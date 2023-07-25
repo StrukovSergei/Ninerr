@@ -1,0 +1,68 @@
+[
+    {
+  "_id": "g101",
+  "title": "I will design your logo",
+  "price": 12,
+  "owner": {
+    "_id": "u101",
+    "fullname": "Dudu Da",
+    "imgUrl": "url",
+    "level": "basic/premium",
+    "rate": 4
+  },
+  "daysToMake": 3,
+  "description": "Make unique logo...",
+  "imgUrls": [""],
+  "tags": [
+    "logo-design",
+    "artisitic",
+    "proffesional",
+    "accessible"
+  ],
+  "likedByUsers": ["mini-user"] 
+},
+{
+  "_id": "g102",
+  "title": "I will design your web",
+  "price": 12,
+  "owner": {
+    "_id": "u102",
+    "fullname": "Miki Mi",
+    "imgUrl": "url",
+    "level": "basic/premium",
+    "rate": 4
+  },
+  "daysToMake": 3,
+  "description": "Make unique logo...",
+  "imgUrls": [""],
+  "tags": [
+    "logo-design",
+    "artisitic",
+    "proffesional",
+    "accessible"
+  ],
+  "likedByUsers": ["mini-user"] 
+},
+{
+  "_id": "g103",
+  "title": "I will make you somthing",
+  "price": 12,
+  "owner": {
+    "_id": "u103",
+    "fullname": "Miki Mi",
+    "imgUrl": "url",
+    "level": "basic/premium",
+    "rate": 4
+  },
+  "daysToMake": 3,
+  "description": "Make unique logo...",
+  "imgUrls": [""],
+  "tags": [
+    "logo-design",
+    "artisitic",
+    "proffesional",
+    "accessible"
+  ],
+  "likedByUsers": ["mini-user"] 
+}
+]
