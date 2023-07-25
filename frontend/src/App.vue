@@ -3,15 +3,18 @@
     <AppHeader />
     <RouterView/>
     <UserMsg/>
+    <AppFooter/>
   </section>
 </template>
 
+import AppFooter from './cmps/AppFooter.vue'
 <script>
 
 
 import { userService } from './services/user.service'
 import { store } from './store/store'
 
+import AppFooter from './cmps/AppFooter.vue'
 import AppHeader from './cmps/AppHeader.vue'
 import UserMsg from './cmps/UserMsg.vue'
 
@@ -25,7 +28,9 @@ export default {
   },
   components: {
     AppHeader,
-    UserMsg
-  },
+    AppFooter,
+    UserMsg,
+    
+},
 }
 </script>

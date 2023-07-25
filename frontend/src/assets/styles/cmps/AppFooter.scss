@@ -1,0 +1,60 @@
+footer{
+    /* Border properties */
+border-bottom-color: rgb(98, 100, 106);
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-image-outset: 0;
+border-image-repeat: stretch;
+border-image-slice: 100%;
+border-image-source: none;
+border-image-width: 1;
+border-left-color: rgb(98, 100, 106);
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: rgb(98, 100, 106);
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: rgb(98, 100, 106);
+border-top-style: none;
+border-top-width: 0px;
+
+/* Box properties */
+box-sizing: border-box;
+color: rgb(98, 100, 106);
+display: block;
+font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-feature-settings: normal;
+font-kerning: auto;
+font-optical-sizing: auto;
+font-size: 16px;
+font-stretch: 100%;
+font-style: normal;
+font-variant-alternates: normal;
+font-variant-caps: normal;
+font-variant-east-asian: normal;
+font-variant-ligatures: normal;
+font-variant-numeric: normal;
+font-variation-settings: normal;
+font-weight: 400;
+height: 55px;
+line-height: 24px;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+max-width: 1400px;
+outline-color: rgb(98, 100, 106);
+outline-style: none;
+outline-width: 0px;
+padding-bottom: 24px;
+padding-left: 32px;
+padding-right: 32px;
+padding-top: 64px;
+width: 1254px;
+-webkit-font-smoothing: antialiased;
+
+ .footer-logo{
+    font-family: fiverr;
+    font-size: 16px;
+ }
+}

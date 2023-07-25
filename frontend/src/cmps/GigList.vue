@@ -1,5 +1,6 @@
 <template>
     <section>
+<<<<<<< HEAD
         <ul class="gig-list grid">
             <GigPreview v-for="gig in gigs" :key="gig._id" :gig="gig" @removeGig="$emit('removeGig', gig._id)" />
         </ul>
@@ -30,3 +31,17 @@ export default {
 
 }
 </script>
+=======
+
+    </section>
+  </template>
+  
+  <script>
+  
+
+  export default {
+  
+    
+  }
+  </script>
+>>>>>>> 7bb9bc4dc24e8cd318497b50df1e75a929d72491
