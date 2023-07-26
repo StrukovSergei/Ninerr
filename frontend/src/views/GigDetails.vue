@@ -1,9 +1,12 @@
 <template>
     <section v-if="currGig" class="gig-details flex gap-2">
-        <div class="gig-details__details grid">
+
+        <div class="gig-details-overview grid">
             <h2 class="gig-details__title">{{ currGig.title }}</h2>
-            <img :src="currGig.owner.imgUrl" alt="" class="owner-small-logo">
-            <h3> {{ currGig.owner.fullname }} , {{ currGig.owner.level }} , {{ currGig.owner.rate }}</h3>
+            <div class="mini-user-info flex">
+                <img :src="currGig.owner.imgUrl" alt="" class="owner-small-logo">
+                <h3> {{ currGig.owner.fullname }} , {{ currGig.owner.level }} , {{ currGig.owner.rate }}</h3>
+            </div>
             <div>
                 <vueper-slides ref="vueperslides1" :touchable="false" fade :autoplay="false" :bullets="false"
                     @slide="$refs.vueperslides2.goToSlide($event.currentSlide.index, { emit: false })" fixed-height="400px">
@@ -26,24 +29,26 @@
                 {{ currGig.description }}
             </div>
 
-            <div class="order-container">
-                <h3>Basic</h3>
-                <p>${{ currGig.price }}</p>
-                <button class="btn-continue">Continue</button>
-            </div>
+
 
             <div class="flex justify-end self-end">
                 <router-link v-if="user?.isAdmin" class="btn-light" :to="'/gig/edit/' + currGig._id">Edit</router-link>
             </div>
-        </div>
-        <div class="">
-            <h1 class="review-header">Reviews</h1>
-            <div v-for="review in reviews" :key="review._id" class="review-preview">
-                <h4>About: {{ review.currGig.title }}</h4>
-                <h4>By: {{ review.user.username }}</h4>
-                <p>Review: {{ review.txt }}</p>
-            </div>
+            <div class="">
+                <h2 class="review-header">Reviews</h2>
+                <div v-for="review in reviews" :key="review._id" class="review-preview">
+                    <h4>About: {{ review.currGig.title }}</h4>
+                    <h4>By: {{ review.user.username }}</h4>
+                    <p>Review: {{ review.txt }}</p>
+                </div>
 
+            </div>
+        </div>
+        <div class="order-container">
+            <h3>Basic</h3>
+            <p>${{ currGig.price }}</p>
+            <p> {{ currGig.daysToMake }} Days Delivery</p>
+            <button class="btn-continue">Continue</button>
         </div>
     </section>
 </template>
