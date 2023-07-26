@@ -3,7 +3,7 @@
     <header>
       <RouterLink to="/" class="site-logo">
         <div>
-          <img src="../assets/imgs/fiverr-2.svg" alt="">
+          <img src="../assets/imgs/main-logo.png" alt="">
         </div>
       </RouterLink>
       <div class="search">

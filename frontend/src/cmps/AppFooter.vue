@@ -2,7 +2,7 @@
     <section class="app-footer main-layout full">
         <div class="content-container flex align-center space-between">
             <div class="title">
-                <span class="logo"><img src="../assets/imgs/fiverr-2.svg" alt=""> </span>
+                <span class="logo"><img src="../assets/imgs/footer-logo.png" alt=""><span class="smallRForLogo">®</span> </span>
 
                 <small class="copy-rights">© Ninerr International Ltd. 2023</small>
             </div>
