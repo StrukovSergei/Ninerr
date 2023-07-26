@@ -18,6 +18,20 @@
         <RouterLink to="/login">Login <span> Signup</span> </RouterLink>
       </div>
     </header>
+    <section class="categories-menu-package">
+      <ul class="flex clean-list">
+        <li>Graphics & Design</li>
+        <li>Digital Marketing</li>
+        <li>Writing & Translation</li>
+        <li>Video & Animation</li>
+        <li>Music & Audio</li>
+        <li>Programming & Tech</li>
+        <li>Photography</li>
+        <li>Business</li>
+        <li>AI Services</li>
+      </ul>
+
+    </section>
   </div>
 </template>
 
@@ -25,6 +39,7 @@
 <script>
 
 export default {
+  name: 'AppHeader',
   computed: {
     isHomePage() {
       return this.$route.path === '/'
