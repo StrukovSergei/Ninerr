@@ -2,42 +2,123 @@
   <section class="home full">
     <Hero />
     <h2>Popular services:</h2>
-    <vueper-slides bullets:false class="no-shadow slides-container" :visible-slides="5" slide-multiple :gap="2"
-      :slide-ratio="1 / 4" :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }">
+    <vueper-slides class="no-shadow" :visible-slides='slidesNum' slide-multiple :gap="3" :slide-ratio="1 / 3"
+      :bullets="false" :dragging-distance="200" :breakpoints="{
+        550: { visibleSlides: 1, slideMultiple: 2 },
+        800: { visibleSlides: 2, slideMultiple: 2 },
+        1000: { visibleSlides: 3, slideMultiple: 2 },
+        1330: { visibleSlides: 5, slideMultiple: 2 }
+      }">
+      <template #arrow-left>
+        <i class="fa-solid fa-angle-left"></i>
+      </template>
+      <template #arrow-right>
+        <i class="fa-solid fa-angle-right"></i>
+      </template>
       <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
     </vueper-slides>
   </section>
 
-  <section class="video-section flex full main-layout">
-    <div class="flex video-layout">
-      <div class="site-info">
-        <p class="side-text">
-        <h1>A whole world of freelance talent at your fingertips</h1>
-        <ul>
-          <li>
-            <h3>The best for every budget</h3>
-            Find high-quality services at every price point. No hourly rates, just project-based pricing.
-          </li>
-          <li>
-            <h3>Quality work done quickly</h3>
-            Find the right freelancer to begin working on your project within minutes.
-          </li>
-          <li>
-            <h3>Protected payments, every time</h3>
-            Always know what you'll pay upfront. Your payment isn't released until you approve the work.
-          </li>
-          <li>
-            <h3>Quality work done quickly</h3>
-            Find the right freelancer to begin working on your project within minutes.
-          </li>
-        </ul>
-        </p>
-      </div>
-      <div class="vid-container ">
-        <img src="https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793711/gigs/ostlxosopzlu6ccomezg.webp">
+  <div class="selling-proposition-wrapper main-layout full">
+    <div class="selling-proposition">
+      <div class="selling-container">
+        <div class="selling-info">
+          <h2>The best part? Everything.</h2>
+          <ul class="clean-list">
+            <li>
+              <section class="flex align-center">
+                <h6>
+                  <span class="check-svg">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8 1.75C4.54822 1.75 1.75 4.54822 1.75 8C1.75 11.4518 4.54822 14.25 8 14.25C11.4518 14.25 14.25 11.4518 14.25 8C14.25 4.54822 11.4518 1.75 8 1.75ZM0.25 8C0.25 3.71979 3.71979 0.25 8 0.25C12.2802 0.25 15.75 3.71979 15.75 8C15.75 12.2802 12.2802 15.75 8 15.75C3.71979 15.75 0.25 12.2802 0.25 8Z">
+                      </path>
+                      <path
+                        d="M11.5303 5.46967C11.8232 5.76256 11.8232 6.23744 11.5303 6.53033L7.53033 10.5303C7.23744 10.8232 6.76256 10.8232 6.46967 10.5303L4.46967 8.53033C4.17678 8.23744 4.17678 7.76256 4.46967 7.46967C4.76256 7.17678 5.23744 7.17678 5.53033 7.46967L7 8.93934L10.4697 5.46967C10.7626 5.17678 11.2374 5.17678 11.5303 5.46967Z">
+                      </path>
+                    </svg>
+                  </span>
+                  <h3>Stick to your budget</h3>
+                </h6>
+              </section>
+              <p>
+                Find the right service for every price point. No hourly rates, just project-based pricing.
+              </p>
+            </li>
+            <li>
+              <section class="flex align-center">
+                <h6>
+                  <span class="check-svg">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8 1.75C4.54822 1.75 1.75 4.54822 1.75 8C1.75 11.4518 4.54822 14.25 8 14.25C11.4518 14.25 14.25 11.4518 14.25 8C14.25 4.54822 11.4518 1.75 8 1.75ZM0.25 8C0.25 3.71979 3.71979 0.25 8 0.25C12.2802 0.25 15.75 3.71979 15.75 8C15.75 12.2802 12.2802 15.75 8 15.75C3.71979 15.75 0.25 12.2802 0.25 8Z">
+                      </path>
+                      <path
+                        d="M11.5303 5.46967C11.8232 5.76256 11.8232 6.23744 11.5303 6.53033L7.53033 10.5303C7.23744 10.8232 6.76256 10.8232 6.46967 10.5303L4.46967 8.53033C4.17678 8.23744 4.17678 7.76256 4.46967 7.46967C4.76256 7.17678 5.23744 7.17678 5.53033 7.46967L7 8.93934L10.4697 5.46967C10.7626 5.17678 11.2374 5.17678 11.5303 5.46967Z">
+                      </path>
+                    </svg>
+                  </span>
+                  <h3>Get quality work done quickly</h3>
+                </h6>
+              </section>
+              <p>
+                Hand your project over to a talented freelancer in minutes, get long-lasting results.
+              </p>
+            </li>
+            <li>
+              <section class="flex align-center">
+                <h6>
+                  <span class="check-svg">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8 1.75C4.54822 1.75 1.75 4.54822 1.75 8C1.75 11.4518 4.54822 14.25 8 14.25C11.4518 14.25 14.25 11.4518 14.25 8C14.25 4.54822 11.4518 1.75 8 1.75ZM0.25 8C0.25 3.71979 3.71979 0.25 8 0.25C12.2802 0.25 15.75 3.71979 15.75 8C15.75 12.2802 12.2802 15.75 8 15.75C3.71979 15.75 0.25 12.2802 0.25 8Z">
+                      </path>
+                      <path
+                        d="M11.5303 5.46967C11.8232 5.76256 11.8232 6.23744 11.5303 6.53033L7.53033 10.5303C7.23744 10.8232 6.76256 10.8232 6.46967 10.5303L4.46967 8.53033C4.17678 8.23744 4.17678 7.76256 4.46967 7.46967C4.76256 7.17678 5.23744 7.17678 5.53033 7.46967L7 8.93934L10.4697 5.46967C10.7626 5.17678 11.2374 5.17678 11.5303 5.46967Z">
+                      </path>
+                    </svg>
+                  </span>
+                  <h3>Pay when you're happy</h3>
+                </h6>
+              </section>
+              <p>
+                Upfront quotes mean no surprises. Payments only get released when you approve.
+              </p>
+            </li>
+            <li>
+              <section class="flex align-center">
+                <h6>
+                  <span class="check-svg">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8 1.75C4.54822 1.75 1.75 4.54822 1.75 8C1.75 11.4518 4.54822 14.25 8 14.25C11.4518 14.25 14.25 11.4518 14.25 8C14.25 4.54822 11.4518 1.75 8 1.75ZM0.25 8C0.25 3.71979 3.71979 0.25 8 0.25C12.2802 0.25 15.75 3.71979 15.75 8C15.75 12.2802 12.2802 15.75 8 15.75C3.71979 15.75 0.25 12.2802 0.25 8Z">
+                      </path>
+                      <path
+                        d="M11.5303 5.46967C11.8232 5.76256 11.8232 6.23744 11.5303 6.53033L7.53033 10.5303C7.23744 10.8232 6.76256 10.8232 6.46967 10.5303L4.46967 8.53033C4.17678 8.23744 4.17678 7.76256 4.46967 7.46967C4.76256 7.17678 5.23744 7.17678 5.53033 7.46967L7 8.93934L10.4697 5.46967C10.7626 5.17678 11.2374 5.17678 11.5303 5.46967Z">
+                      </path>
+                    </svg>
+                  </span>
+                  <h3>Count on 24/7 support</h3>
+                </h6>
+              </section>
+              <p>
+                Our round-the-clock support team is available to help anytime, anywhere.
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="selling-video">
+          <div class="picture-wrapper">
+            <img src="https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793711/gigs/ostlxosopzlu6ccomezg.webp"
+              alt="">
+            <!-- <video src="src\assets\videos\vmvv3czyk2ifedefkau7.mp4"></video> -->
+          </div>
+        </div>
+
       </div>
     </div>
-  </section>
+
+  </div>
   <section class="icon-category">
     <h2 class="bold"> Explore the marketplace</h2>
     <section class="category-list main-layout">
@@ -405,7 +486,9 @@ export default {
         image: img10
       },
 
-    ]
+    ],
+    slidesNum: 5,
+    width: window.innerWidth,
   }),
   computed: {
   },

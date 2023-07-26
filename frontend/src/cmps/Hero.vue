@@ -5,7 +5,7 @@
                 <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
             </vueper-slides>
 
-            <div class="search-container">
+            <div class="search-container flex">
                 <h1>
                     Find the perfect
                     <i class="fancy-word">freelance</i> <br>
