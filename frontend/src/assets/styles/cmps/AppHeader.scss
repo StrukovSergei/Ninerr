@@ -1,38 +1,34 @@
 header {
-    background-color: $clr5;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
+display: grid;
+align-items: center;
 
-    .loggedin-user {
-        background-color: $clr1;
-        padding: 2px 8px;
-        border-radius: 1em;
-        align-self: flex-end;
-        color: whitesmoke;
-        span{
-            background-color: $clr2;
-            padding: 4px;
-            margin: 10px;
-            border-radius: 50%;
+    & .site-logo{
+        grid-column: 1;
+        margin: 0;       
+      & img{
+        width: 5em;
+      }
+        .point {
+                color: $clr1;
+                border-radius: 50%;
+                font-size: 50px;
+                height: fit-content;              
+                
+                font-family: "Courier New", Courier, monospace;
+            }
+    }
+
+    & .search {
+        grid-column: 2;
+    }
+
+    & .links{
+        font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1rem;
+        grid-column: 3;
+        justify-self: end;
+        & >*{
+            padding-inline-end: rem(20px);
         }
-        img {
-            width: 2em;
-            height: 2em;
-            border-radius: 50%;
-        }
     }
-    nav {
-        background-color: $clr4;
-        padding: 5px 0;
-    }
-    nav a:not(:first-child) {
-        border-top: 1px solid $clr1;
-        padding: 0 5px;
-        margin: 10px;
-    }
-    nav .active {
-        color: $clr1;
-    }
-    
 }
