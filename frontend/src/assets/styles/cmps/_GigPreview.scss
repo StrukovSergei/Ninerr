@@ -1,13 +1,38 @@
-.gig-preview{
-    & .user_preview{
+.gig-preview {
+    background-color: white;
+    & .product_img{
+        width: 100%;
+        // opacity: 0;
+    }
+    
+    & .user_preview {
         display: flex;
+        // -webkit-box-align: center;
         flex-direction: row;
-        & .user_info{
-            img{
+        justify-content: space-between;
+        align-items: center;
+        
+
+        & .user_info {
+            & .user_img{
                 height: 24px;
                 border-radius: 50%;
             }
+
         }
+
+    }
+
+    & .txt_body {
+        font-size: 14px;
+        color: #222325;
+        font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        // -webkit-line-clamp: 2;
+        // -webkit-box-orient: vertical;
+        // display: -webkit-box;
+        // overflow: hidden;
+        // -o-text-overflow: ellipsis;
+        // text-overflow: ellipsis;
 
     }
 }
