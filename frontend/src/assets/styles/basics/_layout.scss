@@ -1,9 +1,4 @@
-.container {
-    max-width: 1500px;
-    padding: 10px;
-}
-
-.main-container {
+.main-layout {
     display: grid;
     grid-template-columns: 20px 1fr 20px;
 
@@ -33,6 +28,15 @@
             minmax(auto, $normal-breakpoint)
             minmax(20px, 1fr);
     }
+}
+
+.app-container {
+    min-height: 100vh;
+
+}
+
+.main-text {
+    margin-bottom: rem(90px);
 }
 
 .card-grid {

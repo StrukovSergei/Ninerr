@@ -1,12 +1,57 @@
-// Colors
-$clr1: #ce2e6c;
-$clr2: #4f3a65;
-$clr3: #574f7d;
-$clr4: #95adbe;
-$clr5: #dff0ea;
-$clr6: #fff;
+// COLOR PALETTE
+
+// BACKGROUND COLORS
+$CLR0: #ffffff; //menu open bgc
+$CLR00: #62646a;
+
+
+$CLR05: rgb(247, 247, 247);
+
+$CLR01: #f3fdf9; //SECOND LEVEL BGC
+$CLR02: #0d084d; // FIVER BUISNESS BGC
+$CLR03: #023a15; // FIVER HERO BGC
+//HEROS BGC
+$CLR04: #0c3b24; // GRAFIC DESIGN BGC
+$CLR04: #bd5272; // DIGITAL MARKETING BGC
+$CLR04: #254200; // Writing & Translation BGC
+$CLR04: #4d1627; // Video & Animation // trending BGC
+$CLR04: #2f0d05; // Programming & Tech BGC
+$CLR04: #687200; // Business BGC
+$CLR04: #8f2800; // Lifstyle BGC
+
+
+
+// LINKS CLICKED COLOR-ACTIVE /SEARCH BUTTOM COLOR OF THE HERO
+$clr1: #1dbf73;
+// BORDER INPUT WHEN NOT ACTIVE 
+$clr2: #c5c6c9;
+// FONT COLOR INSIDE AN INPUT 
+$clr3: #62646a;
+// INPUT SEARCH BUTTOM BACKGRAOUND / HEADLINE COLOR OF THE HOE PAGE PREVIEW
+$clr4: #222325;
+// LINK COLOR NOT ACTIVE BELLOW THE MAIN HEADER 
+$clr5: #74767e;
+// FONT COLOR IN PREVIEW CARD ON THE MAIN PAGE 
+$clr6: rgb(255, 255, 255);
+
+$clr7: #1dbf73;
+
+$clr8: #02c2a9; // FIVVER PRO LINK
+
+
+$clr9: #dadbdd; // SWITCH OFF 
+
+$clr10: #ffbe5b; // STAR RATE COLOR
+
+//FONT COLOR
+$clr11: #404145;
+
+$clr12: #b5b6ba;
 
 // Breakpoints
 $mobile-breakpoint: 460px;
 $narrow-breakpoint: 720px;
 $normal-breakpoint: 960px;
+
+// LAYOUT
+$layoutPadding: 24px;

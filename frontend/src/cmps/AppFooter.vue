@@ -1,21 +1,24 @@
 <template>
-    <footer>
-        <div class="footer-logo">fiverr</div>
-        <nav>
-            <RouterLink to="/">
-                <span role="img" aria-label="logo">🙏</span>
-            </RouterLink>
-            <RouterLink to="/explore">Explore</RouterLink>
-            <RouterLink to="/review">Reviews</RouterLink>
-            <RouterLink to="/chat">Chat</RouterLink>
-            <RouterLink to="/login">Login / Signup</RouterLink>
-        </nav>
-    </footer>
+    <section class="app-footer main-layout full">
+        <div class="content-container flex align-center space-between">
+            <div class="title">
+                <span class="logo">Ninerr</span>
+                <small class="copy-rights">© Ninerr International Ltd. 2023</small>
+            </div>
+
+            <div class="social-links flex space-between">
+                <div><a class='twitter'>twitter</a></div>
+                <div><a class='facebook'>facebook</a></div>
+                <div><a class='linkedin'>linkedin</a></div>
+                <div><a class='pinterest'>pinterest</a></div>
+                <div><a class='instagram'>instagram</a></div>
+            </div>
+        </div>
+    </section>
 </template>
+
 <script>
 export default {
-    computed: {
-
-    }
+    name: 'AppFooter'
 }
 </script>

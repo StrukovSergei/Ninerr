@@ -1,11 +1,7 @@
 <template>
-  <section class="container home ">
-    <h1 class="text-center">Home Page</h1>
-    <h5 class="text-center">Trusted by:</h5>
-    <section>
-      <h2>Popular services:</h2>
-      
-    </section>
+  <section class="home full">
+    <Hero />
+    <h2>Popular services:</h2>
     <vueper-slides bullets:false class="no-shadow slides-container" :visible-slides="5" slide-multiple :gap="2"
       :slide-ratio="1 / 4" :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }">
       <vueper-slide bullets:false class="slides" v-for="i in 10" :key="i" :title="i.toString()" />
@@ -14,8 +10,10 @@
 </template>
 
 <script>
+
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
+import Hero from '../cmps/Hero.vue'
 
 export default {
   name: 'home',
@@ -69,7 +67,7 @@ export default {
   },
   methods: {
   },
-  components: { VueperSlides, VueperSlide },
+  components: { VueperSlides, VueperSlide, Hero },
 
 }
 </script>
