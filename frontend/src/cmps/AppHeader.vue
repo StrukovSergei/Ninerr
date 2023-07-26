@@ -4,7 +4,6 @@
       <RouterLink to="/" class="site-logo">
         <div>
           <img src="../assets/imgs/fiverr-2.svg" alt="">
-
         </div>
       </RouterLink>
       <div class="search">
