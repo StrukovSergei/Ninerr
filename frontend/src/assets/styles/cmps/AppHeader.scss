@@ -8,14 +8,7 @@ align-items: center;
       & img{
         width: 5em;
       }
-        .point {
-                color: $clr1;
-                border-radius: 50%;
-                font-size: 50px;
-                height: fit-content;              
-                
-                font-family: "Courier New", Courier, monospace;
-            }
+       
     }
 
     & .search {
@@ -30,5 +23,27 @@ align-items: center;
         & >*{
             padding-inline-end: rem(20px);
         }
+    }
+    
+}
+
+.categories-menu-package {
+    font-family: Macan,
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+    
+    & ul {          
+        
+        & li {
+            color: #62646a;
+            font-size: 1rem;
+            line-height: rem(24px);
+            padding: rem(8px) 0;
+            position: relative;
+            cursor: pointer;
+        }
+
     }
 }
