@@ -17,9 +17,7 @@
                     </div>
                     <a href="'/#/gig?txt=' + filterBy.txt">
                         <button class="el-button">
-                            <span>
-                                Search
-                            </span>
+                            <span class="search-icon" v-html="$svg('search')"></span>
                         </button>
                     </a>
                 </div>
