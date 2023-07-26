@@ -1,0 +1,145 @@
+.gig-details {
+    max-width: 1240px;
+    padding: 0 32px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    color: $clr11;
+    font-family: macan;
+
+    .gig-details-title {
+        font-size: 28px;
+        font-weight: 700;
+
+    }
+
+    .gig-small-nav {
+
+        .home-icon {
+            cursor: pointer;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .small-devider{
+            color: $clr2;
+            font-size: 14px;
+            margin-top: 3px;
+            margin-right: 10px;
+        }
+
+        .btn-back{
+            font-size: 14px;
+            margin-top: 3px;
+            color: $clr4;
+            cursor: pointer;
+        }
+    }
+
+    .order-container {
+        width: 35%;
+        background-color: #fff;
+        position: sticky;
+        align-self: flex-start;
+        top: 53px;
+        overflow-y: auto;
+        padding: 2em 1.5em;
+        border: 1px solid #dadbdd;
+        margin-block-end: 16px;
+        font-family: macan;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1.5fr 1fr 2fr 1fr 1fr;
+        grid-template-areas:
+            "header header"
+            "offer price"
+            "info info"
+            "properties properties"
+            "btn btn ";
+
+        .order-header {
+            grid-area: header;
+            color: $clr1;
+        }
+
+        .order-offer {
+            grid-area: offer;
+        }
+
+        .order-price {
+            grid-area: price;
+        }
+
+        .order-mini-info {
+            grid-area: info;
+        }
+
+        .order-propertie {
+            grid-area: properties;
+        }
+
+        .btn-continue {
+            grid-area: btn;
+        }
+    }
+
+    .vueperslide__content-wrapper {}
+
+    .vueperslides__arrow svg {
+        background-color: #fff;
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+        height: 48px;
+        margin-top: -24px;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        width: 48px;
+        z-index: 4;
+        border-radius: 30px;
+        color: rgb(19, 18, 18);
+        font-size: medium;
+
+
+    }
+
+    .gig-details-overview {
+        margin-inline-end: 5.5%;
+        width: 59.5%;
+
+    }
+
+    .mini-user-info {
+        max-height: 30px;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        .mini-user-title {
+            margin: 0;
+        }
+
+        .owner-small-logo {
+            max-width: 30px;
+            max-height: 30px;
+            object-fit: cover;
+            border-radius: 50%;
+            overflow-clip-margin: content-box;
+            overflow: clip;
+        }
+
+    }
+
+    .star-rating svg {
+        fill: $clr10;
+    }
+
+    .star-rating svg.empty {
+        fill: none;
+        stroke: $clr10;
+    }
+
+    .rate-number {
+        color: $clr10;
+    }
+}

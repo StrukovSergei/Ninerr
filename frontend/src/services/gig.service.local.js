@@ -83,7 +83,7 @@ function getEmptyGig() {
 //       imgUrl:
 //         'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5344c10fd4820db3626c4fc24968783d-1588608774469/1e4a3bd9-b71d-48ce-8ac0-0ff6d667caf4.jpeg',
 //       level: 'basic/premium',
-//       rate: 4,
+//       rate: 4.8,
 //     },
 //     daysToMake: 3,
 //     description:
@@ -106,7 +106,7 @@ function getEmptyGig() {
 //       imgUrl:
 //         'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/044fb5914a845a4eb59fc2b69f7f7b32-1634120039750/4dbc2acb-7322-4cd0-9afb-e5190e8e8a0d.jpg',
 //       level: 'basic/premium',
-//       rate: 2,
+//       rate: 2.6,
 //     },
 //     daysToMake: 7,
 //     description:

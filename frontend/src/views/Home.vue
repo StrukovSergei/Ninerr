@@ -15,6 +15,8 @@
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 import Hero from '../cmps/Hero.vue'
+import img1 from '../assets/imgs/1.webp'
+import img2 from '../assets/imgs/2.webp'
 
 export default {
   name: 'home',
@@ -23,12 +25,12 @@ export default {
       {
         title: 'Slide #1',
         content: '',
-        image: url('../assets/imgs/1.webp'),
+        image: img1,
       },
       {
         title: 'Slide #2',
         content: 'Slide 2 content.',
-        image: url('../assets/imgs/2.webp'),
+        image: img2,
       },
       // {
       //   title: 'Slide #3',
