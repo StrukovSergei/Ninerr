@@ -1,0 +1,13 @@
+.gig-preview{
+    & .user_preview{
+        display: flex;
+        flex-direction: row;
+        & .user_info{
+            img{
+                height: 24px;
+                border-radius: 50%;
+            }
+        }
+
+    }
+}

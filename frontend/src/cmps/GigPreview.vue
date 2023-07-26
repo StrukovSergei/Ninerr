@@ -2,7 +2,18 @@
     <section>
         <!-- <ul class="gig-list"> -->
         <li class="gig-preview" @click="goToDetail">
+            <section class="user_preview">
+                <div class="user_info">
+                    <img :src="gig.owner.imgUrl" />
+                    <a>{{ gig?.owner.fullname }}</a>
+                </div>
+            <div>
+                <h3>{{ gig.owner.level }}</h3>
+            </div>
+        </section>
             <p>{{ gig?.title }}</p>
+
+            <p>{{ gig?.owner.rate }}</p>
 
             <p>
                 ${{ gig.price?.toLocaleString() }}
