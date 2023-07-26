@@ -1,5 +1,5 @@
 <template>
-  <section class="main-layout">
+  <section >
     <AppHeader />
     <RouterView />
     <AppFooter />

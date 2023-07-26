@@ -2,7 +2,6 @@
   <section v-if="user">
     <h1>User Details - {{ user.fullname }}</h1>
     <h2 v-if="isMe">Its me</h2>
-    <h3>{{ user.username }} score: {{ user.score }}</h3>
     <img style="max-width: 200px;" :src="user.imgUrl" />
     <ul>
       <li v-for="review in user.givenReviews" :key="review._id">
@@ -12,11 +11,22 @@
         </RouterLink>
       </li>
     </ul>
+    <button @click="addGig">Add Gig</button>
 
-    <details>
-      <summary>Full JSON</summary>
-      <pre>{{ user }}</pre>
-    </details>
+    <!-- List of Current Gigs -->
+    <div v-if="gigs && gigs.length">
+      <h2>Current Gigs:</h2>
+      <ul>
+        <li v-for="gig in gigs" :key="gig._id">
+          {{ gig.title }} - Price: {{ gig.price }}
+          <button @click="updateGig(gig)">Update</button>
+          <button @click="removeGig(gig._id)">Remove</button>
+        </li>
+      </ul>
+    </div>
+    <div v-else>
+      <p>No gigs available.</p>
+    </div>
   </section>
 </template>
 
@@ -24,8 +34,12 @@
 import { SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED, socketService } from '../services/socket.service'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { userService } from '../services/user.service.local'
+import GigList from '../cmps/GigList.vue'
+import { gigService } from '../services/gig.service.local'
+import { getActionRemoveGig, getActionUpdateGig } from '../store/gig.store'
 
 export default {
+  components: { GigList },
   data() {
     return {
       user: null
@@ -46,6 +60,12 @@ export default {
     isMe() {
       return this.userId === this.$store.getters.loggedinUser._id
     },
+    gigs() {
+      return this.$store.getters.gigs
+    }
+  },
+  created() {
+    this.$store.dispatch({ type: 'loadGigs' })
   },
   methods: {
     async loadUser() {
@@ -53,11 +73,11 @@ export default {
       try {
         const user = await userService.getById(this.userId)
         socketService.off(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
-        
+
         socketService.emit(SOCKET_EMIT_USER_WATCH, this.userId)
         socketService.on(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
         this.user = user
-      } catch(err) {
+      } catch (err) {
         showErrorMsg('Cannot load user: ' + this.userId)
         console.error('Failed to load user', err)
       }
@@ -69,6 +89,38 @@ export default {
     },
     unmounted() {
       socketService.off(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
+    },
+    async addGig() {
+      try {
+        await this.$store.dispatch({ type: 'addGig', gig: this.gigToAdd })
+        showSuccessMsg('Gig added')
+        this.gigToAdd = gigService.getEmptyGig()
+      } catch (err) {
+        console.log(err)
+        showErrorMsg('Cannot add gig')
+      }
+    },
+    async removeGig(gigId) {
+      try {
+        await this.$store.dispatch(getActionRemoveGig(gigId))
+        showSuccessMsg('Gig removed')
+
+      } catch (err) {
+        console.log(err)
+        showErrorMsg('Cannot remove gig')
+      }
+    },
+    async updateGig(gig) {
+      try {
+        gig = { ...gig }
+        gig.price = +prompt('New price?', gig.price)
+        await this.$store.dispatch(getActionUpdateGig(gig))
+        showSuccessMsg('Gig updated')
+
+      } catch (err) {
+        console.log(err)
+        showErrorMsg('Cannot update gig')
+      }
     },
   }
 }
