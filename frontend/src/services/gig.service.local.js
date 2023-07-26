@@ -72,13 +72,45 @@ function getEmptyGig() {
 }
 
 // Initial data
-// ;(async () => {
+// ; (async () => {
 //   await storageService.post(STORAGE_KEY, {
-//     title: 'Subali Karov 1',
-//     price: 180,
+//     _id: "g101",
+//     title: "I will build responsive wordpress website design",
+//     price: 12,
+//     owner: {
+//       "_id": "u101",
+//       "fullname": "Dudu Da",
+//       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5344c10fd4820db3626c4fc24968783d-1588608774469/1e4a3bd9-b71d-48ce-8ac0-0ff6d667caf4.jpeg",
+//       "level": "basic/premium",
+//       "rate": 4
+//     },
+//     daysToMake: 3,
+//     description: "I will design a professional, Mobile friendly, And user-friendly Website for your business/ Enterprises or an organization.",
+//     imgUrls: ["https://res.cloudinary.com/dcwibf9o5/image/upload/v1673726966/q1msdqaht5dsqu22ip62.webp",
+//       "https://res.cloudinary.com/dcwibf9o5/image/upload/v1673726973/jjkh0hwshulmatnflwhz.webp",
+//       "https://res.cloudinary.com/dcwibf9o5/image/upload/v1673726960/hm6yg2uc0c3ktwjnw2eg.webp"],
+//     tags: ["proffesional", "accessible"],
+//     likedByUsers: ['mini-user']
 //   })
 //   await storageService.post(STORAGE_KEY, {
-//     title: 'Subali Rahok 2',
-//     price: 240,
+//     _id: "g102",
+//     title: "I will design best custom hand drawn logo with unlimited revisions",
+//     price: 36,
+//     owner: {
+//       "_id": "u102",
+//       "fullname": "Budu Ba",
+//       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/044fb5914a845a4eb59fc2b69f7f7b32-1634120039750/4dbc2acb-7322-4cd0-9afb-e5190e8e8a0d.jpg",
+//       "level": "basic/premium",
+//       "rate": 2
+//     },
+//     daysToMake: 7,
+//     description: "Talented Logo Maker Team, Fully custom made, creative, original, UNIQUE and AWESOME designs",
+//     imgUrls:
+//       ["https://res.cloudinary.com/dja6gjgcd/image/upload/v1670579338/samples/higherr/ddf38ce88cd6f0ab8ee9c1097f3727a452715f19_xknjtm.webp",
+//         "https://res.cloudinary.com/dja6gjgcd/image/upload/v1670579338/samples/higherr/14c7f411ab4958c13cccf3f46e6b3be04797ce59_cp8j4w.webp",
+//         "https://res.cloudinary.com/dja6gjgcd/image/upload/v1670579338/samples/higherr/Doc_2_swjqrg_gvb7az.jpg",
+//         "https://res.cloudinary.com/dja6gjgcd/image/upload/v1670579338/samples/higherr/ee19f64d39ae8a60c7f7fe39895f733698981c99_sadnfj.webp"],
+//     tags: ["logo-design", "proffesional"],
+//     likedByUsers: ['mini-user']
 //   })
 // })()

@@ -32,9 +32,7 @@ export const userStore = {
         removeUser(state, { userId }) {
             state.users = state.users.filter(user => user._id !== userId)
         },
-        setUserScore(state, { score }) {
-            state.loggedinUser.score = score
-        },
+
     },
     actions: {
         async login({ commit }, { userCred }) {

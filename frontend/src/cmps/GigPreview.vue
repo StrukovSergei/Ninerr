@@ -1,14 +1,13 @@
 <template>
     <section>
         <!-- <ul class="gig-list"> -->
-        <li class="gig-preview">
+        <li class="gig-preview" @click="goToDetail">
             <p>{{ gig?.title }}</p>
 
             <p>
                 ${{ gig.price?.toLocaleString() }}
             </p>
             <button @click="removeGig(gig._id)">x</button>
-            <button @click="updateGig(gig)">Update</button>
             <hr />
         </li>
         <!-- </ul> -->
@@ -42,7 +41,12 @@ export default {
     created() {
         this.$store.dispatch({ type: 'loadGigs' })
     },
+    methods: {
+        goToDetail() {
+            this.$router.push(`/gig/${this.gig._id}`)
+        },
 
+    },
 }
 
 </script>
