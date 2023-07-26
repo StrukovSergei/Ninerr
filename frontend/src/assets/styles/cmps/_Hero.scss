@@ -70,7 +70,7 @@
         width: 100%;
         border-radius: 4px;
       }
-      // position: relative;
+      
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -90,8 +90,8 @@
       height: rem(48px);
 
       &:hover {
-        background-color: #222325;
-        border: 1px solid #222325;
+        background-color: #19a463;
+        border: 1px solid #19a463;
       }
 
       span {
@@ -105,8 +105,7 @@
       @include for-mobile-layout {
         // font-size: 12px;
         flex-direction: column;
-      }
-      // position: relative;
+      }      
       margin-block-end: rem(24px);
       margin-block-start: rem(24px);
       height: 3rem;
@@ -116,10 +115,8 @@
     }
 
     .search-icon {
-      align-items: center;
-      justify-content: center;
-      background-color: #fff;
-      color: #74767e;
+          
+      color: #fff;
       border-radius: rem(4px) 0 0 rem(4px);
       width: rem(41px);
       padding-top: rem(3px);
