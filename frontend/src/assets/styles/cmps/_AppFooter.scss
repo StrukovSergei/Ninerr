@@ -34,22 +34,18 @@
         }
     }
 
+    .logo{
+        & img {
+            width: 5em;
+        }
+    }
+
     .logo,
     .copy-rights {
         margin-right: 30px;
     }
-
-    .logo {
-        font-family: Macan;
-        font-size: 1.7rem;
-        color: $clr5;
-
-        &::after {
-            content: '®';
-            font-size: 0.6rem;
-            color: $clr12;
-        }
-    }
+  
+    
 
     .copy-rights {
         font-family: Macan-Regular;

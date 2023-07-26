@@ -1,0 +1,241 @@
+.home {
+    .slides-container {
+        margin: 0 auto;
+        width: 90%;
+        .slides {
+            background-color: green;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+}
+
+.video-section{
+    background-color: $CLR01;
+    min-height: rem(690px);
+    padding: rem(96px) 0px;
+    margin-block-end: rem(96px);
+
+    .vid-container{
+        width: 50%;
+        padding-bottom: rem(96px);
+        padding-top: rem(96px);
+    
+    }
+
+}
+.selling-proposition-wrapper {
+  background-color: #f1fdf7;
+  margin-bottom: rem(96px);
+
+  .selling-proposition {
+    padding-block-end: rem(88px);
+    padding-block-start: rem(88px);
+  }
+
+  .selling-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .selling-video {
+    margin-block-end: 2.3rem;
+
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+
+  .selling-info {
+    padding-inline-end: 30%;
+
+    .flex {
+      align-items: center;
+
+      h3 {
+        color: #404145;
+      }
+    }
+
+    li {
+      padding-block-end: 1.5em;
+
+      section {
+        h6 {
+          display: flex;
+        }
+
+        h3 {
+          letter-spacing: -0.01em;
+          font-family: 'Macan', "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: rem(18px);
+          font-weight: 700;
+          line-height: rem(25.2px)
+        }
+      }
+    }
+
+    h2 {
+      font-family: 'Macan', "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-style: bolder;
+      font-size: 2rem;
+      line-height: rem(38.4px);
+      padding-block-end: 0.3em;
+      color: #404145;
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      text-align: left;
+      color: #62646a;
+      line-height: rem(26px);
+      margin-block-start: 0.8rem;
+      letter-spacing: 0.06em;
+      font-size: rem(18px);
+      font-weight: 400;
+      font-stretch: 100%;
+      font-family: 'Macan', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    span {
+      display: block;
+      width: 24px;
+      height: 24px;
+      margin-inline-end: 0.825em;
+
+      >* {
+        fill: #74767e;
+        float: left;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.icon-category {
+  margin-block-end: 4.9rem;
+  h2 {
+    font-size: 2em;
+    line-height: 118%;
+    padding-bottom: rem(24px);
+    margin-bottom: rem(40px);
+  }
+  .icons {
+    display: grid;
+    padding-inline-start: rem(20px);
+    padding-inline-end: rem(20px);
+    grid-template-columns: repeat(5, 1fr);
+    gap: rem(55px);
+
+    .flex div {
+      width: 100%;
+      height: 100%;
+    }
+
+    span {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      font-family: 'Macan-light', sans-serif;
+      height: 100%;
+      margin-block-end:15px;
+      
+
+
+      &.flex::after {
+        content: "";
+        position: absolute;
+        top: 58px;
+        right: 50%;
+        transform: translate(50%);
+        padding: 0 0 8px;
+        width: 48px;
+        border-bottom: 2px solid #c5c6c9;
+        transition: border-color 0.2s ease-in-out, width 0.2s ease-in-out;
+      }
+      &:hover::after {
+        border-color: #1dbf73;
+        width: 90px;
+        transition: border-color 0.2s ease-in-out, width 0.2s ease-in-out;
+      }
+
+      svg {
+        // height: 60px;
+        // width: 60px;
+        
+        &.svg-graphic {
+          .cls-4 {
+            fill: none;
+            stroke: #4d535b;
+            stroke-miterlimit: 10;
+            stroke-width: 2px;
+          }
+        }
+
+        &.svg-writing {
+          .cls-5 {
+            fill: none;
+            stroke: #4d535b;
+            stroke-miterlimit: 10;
+            stroke-width: 2px;
+          }
+        }
+
+        &.svg-sound {
+          .cls-4 {
+            fill: none;
+            stroke: #4d535b;
+            stroke-miterlimit: 10;
+            stroke-width: 2px;
+          }
+        }
+
+        &.svg-tech {
+          .cls-4 {
+            fill: none;
+            stroke: #4d535b;
+            stroke-miterlimit: 10;
+            stroke-width: 2px;
+          }
+        }
+
+        &.svg-lifestyle {
+          .cls-4 {
+            fill: none;
+            stroke: #4d535b;
+            stroke-miterlimit: 10;
+          }
+
+          .cls-4 {
+            stroke-width: 2.1px;
+          }
+        }
+        &.svg-business {
+          .cls-2 {
+            fill: #fff;
+          }
+        }
+      }
+    }
+
+    span:not(.flex) {
+      display: flex;
+      
+      height: 60px;
+    }
+
+    h4 {
+      text-align: center;
+      font-family: Macan-light;
+      color: #222325;
+      line-height: 26px;
+    }
+  }
+}
