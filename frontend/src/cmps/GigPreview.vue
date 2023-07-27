@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <!-- <section> -->
         <!-- <ul class="gig-list"> -->
             <li class="gig-preview" @click="goToDetail">
                 <img :src="gig.imgUrls[0]" class="product_img"/>
@@ -30,7 +30,7 @@
             <button>Save</button>
         </form> -->
 
-    </section>
+    <!-- </section> -->
 </template>
 
 <script>

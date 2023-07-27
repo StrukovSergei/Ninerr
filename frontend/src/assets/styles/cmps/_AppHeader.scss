@@ -1,11 +1,21 @@
 .header-main-layout {
+    
+    border-bottom: 1px solid $clr22;
+    .header-container{
+        min-height: 80px;
+    }
+    
+    .border-helper{
+        border-bottom: 1px solid $clr22;
+    }
+
     width: 100%;
     z-index: 100;
     header {
         display: flex;
         align-items: center;
-        padding: 0 32px;
-        margin: 0 5rem;
+        // padding: 0 32px;
+        // margin: 0 5rem;
        
 
         & .site-logo {
@@ -17,6 +27,7 @@
         }
 
         & .search {
+            position: relative;
             flex: 1;
             display: flex;
             align-items: center;
@@ -35,9 +46,8 @@
             }
 
             button {
-                margin-left: 8px;
                 position: absolute;
-                right: 464px;
+                right: 13px;
                 background-color: $clr4;
                 border-radius: 0 4px 4px 0;
                 display: block;
@@ -59,7 +69,7 @@
 
             &>* {
                 padding-inline-end: rem(20px);
-                color: #fff;
+
             }
 
             img {
@@ -69,11 +79,15 @@
     }
 
     .categories-menu-package {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         font-family: Macan,
         "Helvetica Neue",
         Helvetica,
         Arial,
         sans-serif;
+
         
         & ul {     
             justify-content: space-between;

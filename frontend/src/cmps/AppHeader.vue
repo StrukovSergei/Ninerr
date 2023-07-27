@@ -1,6 +1,6 @@
 <template>
-    <div :class="['header-main-layout', { 'fixed-header': isHomePage }]">
-    <header>
+    <div :class="['header-main-layout full main-layout', { 'fixed-header': isHomePage }]">
+    <header class="header-container main-layout">
       <RouterLink to="/" class="site-logo">
         <div>
           <img src="../assets/imgs/main-logo.png" alt="">
@@ -25,7 +25,8 @@
         </RouterLink>
       </div>
     </header>
-    <section class="categories-menu-package main-layout">
+    <span class="border-helper full"></span>
+    <section class="categories-menu-package ">
       <ul class="flex clean-list">
         <li>Graphics & Design</li>
         <li>Digital Marketing</li>
@@ -65,12 +66,6 @@ export default {
     isDetails() {
       return this.isDetailsPage ? (this.isDoubleScrolled ? 'grid' : 'none') : 'grid'
     },
-    // loadGig() {
-    //   let { txt, tag } = this.$route.query
-    //   let filterBy = { txt, tag }
-    //   this.$store.dispatch({ type: 'loadGigs', filterBy })
-    //   this.filterBy.txt = null
-    // },
     loggedinUser() {
       return this.$store.getters.loggedinUser
     },

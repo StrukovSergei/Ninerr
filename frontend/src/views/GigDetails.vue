@@ -3,13 +3,11 @@
 
         <div class="gig-details-overview">
             <div class="gig-small-nav flex">
-                <div class="home-icon" @click="redirectToHome">
+                <RouterLink class="home-icon" to="/">
                     <span v-html="$svg('home')"></span>
-
-
-                </div>
+                </RouterLink>
                 <span class="small-devider">/</span>
-                <p class="btn-back" @click="redirectToExplore">All Gigs</p>
+                <RouterLink class="btn-back" to="/explore">All Gigs</RouterLink>
             </div>
             <h2 class="gig-details__title">{{ currGig.title }}</h2>
             <div class="mini-user-info flex">
@@ -71,7 +69,8 @@
                 <span class="order-offer">Special offer:</span>
                 <span class="order-price">${{ currGig.price }}</span>
                 <p class="order-mini-info">Info:</p>
-                <span class="order-properties"><span v-html="$svg('clock')" class="clock-icon"></span> {{ currGig.daysToMake}}Days Delivery</span>
+                <span class="order-properties"><span v-html="$svg('clock')" class="clock-icon"></span> {{
+                    currGig.daysToMake }}Days Delivery</span>
             </div>
             <button class="btn-continue">Continue
                 <span class="btn-continue-arrow" aria-hidden="true" style="width: 16px; height: 16px; fill: white;">
@@ -124,9 +123,6 @@ export default {
                 console.log('Could Not load gig')
             }
         },
-        goBack() {
-            this.$router.push('/explore')
-        },
         async sendReview() {
             await this.$store.dispatch({
                 type: 'addReview',
@@ -143,14 +139,6 @@ export default {
                 fullStars: Array(fullStars).fill(1),
                 emptyStars: Array(emptyStars).fill(0),
             }
-        },
-        redirectToHome() {
-
-            this.$router.push('/')
-        },
-        redirectToExplore() {
-
-            this.$router.push('/explore')
         },
     },
     computed: {
