@@ -1,5 +1,6 @@
 .header-main-layout {
     width: 100%;
+    z-index: 9999;
 
     header {
         display: flex;
@@ -43,9 +44,8 @@
                 font-size: 14px;
                 padding: 8px 16px;
                 text-shadow: none;
-                color: $CLR0;
-                .search-icon{
-                    color: $CLR0;
+                .search-icon svg{
+                    fill: $CLR0;
                 }
 
             }

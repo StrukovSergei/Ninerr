@@ -8,7 +8,7 @@
       </RouterLink>
       <div class="search">
         <input type="text" placeholder="What service are you looking for today?" v-model="searchText">
-        <button @click="searchGigs">
+        <button @click.prevent="searchGigs">
           <span class="search-icon" v-html="$svg('search')"></span>
         </button>
       </div>
@@ -65,12 +65,12 @@ export default {
     isDetails() {
       return this.isDetailsPage ? (this.isDoubleScrolled ? 'grid' : 'none') : 'grid'
     },
-    loadGig() {
-      let { txt, tag } = this.$route.query
-      let filterBy = { txt, tag }
-      this.$store.dispatch({ type: 'loadGigs', filterBy })
-      this.filterBy.txt = null
-    },
+    // loadGig() {
+    //   let { txt, tag } = this.$route.query
+    //   let filterBy = { txt, tag }
+    //   this.$store.dispatch({ type: 'loadGigs', filterBy })
+    //   this.filterBy.txt = null
+    // },
     loggedinUser() {
       return this.$store.getters.loggedinUser
     },

@@ -34,8 +34,8 @@
 </template>
 
 <script>
-import { gigService } from '../services/gig.service.local'
-import { getActionRemoveGig, getActionUpdateGig } from '../store/gig.store'
+
+
 export default {
     name: 'GigPreview',
     props: {
@@ -43,7 +43,7 @@ export default {
     },
     data() {
         return {
-            gigToAdd: gigService.getEmptyGig()
+
         }
     },
     computed: {
@@ -51,9 +51,7 @@ export default {
             return this.$store.getters.gigs
         }
     },
-    created() {
-        this.$store.dispatch({ type: 'loadGigs' })
-    },
+
     methods: {
         goToDetail() {
             this.$router.push(`/gig/${this.gig._id}`)

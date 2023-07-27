@@ -25,6 +25,8 @@ async function query(filterBy = { txt: '', price: 0 }) {
   if (filterBy.price) {
     gigs = gigs.filter((gig) => gig.price <= filterBy.price)
   }
+  
+  console.log("🚀 ~ file: gig.service.local.js:30 ~ query ~ gigs:", gigs)
   return gigs
 }
 
