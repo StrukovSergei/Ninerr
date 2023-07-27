@@ -3,6 +3,27 @@
     & .product_img{
         width: 100%;
         // opacity: 0;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    & .user_name{
+        cursor: pointer;
+    }
+    & .title_product{
+        cursor: pointer;
+    }
+    & .rate{
+        display: flex;
+        flex-direction: row;
+    }
+    & .rate p{
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+    }
+
+    & .price_product{
+        cursor: pointer;
     }
     
     & .user_preview {
@@ -27,6 +48,7 @@
         font-size: 14px;
         color: #222325;
         font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-style: bold;
         // -webkit-line-clamp: 2;
         // -webkit-box-orient: vertical;
         // display: -webkit-box;
@@ -35,4 +57,5 @@
         // text-overflow: ellipsis;
 
     }
+
 }
