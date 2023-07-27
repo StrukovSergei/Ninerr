@@ -1,49 +1,88 @@
-header {
-display: grid;
-align-items: center;
+.header-main-layout {
+    width: 100%;
 
-    & .site-logo{
-        grid-column: 1;
-        margin: 0;       
-      & img{
-        width: 5em;
-      }
-       
-    }
+    header {
+        display: flex;
+        align-items: center;
+        padding: 0 32px;
+        margin: 0 5rem;
 
-    & .search {
-        grid-column: 2;
-    }
+        & .site-logo {
+            margin: 0;
 
-    & .links{
-        font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 1rem;
-        grid-column: 3;
-        justify-self: end;
-        & >*{
-            padding-inline-end: rem(20px);
+            & img {
+                width: 5em;
+            }
         }
-    }
-    
-}
 
-.categories-menu-package {
-    font-family: Macan,
-    "Helvetica Neue",
-    Helvetica,
-    Arial,
-    sans-serif;
-    
-    & ul {          
-        
-        & li {
-            color: #62646a;
+        & .search {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            min-width: 200px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+
+
+            input[type="text"] {
+                flex: 1;
+                padding: 8px;
+                border: 1px solid $clr2;
+                border-radius: 4px 0 0 4px;
+                border-right: 0;
+            }
+
+            button {
+                margin-left: 8px;
+                position: absolute;
+                right: 474px;
+                background-color: $clr4;
+                border-radius: 0 4px 4px 0;
+                display: block;
+                font-size: 14px;
+                padding: 8px 16px;
+                text-shadow: none;
+                color: $CLR0;
+                .search-icon{
+                    color: $CLR0;
+                }
+
+            }
+        }
+
+        & .links {
+            font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 1rem;
-            line-height: rem(24px);
-            padding: rem(8px) 0;
-            position: relative;
-            cursor: pointer;
-        }
+            justify-self: end;
 
+            &>* {
+                padding-inline-end: rem(20px);
+            }
+
+            img {
+                width: 2.5em;
+            }
+        }
+    }
+
+    .categories-menu-package {
+        font-family: Macan,
+            "Helvetica Neue",
+            Helvetica,
+            Arial,
+            sans-serif;
+
+        & ul {
+
+            & li {
+                color: #62646a;
+                font-size: 1rem;
+                line-height: rem(24px);
+                padding: rem(8px) 0;
+                position: relative;
+                cursor: pointer;
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="container home">
-    <GigList v-if="gigs" :gigs="gigs" @removeGig="removeGig" />
+    <GigList v-if="gigs" :gigs="filteredGigs" />
 
   </div>
 </template>
@@ -16,7 +16,8 @@ export default {
   components: { GigList },
   data() {
     return {
-      gigToAdd: gigService.getEmptyGig()
+      gigToAdd: gigService.getEmptyGig(),
+      searchText: '',
     }
   },
   computed: {
@@ -25,10 +26,27 @@ export default {
     },
     gigs() {
       return this.$store.getters.gigs
-    }
+    },
+    filteredGigs() {
+      const searchQuery = this.$route.query.txt
+      if (!searchQuery) return this.gigs
+      const regex = new RegExp(searchQuery, 'i')
+      return this.gigs.filter(
+        (gig) => regex.test(gig.title) || regex.test(gig.description)
+      )
+    },
   },
   created() {
     this.$store.dispatch({ type: 'loadGigs' })
+    this.searchText = this.$route.query.txt || ''
+  },
+  watch: {
+    '$route.query.txt'(newSearchText) {
+      this.searchText = newSearchText || ''
+    },
+    searchText(newSearchText) {
+      this.$router.replace({ query: { ...this.$route.query, txt: newSearchText } })
+    },
   },
   methods: {
     async addGig() {
