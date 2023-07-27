@@ -1,22 +1,25 @@
 <template>
   <section class="home full">
     <Hero />
-    <h2>Popular services:</h2>
-    <vueper-slides class="no-shadow" :visible-slides='slidesNum' slide-multiple :gap="3" :slide-ratio="1 / 3"
-      :bullets="false" :dragging-distance="200" :breakpoints="{
-        550: { visibleSlides: 1, slideMultiple: 2 },
-        800: { visibleSlides: 2, slideMultiple: 2 },
-        1000: { visibleSlides: 3, slideMultiple: 2 },
-        1330: { visibleSlides: 5, slideMultiple: 2 }
-      }">
-      <template #arrow-left>
-        <i class="fa-solid fa-angle-left"></i>
-      </template>
-      <template #arrow-right>
-        <i class="fa-solid fa-angle-right"></i>
-      </template>
-      <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
-    </vueper-slides>
+
+    <div class="main-layout vueperslides">
+      <h2>Popular services:</h2>
+      <vueper-slides class="no-shadow" :visible-slides='slidesNum' slide-multiple :gap="3" :slide-ratio="1 / 3"
+        :bullets="false" :dragging-distance="200" :breakpoints="{
+          550: { visibleSlides: 1, slideMultiple: 2 },
+          800: { visibleSlides: 2, slideMultiple: 2 },
+          1000: { visibleSlides: 3, slideMultiple: 2 },
+          1330: { visibleSlides: 5, slideMultiple: 2 }
+        }">
+        <template #arrow-left>
+          <i class="fa-solid fa-angle-left"></i>
+        </template>
+        <template #arrow-right>
+          <i class="fa-solid fa-angle-right"></i>
+        </template>
+        <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+      </vueper-slides>
+    </div>
   </section>
 
   <div class="selling-proposition-wrapper main-layout full">
