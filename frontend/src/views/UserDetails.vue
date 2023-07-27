@@ -1,5 +1,5 @@
 <template>
-  <section v-if="user">
+  <section v-if="user" class="main-user">
     <h1>User Details - {{ user.fullname }}</h1>
     <h2 v-if="isMe">Its me</h2>
     <img style="max-width: 200px;" :src="user.imgUrl" />
@@ -11,7 +11,8 @@
         </RouterLink>
       </li>
     </ul>
-    <button @click="addGig">Add Gig</button>
+    <button @click="openModal">Add Gig</button>
+    <add-gig-modal :is-modal-open="isModalOpen" @close="closeModal" @add="handleAddGig"></add-gig-modal>
 
     <!-- List of Current Gigs -->
     <div v-if="gigs && gigs.length">
@@ -37,12 +38,14 @@ import { userService } from '../services/user.service.local'
 import GigList from '../cmps/GigList.vue'
 import { gigService } from '../services/gig.service.local'
 import { getActionRemoveGig, getActionUpdateGig } from '../store/gig.store'
+import AddGigModal from '../cmps/AddGigModal.vue'
 
 export default {
   components: { GigList },
   data() {
     return {
-      user: null
+      user: null,
+      isModalOpen: false
     }
   },
   watch: {
@@ -122,6 +125,25 @@ export default {
         showErrorMsg('Cannot update gig')
       }
     },
+    openModal() {
+      this.isModalOpen = true
+    },
+    closeModal() {
+      this.isModalOpen = false
+    },
+    async handleAddGig(gig) {
+      try {
+        await this.$store.dispatch({ type: 'addGig', gig })
+        showSuccessMsg('Gig added')
+      } catch (err) {
+        console.log(err)
+        showErrorMsg('Cannot add gig')
+      }
+    }
+  },
+  components: {
+    AddGigModal
   }
 }
+
 </script>

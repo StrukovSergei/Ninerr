@@ -1,6 +1,6 @@
 <template>
     <section class="hero-container main-layout full">
-        <div class="hero-pos-container main-layout full">
+        <div class="hero-pos-container">
             <vueper-slides autoplay class="no-shadow" fade :arrows="false" :bullets="false" :pause-on-hover=false>
                 <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
             </vueper-slides>
@@ -17,9 +17,7 @@
                     </div>
                     <a href="'/#/gig?txt=' + filterBy.txt">
                         <button class="el-button">
-                            <span>
-                                Search
-                            </span>
+                            <span class="search-icon" v-html="$svg('search')"></span>
                         </button>
                     </a>
                 </div>
