@@ -74,11 +74,8 @@ export const gigStore = {
       }
     },
     async loadGigs(context, { filterBy, searchText }) {
-      console.log("🚀 ~ file: gig.store.js:77 ~ loadGigs ~ filterBy:", filterBy)
-      console.log("🚀 ~ file: gig.store.js:77 ~ loadGigs ~ searchText:", searchText)
       try {
         
-        console.log('heree');
         const gigs = await gigService.query(filterBy, searchText)
         context.commit({ type: 'setGigs', gigs })
       } catch (err) {

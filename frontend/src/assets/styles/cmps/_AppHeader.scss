@@ -1,27 +1,36 @@
 .header-main-layout {
-    
+
+    position: sticky;
+    top: 0;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
     border-bottom: 1px solid $clr22;
-    .header-container{
+
+
+    .header-container {
         min-height: 80px;
     }
-    
-    .border-helper{
+
+    .border-helper {
         border-bottom: 1px solid $clr22;
+        opacity: 0;
     }
 
     width: 100%;
     z-index: 100;
+
     header {
         display: flex;
         align-items: center;
         // padding: 0 32px;
         // margin: 0 5rem;
-       
+
 
         & .site-logo {
             margin: 0;
 
             & img {
+                padding-top: 7px;
                 width: 5em;
             }
         }
@@ -34,8 +43,12 @@
             min-width: 200px;
             padding-left: 20px;
             padding-right: 20px;
+            transition: opacity 0.3s ease;
+            opacity: 0;
 
-
+            .header-main-layout.search-visible .search{
+                opacity: 1;
+            }
 
             input[type="text"] {
                 flex: 1;
@@ -54,7 +67,8 @@
                 font-size: 14px;
                 padding: 8px 16px;
                 text-shadow: none;
-                .search-icon svg{
+
+                .search-icon svg {
                     fill: $CLR0;
                 }
 
@@ -65,7 +79,7 @@
             font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 1rem;
             justify-self: end;
-            
+
 
             &>* {
                 padding-inline-end: rem(20px);
@@ -83,17 +97,18 @@
         justify-content: space-between;
         align-items: center;
         font-family: Macan,
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
+            "Helvetica Neue",
+            Helvetica,
+            Arial,
+            sans-serif;
+        transition: opacity 0.3s ease;
+        opacity: 0;
 
-        
-        & ul {     
+        & ul {
             justify-content: space-between;
-            margin: 0 auto;                
+            margin: 0 auto;
             padding: 0;
-            
+
             & li {
                 color: #62646a;
                 display: block;
@@ -106,4 +121,20 @@
             }
         }
     }
+
+}
+
+.header-main-layout.scrolled .header-container{
+    background-color: white;
+    
+}
+
+.header-main-layout.search-visible .border-helper{
+    opacity: 1;
+}
+
+.header-main-layout.search-visible .search,
+.header-main-layout.categories-visible .categories-menu-package {
+    opacity: 1;
+    background-color: white;
 }

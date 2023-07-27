@@ -1,10 +1,12 @@
 <template>
-    <div :class="['header-main-layout full main-layout', { 'fixed-header': isHomePage }]">
+  <!-- <div :class="['header-main-layout full main-layout', { 'fixed-header': isHomePage }]"> -->
+  <div class="header-main-layout full main-layout"
+    :class="{ 'scrolled': scrolled, 'search-visible': searchVisible, 'categories-visible': categoriesVisible }">
     <header class="header-container main-layout">
       <RouterLink to="/" class="site-logo">
-        <div>
-          <img src="../assets/imgs/main-logo.png" alt="">
-        </div>
+
+        <img src="../assets/imgs/main-logo.png" alt="">
+
       </RouterLink>
       <div class="search">
         <input type="text" placeholder="What service are you looking for today?" v-model="searchText">
@@ -51,7 +53,20 @@ export default {
   data() {
     return {
       searchText: '',
-    };
+      scrolled: false,
+      searchVisible: false,
+      categoriesVisible: false,
+    }
+  },
+  mounted() {
+    if (this.isHomePage) {
+      window.addEventListener('scroll', this.handleScroll)
+    }
+  },
+  beforeDestroy() {
+    if (this.isHomePage) {
+      window.removeEventListener('scroll', this.handleScroll)
+    }
   },
   computed: {
     isHomePage() {
@@ -90,9 +105,11 @@ export default {
   watch: {
     '$route.params': {
       handler: function () {
-        window.scrollTo(0, 0)
-      }
-    }
+        if (this.isHomePage) {
+          window.scrollTo(0, 0)
+        }
+      },
+    },
   },
   methods: {
     searchGigs() {
@@ -104,7 +121,39 @@ export default {
         })
       }
     },
-  }
+    handleScroll() {
+      // Check the scroll position
+      const scrollPosition = window.scrollY;
+
+      // Define the scroll thresholds for the two stages
+      const firstStageThreshold = 20; // Adjust this value as needed
+      const secondStageThreshold = 90; // Adjust this value as needed
+
+      // Update the scrolled state based on the scroll position
+      this.scrolled = scrollPosition >= firstStageThreshold;
+
+      // Show/hide the search input and categories-menu-package based on the scroll position
+      if (scrollPosition >= firstStageThreshold) {
+        // Show the search input
+      } else {
+        // Hide the search input
+        this.searchVisible = false;
+      }
+
+      if (scrollPosition >= secondStageThreshold) {
+        // Show the categories-menu-package
+        this.categoriesVisible = true;
+        this.searchVisible = true;
+
+      } else {
+        // Hide the categories-menu-package
+        this.categoriesVisible = false;
+      }
+    },
+
+  },
+
+
 }
 
 </script>

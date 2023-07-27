@@ -4,6 +4,7 @@
   height: 42.5em;
   margin-block-end: rem(-80px);
   min-height: rem(680px);
+  top: 0;
 
   .hero-pos-container {
     position: absolute;
@@ -55,8 +56,8 @@
       margin: 0;
 
       & i.fancy-word {
-          font-family: Domain-Display-Regular-Italic, "Helvetica Neue", Helvetica, Arial,
-          sans-serif;
+          // font-family: Domain-Display-Regular-Italic, "Helvetica Neue", Helvetica, Arial,
+          // sans-serif;
           letter-spacing: 0.016em;
         }
     }
