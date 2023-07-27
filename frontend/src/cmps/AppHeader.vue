@@ -25,7 +25,7 @@
         </RouterLink>
       </div>
     </header>
-    <section class="categories-menu-package">
+    <section class="categories-menu-package main-layout">
       <ul class="flex clean-list">
         <li>Graphics & Design</li>
         <li>Digital Marketing</li>
