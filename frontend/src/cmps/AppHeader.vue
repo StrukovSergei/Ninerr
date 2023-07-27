@@ -1,5 +1,5 @@
 <template>
-  <div class="main-layout">
+  <div class="header-main-layout">
     <header>
       <RouterLink to="/" class="site-logo">
         <div>
@@ -7,14 +7,22 @@
         </div>
       </RouterLink>
       <div class="search">
-        <input type="text" placeholder="What service are you looking for today?">
-        <button>Search</button>
+        <input type="text" placeholder="What service are you looking for today?" v-model="searchText">
+        <button @click="searchGigs">
+          <span class="search-icon" v-html="$svg('search')"></span>
+        </button>
       </div>
       <div class="links">
         <RouterLink to="/explore">Explore</RouterLink>
         <RouterLink to="/user/:id">Become a Seller </RouterLink>
-        <RouterLink :to="userProfile">Profile</RouterLink>
-        <RouterLink to="/login">Login <span> Signup</span> </RouterLink>
+        <RouterLink :to="userProfile">
+          <span v-if="loggedinUser" class="user-profile-photo">
+            <img :src="userImg" alt="Profile Photo">
+          </span>
+          <span v-else>
+            <RouterLink to="/login">Login <span> Signup</span> </RouterLink>
+          </span>
+        </RouterLink>
       </div>
     </header>
     <section class="categories-menu-package">
@@ -39,6 +47,11 @@
 
 export default {
   name: 'AppHeader',
+  data() {
+    return {
+      searchText: '',
+    };
+  },
   computed: {
     isHomePage() {
       return this.$route.path === '/'
@@ -72,17 +85,31 @@ export default {
     userImg() {
       if (!this.loggedinUser) return ''
       return this.loggedinUser.imgUrl
-    }
+    },
+    loggedinUser() {
+      return this.$store.getters.loggedinUser
+    },
 
 
   },
   watch: {
     '$route.params': {
       handler: function () {
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 0)
       }
     }
   },
+  methods: {
+    searchGigs() {
+      const searchQuery = this.searchText.trim()
+      if (searchQuery) {
+        this.$router.push({
+          path: '/explore',
+          query: { txt: searchQuery },
+        })
+      }
+    },
+  }
 }
 
 </script>
