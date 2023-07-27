@@ -1,12 +1,6 @@
 .header-main-layout {
     width: 100%;
-<<<<<<< HEAD
-    z-index: 9999;
-
-=======
-    position: fixed;
     z-index: 100;
->>>>>>> 848b605ea5b6a075d200f16cbff68c6a3d54648e
     header {
         display: flex;
         align-items: center;
@@ -43,7 +37,7 @@
             button {
                 margin-left: 8px;
                 position: absolute;
-                right: 474px;
+                right: 464px;
                 background-color: $clr4;
                 border-radius: 0 4px 4px 0;
                 display: block;

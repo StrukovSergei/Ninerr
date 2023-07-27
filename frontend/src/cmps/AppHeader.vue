@@ -1,5 +1,5 @@
 <template>
-  <div class="header-main-layout">
+    <div :class="['header-main-layout', { 'fixed-header': isHomePage }]">
     <header>
       <RouterLink to="/" class="site-logo">
         <div>
