@@ -7,9 +7,9 @@
 
             <div class="search-container main-layout flex">
                 <h1>
-                    Find the perfect
-                    <i class="fancy-word">freelance</i> <br>
-                    services for your business
+                    Find the right
+                    <i class="fancy-word">freelance services,</i>
+                    right away
                 </h1>
                 <div class="hero-search flex">
                     <div class="input-container flex">
@@ -42,31 +42,27 @@
                 </div>
             </div>
         </div>
-
     </section>
-    <div class="trusted-container full">
-        <div class="trusted main-layout full">
-            <div class="logos flex align-center justify-center">
-                <span>Trusted By:</span>
-                <div class="icon-container"><img
-                        src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/meta.12b5e5c.png"
-                        alt=""> </div>
-                <div class="icon-container"><img
-                        src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/google.61e78c8.png"
-                        alt=""> </div>
-                <div class="icon-container"><img
-                        src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/netflix.96c5e3f.png"
-                        alt=""> </div>
-                <div class="icon-container"><img
-                        src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/pandg.0f4cfc2.png"
-                        alt=""> </div>
-                <div class="icon-container"><img
-                        src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/paypal.305e264.png"
-                        alt=""> </div>
-            </div>
+
+    <div class="trusted-container main-layout full">
+        <div class="logos flex align-center justify-center">
+            <span>Trusted By:</span>
+            <div class="icon-container"><img
+                    src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/meta.12b5e5c.png"
+                    alt=""> </div>
+            <div class="icon-container"><img
+                    src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/google.61e78c8.png"
+                    alt=""> </div>
+            <div class="icon-container"><img
+                    src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/netflix.96c5e3f.png"
+                    alt=""> </div>
+            <div class="icon-container"><img
+                    src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/pandg.0f4cfc2.png"
+                    alt=""> </div>
+            <div class="icon-container"><img
+                    src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/paypal.305e264.png"
+                    alt=""> </div>
         </div>
-        <section class="categories-list main-layout full">
-        </section>
     </div>
 </template>
 
