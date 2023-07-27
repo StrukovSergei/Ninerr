@@ -25,7 +25,7 @@ async function query(filterBy = { txt: '', price: 0 }) {
   if (filterBy.price) {
     gigs = gigs.filter((gig) => gig.price <= filterBy.price)
   }
-  
+
   console.log("🚀 ~ file: gig.service.local.js:30 ~ query ~ gigs:", gigs)
   return gigs
 }
@@ -74,7 +74,7 @@ function getEmptyGig() {
 }
 
 // Initial data
-// ;(async () => {
+// ; (async () => {
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g101',
 //     title: 'I will build responsive wordpress website design',
@@ -122,4 +122,201 @@ function getEmptyGig() {
 //     tags: ['logo-design', 'proffesional'],
 //     likedByUsers: ['mini-user'],
 //   })
+//   await storageService.post(STORAGE_KEY, {
+//     _id: 'g103',
+//     title: 'I will create modern and stylish website design',
+//     price: 25,
+//     owner: {
+//       _id: 'u103',
+//       fullname: 'Fifi Fu',
+//       imgUrl: 'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/9f500b4b629e3dcb09a311b29525d40d-1647197131685/eccd2987-a403-4069-a42d-1c844ef2b0b4.jpg',
+//       level: 'basic/premium',
+//       rate: 4.5,
+//     },
+//     daysToMake: 5,
+//     description: 'Get a modern and stylish website design to impress your audience.',
+//     imgUrls: ['https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/124548693/original/f898f0bde16135e197651d044c923661f6d2de08/clone-duplicate-or-create-any-page-or-website-to-divi-theme.png',
+//       'https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/43aa46e39b0ca1520de3004c84ffc930-1683684175/virgilbrewster.com/clone-duplicate-or-create-any-page-or-website-to-divi-theme.png',
+//       'https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/3c4f341ce843f556fbdd47fe4fddf617-1673724745/michellealva.comnew-home/clone-duplicate-or-create-any-page-or-website-to-divi-theme.png'],
+//     tags: ['website-design', 'modern'],
+//     likedByUsers: [],
+//   }
+//   )
+//   await storageService.post(STORAGE_KEY, {
+//     _id: 'g104',
+//     title: 'I will provide professional social media marketing services',
+//     price: 50,
+//     owner: {
+//       _id: 'u104',
+//       fullname: 'Gugu Gu',
+//       imgUrl: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/3949d5821f00df73d26614f6cd4e1f3d-1240311201670599379.534255/874FB21E-A700-4A74-9F4F-D0C524CBCE38',
+//       level: 'basic/premium',
+//       rate: 4.9,
+//     },
+//     daysToMake: 10,
+//     description: 'Boost your social media presence with our professional marketing services.',
+//     imgUrls: ['https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/174169384/original/a06805520cd70790a09205879fc0677c49953e74/be-your-social-media-marketing-manager-and-content-creator.png',
+//       'https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/80c8869311384e882c6b8fd9f1cb025d-1690449640/dwayne752%20feed%20preview(1)/be-your-social-media-marketing-manager-and-content-creator.png',
+//       'https://fiverr-res.cloudinary.com/images/t_smartwm/t_gig_pdf_gallery_view_ver4,q_auto,f_auto/attachments/delivery/asset/7ea45c9137b47a51ff2ed4846bd79947-1690383421/jolvans%20captions%20revision-1/be-your-social-media-marketing-manager-and-content-creator.pdf',
+//       'https://fiverr-res.cloudinary.com/images/t_smartwm/t_gig_pdf_gallery_view_ver4,q_auto,f_auto/attachments/delivery/asset/868c34c494ce8b6dd215bef4c3e1095d-1689926688/sandeepbagoban%20captions%20revision%202/be-your-social-media-marketing-manager-and-content-creator.pdf'],
+//     tags: ['social-media', 'marketing', 'professional'],
+//     likedByUsers: [],
+//   })
+//   await storageService.post(STORAGE_KEY, {
+//     _id: 'g105',
+//     title: 'I will write engaging and SEO-friendly blog posts',
+//     price: 15,
+//     owner: {
+//       _id: 'u105',
+//       fullname: 'Huhu Ha',
+//       imgUrl: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/0d89becb3d4ac31ce9195e7174f0473f-1620254574639/b371c86f-2476-4813-95dd-96c4158d90f7.JPG',
+//       level: 'basic/premium',
+//       rate: 4.7,
+//     },
+//     daysToMake: 2,
+//     description: 'Get high-quality blog posts that engage your readers and boost your SEO.',
+//     imgUrls: ['https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/173769270/original/4d73c4c4e249fde66b651e8384e4835772c0d25b/write-content-for-your-beauty-and-lifestyle-blog.png',
+//       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/173769270/original/502392c13e1b777d4a69eb89d51278f90fd4e60f/write-content-for-your-beauty-and-lifestyle-blog.png',
+//       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/173769270/original/9acde2928d80fd32e4f3014de0bbbdfc961cbca7/write-content-for-your-beauty-and-lifestyle-blog.jpg'],
+//     tags: ['blog-writing', 'SEO-friendly'],
+//     likedByUsers: [],
+//   })
+//   await storageService.post(STORAGE_KEY, {
+//     _id: 'g106',
+//     title: 'I will create eye-catching flyer designs',
+//     price: 20,
+//     owner: {
+//       _id: 'u106',
+//       fullname: 'Jiju Ja',
+//       imgUrl: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/9b8f8d3cd42f034d2b0ab40b885db4f4-1626302890625/b3d6c17c-c9ef-4357-9026-294ec9e3e068.jpg',
+//       level: 'basic/premium',
+//       rate: 4.2,
+//     },
+//     daysToMake: 3,
+//     description: 'Stand out with unique and eye-catching flyer designs for your events or promotions.',
+//     imgUrls: ['https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/35055940/original/093fc49670c402f25619a89439a905d945b1b238/design-professional-clear-business-flyer.png',
+//       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/35055940/original/f381950c405e7a0652067bdf705c2601bab1d5fd/design-professional-clear-business-flyer.jpg',
+//       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/35055940/original/11d68b30ef4462e3099219ac48dcb5913a6377ed/design-professional-clear-business-flyer.jpg'],
+//     tags: ['flyer-design', 'eye-catching'],
+//     likedByUsers: [],
+//   })
+//   await storageService.post(STORAGE_KEY, {
+//     _id: 'g107',
+//     title: 'I will provide professional video editing services',
+//     price: 30,
+//     owner: {
+//       _id: 'u107',
+//       fullname: 'Kuku Ku',
+//       imgUrl: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/1172433/original/j.jpg',
+//       level: 'basic/premium',
+//       rate: 4.6,
+//     },
+//     daysToMake: 6,
+//     description: 'Get your videos professionally edited for a polished and captivating look.',
+//     imgUrls: ['https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/289213291/original/cab40eb7567465c82d59f2c6d7395e78734317d2/do-professional-creative-video-edit-for-facebook-and-youtube.png',
+//     ],
+//     tags: ['video-editing', 'professional'],
+//     likedByUsers: [],
+//   })
+//   await storageService.post(STORAGE_KEY, {
+//     _id: 'g108',
+//     title: 'I will create custom illustrations for your project',
+//     price: 40,
+//     owner: {
+//       _id: 'u108',
+//       fullname: 'Lulu Lu',
+//       imgUrl: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/1643be003b678a94e6f2ab861276d472-939741421598993603203/JPEG_20200901_165322_1030903637663592876.jpg',
+//       level: 'basic/premium',
+//       rate: 4.8,
+//     },
+//     daysToMake: 8,
+//     description: 'Get unique and creative custom illustrations to enhance your project.',
+//     imgUrls: ['https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/169347675/original/9681d62d3c532ab70d3160d81de051e621ae4ca4/draw-a-car-motorcyle-vehicle-and-animate-it.jpg',
+//       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/169347675/original/dadd0fab5e9788dcfe8f30f089b6de0608eb0c47/draw-a-car-motorcyle-vehicle-and-animate-it.jpeg',
+//       'https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/f96f8aafed3bfa93c794946ed7264125-1689345150/Abunajeeb3_2rev_without_text/draw-a-car-motorcyle-vehicle-and-animate-it.png',
+//       'https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/98267b16e84f74864fc063f3e63ac970-1689234608/Abunajeeb2/draw-a-car-motorcyle-vehicle-and-animate-it.jpg'],
+//     tags: ['custom-illustrations', 'creative'],
+//     likedByUsers: [],
+//   }
+//   )
+//   await storageService.post(STORAGE_KEY, {
+//     _id: 'g109',
+//     title: 'I will provide virtual assistant services',
+//     price: 18,
+//     owner: {
+//       _id: 'u109',
+//       fullname: 'Mumu Mu',
+//       imgUrl: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/c1bf7fa52003d4e01f32bf2ffc13eda4-846921031687736065.32306/27E1B7AF-E6E3-4D76-A6D0-66761E0B5FD8',
+//       level: 'basic/premium',
+//       rate: 4.3,
+//     },
+//     daysToMake: 4,
+//     description: 'Hire a virtual assistant to handle administrative tasks and improve productivity.',
+//     imgUrls: ['https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/215431426/original/3da3155be9bd3e63aa73e322c067c0c1c6f63383/be-your-virtual-assistant-for-data-entry-data-mining-typing-web-research.jpg',
+//       'https://fiverr-res.cloudinary.com/images/w_1260,q_auto,f_auto,pg_1/attachments/delivery/asset/e17f222458f1877bbfb7a6f60dd9a895-1680368139/Logo-Updated/be-your-virtual-assistant-for-data-entry-data-mining-typing-web-research',
+//       'https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/13707a59ced55e8af5518414523ffe6d-1641709085/image_2022_01_09T06_12_51_352Z/be-your-virtual-assistant-for-data-entry-data-mining-typing-web-research.png'],
+//     tags: ['virtual-assistant', 'productivity'],
+//     likedByUsers: [],
+//   }
+//   )
+//   await storageService.post(STORAGE_KEY, {
+//     _id: 'g110',
+//     title: 'I will translate documents between English and Spanish',
+//     price: 12,
+//     owner: {
+//       _id: 'u110',
+//       fullname: 'Nunu Nu',
+//       imgUrl: 'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/ad7178fcf838c1965e1dc5b33b375243-1603730199570/6f0cb0e2-4777-4b23-adbe-b79b8c78b82c.png',
+//       level: 'basic/premium',
+//       rate: 4.9,
+//     },
+//     daysToMake: 2,
+//     description: 'Accurate and reliable translation services between English and Spanish.',
+//     imgUrls: ['https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/180205136/original/31f37986ef5c773f8304a7b1c109bbd459446afb/translate-handwritten-documents-from-russian-ukrainian-into-english.jpg',
+//       'https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/180205136/original/cff327673a51840e53219b9005794f4ac5bd0ee7/translate-handwritten-documents-from-russian-ukrainian-into-english.jpg',
+//     ],
+//     tags: ['translation', 'English-Spanish'],
+//     likedByUsers: [],
+//   }
+//   )
+//   await storageService.post(STORAGE_KEY, {
+//     _id: 'g111',
+//     title: 'I will design unique and creative t-shirt graphics',
+//     price: 22,
+//     owner: {
+//       _id: 'u111',
+//       fullname: 'Ouou Oa',
+//       imgUrl: 'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/77aa04a51d12a47a9dd663a58f1e040f-695136681685414307344/JPEG_20230530_073824_4160025611441147309.jpg',
+//       level: 'basic/premium',
+//       rate: 4.5,
+//     },
+//     daysToMake: 5,
+//     description: 'Stand out with custom and creative t-shirt graphics for your brand.',
+//     imgUrls: ['https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/104718396/original/1e0b01d1a3436421057d972b37e26c13d2200d32/make-creative-excellent-t-shirt-design.jpg',
+//       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/104718396/original/3e2e8c00f5b7dd3eff283ab78fa23246b2a5d2d4/make-creative-excellent-t-shirt-design.jpg',
+//       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/104718396/original/90806bfa84c0418c6dd57ccccd4ea5eb8202a1ec/make-creative-excellent-t-shirt-design.jpg',
+//     ],
+//     tags: ['t-shirt-design', 'creative'],
+//     likedByUsers: [],
+//   }
+//   )
+//   await storageService.post(STORAGE_KEY, {
+//     _id: 'g112',
+//     title: 'I will provide professional voice-over services',
+//     price: 28,
+//     owner: {
+//       _id: 'u112',
+//       fullname: 'Pupu Pa',
+//       imgUrl: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/0abd97962ff9b1846d70a59afc509019-1376642671675088247.55062/840047FC-8953-4B50-9FF8-7B7B22F4ADA5',
+//       level: 'basic/premium',
+//       rate: 4.7,
+//     },
+//     daysToMake: 3,
+//     description: 'Get high-quality voice-over recordings for your videos or audio projects.',
+//     imgUrls: ['https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/301655735/original/b4f75ba4740d3e84413dfb1ea6f72604c9921f18.png',
+//       'https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/301655735/original/b4f75ba4740d3e84413dfb1ea6f72604c9921f18.png'],
+//     tags: ['voice-over', 'professional'],
+//     likedByUsers: [],
+//   }
+//   )
 // })()
