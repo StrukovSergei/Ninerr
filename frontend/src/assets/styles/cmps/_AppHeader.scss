@@ -1,12 +1,18 @@
 .header-main-layout {
     width: 100%;
+<<<<<<< HEAD
     z-index: 9999;
 
+=======
+    position: fixed;
+    z-index: 100;
+>>>>>>> 848b605ea5b6a075d200f16cbff68c6a3d54648e
     header {
         display: flex;
         align-items: center;
         padding: 0 32px;
         margin: 0 5rem;
+       
 
         & .site-logo {
             margin: 0;
@@ -55,9 +61,11 @@
             font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 1rem;
             justify-self: end;
+            
 
             &>* {
                 padding-inline-end: rem(20px);
+                color: #fff;
             }
 
             img {

@@ -34,11 +34,10 @@
   
   & .search-container {
     // position: relative;
-    margin-inline-end: 2em;
+    margin-inline-start: 2em;
     z-index: 50;
     position: absolute;
-    flex-direction: column;
-    
+    flex-direction: column;    
     color: #fff;
     line-height: 1.2;
     align-self: center;
@@ -58,7 +57,7 @@
     .fancy-word {
       font-style: italic;
       font-family: "DomaineDisplay", "Helvetica Neue", Helvetica, Arial,
-        sans-serif;
+      sans-serif;
       font-weight: 500;
       letter-spacing: 0.016em;
     }
@@ -108,8 +107,6 @@
         flex-direction: column;
       }      
       margin-block-end: rem(24px);
-      margin-block-start: rem(24px);
-      height: 3rem;
       max-width: rem(650px);
       background-color: #fcfcfc;;
       border-radius: rem(4px) rem(4px) rem(4px) rem(4px);
@@ -118,16 +115,15 @@
     .search-icon {
       align-items: center;
       justify-content: center;
-      background-color: #fff;
-      color: #e9eaef;
       border-radius: rem(4px) 0 0 rem(4px);
       width: rem(41px);
       padding-top: rem(3px);
 
-      span {
+      & span {
         padding: 0px 0px 0px 4px;
-        svg {
+       & svg {
           margin: 0;
+          fill:#fff;
         }
       }
     }
@@ -144,6 +140,13 @@
         padding: 0px 0px 0px 4px;
         font-family: 'Macan', sans-serif;
       }
+    } 
+
+    .hero-info{
+      &::before{
+
+      }
+      justify-self: end;
     }
 
     .categories {

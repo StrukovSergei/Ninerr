@@ -5,7 +5,7 @@
                 <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
             </vueper-slides>
 
-            <div class="search-container flex">
+            <div class="search-container main-layout flex">
                 <h1>
                     Find the perfect
                     <i class="fancy-word">freelance</i> <br>
@@ -15,11 +15,9 @@
                     <div class="input-container flex">
                         <input type="text" name="" placeholder='Try "Logo Design"'>
                     </div>
-                    <a href="'/#/gig?txt=' + filterBy.txt">
-                        <button class="el-button">
-                            <span class="search-icon" v-html="$svg('search')"></span>
-                        </button>
-                    </a>
+                    <button class="el-button">
+                        <span class="search-icon" v-html="$svg('search')"></span>
+                    </button>
                 </div>
                 <div class="categories flex">
                     <span>
@@ -37,6 +35,10 @@
                     <RouterLink to="/gig?tag=ai-services">
                         <div class="category flex">AI Services</div>
                     </RouterLink>
+                </div>
+                <div class="hero-info flex">
+                    <p class="rate">
+                        Andrea, <span> Fashion Designer</span></p>
                 </div>
             </div>
         </div>
