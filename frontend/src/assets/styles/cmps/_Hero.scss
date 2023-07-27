@@ -8,9 +8,10 @@
   .hero-pos-container {
     position: absolute;
     display: grid;
-    // top: rem(-80px);
+    top: rem(-80px);
     width: 100%;
-    height: 100%;   
+    // height: 100%;   
+    grid-column: 1/-1;
 
     .vueperslides {
       &__parallax-wrapper {
@@ -32,12 +33,12 @@
     }
   
   & .search-container {
-    position: relative;
+    // position: relative;
     margin-inline-end: 2em;
     z-index: 50;
     position: absolute;
     flex-direction: column;
-    grid-column: 2;
+    
     color: #fff;
     line-height: 1.2;
     align-self: center;
@@ -115,8 +116,10 @@
     }
 
     .search-icon {
-          
-      color: #fff;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      color: #e9eaef;
       border-radius: rem(4px) 0 0 rem(4px);
       width: rem(41px);
       padding-top: rem(3px);
