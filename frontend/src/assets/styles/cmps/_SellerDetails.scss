@@ -1,0 +1,114 @@
+.seller-preview-big {
+    max-height: 140px;
+
+    img {
+        height: 110px;
+        width: 110px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .seller-details {
+
+        padding-left: 20px;
+
+        .seller-level {
+            color: $clr3;
+            font-size: 16px;
+        }
+
+        .seller-rate svg {
+            fill: $clr10;
+
+        }
+
+        .seller-rate svg.empty {
+            fill: none;
+            stroke: $clr10;
+        }
+
+        .rate-number {
+            color: $clr10;
+            font-weight: bold;
+            font-size: 16px;
+            position: relative;
+            top: 2px;
+            padding-left: 4px;
+        }
+
+        .btn-contact {
+            color: $clr3;
+
+            border-radius: 4px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            cursor: pointer;
+
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 100%;
+            padding: 12px 24px;
+
+            text-align: center;
+            text-decoration: none;
+            -webkit-transition: 70ms cubic-bezier(.75, 0, .25, 1);
+            transition: 70ms cubic-bezier(.75, 0, .25, 1);
+            background-color: transparent;
+            border: 1px solid $clr3;
+        }
+
+        .btn-contact:hover {
+            background-color: $clr3;
+            color: white;
+
+        }
+    }
+
+}
+
+.seller-details-box {
+    border: 1px solid $clr9;
+    border-radius: 3px;
+    margin-top: 20px;
+    padding: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Macan-Light;
+
+    .user-stats {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            'from since'
+            'response delivery'
+            'language .';
+        border-bottom: 1px solid $clr9;
+        
+
+        .fw700 {
+            font-weight: 700;
+            padding-bottom: 16px;
+        }
+
+        .stat-country {
+            grid-area: from;
+        }
+
+        .stat-since {
+            grid-area: since;
+        }
+
+        .stat-response {
+            grid-area: response;
+        }
+
+        .stat-lastDelivery {
+            grid-area: delivery;
+        }
+
+        .stat-language {
+            grid-area: language;
+        }
+    }
+
+}

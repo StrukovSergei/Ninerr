@@ -1,8 +1,8 @@
 <template>
   <!-- <div :class="['header-main-layout full main-layout', { 'fixed-header': isHomePage }]"> -->
-  <div class="header-main-layout full main-layout"
+  <div class="header-main-layout full"
     :class="{ 'scrolled': scrolled, 'search-visible': searchVisible, 'categories-visible': categoriesVisible }">
-    <header class="header-container main-layout">
+    <header class="header-container flex">
       <RouterLink to="/" class="site-logo">
 
         <img src="../assets/imgs/main-logo.png" alt="">
@@ -61,6 +61,8 @@ export default {
   mounted() {
     if (this.isHomePage) {
       window.addEventListener('scroll', this.handleScroll)
+    } else {
+      this.scrolled = true
     }
   },
   beforeDestroy() {
@@ -123,31 +125,31 @@ export default {
     },
     handleScroll() {
       // Check the scroll position
-      const scrollPosition = window.scrollY;
+      const scrollPosition = window.scrollY
 
       // Define the scroll thresholds for the two stages
-      const firstStageThreshold = 20; // Adjust this value as needed
-      const secondStageThreshold = 90; // Adjust this value as needed
+      const firstStageThreshold = 20 // Adjust this value as needed
+      const secondStageThreshold = 90 // Adjust this value as needed
 
       // Update the scrolled state based on the scroll position
-      this.scrolled = scrollPosition >= firstStageThreshold;
+      this.scrolled = scrollPosition >= firstStageThreshold
 
       // Show/hide the search input and categories-menu-package based on the scroll position
       if (scrollPosition >= firstStageThreshold) {
         // Show the search input
       } else {
         // Hide the search input
-        this.searchVisible = false;
+        this.searchVisible = false
       }
 
       if (scrollPosition >= secondStageThreshold) {
         // Show the categories-menu-package
-        this.categoriesVisible = true;
-        this.searchVisible = true;
+        this.categoriesVisible = true
+        this.searchVisible = true
 
       } else {
         // Hide the categories-menu-package
-        this.categoriesVisible = false;
+        this.categoriesVisible = false
       }
     },
 

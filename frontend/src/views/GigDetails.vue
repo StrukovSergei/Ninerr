@@ -42,11 +42,14 @@
 
             </div>
             <div class="aboutgig-container">
-                <h2>About this gig:</h2>
-                {{ currGig.description }}
+                <h2 class="gig-title fs20">About this gig:</h2>
+                <span class="gig-description">{{ currGig.description }}</span>
             </div>
 
-
+            <div class="aboutseller-container">
+                <h2 class="seller-title fs20">About the seller</h2>
+                <SellerDetails :gig="currGig"></SellerDetails>
+            </div>
 
             <div class="flex justify-end self-end">
                 <router-link v-if="user?.isAdmin" class="btn-light" :to="'/gig/edit/' + currGig._id">Edit</router-link>
@@ -82,6 +85,7 @@
 </template>
 
 <script>
+import SellerDetails from '../cmps/SellerDetails.vue'
 import { gigService } from '../services/gig.service.local'
 import { userService } from '../services/user.service.js'
 import { VueperSlides, VueperSlide } from 'vueperslides'
@@ -149,6 +153,6 @@ export default {
             return this.$store.getters.getReviews
         },
     },
-    components: { VueperSlides, VueperSlide },
+    components: { VueperSlides, VueperSlide, SellerDetails },
 }
 </script>
