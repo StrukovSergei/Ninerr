@@ -4,23 +4,12 @@
     & .product_img {
         width: 100%;
         border-radius: 10px;
-        height: auto;
         cursor: pointer;
+        aspect-ratio: 1.66;
+        object-fit: cover;
+        object-position: center;
     }
-// .gig-preview {
-//     position: relative; /* Ensure proper positioning for the absolutely positioned image */
-//     background-color: white;
-//     border-radius: 10px;
- 
 
-//     & .product_img {
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover; /* Preserve aspect ratio and fill container */
-//     }
     & .user_name {
         cursor: pointer;
         font-size: rem(14px);
