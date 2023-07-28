@@ -192,16 +192,6 @@
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 import Hero from '../cmps/Hero.vue'
-import img1 from '../assets/imgs/1.webp'
-import img2 from '../assets/imgs/2.webp'
-import img3 from '../assets/imgs/3.webp'
-import img4 from '../assets/imgs/4.webp'
-import img5 from '../assets/imgs/5.webp'
-import img6 from '../assets/imgs/6.webp'
-import img7 from '../assets/imgs/7.webp'
-import img8 from '../assets/imgs/8.webp'
-import img9 from '../assets/imgs/9.webp'
-import img10 from '../assets/imgs/10.webp'
 
 export default {
   name: 'home',
