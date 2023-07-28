@@ -26,7 +26,6 @@ async function query(filterBy = { txt: '', price: 0 }) {
     gigs = gigs.filter((gig) => gig.price <= filterBy.price)
   }
 
-  console.log("🚀 ~ file: gig.service.local.js:30 ~ query ~ gigs:", gigs)
   return gigs
 }
 
@@ -86,6 +85,12 @@ function getEmptyGig() {
 //         'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5344c10fd4820db3626c4fc24968783d-1588608774469/1e4a3bd9-b71d-48ce-8ac0-0ff6d667caf4.jpeg',
 //       level: 'basic/premium',
 //       rate: 4.8,
+//       country: 'India',
+//       since: 'Nov 2016',
+//       response: '3 Hours',
+//       lastDelivery: 'Just now',
+//       language: ['English', 'Hindi'],
+//       about: `I'm Abhi, a passionate graphic designer based in India, with 7+ years of experience. I've worked with many notable clients like Nike, Cisco, EA Sports, DC Pro, Fiverr internal communications, etc. I am specialized in Logo Design and Brand Identity design. I'm available : Mon/Sat- 12am/12pm(EST). Let's connect :)`
 //     },
 //     daysToMake: 3,
 //     description:
@@ -109,6 +114,12 @@ function getEmptyGig() {
 //         'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/044fb5914a845a4eb59fc2b69f7f7b32-1634120039750/4dbc2acb-7322-4cd0-9afb-e5190e8e8a0d.jpg',
 //       level: 'basic/premium',
 //       rate: 2.6,
+//       country: 'India',
+//       since: 'Jan 2018',
+//       response: '1 Hour',
+//       lastDelivery: '6 hours ago',
+//       language: ['English', 'Hindi'],
+//       about: `Namaste! I'm Mumu, a reliable virtual assistant with a knack for organization and multitasking. With my support, you can focus on what matters most while I handle the rest. Let's streamline your tasks together!`
 //     },
 //     daysToMake: 7,
 //     description:
@@ -132,6 +143,12 @@ function getEmptyGig() {
 //       imgUrl: 'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/9f500b4b629e3dcb09a311b29525d40d-1647197131685/eccd2987-a403-4069-a42d-1c844ef2b0b4.jpg',
 //       level: 'basic/premium',
 //       rate: 4.5,
+//       country: 'Spain',
+//       since: 'Apr 2017',
+//       response: '2 Hours',
+//       lastDelivery: '1 day ago',
+//       language: ['English', 'Spanish'],
+//       about: `Hola! I'm Lulu, a creative illustrator with a passion for bringing ideas to life through art. With over 6 years of experience, I've collaborated with clients worldwide. Let's make your project a visual masterpiece!`
 //     },
 //     daysToMake: 5,
 //     description: 'Get a modern and stylish website design to impress your audience.',
@@ -152,6 +169,12 @@ function getEmptyGig() {
 //       imgUrl: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/3949d5821f00df73d26614f6cd4e1f3d-1240311201670599379.534255/874FB21E-A700-4A74-9F4F-D0C524CBCE38',
 //       level: 'basic/premium',
 //       rate: 4.9,
+//       country: 'United Kingdom',
+//       since: 'Nov 2016',
+//       response: '5 Hours',
+//       lastDelivery: '3 days ago',
+//       language: ['English'],
+//       about: `Hello there! I'm Kuku, a skilled video editor with a keen eye for detail. I have 7+ years of experience in the industry, and I'm dedicated to delivering polished and captivating videos. Let's bring your footage to life!`
 //     },
 //     daysToMake: 10,
 //     description: 'Boost your social media presence with our professional marketing services.',
@@ -172,6 +195,12 @@ function getEmptyGig() {
 //       imgUrl: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/0d89becb3d4ac31ce9195e7174f0473f-1620254574639/b371c86f-2476-4813-95dd-96c4158d90f7.JPG',
 //       level: 'basic/premium',
 //       rate: 4.7,
+//       country: 'Germany',
+//       since: 'May 2018',
+//       response: '4 Hours',
+//       lastDelivery: '12 hours ago',
+//       language: ['English', 'German'],
+//       about: `Greetings! I'm Jiju, a passionate graphic designer known for creating eye-catching flyer designs. With my artistic flair and attention to detail, your promotional material will stand out from the crowd. Let's make your brand shine!`
 //     },
 //     daysToMake: 2,
 //     description: 'Get high-quality blog posts that engage your readers and boost your SEO.',
@@ -191,6 +220,12 @@ function getEmptyGig() {
 //       imgUrl: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/9b8f8d3cd42f034d2b0ab40b885db4f4-1626302890625/b3d6c17c-c9ef-4357-9026-294ec9e3e068.jpg',
 //       level: 'basic/premium',
 //       rate: 4.2,
+//       country: 'Australia',
+//       since: 'Aug 2019',
+//       response: '1 Hour',
+//       lastDelivery: '2 days ago',
+//       language: ['English'],
+//       about: `Hi, I'm Huhu, a professional content writer specializing in engaging and SEO-friendly blog posts. My words have the power to captivate readers and drive traffic to your website. Let's create compelling content for your audience!`
 //     },
 //     daysToMake: 3,
 //     description: 'Stand out with unique and eye-catching flyer designs for your events or promotions.',
@@ -210,6 +245,12 @@ function getEmptyGig() {
 //       imgUrl: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/1172433/original/j.jpg',
 //       level: 'basic/premium',
 //       rate: 4.6,
+//       country: 'Canada',
+//       since: 'Jan 2015',
+//       response: '2 Hours',
+//       lastDelivery: '6 hours ago',
+//       language: ['English', 'French'],
+//       about: `Hello! I'm Gugu, a social media marketing expert with a proven track record of success. I have 8+ years of experience helping businesses of all sizes achieve their marketing goals. Let's boost your brand's online presence together!`
 //     },
 //     daysToMake: 6,
 //     description: 'Get your videos professionally edited for a polished and captivating look.',
@@ -228,6 +269,12 @@ function getEmptyGig() {
 //       imgUrl: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/1643be003b678a94e6f2ab861276d472-939741421598993603203/JPEG_20200901_165322_1030903637663592876.jpg',
 //       level: 'basic/premium',
 //       rate: 4.8,
+//       country: 'United States',
+//       since: 'Dec 2017',
+//       response: '6 Hours',
+//       lastDelivery: '1 day ago',
+//       language: ['English'],
+//       about: `Hi there! I'm Fifi, a creative web designer with a passion for crafting modern and stylish websites. With over 5 years of experience, I've worked with clients from various industries, delivering stunning results every time. Let's collaborate and bring your vision to life!`
 //     },
 //     daysToMake: 8,
 //     description: 'Get unique and creative custom illustrations to enhance your project.',
@@ -249,6 +296,12 @@ function getEmptyGig() {
 //       imgUrl: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/c1bf7fa52003d4e01f32bf2ffc13eda4-846921031687736065.32306/27E1B7AF-E6E3-4D76-A6D0-66761E0B5FD8',
 //       level: 'basic/premium',
 //       rate: 4.3,
+//       country: 'Germany',
+//       since: 'May 2018',
+//       response: '4 Hours',
+//       lastDelivery: '12 hours ago',
+//       language: ['English', 'German'],
+//       about: `Greetings! I'm Jiju, a passionate graphic designer known for creating eye-catching flyer designs. With my artistic flair and attention to detail, your promotional material will stand out from the crowd. Let's make your brand shine!`
 //     },
 //     daysToMake: 4,
 //     description: 'Hire a virtual assistant to handle administrative tasks and improve productivity.',
@@ -269,6 +322,12 @@ function getEmptyGig() {
 //       imgUrl: 'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/ad7178fcf838c1965e1dc5b33b375243-1603730199570/6f0cb0e2-4777-4b23-adbe-b79b8c78b82c.png',
 //       level: 'basic/premium',
 //       rate: 4.9,
+//       country: 'United Kingdom',
+//       since: 'Nov 2016',
+//       response: '5 Hours',
+//       lastDelivery: '3 days ago',
+//       language: ['English'],
+//       about: `Hello there! I'm Kuku, a skilled video editor with a keen eye for detail. I have 7+ years of experience in the industry, and I'm dedicated to delivering polished and captivating videos. Let's bring your footage to life!`
 //     },
 //     daysToMake: 2,
 //     description: 'Accurate and reliable translation services between English and Spanish.',
@@ -289,6 +348,12 @@ function getEmptyGig() {
 //       imgUrl: 'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/77aa04a51d12a47a9dd663a58f1e040f-695136681685414307344/JPEG_20230530_073824_4160025611441147309.jpg',
 //       level: 'basic/premium',
 //       rate: 4.5,
+//       country: 'India',
+//       since: 'Jan 2018',
+//       response: '1 Hour',
+//       lastDelivery: '6 hours ago',
+//       language: ['English', 'Hindi'],
+//       about: `Namaste! I'm Mumu, a reliable virtual assistant with a knack for organization and multitasking. With my support, you can focus on what matters most while I handle the rest. Let's streamline your tasks together!`
 //     },
 //     daysToMake: 5,
 //     description: 'Stand out with custom and creative t-shirt graphics for your brand.',
@@ -310,6 +375,12 @@ function getEmptyGig() {
 //       imgUrl: 'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/0abd97962ff9b1846d70a59afc509019-1376642671675088247.55062/840047FC-8953-4B50-9FF8-7B7B22F4ADA5',
 //       level: 'basic/premium',
 //       rate: 4.7,
+//       country: 'United States',
+//       since: 'Dec 2017',
+//       response: '6 Hours',
+//       lastDelivery: '1 day ago',
+//       language: ['English'],
+//       about: `Hi there! I'm Fifi, a creative web designer with a passion for crafting modern and stylish websites. With over 5 years of experience, I've worked with clients from various industries, delivering stunning results every time. Let's collaborate and bring your vision to life!`
 //     },
 //     daysToMake: 3,
 //     description: 'Get high-quality voice-over recordings for your videos or audio projects.',
