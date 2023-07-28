@@ -1,6 +1,6 @@
 <template>
   <!-- <div :class="['header-main-layout full main-layout', { 'fixed-header': isHomePage }]"> -->
-  <div class="header-main-layout full"
+  <div class="header-main-layout main-layout full"
     :class="{ 'scrolled': scrolled, 'search-visible': searchVisible, 'categories-visible': categoriesVisible }">
     <header class="header-container flex">
       <RouterLink to="/" class="site-logo">
