@@ -7,6 +7,7 @@ import ReviewIndex from './views/ReviewIndex.vue'
 import LoginSignup from './views/LoginSignup.vue'
 import UserDetails from './views/UserDetails.vue'
 import GigDetails from './views/GigDetails.vue'
+import Payment from './views/Payment.vue'
 
 const routes = [
   {
@@ -43,6 +44,11 @@ const routes = [
       path: '/gig/:gigId',
       name: 'gig-details',
       component: GigDetails,
+  },
+  {
+      path: '/payment/:gigId',
+      name: 'payment-details',
+      component: Payment,
   },
 ]
 

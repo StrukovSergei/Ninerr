@@ -1,0 +1,134 @@
+.gig-payment {
+
+    .payment-container {
+        border: 1px solid $clr9;
+        border-radius: 0.1875em;
+        padding: 1.5em;
+        margin-block-end: 64px;
+        color: $clr5;
+        margin-inline-end: 50px;
+        height: 760px;
+        flex: 1;
+
+
+        h2 {
+            font-family: Macan;
+        }
+
+        p {
+            font-family: Macan-Regular;
+
+            img {
+                position: relative;
+                top: 5px;
+                padding-left: 9px;
+            }
+        }
+
+        .card-container {
+            font-family: Macan;
+            grid-template-columns: 290px 145px 145px;
+            grid-template-rows: 110px 110px;
+            grid-template-areas:
+                "number date security"
+                "name lname lname";
+
+            font-size: 16px;
+
+            input {
+                max-width: 235px;
+            }
+
+            .card-number {
+                grid-area: number;
+            }
+
+            .card-date {
+                grid-area: date;
+
+                input {
+                    max-width: 90px;
+                }
+            }
+
+            .card-security {
+                grid-area: security;
+
+                input {
+                    max-width: 90px;
+                }
+            }
+
+            .card-name {
+                grid-area: name;
+            }
+
+            .card-lname {
+
+                grid-area: lname;
+            }
+
+        }
+
+
+    }
+
+    .confirm-container {
+
+        border: 1px solid $clr9;
+        border-radius: 0.1875em;
+        padding: 1.5em;
+        margin-block-end: 64px;
+        color: $clr5;
+        margin-inline-end: 50px;
+        max-height: 600px;
+        max-width: 440px;
+
+        .payment-header {
+
+            display: flex;
+
+            img {
+                width: 100px;
+                max-height: 62px;
+                object-fit: contain;
+                border-radius: 4px;
+                margin-right: 16px;
+            }
+
+            .confirm-title {
+                font-weight: 600;
+                color: $CLR00;
+                text-align: left;
+                margin-bottom: 4px;
+
+            }
+        }
+
+        .payment-price {
+            padding-top: 20px;
+            font-size: 1.25rem;
+            line-height: 1.5em;
+            font-weight: 400;
+            color: $clr11;
+            font-family: Macan;
+        }
+
+        .payment-features-list {
+            font-size: 16px;
+            font-weight: 400;
+
+            .payment-feature-icon svg {
+                fill: $clr1;
+                
+            }
+
+            .payment-feature-text{
+                padding-left: 7px;
+                position: relative;
+                top:-3px
+            }
+        }
+    }
+
+}

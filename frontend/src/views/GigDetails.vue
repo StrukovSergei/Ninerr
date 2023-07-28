@@ -64,27 +64,33 @@
 
             </div>
         </div>
-        <div class="order-container grid">
+        <div class="order-container ">
             <div class="order-header">
                 <p>Basic</p>
             </div>
-            <div class="order-details">
+            <div class="order-details flex">
                 <span class="order-offer">Special offer:</span>
                 <span class="order-price">${{ currGig.price }}</span>
-                <p class="order-mini-info">Info:</p>
+                <span class="order-mini-info">{{ currGig.info }}</span>
                 <span class="order-properties"><span v-html="$svg('clock')" class="clock-icon"></span> {{
                     currGig.daysToMake }}Days Delivery</span>
             </div>
-            <button class="btn-continue">Continue
-                <span class="btn-continue-arrow" aria-hidden="true" style="width: 16px; height: 16px; fill: white;">
-                    <span v-html="$svg('arrowRight')"></span>
-                </span>
-            </button>
+            <RouterLink class="btn-continue-route"
+                :to="{ name: 'payment-details', params: { gigId: currGig._id }, props: { gig: currGig } }">
+                <button class="btn-continue">
+                    Continue
+
+                    <span class="btn-continue-arrow" aria-hidden="true" style="width: 16px; height: 16px; fill: white;">
+                        <span v-html="$svg('arrowRight')"></span>
+                    </span>
+                </button>
+            </RouterLink>
         </div>
     </section>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router'
 import SellerDetails from '../cmps/SellerDetails.vue'
 import { gigService } from '../services/gig.service.local'
 import { userService } from '../services/user.service.js'
@@ -153,6 +159,6 @@ export default {
             return this.$store.getters.getReviews
         },
     },
-    components: { VueperSlides, VueperSlide, SellerDetails },
+    components: { VueperSlides, VueperSlide, SellerDetails, RouterLink },
 }
 </script>

@@ -94,7 +94,7 @@
             text-align: right;
             display: grid;
             position: relative;
-            right: -190px;
+            // right: -190px;
             top: -28px;
         }
 
@@ -104,6 +104,7 @@
 
         .order-mini-info {
             padding: 30px 0;
+            font-family: Macan-Regular;
         }
 
         .btn-continue {
@@ -115,11 +116,19 @@
             padding: 12px 24px;
             border: 1px solid transparent;
             margin: 0 24px 20px 24px;
+            width: 88%;
+            cursor: pointer;
+
 
             .btn-continue-arrow{
                 position: relative;
                 top: 3px;
-                right: -123px;
+                right: -113px;
+            }
+
+            .btn-continue-route{
+                color: white;
+                text-decoration: none;
             }
         }
 

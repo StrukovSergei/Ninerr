@@ -73,8 +73,7 @@ function getEmptyGig() {
 }
 
 // Initial data
-      // 'https://fiverr-res.cloudinary.com/images/w_1260,q_auto,f_auto,pg_1/attachments/delivery/asset/e17f222458f1877bbfb7a6f60dd9a895-1680368139/Logo-Updated/be-your-virtual-assistant-for-data-entry-data-mining-typing-web-research',
-// ;(async () => {
+// ; (async () => {
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g101',
 //     title: 'I will build responsive wordpress website design',
@@ -103,6 +102,13 @@ function getEmptyGig() {
 //     ],
 //     tags: ['proffesional', 'accessible'],
 //     likedByUsers: ['mini-user'],
+//     info: 'Modern and stylish website design with unlimited revisions',
+//     features: [
+//       'Fully responsive design',
+//       'User-friendly interface',
+//       'High-quality graphics',
+//       'SEO optimized',
+//     ],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g102',
@@ -133,6 +139,8 @@ function getEmptyGig() {
 //     ],
 //     tags: ['logo-design', 'proffesional'],
 //     likedByUsers: ['mini-user'],
+//     info: '1 custom logo+high resolution file+3d mockup+logo transparency+ 300dpi',
+//     features: ['1 concept included','Logo transparency','Printable file','Include 3D mockup'],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g103',
@@ -162,6 +170,13 @@ function getEmptyGig() {
 //     ],
 //     tags: ['website-design', 'modern'],
 //     likedByUsers: [],
+//     info: 'Modern and stylish website design with unlimited revisions',
+//     features: [
+//       'Fully responsive design',
+//       'User-friendly interface',
+//       'High-quality graphics',
+//       'SEO optimized',
+//     ],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g104',
@@ -192,6 +207,13 @@ function getEmptyGig() {
 //     ],
 //     tags: ['social-media', 'marketing', 'professional'],
 //     likedByUsers: [],
+//     info: 'Professional social media marketing with detailed analytics',
+//     features: [
+//       'Content creation and scheduling',
+//       'Audience targeting',
+//       'Performance analysis',
+//       'Ad campaign management',
+//     ],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g105',
@@ -221,6 +243,13 @@ function getEmptyGig() {
 //     ],
 //     tags: ['blog-writing', 'SEO-friendly'],
 //     likedByUsers: [],
+//     info: 'SEO-friendly blog posts with keyword research',
+//     features: [
+//       'Well-researched content',
+//       'Keyword optimization',
+//       'Plagiarism-free writing',
+//       'Quick turnaround',
+//     ],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g106',
@@ -250,6 +279,13 @@ function getEmptyGig() {
 //     ],
 //     tags: ['flyer-design', 'eye-catching'],
 //     likedByUsers: [],
+//     info: 'Eye-catching flyer designs for various occasions',
+//     features: [
+//       'Customized design options',
+//       'High-resolution print files',
+//       'Quick revisions',
+//       'Creative and original artwork',
+//     ],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g107',
@@ -277,6 +313,13 @@ function getEmptyGig() {
 //     ],
 //     tags: ['video-editing', 'professional'],
 //     likedByUsers: [],
+//     info: 'Professional video editing with visual effects and transitions',
+//     features: [
+//       'Video color grading',
+//       'Audio enhancement',
+//       'Motion graphics',
+//       'Custom animations',
+//     ],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g108',
@@ -307,6 +350,13 @@ function getEmptyGig() {
 //     ],
 //     tags: ['custom-illustrations', 'creative'],
 //     likedByUsers: [],
+//     info: 'Custom illustrations for books, websites, and branding',
+//     features: [
+//       'Unique hand-drawn artwork',
+//       'Vector file format',
+//       'Unlimited revisions',
+//       'Commercial use rights',
+//     ],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g109',
@@ -331,10 +381,18 @@ function getEmptyGig() {
 //       'Hire a virtual assistant to handle administrative tasks and improve productivity.',
 //     imgUrls: [
 //       'https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/215431426/original/3da3155be9bd3e63aa73e322c067c0c1c6f63383/be-your-virtual-assistant-for-data-entry-data-mining-typing-web-research.jpg',
+//       'https://fiverr-res.cloudinary.com/images/w_1260,q_auto,f_auto,pg_1/attachments/delivery/asset/e17f222458f1877bbfb7a6f60dd9a895-1680368139/Logo-Updated/be-your-virtual-assistant-for-data-entry-data-mining-typing-web-research',
 //       'https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/13707a59ced55e8af5518414523ffe6d-1641709085/image_2022_01_09T06_12_51_352Z/be-your-virtual-assistant-for-data-entry-data-mining-typing-web-research.png',
 //     ],
 //     tags: ['virtual-assistant', 'productivity'],
 //     likedByUsers: [],
+//     info: 'Experienced virtual assistant for efficient task management',
+//     features: [
+//       'Data entry and organization',
+//       'Email and calendar management',
+//       'Web research',
+//       'Document preparation',
+//     ],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g110',
@@ -363,6 +421,13 @@ function getEmptyGig() {
 //     ],
 //     tags: ['translation', 'English-Spanish'],
 //     likedByUsers: [],
+//     info: 'Accurate translation with attention to cultural nuances',
+//     features: [
+//       'Proofreading and editing',
+//       'Fast turnaround time',
+//       'Confidentiality assurance',
+//       'Localized translations',
+//     ],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g111',
@@ -392,6 +457,13 @@ function getEmptyGig() {
 //     ],
 //     tags: ['t-shirt-design', 'creative'],
 //     likedByUsers: [],
+//     info: 'Custom t-shirt designs for merchandise and apparel',
+//     features: [
+//       'Variety of design styles',
+//       'Multiple color options',
+//       'Print-ready files',
+//       'Editable source files',
+//     ],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g112',
@@ -420,5 +492,7 @@ function getEmptyGig() {
 //     ],
 //     tags: ['voice-over', 'professional'],
 //     likedByUsers: [],
+//     info: 'Unique and professional voice service',
+//     features: ['Custom voice', 'High-resolution files', 'Unlimited revisions'],
 //   })
 // })()
