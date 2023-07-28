@@ -17,7 +17,8 @@
         <template #arrow-right>
           <i class="fa-solid fa-angle-right"></i>
         </template>
-        <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+        <vueper-slide v-for="(slide, i) in slides" :key="i" :content="slide.content" :link="slide.link"
+          @click="loadGig" />
       </vueper-slides>
     </div>
   </section>
@@ -83,7 +84,7 @@
       </div>
     </div>
   </div>
-  <section class="icon-category">
+  <section class="icon-category main-layout ">
     <h2 class="bold"> Explore the marketplace</h2>
     <section class="category-list main-layout">
       <section class="icons full">
@@ -100,7 +101,6 @@
           <span class="flex">
             <div>
               <span v-html="$svg('marketing')">
-
               </span>
               <h4 class="regular">Digital Marketing</h4>
             </div>
@@ -208,36 +208,111 @@ export default {
   data: () => ({
     slides: [
       {
-        image: img1,
-      },
-      {
-        image: img2
-      },
-      {
-        image: img3
-      },
-      {
-        image: img4
-      },
-      {
-        image: img5
-      },
-      {
-        image: img6
-      },
-      {
-        image: img7
-      },
-      {
-        image: img8
-      },
-      {
-        image: img9
-      },
-      {
-        image: img10
-      },
 
+        content:
+          `<a href="#/gig?tag=ai-services">
+                <div class="subcategory-warper"
+                    style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/f27bec553efc12cc60baed89b8f2223e-1674661140708/ai-artists-2x.png) ;">
+                    <span>Add talent to AI</span>
+                    <h4>AI Artists</h4>
+                </div>
+                </a>`,
+        props: {
+          allow: 'click',
+        }
+      },
+      {
+        // title: 'Slide #2',
+        content: `
+                
+                    <a href="#/gig?tag=logo-design">
+                        <div class="subcategory-warper"
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png) ;">
+                            <span>Build your brand</span>
+                            <h4>Logo Design</h4>
+                        </div>
+                    </a>`
+      },
+      {
+        // title: 'Slide #3',
+        content: `<a href="#/gig?tag=word-press">
+                        <div class="subcategory-warper"
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/ae11e2d45410b0eded7fba0e46b09dbd-1598561917003/wordpress-2x.png) ;">
+                            <span>Customize your site</span>
+                            <h4>WordPress</h4>
+                        </div>
+                    </a>`
+      },
+      {
+        // title: 'Slide #4',
+        content: `<a href="#/gig?tag=voice-over">
+                        <div class="subcategory-warper"
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741669/voiceover-2x.png) ;">
+                            <span>Share your message</span>
+                            <h4>Voice Over</h4>
+                        </div>
+                    </a>`
+      },
+      {
+        // title: 'Slide #5',
+        content: `<a href="#/gig?tag=video">
+                        <div class="subcategory-warper"
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741663/animated-explainer-2x.png) ;">
+                            <span>Engage your audience</span>
+                            <h4>Video Explainer</h4>
+                        </div>
+                    </a>`
+      },
+      {
+        // title: 'Slide #6',
+        content: `<a href="#/gig?tag=social-media">
+                        <div class="subcategory-warper"
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png;">
+                            <span>Reach more costumers</span>
+                            <h4>Social Media</h4>
+                        </div>
+                    </a>`
+      },
+      {
+        // title: 'Slide #7',
+        content: `<a href="#/gig?tag=marketing">
+                        <div class="subcategory-warper"
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741668/seo-2x.png);">
+                            <span>Unlock growth online</span>
+                            <h4>SEO</h4>
+                        </div>
+                    </a>`
+      },
+      {
+        // title: 'Slide #8',
+        content: `<a href="#/gig?tag=graphics-design">
+                        <div class="subcategory-warper"
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741664/illustration-2x.png) ;">
+                            <span>Color your dreams</span>
+                            <h4>Illustration</h4>
+                        </div>
+                    </a>`
+      },
+      {
+        // title: 'Slide #9',
+        content: `<a href="#/gig?tag=word-press">
+                        <div class="subcategory-warper"
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741674/translation-2x.png) ;">
+                            <span>Go global</span>
+                            <h4>Translation</h4>
+                        </div>
+                    </a>`
+      },
+      {
+        // title: 'Slide #10',
+        content: `<a href="#/gig?tag=data">
+                        <div class="subcategory-warper"
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741664/data-entry-2x.png) ;">
+                            <span>Learn your business</span>
+                            <h4>Data Entry</h4>
+                        </div>
+                    </a>`
+      },
     ],
     slidesNum: 5,
     width: window.innerWidth,

@@ -1,3 +1,102 @@
+.vueperslides {    
+    position: relative;
+    background-color: #ffffff00;
+    width: 100%;    
+
+    &.details-slides {
+      border: 1px solid #dadbdd;
+    }
+
+    .vueperslides__inner {
+      height: inherit;
+      position: relative;
+      user-select: none;
+    }
+
+    .categories-list section.type-card .vueperslides__parallax-wrapper {
+      position: relative;
+      overflow: hidden;
+      // padding-bottom: 26% !important;
+    }
+
+    .vueperslides__track {
+      position: absolute;
+      top: 0;
+      cursor: pointer;
+      width: 100%;
+      // min-height: 300px;
+      user-select: none;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .vueperslides__track-inner {
+      white-space: nowrap;
+      transition: 0.5s ease-in-out transform;
+      // min-height: 300px;
+      height: rem(340px);
+      display: flex;
+    }
+
+    .vueperslide__content-wrapper {
+      width: 100%;
+    }
+
+    .subcategory-warper {
+      position: relative;
+      height: rem(340px);
+      display: flex;
+      flex-direction: column;
+      color: #fcfcfc;
+      margin-inline-end: 3%;
+      width: 15.8rem;
+      // height: 100%;
+      border-radius: 4px;
+      padding: 1rem;
+      cursor: pointer;
+
+      span {
+        font-size: em(14px);
+        padding-block-end: 0.5rem;
+        text-align: left;
+      }
+
+      h4 {
+        color: white;
+        text-align: left;
+        font-size: em(23px);
+      }
+    }
+
+    .vueperslide__content {
+      min-height: rem(300px);
+      width: 100%;
+      color: white;
+    }
+
+  & .vueperslides__arrows--outside .vueperslides__arrow--next{
+    left: auto;
+    right: -1.5em;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    background-color: #ffffff;
+    opacity: 1;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+  }
+
+  & .vueperslides__arrows--outside .vueperslides__arrow--prev{
+    right: auto;
+    left: -1.5em;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    background-color: #ffffff;
+    opacity: 1;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+  }
+}
+
 .video-section{
     background-color: $CLR01;
     min-height: rem(690px);
