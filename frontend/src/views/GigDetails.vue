@@ -3,13 +3,11 @@
 
         <div class="gig-details-overview">
             <div class="gig-small-nav flex">
-                <div class="home-icon" @click="redirectToHome">
+                <RouterLink class="home-icon" to="/">
                     <span v-html="$svg('home')"></span>
-
-
-                </div>
+                </RouterLink>
                 <span class="small-devider">/</span>
-                <p class="btn-back" @click="redirectToExplore">All Gigs</p>
+                <RouterLink class="btn-back" to="/explore">All Gigs</RouterLink>
             </div>
             <h2 class="gig-details__title">{{ currGig.title }}</h2>
             <div class="mini-user-info flex">
@@ -44,11 +42,14 @@
 
             </div>
             <div class="aboutgig-container">
-                <h2>About this gig:</h2>
-                {{ currGig.description }}
+                <h2 class="gig-title fs20">About this gig:</h2>
+                <span class="gig-description">{{ currGig.description }}</span>
             </div>
 
-
+            <div class="aboutseller-container">
+                <h2 class="seller-title fs20">About the seller</h2>
+                <SellerDetails :gig="currGig"></SellerDetails>
+            </div>
 
             <div class="flex justify-end self-end">
                 <router-link v-if="user?.isAdmin" class="btn-light" :to="'/gig/edit/' + currGig._id">Edit</router-link>
@@ -71,7 +72,8 @@
                 <span class="order-offer">Special offer:</span>
                 <span class="order-price">${{ currGig.price }}</span>
                 <p class="order-mini-info">Info:</p>
-                <span class="order-properties"><span v-html="$svg('clock')" class="clock-icon"></span> {{ currGig.daysToMake}}Days Delivery</span>
+                <span class="order-properties"><span v-html="$svg('clock')" class="clock-icon"></span> {{
+                    currGig.daysToMake }}Days Delivery</span>
             </div>
             <button class="btn-continue">Continue
                 <span class="btn-continue-arrow" aria-hidden="true" style="width: 16px; height: 16px; fill: white;">
@@ -83,6 +85,7 @@
 </template>
 
 <script>
+import SellerDetails from '../cmps/SellerDetails.vue'
 import { gigService } from '../services/gig.service.local'
 import { userService } from '../services/user.service.js'
 import { VueperSlides, VueperSlide } from 'vueperslides'
@@ -124,9 +127,6 @@ export default {
                 console.log('Could Not load gig')
             }
         },
-        goBack() {
-            this.$router.push('/explore')
-        },
         async sendReview() {
             await this.$store.dispatch({
                 type: 'addReview',
@@ -144,14 +144,6 @@ export default {
                 emptyStars: Array(emptyStars).fill(0),
             }
         },
-        redirectToHome() {
-
-            this.$router.push('/')
-        },
-        redirectToExplore() {
-
-            this.$router.push('/explore')
-        },
     },
     computed: {
         user() {
@@ -161,6 +153,6 @@ export default {
             return this.$store.getters.getReviews
         },
     },
-    components: { VueperSlides, VueperSlide },
+    components: { VueperSlides, VueperSlide, SellerDetails },
 }
 </script>

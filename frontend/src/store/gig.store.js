@@ -50,11 +50,7 @@ export const gigStore = {
     removeGig(state, { gigId }) {
       state.gigs = state.gigs.filter((gig) => gig._id !== gigId)
     },
-    // addGigMsg(state, { gigId , msg}) {
-    //     const gig = state.gigs.find(gig => gig._id === gigId)
-    //     if (!gig.msgs) gig.msgs = []
-    //     gig.msgs.push(msg)
-    // },
+
   },
   actions: {
     async addGig(context, { gig }) {
@@ -77,10 +73,10 @@ export const gigStore = {
         throw err
       }
     },
-    async loadGigs(context) {
+    async loadGigs(context, { filterBy, searchText }) {
       try {
-        const gigs = await gigService.query()
-        console.log('gigs', gigs)
+        
+        const gigs = await gigService.query(filterBy, searchText)
         context.commit({ type: 'setGigs', gigs })
       } catch (err) {
         console.log('gigStore: Error in loadGigs', err)
@@ -96,14 +92,6 @@ export const gigStore = {
         throw err
       }
     },
-    // async addCarMsg(context, { carId, txt }) {
-    //     try {
-    //         const msg = await carService.addCarMsg(carId, txt)
-    //         context.commit({type: 'addCarMsg', carId, msg })
-    //     } catch (err) {
-    //         console.log('carStore: Error in addCarMsg', err)
-    //         throw err
-    //     }
-    // },
+
   },
 }

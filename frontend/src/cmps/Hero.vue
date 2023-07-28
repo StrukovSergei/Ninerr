@@ -2,10 +2,29 @@
     <section class="hero-container main-layout full">
         <div class="hero-pos-container">
             <vueper-slides autoplay class="no-shadow" fade :arrows="false" :bullets="false" :pause-on-hover=false>
-                <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+                <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.img">
+                    <template #content>
+                        <div class="hero-info">
+                            <div class="info-pic">
+                                <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_40,dpr_1.0/v1/attachments/generic_asset/asset/7539ee9d7a6ab02e3d23069ebefb32c8-1690386499422/christina-2x.png"
+                                    alt="pic">
+                            </div>
+                            <div class="info-txt ">
+                                <span class="fullname">
+                                    {{ info.fullname[i] }}
+                                </span>
+                                <span class="star "> 5
+                                    <span v-html="$svg('star')">
+                                    </span>
+                                </span>
+                                <p class="expert">{{ info.expert[i] }}</p>
+                            </div>
+                        </div>
+                    </template>
+                </vueper-slide>
             </vueper-slides>
 
-            <div class="search-container main-layout flex">
+            <div class="search-container main-layout full">
                 <h1>
                     Find the right
                     <i class="fancy-word">freelance services,</i>
@@ -35,10 +54,6 @@
                     <RouterLink to="/gig?tag=ai-services">
                         <div class="category flex">AI Services</div>
                     </RouterLink>
-                </div>
-                <div class="hero-info flex">
-                    <p class="rate">
-                        Andrea, <span> Fashion Designer</span></p>
                 </div>
             </div>
         </div>
@@ -78,14 +93,70 @@ export default {
             filterBy: {
                 txt: '',
             },
-            slides: [
-                { image: "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/062d9604f20f64f4b45f8501aeea8212-1674662964518/bg-hero-6-900-x1.png" },
-                { image: "https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670768271/gigs/zj3dflxnixaytffgqpn9.webp" },
-                { image: "https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/2413b8415dda9dbd7756d02cb87cd4b1-1599595203045/bg-hero-2-1792-x1.png" },
-                { image: "https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783966/bg-hero-3-1792-x1.png" },
-                { image: "https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/93085acc959671e9e9e77f3ca8147f82-1599427734108/bg-hero-4-1792-x1.png" },
-                { image: "https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049970/bg-hero-5-1792-x1.png" },
+            img: [
+                "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/062d9604f20f64f4b45f8501aeea8212-1674662964518/bg-hero-6-900-x1.png",
+                "https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670768271/gigs/zj3dflxnixaytffgqpn9.webp",
+                "https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/2413b8415dda9dbd7756d02cb87cd4b1-1599595203045/bg-hero-2-1792-x1.png",
+                "https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783966/bg-hero-3-1792-x1.png",
+                "https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/93085acc959671e9e9e77f3ca8147f82-1599427734108/bg-hero-4-1792-x1.png",
+                "https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049970/bg-hero-5-1792-x1.png",
             ],
+            imgSmall: ["https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/062d9604f20f64f4b45f8501aeea8212-1674662964518/bg-hero-6-900-x1.png",
+                "https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670768271/gigs/zj3dflxnixaytffgqpn9.webp",
+                "https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/2413b8415dda9dbd7756d02cb87cd4b1-1599595203045/bg-hero-2-1792-x1.png",
+                "https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783966/bg-hero-3-1792-x1.png",
+                "https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/93085acc959671e9e9e77f3ca8147f82-1599427734108/bg-hero-4-1792-x1.png",
+                "https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049970/bg-hero-5-1792-x1.png",
+            ],
+
+            info: {
+                pic: [
+                    { img: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_40,dpr_1.0/v1/attachments/generic_asset/asset/7539ee9d7a6ab02e3d23069ebefb32c8-1690386499422/christina-2x.png' }
+                ],
+                fullname: [
+                    '@Valentina',
+                    '@Andrea',
+                    '@Moon',
+                    '@Retika',
+                    '@Zach',
+                    '@Gabrielle',
+                ],
+                expert: [
+                    'AI Artist',
+                    'Fashion Designer',
+                    'Marketing Designer',
+                    'Shoemaker and Designer',
+                    'Bar Owner',
+                    'Video Editor',
+                ],
+                rate: [5, 0, 5, 0, 0, 5]
+            },
+            slides: [
+                {
+                    // valentina,
+                    img: ("https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/062d9604f20f64f4b45f8501aeea8212-1674662964518/bg-hero-6-900-x1.png"),
+                },
+                {
+                    // andrea,
+                    img: ("https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670768271/gigs/zj3dflxnixaytffgqpn9.webp"),
+                },
+                {
+                    // moon,
+                    img: ("https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/2413b8415dda9dbd7756d02cb87cd4b1-1599595203043/bg-hero-2-900-x1.png"),
+                },
+                {
+                    // ritika,
+                    img: ("https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783973/bg-hero-3-900-x1.png"),
+                },
+                {
+                    // zach,
+                    img: ("https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049964/bg-hero-4-900-x1.png"),
+                },
+                {
+                    // gabriela,
+                    img: ("https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049961/bg-hero-5-900-x1.png"),
+                },
+            ]
 
         }
     },
