@@ -73,6 +73,7 @@ function getEmptyGig() {
 }
 
 // Initial data
+      // 'https://fiverr-res.cloudinary.com/images/w_1260,q_auto,f_auto,pg_1/attachments/delivery/asset/e17f222458f1877bbfb7a6f60dd9a895-1680368139/Logo-Updated/be-your-virtual-assistant-for-data-entry-data-mining-typing-web-research',
 // ;(async () => {
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g101',
@@ -330,7 +331,6 @@ function getEmptyGig() {
 //       'Hire a virtual assistant to handle administrative tasks and improve productivity.',
 //     imgUrls: [
 //       'https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/215431426/original/3da3155be9bd3e63aa73e322c067c0c1c6f63383/be-your-virtual-assistant-for-data-entry-data-mining-typing-web-research.jpg',
-//       'https://fiverr-res.cloudinary.com/images/w_1260,q_auto,f_auto,pg_1/attachments/delivery/asset/e17f222458f1877bbfb7a6f60dd9a895-1680368139/Logo-Updated/be-your-virtual-assistant-for-data-entry-data-mining-typing-web-research',
 //       'https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/13707a59ced55e8af5518414523ffe6d-1641709085/image_2022_01_09T06_12_51_352Z/be-your-virtual-assistant-for-data-entry-data-mining-typing-web-research.png',
 //     ],
 //     tags: ['virtual-assistant', 'productivity'],
