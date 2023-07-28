@@ -1,18 +1,12 @@
 /** @format */
 .hero-container {
-  position: relative;
-  height: 42.5em;
-  margin-block-end: rem(-80px);
+  position: relative;  
   min-height: rem(680px);
-  top: 0;
 
   .hero-pos-container {
-    position: absolute;
-    display: grid;
+    position: absolute;    
     top: -7.55rem;
-    width: 100%;
-    // height: 100%;   
-    grid-column: 1/-1;
+    width: 100%;     
 
     .vueperslides {
       &__parallax-wrapper {
@@ -43,9 +37,9 @@
     color: #fff;
     line-height: 1.2;
     align-self: center;    
-    @include for-mobile-layout {
-      font-size: 12px;
-    }
+    // @include for-mobile-layout {
+    //   font-size: 12px;
+    // }
 
     h1 {    
       letter-spacing: 0.1rem;      
@@ -66,13 +60,13 @@
     
 
     .el-button {
-      @include for-mobile-layout {
-        // font-size: 12px;
-        position: absolute;
-        top: 300px;
-        width: 100%;
-        border-radius: 4px;
-      }
+      // @include for-mobile-layout {
+      //   // font-size: 12px;
+      //   position: absolute;
+      //   top: 300px;
+      //   width: 100%;
+      //   border-radius: 4px;
+      // }
       margin: 0;
       cursor: pointer;
       display: inline-flex;
@@ -101,10 +95,10 @@
     }
 
     .hero-search {
-      @include for-mobile-layout {
-        // font-size: 12px;
-        flex-direction: column;
-      }      
+      // @include for-mobile-layout {
+      //   // font-size: 12px;
+      //   flex-direction: column;
+      // }      
       margin-block-end: rem(24px);
       max-width: rem(650px);
       background-color: #fcfcfc;;
@@ -138,10 +132,10 @@
     }    
 
     .categories {
-      display: none;
-      @include for-normal-layout {
-        display: flex;
-      }
+      // display: none;
+      // @include for-normal-layout {
+      //   display: flex;
+      // }
       flex-wrap: wrap;
       text-decoration: none;
       align-items: center;
@@ -175,40 +169,37 @@
   }
 }
 
- .hero-info {    
-    
+ .hero-info { 
     padding: 12px 24px 12px 12px;
-    
     display: grid;
     grid-template-areas:
     'pic name . . star'
     'pic exp exp exp exp';    
-    grid-gap: 12px;
+    
     
     backdrop-filter: blur(30px);
     background: hsla(0, 0%, 100%, .14);
     border: 1px solid hsla(0, 0%, 100%, .4);
-    border-radius: 1600px;
-    bottom: 0;
+    border-radius: 1600px;    
     box-shadow: 0 20px 30px 0 rgba(0, 37, 19, .2);
     color: #fff;       
     
     position: absolute;
     right: 2rem;
-    bottom: 2em;
-    width:fit-content;
+    bottom: 2em;   
     
     font-family: Macan,
       "Helvetica Neue",
       Helvetica,
       Arial,
       sans-serif;
+
       font-size: 1rem;
       font-weight: 700;
      line-height: 1rem;
 
     & .info-pic {
-       grid-area: pic ; 
+      margin-inline-end: rem(10px);
       width: rem(40px);
       align-self: center;
     }
@@ -223,7 +214,8 @@
           }
         
         & span.star {   
-          grid-area: star ;
+          position: absolute;
+          right: rem(20px);          
           font-size: 12px;
           font-weight: 600;
           fill: #fff;
@@ -239,7 +231,8 @@
   padding-bottom: 0;
   padding-top: 0;
   position: relative;
-  top: rem(-85px);
+  top: -7.62rem;
+  background-color: #fafafa;
 
   & span{
     font-size: 1em;
