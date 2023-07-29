@@ -54,9 +54,9 @@
             <div class="flex justify-end self-end">
                 <router-link v-if="user?.isAdmin" class="btn-light" :to="'/gig/edit/' + currGig._id">Edit</router-link>
             </div>
-            <div class="">
+            <div v-if="reviews" class="">
                 <h2 class="review-header">Reviews</h2>
-                <ReviewList></ReviewList>
+                <ReviewList :reviews="reviews"></ReviewList>
 
             </div>
         </div>
@@ -69,7 +69,7 @@
                 <span class="order-price">${{ currGig.price }}</span>
                 <span class="order-mini-info">{{ currGig.info }}</span>
                 <span class="order-properties"><span v-html="$svg('clock')" class="clock-icon"></span> {{
-                    currGig.daysToMake }}Days Delivery</span>
+                    currGig.daysToMake }} Days Delivery</span>
             </div>
             <RouterLink class="btn-continue-route"
                 :to="{ name: 'payment-details', params: { gigId: currGig._id }, props: { gig: currGig } }">
@@ -91,6 +91,7 @@ import SellerDetails from '../cmps/SellerDetails.vue'
 import ReviewList from '../cmps/ReviewList.vue'
 import { gigService } from '../services/gig.service.local'
 import { userService } from '../services/user.service.js'
+import { reviewService } from '../services/review.service.local'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 
@@ -102,8 +103,8 @@ export default {
     data() {
         return {
             currGig: null,
-            addReview: '',
-            slides: []
+            slides: [],
+            reviews: null
         }
     },
     async created() {
@@ -113,6 +114,7 @@ export default {
                 this.$store.commit({ type: 'setLoggedinUser', user })
             }
             await this.loadGig()
+            await this.loadReviews()
             await this.$store.dispatch({ type: 'loadReviews', filterBy: { gigId: this.currGig._id } })
 
             this.slides = this.currGig.imgUrls.map(imageUrl => ({ image: imageUrl }))
@@ -130,13 +132,13 @@ export default {
                 console.log('Could Not load gig')
             }
         },
-        async sendReview() {
-            await this.$store.dispatch({
-                type: 'addReview',
-                newReview: { txt: this.addReview, gigId: this.currGig._id },
-            })
-            this.$store.dispatch({ type: 'getReviews', filterBy: { gigId: this.currGig._id } })
-            this.newReview = ''
+        async loadReviews() {
+            try {
+                const reviews = await reviewService.query()
+                this.reviews = reviews
+            } catch {
+                console.log('Could Not load reviews')
+            }
         },
         generateStars(rate) {
             const fullStars = Math.floor(rate)
@@ -152,9 +154,9 @@ export default {
         user() {
             return this.$store.getters.loggedInUser
         },
-        reviews() {
-            return this.$store.getters.getReviews
-        },
+        // reviews() {
+        //     return this.$store.getters.getReviews
+        // },
     },
     components: { VueperSlides, VueperSlide, SellerDetails, RouterLink, ReviewList },
 }

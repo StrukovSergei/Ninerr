@@ -1,24 +1,95 @@
-.review-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    li {
-        background-color: $clr2;
-        color: $clr6;
-        padding: 5px;
-        margin: 5px;
+.review-container {
+    border-bottom: 1px solid $clr9;
+    padding-top: 30px;
+
+    .review-user-img {
+        border-radius: 50%;
+        display: block;
+
+        position: absolute;
+
+        z-index: 1;
+        max-width: 48px;
     }
-    a {
-        color: $clr1;
-        padding: 10px;
-    }    
-    pre {
-        background-color: #ddd;
-        color: #333;
-        padding: 10px 5px;
-        margin: 5px;
-    }    
+
+    .review-user-name {
+        padding-left: 60px;
+        flex: 1;
+        font-size: 16px;
+    }
+
+    .review-user-country {
+        position: relative;
+        padding-left: 60px;
+        font-size: 16px;
+        font-family: Macan-Regular;
+
+        img {
+            position: relative;
+            max-width: 20px;
+            top: 4px;
+        }
+
+    }
+
+    .review-rate-number {
+        color: $clr10;
+        font-weight: bold;
+        font-size: 16px;
+        position: relative;
+        padding-left: 3px;
+        top: -1px;
+    }
+
+    .review-star {
+        padding-left: 60px;
+
+    }
+
+    .review-txt {
+        font-family: Macan-Regular;
+        padding-top: 13px;
+        padding-left: 60px;
+
+    }
+
+    .review-btns {
+        padding-left: 60px;
+        font-family: Macan;
+        font-size: 16px;
+        cursor: pointer;
+        padding-bottom: 10px;
+
+        .review-btn-yes {
+            padding-left: 10px;
+
+
+            svg {
+                padding-right: 2px;
+                position: relative;
+                top: 3px;
+            }
+        }
+
+        .review-btn-no {
+            padding-left: 10px;
+
+            svg {
+                padding-right: 2px;
+                position: relative;
+                top: 3px;
+            }
+
+        }
+    }
+
+
 }
 
-
-
+.review-more-btn {
+    padding-top: 15px;
+    cursor: pointer;
+    font-family: Macan-Regular;
+    font-size: 16px;
+    color: $clr7;
+}
