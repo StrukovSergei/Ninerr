@@ -1,26 +1,30 @@
 <template>
   <div class="container home main-layout">
-    <div class="price-filter-section">
-      <input type="number" v-model="minPrice" placeholder="Min Price" />
-      <input type="number" v-model="maxPrice" placeholder="Max Price" />
-      <button @click="applyFilter">Apply</button>
-    </div>
-    <div class="delivery-filter-section">
-      <label>
-        <input type="radio" v-model="deliveryTime" value="3" />
-        Up to 3 days
-      </label>
-      <label>
-        <input type="radio" v-model="deliveryTime" value="5" />
-        Up to 5 days
-      </label>
-      <label>
-        <input type="radio" v-model="deliveryTime" value="" />
-        Anytime
-      </label>
-      <button @click="applyFilter">Apply</button>
-    </div>
+    <section class="index-filter">
+      <div class="price-filter-section">
+        <input type="number" v-model="minPrice" placeholder="Min Price" />
+        <input type="number" v-model="maxPrice" placeholder="Max Price" />
+        <button @click="applyFilter">Apply</button>
+      </div>
+      <div class="delivery-filter-section">
+        <label>
+          <input type="radio" v-model="deliveryTime" value="3" />
+          Up to 3 days
+        </label>
+        <label>
+          <input type="radio" v-model="deliveryTime" value="5" />
+          Up to 5 days
+        </label>
+        <label>
+          <input type="radio" v-model="deliveryTime" value="" />
+          Anytime
+        </label>
+        <button @click="applyFilter">Apply</button>
+      </div>
+    </section>
     <GigList v-if="gigs" :gigs="filteredGigs" />
+
+
 
   </div>
 </template>
@@ -59,7 +63,7 @@ export default {
         this.minPrice = query.minPrice ? parseInt(query.minPrice) : null
         this.maxPrice = query.maxPrice ? parseInt(query.maxPrice) : null
         this.deliveryTime = query.deliveryTime ? parseInt(query.deliveryTime) : null
-        const filterBy = { category: query.category, searchText: this.searchText, minPrice: this.minPrice, maxPrice: this.maxPrice, delivery: this.deliveryTime}
+        const filterBy = { category: query.category, searchText: this.searchText, minPrice: this.minPrice, maxPrice: this.maxPrice, delivery: this.deliveryTime }
         this.$store.dispatch({ type: 'loadGigs', filterBy })
       },
       immediate: true,
@@ -79,7 +83,8 @@ export default {
 
       const query = { ...this.$route.query, ...filterBy }
       this.$router.push({ path: this.$route.path, query })
-    }
+    },
+
   }
 }
 

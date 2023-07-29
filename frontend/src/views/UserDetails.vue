@@ -22,6 +22,11 @@
           {{ gig.title }} - Price: {{ gig.price }}
           <button @click="updateGig(gig)">Update</button>
           <button @click="removeGig(gig._id)">Remove</button>
+          <button :class="getStatusButtonClass(gig.status)">{{ gig.status }}</button>
+          <select v-model="selectedStatus" @change="updateStatus(gig)">
+            <option v-for="status in statusOptions" :key="status">{{ status }}</option>
+          </select>
+
         </li>
       </ul>
     </div>
@@ -45,7 +50,9 @@ export default {
   data() {
     return {
       user: null,
-      isModalOpen: false
+      isModalOpen: false,
+      selectedStatus: '',
+      statusOptions: ['rejected', 'completed', 'in progress', 'pending'],
     }
   },
   watch: {
@@ -139,7 +146,25 @@ export default {
         console.log(err)
         showErrorMsg('Cannot add gig')
       }
-    }
+    },
+    async updateStatus(gig) {
+      gig = { ...gig, status: this.selectedStatus }
+      try {
+        await this.$store.dispatch(getActionUpdateGig(gig))
+        showSuccessMsg('Gig status updated')
+      } catch (err) {
+        console.log(err)
+        showErrorMsg('Cannot update gig status')
+      }
+    },
+    getStatusButtonClass(status) {
+      return {
+        'btn-rejected': status === 'rejected',
+        'btn-completed': status === 'completed',
+        'btn-in-progress': status === 'in progress',
+        'btn-pending': status === 'pending',
+      }
+    },
   },
   components: {
     AddGigModal

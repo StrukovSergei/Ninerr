@@ -1,3 +1,23 @@
-.main-user{
+.main-user {
     color: black;
+
+    button {
+        cursor: pointer;
+    }
+
+    .btn-rejected {
+        background-color: red;
+    }
+
+    .btn-completed {
+        background-color: green;
+    }
+
+    .btn-in-progress {
+        background-color: orange;
+    }
+
+    .btn-pending {
+        background-color: blue;
+    }
 }

@@ -1,16 +1,5 @@
 <template>
-    <section >
-      <el-input
-        v-focus
-        v-model="txt"
-        @input="setFilterTxt"
-        style="width: 250px"
-        placeholder="Search toy..."
-        :prefix-icon="search"
-      />
-  
 
-    </section>
   </template>
   
   <script>
