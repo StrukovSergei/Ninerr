@@ -69,14 +69,10 @@
                     </div>
                 </div>
 
-                <!-- <RouterLink class="btn-confirm-route"
-                    :to="{ name: 'UserDetails', params: { gigId: gig.owner?._id }, props: { gig: gig } }"> -->
                 <RouterLink v-if="user" :to="{ name: 'UserDetails', params: { id: user._id } }">
                     <button class="btn-confirm">Confirm & Pay</button>
                 </RouterLink>
                 <button v-else class="btn-confirm" @click="handleConfirmAndPay()">Confirm & Pay</button>
-                <!-- </RouterLink> -->
-
 
             </section>
         </div>

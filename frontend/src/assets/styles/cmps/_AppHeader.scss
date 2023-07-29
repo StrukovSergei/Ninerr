@@ -94,9 +94,7 @@
     }
 
     .categories-menu-package {
-        display: flex;
         justify-content: space-between;
-        align-items: center;
         font-family: Macan,
             "Helvetica Neue",
             Helvetica,
@@ -104,6 +102,9 @@
             sans-serif;
         transition: opacity 0.3s ease;
         opacity: 0;
+        border-bottom: 1px solid $clr22;
+        border-top: 1px solid $clr22;
+
 
         & ul {
             justify-content: space-between;
@@ -136,9 +137,6 @@
     opacity: 1;
 }
 
-.header-main-layout.categories-visible .categories-menu-package {
-    border-bottom: 1px solid $clr22;
-}
 
 .header-main-layout.search-visible .search,
 .header-main-layout.categories-visible .categories-menu-package {

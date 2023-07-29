@@ -27,9 +27,8 @@
         </RouterLink>
       </div>
     </header>
-    <span class="border-helper full"></span>
     <section class="categories-menu-package ">
-      <ul class="flex clean-list">
+      <ul class="flex clean-list header-categories">
         <li @click="filterByCategory('Graphics & Design')">Graphics & Design</li>
         <li @click="filterByCategory('Digital Marketing')">Digital Marketing</li>
         <li @click="filterByCategory('Writing & Translation')">Writing & Translation</li>
