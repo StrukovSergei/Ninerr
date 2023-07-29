@@ -56,11 +56,7 @@
             </div>
             <div class="">
                 <h2 class="review-header">Reviews</h2>
-                <div v-for="review in reviews" :key="review._id" class="review-preview">
-                    <h4>About: {{ review.currGig.title }}</h4>
-                    <h4>By: {{ review.user.username }}</h4>
-                    <p>Review: {{ review.txt }}</p>
-                </div>
+                <ReviewList></ReviewList>
 
             </div>
         </div>
@@ -92,6 +88,7 @@
 <script>
 import { RouterLink } from 'vue-router'
 import SellerDetails from '../cmps/SellerDetails.vue'
+import ReviewList from '../cmps/ReviewList.vue'
 import { gigService } from '../services/gig.service.local'
 import { userService } from '../services/user.service.js'
 import { VueperSlides, VueperSlide } from 'vueperslides'
@@ -159,6 +156,6 @@ export default {
             return this.$store.getters.getReviews
         },
     },
-    components: { VueperSlides, VueperSlide, SellerDetails, RouterLink },
+    components: { VueperSlides, VueperSlide, SellerDetails, RouterLink, ReviewList },
 }
 </script>
