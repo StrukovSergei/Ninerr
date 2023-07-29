@@ -1,9 +1,24 @@
 <template>
   <div class="container home main-layout">
-    <div class="filter-section ">
+    <div class="price-filter-section">
       <input type="number" v-model="minPrice" placeholder="Min Price" />
       <input type="number" v-model="maxPrice" placeholder="Max Price" />
-      <button @click="applyFilter">Apply Filter</button>
+      <button @click="applyFilter">Apply</button>
+    </div>
+    <div class="delivery-filter-section">
+      <label>
+        <input type="radio" v-model="deliveryTime" value="3" />
+        Up to 3 days
+      </label>
+      <label>
+        <input type="radio" v-model="deliveryTime" value="5" />
+        Up to 5 days
+      </label>
+      <label>
+        <input type="radio" v-model="deliveryTime" value="" />
+        Anytime
+      </label>
+      <button @click="applyFilter">Apply</button>
     </div>
     <GigList v-if="gigs" :gigs="filteredGigs" />
 
@@ -21,6 +36,7 @@ export default {
       searchText: '',
       minPrice: null,
       maxPrice: null,
+      deliveryTime: '',
       gigs: []
     }
   },
@@ -42,7 +58,8 @@ export default {
         this.searchText = query.txt || ''
         this.minPrice = query.minPrice ? parseInt(query.minPrice) : null
         this.maxPrice = query.maxPrice ? parseInt(query.maxPrice) : null
-        const filterBy = { category: query.category, searchText: this.searchText, minPrice: this.minPrice, maxPrice: this.maxPrice,}
+        this.deliveryTime = query.deliveryTime ? parseInt(query.deliveryTime) : null
+        const filterBy = { category: query.category, searchText: this.searchText, minPrice: this.minPrice, maxPrice: this.maxPrice, delivery: this.deliveryTime}
         this.$store.dispatch({ type: 'loadGigs', filterBy })
       },
       immediate: true,
@@ -56,7 +73,8 @@ export default {
         txt: this.searchText,
         minPrice: this.minPrice,
         maxPrice: this.maxPrice,
-        category: this.$route.query.category 
+        category: this.$route.query.category,
+        deliveryTime: this.deliveryTime
       }
 
       const query = { ...this.$route.query, ...filterBy }
