@@ -1,5 +1,10 @@
 <template>
-  <div class="container home">
+  <div class="container home main-layout">
+    <div class="filter-section ">
+      <input type="number" v-model="minPrice" placeholder="Min Price" />
+      <input type="number" v-model="maxPrice" placeholder="Max Price" />
+      <button @click="applyFilter">Apply Filter</button>
+    </div>
     <GigList v-if="gigs" :gigs="filteredGigs" />
 
   </div>
@@ -14,6 +19,8 @@ export default {
   data() {
     return {
       searchText: '',
+      minPrice: null,
+      maxPrice: null,
       gigs: []
     }
   },
@@ -33,7 +40,9 @@ export default {
     '$route.query': {
       handler(query) {
         this.searchText = query.txt || ''
-        const filterBy = { category: query.category, searchText: this.searchText }
+        this.minPrice = query.minPrice ? parseInt(query.minPrice) : null
+        this.maxPrice = query.maxPrice ? parseInt(query.maxPrice) : null
+        const filterBy = { category: query.category, searchText: this.searchText, minPrice: this.minPrice, maxPrice: this.maxPrice,}
         this.$store.dispatch({ type: 'loadGigs', filterBy })
       },
       immediate: true,
@@ -41,7 +50,21 @@ export default {
 
   },
 
+  methods: {
+    applyFilter() {
+      const filterBy = {
+        txt: this.searchText,
+        minPrice: this.minPrice,
+        maxPrice: this.maxPrice,
+        category: this.$route.query.category 
+      }
 
-
+      const query = { ...this.$route.query, ...filterBy }
+      this.$router.push({ path: this.$route.path, query })
+    }
+  }
 }
+
+
+
 </script>

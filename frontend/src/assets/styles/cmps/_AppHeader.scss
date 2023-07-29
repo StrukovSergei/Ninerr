@@ -80,7 +80,11 @@
             font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 1rem;
             justify-self: end;
+            text-decoration: none;
 
+            a {
+                color: $CLR00;
+            }
 
             &>* {
                 padding-inline-end: rem(20px);

@@ -14,23 +14,33 @@ export const gigService = {
 }
 window.cs = gigService
 
-async function query(filterBy = { txt: '', price: 0, category: '' }) {
-  var gigs = await storageService.query(STORAGE_KEY)
+
+async function query(filterBy = { txt: '', minPrice: 0, maxPrice: 0, category: '' }) {
+  var gigs = await storageService.query(STORAGE_KEY);
+
   if (filterBy.searchText) {
-    const regex = new RegExp(filterBy.searchText, 'i')
+    const regex = new RegExp(filterBy.searchText, 'i');
     gigs = gigs.filter(
       (gig) => regex.test(gig.title) || regex.test(gig.description)
     );
   }
-  if (filterBy.price) {
-    gigs = gigs.filter((gig) => gig.price <= filterBy.price)
-  }
-  if (filterBy.category) {
-    gigs = gigs.filter((gig) => gig.categories.includes(filterBy.category))
+
+  if (filterBy.minPrice) {
+    gigs = gigs.filter((gig) => gig.price >= filterBy.minPrice);
   }
 
-  return gigs
+  if (filterBy.maxPrice) {
+    gigs = gigs.filter((gig) => gig.price <= filterBy.maxPrice);
+  }
+
+  if (filterBy.category) {
+    gigs = gigs.filter((gig) => gig.categories.includes(filterBy.category));
+  }
+
+  console.log("🚀 ~ file: gig.service.local.js:41 ~ query ~ gigs:", gigs)
+  return gigs;
 }
+
 
 function getById(gigId) {
   return storageService.get(STORAGE_KEY, gigId)
