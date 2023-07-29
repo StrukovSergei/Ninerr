@@ -7,7 +7,7 @@
         margin-block-end: 64px;
         color: $clr5;
         margin-inline-end: 50px;
-        height: 760px;
+        height: 860px;
         flex: 1;
 
 
@@ -17,6 +17,7 @@
 
         p {
             font-family: Macan-Regular;
+
 
             img {
                 position: relative;
@@ -81,12 +82,14 @@
         margin-block-end: 64px;
         color: $clr5;
         margin-inline-end: 50px;
-        max-height: 600px;
+        max-height: 650px;
         max-width: 440px;
 
         .payment-header {
 
             display: flex;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $clr9;
 
             img {
                 width: 100px;
@@ -120,14 +123,49 @@
 
             .payment-feature-icon svg {
                 fill: $clr1;
-                
+
             }
 
-            .payment-feature-text{
+            .payment-feature-text {
                 padding-left: 7px;
                 position: relative;
-                top:-3px
+                top: -3px
             }
+        }
+
+        .payment-fees {
+            flex-direction: column;
+
+            .payment-fee,
+            .payment-vat,
+            .payment-total,
+            .payment-delivery {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 8px;
+                margin-top: 18px;
+            }
+
+            .payment-total {
+                margin-top: 28px;
+                font-weight: 700;
+                max-width: 360px;
+                border-top: 1px solid $clr9;
+            }
+        }
+
+        .btn-confirm{
+            border-radius: 4px;
+            background-color: black;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px 24px;
+            border: 1px solid transparent;
+            width: 100%;
+            max-width: 360px;
+
+            cursor: pointer;
         }
     }
 
