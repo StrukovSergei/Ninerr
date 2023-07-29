@@ -74,7 +74,7 @@
                 <RouterLink v-if="user" :to="{ name: 'UserDetails', params: { id: user._id } }">
                     <button class="btn-confirm">Confirm & Pay</button>
                 </RouterLink>
-                <button v-else class="btn-confirm" @click="handleConfirmAndPay()">Login to Confirm & Pay</button>
+                <button v-else class="btn-confirm" @click="handleConfirmAndPay()">Confirm & Pay</button>
                 <!-- </RouterLink> -->
 
 

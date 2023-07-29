@@ -7,7 +7,6 @@
 
 <script>
 import GigList from '../cmps/GigList.vue'
-import { gigService } from '../services/gig.service.local'
 
 export default {
   name: 'GigIndex',
@@ -27,13 +26,15 @@ export default {
     },
   },
   created() {
-   
+
   },
   watch: {
 
     '$route.query': {
-      handler() {
-        this.$store.dispatch({ type: 'loadGigs', filterBy: this.$route.query })
+      handler(query) {
+        this.searchText = query.txt || ''
+        const filterBy = { category: query.category, searchText: this.searchText }
+        this.$store.dispatch({ type: 'loadGigs', filterBy })
       },
       immediate: true,
     }

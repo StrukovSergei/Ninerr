@@ -14,16 +14,19 @@ export const gigService = {
 }
 window.cs = gigService
 
-async function query(filterBy = { txt: '', price: 0 }) {
+async function query(filterBy = { txt: '', price: 0, category: '' }) {
   var gigs = await storageService.query(STORAGE_KEY)
-  if (filterBy.txt) {
-    const regex = new RegExp(filterBy.txt, 'i')
+  if (filterBy.searchText) {
+    const regex = new RegExp(filterBy.searchText, 'i')
     gigs = gigs.filter(
       (gig) => regex.test(gig.title) || regex.test(gig.description)
-    )
+    );
   }
   if (filterBy.price) {
     gigs = gigs.filter((gig) => gig.price <= filterBy.price)
+  }
+  if (filterBy.category) {
+    gigs = gigs.filter((gig) => gig.categories.includes(filterBy.category))
   }
 
   return gigs
@@ -78,6 +81,7 @@ function getEmptyGig() {
 //     _id: 'g101',
 //     title: 'I will build responsive wordpress website design',
 //     price: 12,
+//     status: 'pending',
 //     owner: {
 //       _id: 'u101',
 //       fullname: 'Dudu Da',
@@ -109,11 +113,13 @@ function getEmptyGig() {
 //       'High-quality graphics',
 //       'SEO optimized',
 //     ],
+//     categories:['Graphics & Design','Digital Marketing']
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g102',
 //     title: 'I will design best custom hand drawn logo with unlimited revisions',
 //     price: 36,
+//     status: 'pending',
 //     owner: {
 //       _id: 'u102',
 //       fullname: 'Budu Ba',
@@ -141,11 +147,13 @@ function getEmptyGig() {
 //     likedByUsers: ['mini-user'],
 //     info: '1 custom logo+high resolution file+3d mockup+logo transparency+ 300dpi',
 //     features: ['1 concept included','Logo transparency','Printable file','Include 3D mockup'],
+//     categories:['Video & Animation','Graphics & Design']
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g103',
 //     title: 'I will create modern and stylish website design',
 //     price: 25,
+//     status: 'rejected',
 //     owner: {
 //       _id: 'u103',
 //       fullname: 'Fifi Fu',
@@ -177,11 +185,14 @@ function getEmptyGig() {
 //       'High-quality graphics',
 //       'SEO optimized',
 //     ],
+//     categories:['AI Services','Programming & Tech']
+
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g104',
 //     title: 'I will provide professional social media marketing services',
 //     price: 50,
+//     status: 'completed',
 //     owner: {
 //       _id: 'u104',
 //       fullname: 'Gugu Gu',
@@ -214,11 +225,14 @@ function getEmptyGig() {
 //       'Performance analysis',
 //       'Ad campaign management',
 //     ],
+//     categories:['Writing & Translation','Digital Marketing']
+
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g105',
 //     title: 'I will write engaging and SEO-friendly blog posts',
 //     price: 15,
+//     status: 'pending',
 //     owner: {
 //       _id: 'u105',
 //       fullname: 'Huhu Ha',
@@ -250,11 +264,14 @@ function getEmptyGig() {
 //       'Plagiarism-free writing',
 //       'Quick turnaround',
 //     ],
+//     categories:['Photography','Music & Audio']
+
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g106',
 //     title: 'I will create eye-catching flyer designs',
 //     price: 20,
+//     status: 'progress',
 //     owner: {
 //       _id: 'u106',
 //       fullname: 'Jiju Ja',
@@ -286,11 +303,14 @@ function getEmptyGig() {
 //       'Quick revisions',
 //       'Creative and original artwork',
 //     ],
+//     categories:['Business','AI Services']
+
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g107',
 //     title: 'I will provide professional video editing services',
 //     price: 30,
+//     status: 'progress',
 //     owner: {
 //       _id: 'u107',
 //       fullname: 'Kuku Ku',
@@ -320,11 +340,14 @@ function getEmptyGig() {
 //       'Motion graphics',
 //       'Custom animations',
 //     ],
+//     categories:['Photography','Music & Audio']
+
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g108',
 //     title: 'I will create custom illustrations for your project',
 //     price: 40,
+//     status: 'progress',
 //     owner: {
 //       _id: 'u108',
 //       fullname: 'Lulu Lu',
@@ -357,11 +380,14 @@ function getEmptyGig() {
 //       'Unlimited revisions',
 //       'Commercial use rights',
 //     ],
+//     categories:['Photography','Music & Audio']
+
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g109',
 //     title: 'I will provide virtual assistant services',
 //     price: 18,
+//     status: 'rejected',
 //     owner: {
 //       _id: 'u109',
 //       fullname: 'Mumu Mu',
@@ -393,11 +419,14 @@ function getEmptyGig() {
 //       'Web research',
 //       'Document preparation',
 //     ],
+//     categories:['Business','Writing & Translation','Digital Marketing']
+
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g110',
 //     title: 'I will translate documents between English and Spanish',
 //     price: 12,
+//     status: 'completed',
 //     owner: {
 //       _id: 'u110',
 //       fullname: 'Nunu Nu',
@@ -428,11 +457,14 @@ function getEmptyGig() {
 //       'Confidentiality assurance',
 //       'Localized translations',
 //     ],
+//     categories:['Writing & Translation']
+
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g111',
 //     title: 'I will design unique and creative t-shirt graphics',
 //     price: 22,
+//     status: 'progress',
 //     owner: {
 //       _id: 'u111',
 //       fullname: 'Ouou Oa',
@@ -464,11 +496,14 @@ function getEmptyGig() {
 //       'Print-ready files',
 //       'Editable source files',
 //     ],
+//     categories:['Graphics & Design','Photography']
+
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g112',
 //     title: 'I will provide professional voice-over services',
 //     price: 28,
+//     status: 'pending',
 //     owner: {
 //       _id: 'u112',
 //       fullname: 'Pupu Pa',
@@ -494,5 +529,8 @@ function getEmptyGig() {
 //     likedByUsers: [],
 //     info: 'Unique and professional voice service',
 //     features: ['Custom voice', 'High-resolution files', 'Unlimited revisions'],
+//     categories:['Writing & Translation','Music & Audio']
+
 //   })
+  
 // })()

@@ -30,15 +30,15 @@
     <span class="border-helper full"></span>
     <section class="categories-menu-package ">
       <ul class="flex clean-list">
-        <li>Graphics & Design</li>
-        <li>Digital Marketing</li>
-        <li>Writing & Translation</li>
-        <li>Video & Animation</li>
-        <li>Music & Audio</li>
-        <li>Programming & Tech</li>
-        <li>Photography</li>
-        <li>Business</li>
-        <li>AI Services</li>
+        <li @click="filterByCategory('Graphics & Design')">Graphics & Design</li>
+        <li @click="filterByCategory('Digital Marketing')">Digital Marketing</li>
+        <li @click="filterByCategory('Writing & Translation')">Writing & Translation</li>
+        <li @click="filterByCategory('Video & Animation')">Video & Animation</li>
+        <li @click="filterByCategory('Music & Audio')">Music & Audio</li>
+        <li @click="filterByCategory('Programming & Tech')">Programming & Tech</li>
+        <li @click="filterByCategory('Photography')">Photography</li>
+        <li @click="filterByCategory('Business')">Business</li>
+        <li @click="filterByCategory('AI Services')">AI Services</li>
       </ul>
 
     </section>
@@ -152,10 +152,26 @@ export default {
         this.categoriesVisible = false
       }
     },
+    filterByCategory(category) {
+      const filterBy = { category, searchText: this.searchText }
+      this.$store.dispatch({ type: 'loadGigs', filterBy })
 
-  },
+      const searchQuery = this.searchText.trim()
+      if (searchQuery) {
+        this.$router.push({
+          path: '/explore',
+          query: { txt: searchQuery, category },
+        })
+      } else {
+        this.$router.push({
+          path: '/explore',
+          query: { category },
+        })
+      }
+    },
 
 
+  }
 }
 
 </script>
