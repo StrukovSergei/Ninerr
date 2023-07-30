@@ -4,12 +4,12 @@
 
     <div class="main-layout vueperslides">
       <h2>Popular services:</h2>
-      <vueper-slides class="no-shadow" :visible-slides='slidesNum' slide-multiple :gap="3" :slide-ratio="1 / 3"
+      <vueper-slides class="no-shadow" :visible-slides="slidesNum" slide-multiple :gap="3" :slide-ratio="1 / 3"
         :bullets="false" :dragging-distance="200" :breakpoints="{
           550: { visibleSlides: 1, slideMultiple: 2 },
           800: { visibleSlides: 2, slideMultiple: 2 },
           1000: { visibleSlides: 3, slideMultiple: 2 },
-          1330: { visibleSlides: 5, slideMultiple: 2 }
+          1330: { visibleSlides: 5, slideMultiple: 2 },
         }">
         <template #arrow-left>
           <i class="fa-solid fa-angle-left"></i>
@@ -37,7 +37,8 @@
                 </h6>
               </section>
               <p>
-                Find the right service for every price point. No hourly rates, just project-based pricing.
+                Find the right service for every price point. No hourly rates, just
+                project-based pricing.
               </p>
             </li>
             <li>
@@ -48,7 +49,8 @@
                 </h6>
               </section>
               <p>
-                Hand your project over to a talented freelancer in minutes, get long-lasting results.
+                Hand your project over to a talented freelancer in minutes, get
+                long-lasting results.
               </p>
             </li>
             <li>
@@ -59,7 +61,8 @@
                 </h6>
               </section>
               <p>
-                Upfront quotes mean no surprises. Payments only get released when you approve.
+                Upfront quotes mean no surprises. Payments only get released when you
+                approve.
               </p>
             </li>
             <li>
@@ -78,17 +81,16 @@
         <div class="selling-video">
           <div class="picture-wrapper">
             <img src="https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793711/gigs/ostlxosopzlu6ccomezg.webp"
-              alt="">
+              alt="" />
           </div>
         </div>
       </div>
     </div>
   </div>
-  <section class="icon-category main-layout ">
-    <h2 class="bold"> Explore the marketplace</h2>
+  <section class="icon-category main-layout">
+    <h2 class="bold">Explore the marketplace</h2>
     <section class="category-list main-layout">
       <section class="icons full">
-
         <RouterLink to="/gig?tag=graphics-design">
           <span class="flex">
             <div>
@@ -100,8 +102,7 @@
         <RouterLink to="/gig?tag=marketing">
           <span class="flex">
             <div>
-              <span v-html="$svg('marketing')">
-              </span>
+              <span v-html="$svg('marketing')"> </span>
               <h4 class="regular">Digital Marketing</h4>
             </div>
           </span>
@@ -119,9 +120,7 @@
         <RouterLink to="/gig?tag=video">
           <span class="flex">
             <div>
-              <span v-html="$svg('video')">
-
-              </span>
+              <span v-html="$svg('video')"> </span>
               <h4 class="regular">Video & Animation</h4>
             </div>
           </span>
@@ -130,9 +129,7 @@
         <RouterLink to="/gig?tag=music">
           <span class="flex">
             <div>
-              <span v-html="$svg('music')">
-
-              </span>
+              <span v-html="$svg('music')"> </span>
               <h4 class="regular">Music & Audio</h4>
             </div>
           </span>
@@ -140,9 +137,7 @@
         <RouterLink to="/gig?tag=programming-tech">
           <span class="flex">
             <div>
-              <span v-html="$svg('tech')">
-
-              </span>
+              <span v-html="$svg('tech')"> </span>
               <h4 class="regular">Programming & Tech</h4>
             </div>
           </span>
@@ -189,27 +184,25 @@
 </template>
 
 <script>
-import { VueperSlides, VueperSlide } from 'vueperslides'
-import 'vueperslides/dist/vueperslides.css'
-import Hero from '../cmps/Hero.vue'
+import { VueperSlides, VueperSlide } from "vueperslides";
+import "vueperslides/dist/vueperslides.css";
+import Hero from "../cmps/Hero.vue";
 
 export default {
-  name: 'home',
+  name: "home",
   data: () => ({
     slides: [
       {
-
-        content:
-          `<a href="#/gig?tag=ai-services">
+        content: `<a href="#/gig?tag=ai-services">
                 <div class="subcategory-warper"
-                    style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/f27bec553efc12cc60baed89b8f2223e-1674661140708/ai-artists-2x.png) ;">
+                    style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161238/book-covers-2x.png) ;">
                     <span>Add talent to AI</span>
                     <h4>AI Artists</h4>
                 </div>
                 </a>`,
         props: {
-          allow: 'click',
-        }
+          allow: "click",
+        },
       },
       {
         // title: 'Slide #2',
@@ -217,107 +210,102 @@ export default {
                 
                     <a href="#/gig?tag=logo-design">
                         <div class="subcategory-warper"
-                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png) ;">
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161247/ai-artists-2x.png) ;">
                             <span>Build your brand</span>
                             <h4>Logo Design</h4>
                         </div>
-                    </a>`
+                    </a>`,
       },
       {
         // title: 'Slide #3',
         content: `<a href="#/gig?tag=word-press">
                         <div class="subcategory-warper"
-                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/ae11e2d45410b0eded7fba0e46b09dbd-1598561917003/wordpress-2x.png) ;">
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161257/logo-design-2x.png) ;">
                             <span>Customize your site</span>
                             <h4>WordPress</h4>
                         </div>
-                    </a>`
+                    </a>`,
       },
       {
         // title: 'Slide #4',
         content: `<a href="#/gig?tag=voice-over">
                         <div class="subcategory-warper"
-                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741669/voiceover-2x.png) ;">
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161257/wordpress-2x.png) ;">
                             <span>Share your message</span>
                             <h4>Voice Over</h4>
                         </div>
-                    </a>`
+                    </a>`,
       },
       {
         // title: 'Slide #5',
         content: `<a href="#/gig?tag=video">
                         <div class="subcategory-warper"
-                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741663/animated-explainer-2x.png) ;">
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161245/animated-explainer-2x.png) ;">
                             <span>Engage your audience</span>
                             <h4>Video Explainer</h4>
                         </div>
-                    </a>`
+                    </a>`,
       },
       {
         // title: 'Slide #6',
         content: `<a href="#/gig?tag=social-media">
                         <div class="subcategory-warper"
-                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png;">
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161249/social-2x.png) ;">
                             <span>Reach more costumers</span>
                             <h4>Social Media</h4>
                         </div>
-                    </a>`
+                    </a>`,
       },
       {
         // title: 'Slide #7',
         content: `<a href="#/gig?tag=marketing">
                         <div class="subcategory-warper"
-                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741668/seo-2x.png);">
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/27f914ed7984fdd2d55aa1fb5e74bd6a-1690384243592/seo-2x.png);">
                             <span>Unlock growth online</span>
                             <h4>SEO</h4>
                         </div>
-                    </a>`
+                    </a>`,
       },
       {
         // title: 'Slide #8',
         content: `<a href="#/gig?tag=graphics-design">
                         <div class="subcategory-warper"
-                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741664/illustration-2x.png) ;">
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161236/illustration-2x.png) ;">
                             <span>Color your dreams</span>
                             <h4>Illustration</h4>
                         </div>
-                    </a>`
+                    </a>`,
       },
       {
         // title: 'Slide #9',
         content: `<a href="#/gig?tag=word-press">
                         <div class="subcategory-warper"
-                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741674/translation-2x.png) ;">
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161247/translation-2x.png) ;">
                             <span>Go global</span>
                             <h4>Translation</h4>
                         </div>
-                    </a>`
+                    </a>`,
       },
       {
         // title: 'Slide #10',
         content: `<a href="#/gig?tag=data">
                         <div class="subcategory-warper"
-                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741664/data-entry-2x.png) ;">
+                            style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161248/data-entry-2x.png) ;">
                             <span>Learn your business</span>
                             <h4>Data Entry</h4>
                         </div>
-                    </a>`
+                    </a>`,
       },
     ],
     slidesNum: 5,
     width: window.innerWidth,
   }),
-  computed: {
-  },
-  created() {
-  },
-  methods: {
-  },
+  computed: {},
+  created() { },
+  methods: {},
   components: { VueperSlides, VueperSlide, Hero },
-
-}
+};
 </script>
-
 
 <style>
 .fixed-header {

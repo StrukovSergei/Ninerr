@@ -14,9 +14,10 @@ export const gigService = {
 }
 window.cs = gigService
 
-
-async function query(filterBy = { txt: '', minPrice: 0, maxPrice: 0, category: '', delivery: 0 }) {
-  var gigs = await storageService.query(STORAGE_KEY);
+async function query(
+  filterBy = { txt: '', minPrice: 0, maxPrice: 0, category: '', delivery: 0 }
+) {
+  var gigs = await storageService.query(STORAGE_KEY)
 
   if (filterBy.searchText) {
     const regex = new RegExp(filterBy.searchText, 'i')
@@ -42,7 +43,6 @@ async function query(filterBy = { txt: '', minPrice: 0, maxPrice: 0, category: '
 
   return gigs
 }
-
 
 function getById(gigId) {
   return storageService.get(STORAGE_KEY, gigId)
@@ -88,7 +88,7 @@ function getEmptyGig() {
 }
 
 // Initial data
-// ; (async () => {
+// ;(async () => {
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g101',
 //     title: 'I will build responsive wordpress website design',
@@ -125,7 +125,7 @@ function getEmptyGig() {
 //       'High-quality graphics',
 //       'SEO optimized',
 //     ],
-//     categories:['Graphics & Design','Digital Marketing']
+//     categories: ['Graphics & Design', 'Digital Marketing'],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g102',
@@ -158,8 +158,13 @@ function getEmptyGig() {
 //     tags: ['logo-design', 'proffesional'],
 //     likedByUsers: ['mini-user'],
 //     info: '1 custom logo+high resolution file+3d mockup+logo transparency+ 300dpi',
-//     features: ['1 concept included','Logo transparency','Printable file','Include 3D mockup'],
-//     categories:['Video & Animation','Graphics & Design']
+//     features: [
+//       '1 concept included',
+//       'Logo transparency',
+//       'Printable file',
+//       'Include 3D mockup',
+//     ],
+//     categories: ['Video & Animation', 'Graphics & Design'],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g103',
@@ -197,8 +202,7 @@ function getEmptyGig() {
 //       'High-quality graphics',
 //       'SEO optimized',
 //     ],
-//     categories:['AI Services','Programming & Tech']
-
+//     categories: ['AI Services', 'Programming & Tech'],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g104',
@@ -237,8 +241,7 @@ function getEmptyGig() {
 //       'Performance analysis',
 //       'Ad campaign management',
 //     ],
-//     categories:['Writing & Translation','Digital Marketing']
-
+//     categories: ['Writing & Translation', 'Digital Marketing'],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g105',
@@ -276,8 +279,7 @@ function getEmptyGig() {
 //       'Plagiarism-free writing',
 //       'Quick turnaround',
 //     ],
-//     categories:['Photography','Music & Audio']
-
+//     categories: ['Photography', 'Music & Audio'],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g106',
@@ -315,8 +317,7 @@ function getEmptyGig() {
 //       'Quick revisions',
 //       'Creative and original artwork',
 //     ],
-//     categories:['Business','AI Services']
-
+//     categories: ['Business', 'AI Services'],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g107',
@@ -352,8 +353,7 @@ function getEmptyGig() {
 //       'Motion graphics',
 //       'Custom animations',
 //     ],
-//     categories:['Photography','Music & Audio']
-
+//     categories: ['Photography', 'Music & Audio'],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g108',
@@ -392,8 +392,7 @@ function getEmptyGig() {
 //       'Unlimited revisions',
 //       'Commercial use rights',
 //     ],
-//     categories:['Photography','Music & Audio']
-
+//     categories: ['Photography', 'Music & Audio'],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g109',
@@ -431,8 +430,7 @@ function getEmptyGig() {
 //       'Web research',
 //       'Document preparation',
 //     ],
-//     categories:['Business','Writing & Translation','Digital Marketing']
-
+//     categories: ['Business', 'Writing & Translation', 'Digital Marketing'],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g110',
@@ -469,8 +467,7 @@ function getEmptyGig() {
 //       'Confidentiality assurance',
 //       'Localized translations',
 //     ],
-//     categories:['Writing & Translation']
-
+//     categories: ['Writing & Translation'],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g111',
@@ -508,8 +505,7 @@ function getEmptyGig() {
 //       'Print-ready files',
 //       'Editable source files',
 //     ],
-//     categories:['Graphics & Design','Photography']
-
+//     categories: ['Graphics & Design', 'Photography'],
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'g112',
@@ -541,10 +537,6 @@ function getEmptyGig() {
 //     likedByUsers: [],
 //     info: 'Unique and professional voice service',
 //     features: ['Custom voice', 'High-resolution files', 'Unlimited revisions'],
-//     categories:['Writing & Translation','Music & Audio']
-
+//     categories: ['Writing & Translation', 'Music & Audio'],
 //   })
-  
 // })()
-
-

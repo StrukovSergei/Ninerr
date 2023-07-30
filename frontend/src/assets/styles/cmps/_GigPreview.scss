@@ -56,9 +56,6 @@ li.gig-preview {
         font-size: rem(14px);
         font-weight: 600;
         height: 20px;
-
-
-
     }
 
     & .rate p {
@@ -76,9 +73,7 @@ li.gig-preview {
         padding-bottom: 0px;
         padding-left: 4px;
         padding-right: 0px;
-        padding-top: 0px;
-       
-
+        padding-top: 0px;     
     }
 
     & .price_product {
@@ -87,8 +82,6 @@ li.gig-preview {
         font-stretch: 100%;
         font-weight: 700;
         height: auto;
-
-
     }
 
     & .user_preview {
@@ -97,22 +90,18 @@ li.gig-preview {
         justify-content: space-between;
         align-items: center;
 
-
         & .user_info {
             & .user_img {
                 height: 24px;
                 border-radius: 50%;
             }
-
         }
-
     }
 
     & .txt_body {
         color: #222325;
         font-family: "Macan", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-style: normal;
-
     }
 
 }

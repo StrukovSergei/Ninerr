@@ -6,11 +6,13 @@
     transition: background-color 0.3s ease;
     // border-bottom: 1px solid $clr22;
     z-index: 100;
+    
 
 
     .header-container {
         min-height: 80px;
         align-items: center;
+        padding-inline: 2rem;
     }
 
     .border-helper {
@@ -81,6 +83,7 @@
             font-size: 1rem;
             justify-self: end;
             text-decoration: none;
+            
 
             a {
                 color: $CLR00;
@@ -107,7 +110,8 @@
         transition: opacity 0.3s ease;
         opacity: 0;
         border-bottom: 1px solid $clr22;
-        border-top: 1px solid $clr22;
+        border-top: 1px solid $clr22;       
+        padding-inline: 2rem;
 
 
         & ul {
@@ -134,6 +138,7 @@
 
 .header-main-layout.scrolled .header-container {
     background-color: white;
+    
 
 }
 
