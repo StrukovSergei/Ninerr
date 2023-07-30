@@ -5,7 +5,7 @@
     <li class="gig-preview">
 
 
-        <vueper-slides class="product_img" ref="vueperslides1" :touchable="false" fade :autoplay="false" :infinite="false"
+        <vueper-slides class="product_img" ref="vueperslides1" fade :touchable="false"  :autoplay="false" :infinite="false"
             disable-arrows-on-edges>
             <template #arrow-left>
                 <i class="fa-solid fa-angle-left"></i>

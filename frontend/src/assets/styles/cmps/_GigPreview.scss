@@ -1,6 +1,8 @@
 li.gig-preview {
     background-color: white;
-    height: fit-content;   
+    height: fit-content;  
+    display: flex; 
+    flex-direction: column;
     
 
     & .product_img {
@@ -164,7 +166,7 @@ li.gig-preview {
     & .txt_body {
         color: #222325;
         font-family: "Macan", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-style: normal;
+        // font-style: normal;
     }
 
 }
