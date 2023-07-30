@@ -91,7 +91,7 @@
     <h2 class="bold">Explore the marketplace</h2>
     <section class="category-list main-layout">
       <section class="icons full">
-        <RouterLink to="/gig?tag=graphics-design">
+        <RouterLink to="/explore?category=graphics-design">
           <span class="flex">
             <div>
               <span v-html="$svg('graphic')"></span>
@@ -99,7 +99,7 @@
             </div>
           </span>
         </RouterLink>
-        <RouterLink to="/gig?tag=marketing">
+        <RouterLink to="/explore?category=marketing">
           <span class="flex">
             <div>
               <span v-html="$svg('marketing')"> </span>
@@ -108,7 +108,7 @@
           </span>
         </RouterLink>
 
-        <RouterLink to="/gig?tag=writing">
+        <RouterLink to="/explore?category=writing">
           <span class="flex">
             <div>
               <span v-html="$svg('writing')"></span>
@@ -117,7 +117,7 @@
           </span>
         </RouterLink>
 
-        <RouterLink to="/gig?tag=video">
+        <RouterLink to="/explore?category=video">
           <span class="flex">
             <div>
               <span v-html="$svg('video')"> </span>
@@ -126,7 +126,7 @@
           </span>
         </RouterLink>
 
-        <RouterLink to="/gig?tag=music">
+        <RouterLink to="/explore?category=music">
           <span class="flex">
             <div>
               <span v-html="$svg('music')"> </span>
@@ -134,7 +134,7 @@
             </div>
           </span>
         </RouterLink>
-        <RouterLink to="/gig?tag=programming-tech">
+        <RouterLink to="/explore?category=programming-tech">
           <span class="flex">
             <div>
               <span v-html="$svg('tech')"> </span>
@@ -143,7 +143,7 @@
           </span>
         </RouterLink>
 
-        <RouterLink to="/gig?tag=business">
+        <RouterLink to="/explore?category=business">
           <span class="flex">
             <div>
               <span v-html="$svg('business')"></span>
@@ -152,7 +152,7 @@
           </span>
         </RouterLink>
 
-        <RouterLink to="/gig?tag=lifestyle">
+        <RouterLink to="/explore?category=lifestyle">
           <span class="flex">
             <div>
               <span v-html="$svg('lifestyle')"></span>
@@ -161,7 +161,7 @@
           </span>
         </RouterLink>
 
-        <RouterLink to="/gig?tag=data">
+        <RouterLink to="/explore?category=data">
           <span class="flex">
             <div>
               <span v-html="$svg('data')"></span>
@@ -170,7 +170,7 @@
           </span>
         </RouterLink>
 
-        <RouterLink to="/gig?tag=photography">
+        <RouterLink to="/explore?category=photography">
           <span class="flex">
             <div>
               <span v-html="$svg('photography')"></span>
@@ -193,7 +193,7 @@ export default {
   data: () => ({
     slides: [
       {
-        content: `<a href="#/gig?tag=ai-services">
+        content: `<a href="#/explore?category=ai-services">
                 <div class="subcategory-warper"
                     style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161238/book-covers-2x.png) ;">
                     <span>Add talent to AI</span>
@@ -208,7 +208,7 @@ export default {
         // title: 'Slide #2',
         content: `
                 
-                    <a href="#/gig?tag=logo-design">
+                    <a href="#/explore?category=logo-design">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161247/ai-artists-2x.png) ;">
                             <span>Build your brand</span>
@@ -218,7 +218,7 @@ export default {
       },
       {
         // title: 'Slide #3',
-        content: `<a href="#/gig?tag=word-press">
+        content: `<a href="#/explore?category=word-press">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161257/logo-design-2x.png) ;">
                             <span>Customize your site</span>
@@ -228,7 +228,7 @@ export default {
       },
       {
         // title: 'Slide #4',
-        content: `<a href="#/gig?tag=voice-over">
+        content: `<a href="#/explore?category=voice-over">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161257/wordpress-2x.png) ;">
                             <span>Share your message</span>
@@ -238,7 +238,7 @@ export default {
       },
       {
         // title: 'Slide #5',
-        content: `<a href="#/gig?tag=video">
+        content: `<a href="#/explore?category=video">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161245/animated-explainer-2x.png) ;">
                             <span>Engage your audience</span>
@@ -248,7 +248,7 @@ export default {
       },
       {
         // title: 'Slide #6',
-        content: `<a href="#/gig?tag=social-media">
+        content: `<a href="#/explore?category=social-media">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161249/social-2x.png) ;">
                             <span>Reach more costumers</span>
@@ -258,7 +258,7 @@ export default {
       },
       {
         // title: 'Slide #7',
-        content: `<a href="#/gig?tag=marketing">
+        content: `<a href="#/explore?category=marketing">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/27f914ed7984fdd2d55aa1fb5e74bd6a-1690384243592/seo-2x.png);">
                             <span>Unlock growth online</span>
@@ -268,7 +268,7 @@ export default {
       },
       {
         // title: 'Slide #8',
-        content: `<a href="#/gig?tag=graphics-design">
+        content: `<a href="#/explore?category=graphics-design">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161236/illustration-2x.png) ;">
                             <span>Color your dreams</span>
@@ -278,7 +278,7 @@ export default {
       },
       {
         // title: 'Slide #9',
-        content: `<a href="#/gig?tag=word-press">
+        content: `<a href="#/explore?category=word-press">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161247/translation-2x.png) ;">
                             <span>Go global</span>
@@ -288,7 +288,7 @@ export default {
       },
       {
         // title: 'Slide #10',
-        content: `<a href="#/gig?tag=data">
+        content: `<a href="#/explore?category=data">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161248/data-entry-2x.png) ;">
                             <span>Learn your business</span>
