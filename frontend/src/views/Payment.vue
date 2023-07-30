@@ -70,7 +70,7 @@
                 </div>
 
                 <RouterLink v-if="user" :to="{ name: 'UserDetails', params: { id: user._id } }">
-                    <button @click="test()" class="btn-confirm">Confirm & Pay</button>
+                    <button @click="addOrder()" class="btn-confirm">Confirm & Pay</button>
                 </RouterLink>
                 <button v-else class="btn-confirm" @click="handleConfirmAndPay()">Confirm & Pay</button>
 
@@ -83,6 +83,8 @@
 
 import { userService } from '../services/user.service'
 import { gigService } from '../services/gig.service.local'
+import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
+
 
 export default {
     name: 'Payment',
@@ -90,6 +92,7 @@ export default {
         return {
             gig: null,
             user: null,
+            order: {},
         }
     },
     async created() {
@@ -128,10 +131,21 @@ export default {
             alert('Login required')
 
         },
-        test(){
-            console.log(gig)
-            console.log(user)
-        }
+        async addOrder() {
+            this.order.sellerId = this.gig.owner._id
+            this.order.buyerId = this.user._id
+            this.order.gigId = this.gig._id
+            this.order.price = this.total.toFixed(2)
+            this.order.status = 'pending'
+            console.log(this.order)
+            try {
+                await this.$store.dispatch({ type: 'addOrder', order: this.order })
+                showSuccessMsg('Order added')
+            } catch (err) {
+                console.log(err)
+                showErrorMsg('Cannot add order')
+            }
+        },
 
     }
 }
