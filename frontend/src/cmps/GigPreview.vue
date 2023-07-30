@@ -1,19 +1,17 @@
 <template>
-    <!-- <section> -->
+    <!-- <section class="main-layout"> -->
     <!-- <ul class="gig-list"> -->
     <!-- @click="goToDetail" -->
-    <li class="gig-preview" @click="goToDetail">
-        <vueper-slides  ref="vueperslides1" :touchable="false" fade :autoplay="false" :bullets="false"
-            height="40%" >
-            <!-- fixed-height="400px"> -->
-            <!-- <template #arrow-left>
+    <li class="gig-preview">
+        <vueper-slides class="product_img" ref="vueperslides1" :touchable="false" fade :autoplay="false" :infinite="false"
+            disable-arrows-on-edges>
+            <template #arrow-left>
                 <i class="fa-solid fa-angle-left"></i>
             </template>
             <template #arrow-right>
                 <i class="fa-solid fa-angle-right"></i>
-            </template> -->
-            <vueper-slide class="product_img" v-for="(slide, i) in slides" :key="i" :image="slide">
-            </vueper-slide>
+            </template>
+            <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide"> </vueper-slide>
         </vueper-slides>
         <!-- visible-slides='slidesNum' -->
         <!-- <img :src="gig.imgUrls[0]" class="product_img"/> -->
@@ -31,9 +29,7 @@
             <span v-html="$svg('blackStar')"></span>
             <p class="txt_body">{{ gig?.owner.rate }}</p>
         </div>
-        <p class="price_product txt_body">
-            From ${{ gig.price?.toLocaleString() }}
-        </p>
+        <p class="price_product txt_body">From ${{ gig.price?.toLocaleString() }}</p>
         <!-- <button @click="removeGig(gig._id)">x</button> -->
     </li>
     <!-- </ul> -->
@@ -45,44 +41,40 @@
     <!-- </section> -->
 </template>
 <script>
-import { VueperSlides, VueperSlide } from 'vueperslides'
-import 'vueperslides/dist/vueperslides.css'
+import { VueperSlides, VueperSlide } from "vueperslides";
+import "vueperslides/dist/vueperslides.css";
 export default {
-    name: 'GigPreview',
+    name: "GigPreview",
     props: {
         gig: Object,
     },
     data() {
         return {
-            slides: []
-
-        }
+            slides: [],
+        };
     },
     computed: {
         gigs() {
-            console.log(this.$store.getters.gigs)
-            return this.$store.getters.gigs
-        }
+            console.log(this.$store.getters.gigs);
+            return this.$store.getters.gigs;
+        },
     },
     watch: {
         gig: {
             handler(newGig) {
-
-                this.slides = newGig.imgUrls
+                this.slides = newGig.imgUrls;
             },
-            immediate: true
+            immediate: true,
         },
     },
     methods: {
         goToDetail() {
-            this.$router.push(`/gig/${this.gig._id}`)
+            this.$router.push(`/gig/${this.gig._id}`);
         },
         preventSlideClick(event) {
             event.stopPropagation()
         },
     },
-    components: { VueperSlides, VueperSlide, },
-
-
-}
+    components: { VueperSlides, VueperSlide },
+};
 </script>

@@ -1,11 +1,10 @@
 /** @format */
-.hero-container {
-  position: relative;  
+.hero-container { 
   min-height: rem(680px);
 
   .hero-pos-container {
     position: absolute;    
-    top: -7.55rem;
+    top: 0;
     width: 100%;     
 
     .vueperslides {
@@ -28,15 +27,13 @@
     }
   
   & .search-container {
-    max-width: rem(650px);
-    position: absolute;
-    padding: 0;
-    top: 16em;    
-    margin-inline-start: 2em;
-    z-index: 50;
+    max-width: rem(650px);    
+    padding: 0;   
+    z-index: 2;
     color: #fff;
     line-height: 1.2;
     align-self: center;    
+    margin-block-end: 18rem;
     // @include for-mobile-layout {
     //   font-size: 12px;
     // }
@@ -143,9 +140,13 @@
       font-size: 0.875rem;
       font-weight: 600;
 
-      div {
-        display: block;
+      & a{
         text-decoration: none;
+      } 
+
+      & div {
+        display: block;
+        
         color: #fff;
         border: 1px solid white;
         border-radius: 2.5rem;
@@ -170,7 +171,7 @@
 }
 
  .hero-info { 
-    padding: 12px 24px 12px 12px;
+    padding: 8px 24px 0px 12px;
     display: grid;
     grid-template-areas:
     'pic name . . star'
@@ -201,16 +202,17 @@
     & .info-pic {
       margin-inline-end: rem(10px);
       width: rem(40px);
-      align-self: center;
+      
     }
 
     & .info-txt{
-
-        & span.fullname {
-          grid-area: name;            
-          font-size: 12px;
-          font-weight: 600;  
-          align-self: center;
+      
+      & span.fullname {
+        grid-area: name;            
+        font-size: 12px;
+        font-weight: 600;  
+        align-self: center;
+        line-height: 1rem;
           }
         
         & span.star {   
@@ -219,6 +221,7 @@
           font-size: 12px;
           font-weight: 600;
           fill: #fff;
+          line-height: 1rem;
         }
 
           & p.expert{

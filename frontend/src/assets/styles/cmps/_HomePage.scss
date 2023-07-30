@@ -47,20 +47,19 @@
 
     .subcategory-warper {
       position: relative;
-      height: rem(340px);
       display: flex;
       flex-direction: column;
       color: #fcfcfc;
       margin-inline-end: 3%;
-      width: 15.8rem;
-      // height: 100%;
+      height: rem(345px);
+      width: 100%;
       border-radius: 4px;
       padding: 1rem;
-      cursor: pointer;
+      cursor: pointer;      
 
       span {
         font-size: em(14px);
-        padding-block-end: 0.5rem;
+        // padding-block-end: 0.5rem;
         text-align: left;
       }
 
@@ -68,6 +67,7 @@
         color: white;
         text-align: left;
         font-size: em(23px);
+        margin: 0;
       }
     }
 
