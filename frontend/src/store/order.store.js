@@ -94,3 +94,36 @@ export const orderStore = {
 
   },
 }
+
+// Initial data
+// ;(async () => {
+//   await orderService.save({
+//     _id: 'o101',
+//     sellerId: 'u101',
+//     buyerId: 'u102',
+//     gigId: 'g101',
+//     price: 123,
+//     status: 'pending',
+//     level: 'basic/premium',
+
+//   })
+//   await userService.signup({
+//     _id: 'o102',
+//     sellerId: 'u101',
+//     buyerId: 'u103',
+//     gigId: 'g104',
+//     price: 123,
+//     status: 'rejected',
+//     level: 'basic/premium',
+
+//   })
+//   await userService.signup({
+//     _id: 'o103',
+//     sellerId: 'u103',
+//     buyerId: 'u102',
+//     gigId: 'g106',
+//     price: 123,
+//     status: 'completed',
+//     level: 'basic/premium',
+//   })
+// })()
