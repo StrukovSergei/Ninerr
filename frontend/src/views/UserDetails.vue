@@ -33,11 +33,12 @@
     <div v-else>
       <p>No gigs available.</p>
     </div>
+    <pre>{{ orders }}</pre>
   </section>
 </template>
 
 <script>
-import { SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED, socketService } from '../services/socket.service'
+// import { SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED, socketService } from '../services/socket.service'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { userService } from '../services/user.service.local'
 import GigList from '../cmps/GigList.vue'
@@ -71,35 +72,38 @@ export default {
       return this.userId === this.$store.getters.loggedinUser._id
     },
     gigs() {
-      return this.$store.getters.gigs
+      return this.user && this.user.isSeller ? this.$store.getters.gigs : []
+    },
+    orders() {
+      return this.$store.getters.orders
     }
   },
   created() {
-    this.$store.dispatch({ type: 'loadGigs' })
-  },
+  this.$store.dispatch({ type: 'loadGigs' })
+
+  if (this.user && this.user._id) {
+    this.$store.dispatch({ type: 'loadOrders', filterBy: { id: this.user._id } })
+    console.log('hi')
+  }
+},
   methods: {
     async loadUser() {
       if (!this.userId) return
       try {
         const user = await userService.getById(this.userId)
-        socketService.off(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
+        // socketService.off(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
 
-        socketService.emit(SOCKET_EMIT_USER_WATCH, this.userId)
-        socketService.on(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
+        // socketService.emit(SOCKET_EMIT_USER_WATCH, this.userId)
+        // socketService.on(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
         this.user = user
       } catch (err) {
         showErrorMsg('Cannot load user: ' + this.userId)
         console.error('Failed to load user', err)
       }
     },
-    onUserUpdate(updatedUser) {
-      showSuccessMsg(`This user ${updatedUser.fullname} just got updated from socket,
-       new score: ${updatedUser.score}`)
-      this.user = updatedUser
-    },
-    unmounted() {
-      socketService.off(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
-    },
+    // unmounted() {
+    //   socketService.off(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
+    // },
     async addGig() {
       try {
         await this.$store.dispatch({ type: 'addGig', gig: this.gigToAdd })
@@ -134,6 +138,7 @@ export default {
     },
     openModal() {
       this.isModalOpen = true
+
     },
     closeModal() {
       this.isModalOpen = false

@@ -1,6 +1,5 @@
 import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
-import { userService } from './user.service.js'
 
 const STORAGE_KEY = 'orderDB'
 
@@ -15,10 +14,15 @@ export const orderService = {
 window.cs = orderService
 
 async function query(
-  filterBy = { txt: '', minPrice: 0, maxPrice: 0, category: '', delivery: 0 }
+  filterBy = { txt: '', minPrice: 0, maxPrice: 0, category: '', delivery: 0, id: '' }
 ) {
   var orders = await storageService.query(STORAGE_KEY)
 
+  if (filterBy.id) {
+    orders = orders.filter(
+      (order) => filterBy.id.test(order.sellerId)
+    )
+  }
   if (filterBy.searchText) {
     const regex = new RegExp(filterBy.searchText, 'i')
     orders = orders.filter(
@@ -89,7 +93,7 @@ function getEmptyOrder() {
 
 // Initial data
 // ;(async () => {
-//   await orderService.save({
+//   await storageService.post(STORAGE_KEY, {
 //     _id: 'o101',
 //     sellerId: 'u101',
 //     buyerId: 'u102',
@@ -99,7 +103,7 @@ function getEmptyOrder() {
 //     level: 'basic/premium',
 
 //   })
-//   await userService.signup({
+//   await storageService.post(STORAGE_KEY, {
 //     _id: 'o102',
 //     sellerId: 'u101',
 //     buyerId: 'u103',
@@ -109,7 +113,7 @@ function getEmptyOrder() {
 //     level: 'basic/premium',
 
 //   })
-//   await userService.signup({
+//   await storageService.post(STORAGE_KEY, {
 //     _id: 'o103',
 //     sellerId: 'u103',
 //     buyerId: 'u102',
