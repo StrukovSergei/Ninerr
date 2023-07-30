@@ -1,28 +1,53 @@
 <template>
   <div class="container home main-layout">
-    <section class="index-filter">
+    <section class="index-filter ">
+      <div class="flex flex-wrap items-center">
+        <el-dropdown trigger="click">
+          <el-button type="primary">
+            Budget <span v-html="$svg('arrowDown')"></span><el-icon class="el-icon--right"><arrow-down /></el-icon>
+          </el-button>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <div class="price-filter-section">
+                <input type="number" v-model="minPrice" placeholder="Min Price" />
+                <input type="number" v-model="maxPrice" placeholder="Max Price" />
+                <button @click="applyFilter">Apply</button>
+              </div>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+      </div>
+      <div class="flex flex-wrap items-center">
+        <el-dropdown trigger="click">
+          <el-button type="primary">
+            Delivery time<span v-html="$svg('arrowDown')"></span><el-icon class="el-icon--right"><arrow-down /></el-icon>
+          </el-button>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <div class="price-filter-section">
+                <div class="delivery-filter-section">
+                  <label>
+                    <input type="radio" v-model="deliveryTime" value="3" />
+                    Up to 3 days
+                  </label>
+                  <label>
+                    <input type="radio" v-model="deliveryTime" value="5" />
+                    Up to 5 days
+                  </label>
+                  <label>
+                    <input type="radio" v-model="deliveryTime" value="" />
+                    Anytime
+                  </label>
+                  <button @click="applyFilter">Apply</button>
+                </div>
+              </div>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+      </div>
 
 
-      <div class="price-filter-section">
-        <input type="number" v-model="minPrice" placeholder="Min Price" />
-        <input type="number" v-model="maxPrice" placeholder="Max Price" />
-        <button @click="applyFilter">Apply</button>
-      </div>
-      <div class="delivery-filter-section">
-        <label>
-          <input type="radio" v-model="deliveryTime" value="3" />
-          Up to 3 days
-        </label>
-        <label>
-          <input type="radio" v-model="deliveryTime" value="5" />
-          Up to 5 days
-        </label>
-        <label>
-          <input type="radio" v-model="deliveryTime" value="" />
-          Anytime
-        </label>
-        <button @click="applyFilter">Apply</button>
-      </div>
+
     </section>
     <GigList v-if="gigs" :gigs="filteredGigs" />
 

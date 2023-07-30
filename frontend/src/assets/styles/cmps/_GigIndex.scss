@@ -1,7 +1,28 @@
-.index-filter{
+.index-filter {
 
-    button{
+    display: flex;
+    padding-top: 20px;
+    padding-left: 40px;
+
+    button {
         cursor: pointer;
     }
 
+    svg {
+        position: relative;
+        left: 20px;
+        height: 12px;
+        width: 12px;
+    }
+
+    .el-button{
+        position: relative;
+        background-color: transparent;
+        color: $clr4;
+        font-family: Macan;
+        font-size: 16px;
+        padding: 12px 16px;
+        height: 100%;
+        border: 1px solid $clr22;
+    }
 }
