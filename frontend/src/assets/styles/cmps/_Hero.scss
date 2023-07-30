@@ -49,13 +49,11 @@
 
       & i.fancy-word {
           font-family: Domain-Display-Regular-Italic, "Helvetica Neue", Helvetica, Arial,
-          sans-serif;
+          sans-serif;          
           letter-spacing: 0.016em;
         }
     }
-
     
-
     .el-button {
       // @include for-mobile-layout {
       //   // font-size: 12px;
@@ -234,9 +232,9 @@
   padding-bottom: 0;
   padding-top: 0;
   position: relative;
-  top: -7.62rem;
-  background-color: #fafafa;
-
+  top: -7.5rem;
+  background-color: #fafafa;  
+  height: rem(95px);
   & span{
     font-size: 1em;
     padding-inline-end: rem(20px);

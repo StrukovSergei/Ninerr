@@ -1,11 +1,6 @@
 <template>
-    <!-- <section class="main-layout"> -->
-    <!-- <ul class="gig-list"> -->
-    <!-- @click="goToDetail" -->
     <li class="gig-preview">
-
-
-        <vueper-slides class="product_img" ref="vueperslides1"  :touchable="false"  :autoplay="false" :infinite="false"
+        <vueper-slides class="product_img" ref="vueperslides1" :touchable="false" :autoplay="false" :infinite="false"
             disable-arrows-on-edges>
             <template #arrow-left>
                 <i class="fa-solid fa-angle-left"></i>
@@ -14,7 +9,6 @@
                 <i class="fa-solid fa-angle-right"></i>
             </template>
             <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide" :link="`/#/gig/${gig._id}`">
-                <!-- Wrap the image inside the RouterLink -->
                 <img :src="slide" class="product_img" />
 
             </vueper-slide>
@@ -23,8 +17,7 @@
 
         </button>
 
-        <!-- visible-slides='slidesNum' -->
-        <!-- <img :src="gig.imgUrls[0]" class="product_img"/> -->
+
         <section class="user_preview">
             <div class="user_info">
                 <img class="user_img" :src="gig.owner.imgUrl" />
@@ -41,19 +34,11 @@
         </div>
         <p class="price_product txt_body">From ${{ gig.price?.toLocaleString() }}</p>
 
-        <!-- <button @click="removeGig(gig._id)">x</button> -->
     </li>
-    <!-- </ul> -->
-    <!-- <form @submit.prevent="addGig()">
-            <h2>Add gig</h2>
-            <input type="text" v-model="gigToAdd.title" />
-            <button>Save</button>
-        </form> -->
-    <!-- </section> -->
 </template>
 <script>
-import { VueperSlides, VueperSlide } from "vueperslides";
-import "vueperslides/dist/vueperslides.css";
+import { VueperSlides, VueperSlide } from "vueperslides"
+import "vueperslides/dist/vueperslides.css"
 export default {
     name: "GigPreview",
     props: {
@@ -66,25 +51,19 @@ export default {
     },
     computed: {
         gigs() {
-            console.log(this.$store.getters.gigs);
-            return this.$store.getters.gigs;
+            console.log(this.$store.getters.gigs)
+            return this.$store.getters.gigs
         },
     },
     watch: {
         gig: {
             handler(newGig) {
-                this.slides = newGig.imgUrls;
+                this.slides = newGig.imgUrls
             },
             immediate: true,
         },
     },
     methods: {
-        goToDetail() {
-            this.$router.push(`/gig/${this.gig._id}`);
-        },
-        preventSlideClick(event) {
-            event.stopPropagation()
-        },
     },
     components: { VueperSlides, VueperSlide },
 };

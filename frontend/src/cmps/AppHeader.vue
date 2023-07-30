@@ -5,7 +5,7 @@
     'categories-visible': categoriesVisible || !isHomePage,
     'header-position': !isHomePage,
   }">
-    <header class="header-container flex full">
+    <header class="header-container flex ">
       <RouterLink to="/" class="site-logo">
         <img src="../assets/imgs/main-logo.png" alt="" />
       </RouterLink>
@@ -28,7 +28,7 @@
         </RouterLink>
       </div>
     </header>
-    <section class="categories-menu-package full">
+    <section class="categories-menu-package main-layout full">
       <ul class="flex clean-list header-categories">
         <RouterLink to="/explore?category=Graphics+%26+Design">Graphics & Design</RouterLink>
         <RouterLink to="/explore?category=Digital+Marketing">Digital Marketing</RouterLink>
@@ -39,7 +39,6 @@
         <RouterLink to="/explore?category=Photography">Photography</RouterLink>
         <RouterLink to="/explore?category=Business">Business</RouterLink>
         <RouterLink to="/explore?category=AI+Services">AI Services</RouterLink>
-
       </ul>
     </section>
   </div>
@@ -58,7 +57,7 @@ export default {
   },
   mounted() {
     // if (this.isHomePage) {
-    window.addEventListener("scroll", this.handleScroll)
+    window.addEventListener("scroll", this.handleScroll);
     // } else {
     //   this.scrolled = true
     // }
@@ -99,24 +98,23 @@ export default {
         this.$router.push({
           path: "/explore",
           query: { txt: searchQuery },
-        });
+        })
       }
     },
     handleScroll() {
-      if (!this.isHomePage) return
-      const scrollPosition = window.scrollY
+      if (!this.isHomePage) return;
+      const scrollPosition = window.scrollY;
 
       const firstStageThreshold = 20;
       const secondStageThreshold = 90;
 
-
       // this.scrolled = scrollPosition >= firstStageThreshold
 
       if (scrollPosition >= firstStageThreshold) {
-        this.scrolled = true
+        this.scrolled = true;
       } else {
-        this.scrolled = false
-        this.searchVisible = false
+        this.scrolled = false;
+        this.searchVisible = false;
       }
 
       if (scrollPosition >= secondStageThreshold) {
