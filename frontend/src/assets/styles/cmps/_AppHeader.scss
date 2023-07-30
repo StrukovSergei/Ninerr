@@ -6,7 +6,7 @@
     transition: background-color 0.3s ease;
     // border-bottom: 1px solid $clr22;
     z-index: 100;
-    
+
 
 
     .header-container {
@@ -83,10 +83,10 @@
             font-size: 1rem;
             justify-self: end;
             text-decoration: none;
-            
+            display: flex;
 
             a {
-                color: $CLR00;
+                color: white;
             }
 
             &>* {
@@ -110,7 +110,7 @@
         transition: opacity 0.3s ease;
         opacity: 0;
         border-bottom: 1px solid $clr22;
-        border-top: 1px solid $clr22;       
+        border-top: 1px solid $clr22;
         padding-inline: 2rem;
 
 
@@ -138,8 +138,10 @@
 
 .header-main-layout.scrolled .header-container {
     background-color: white;
-    
 
+    a {
+        color: $CLR00;
+    }
 }
 
 .header-main-layout.search-visible .border-helper {
@@ -151,5 +153,20 @@
 .header-main-layout.categories-visible .categories-menu-package {
     opacity: 1;
     background-color: white;
+
+}
+
+.header-position {
+    position: relative;
+
+    .header-container {
+        .links {
+            a {
+                color: $CLR00;
+            }
+        }
+    }
+
+
 
 }

@@ -1,9 +1,9 @@
 <template>
-  <!-- <div :class="['header-main-layout full main-layout', { 'fixed-header': isHomePage }]"> -->
   <div class="header-main-layout main-layout full" :class="{
     scrolled: scrolled,
-    'search-visible': searchVisible,
-    'categories-visible': categoriesVisible,
+    'search-visible': searchVisible || !isHomePage,
+    'categories-visible': categoriesVisible || !isHomePage,
+    'header-position': !isHomePage
   }">
     <header class="header-container flex full">
       <RouterLink to="/" class="site-logo">
@@ -53,116 +53,96 @@ export default {
       scrolled: false,
       searchVisible: false,
       categoriesVisible: false,
-    };
+    }
   },
+
   mounted() {
     if (this.isHomePage) {
-      window.addEventListener("scroll", this.handleScroll);
+      window.addEventListener("scroll", this.handleScroll)
     } else {
-      this.scrolled = true;
+      this.scrolled = true
     }
   },
   beforeDestroy() {
     if (this.isHomePage) {
-      window.removeEventListener("scroll", this.handleScroll);
+      window.removeEventListener("scroll", this.handleScroll)
     }
   },
   computed: {
     isHomePage() {
-      return this.$route.path === "/";
-    },
-    isHome() {
-      return this.isHomePage ? (this.isDoubleScrolled ? "grid" : "none") : "grid";
-    },
-    isDetailsPage() {
-      return this.$route.path === "/gig/";
-    },
-    isDetails() {
-      return this.isDetailsPage ? (this.isDoubleScrolled ? "grid" : "none") : "grid";
+      return this.$route.name === "Home"
     },
     loggedinUser() {
-      return this.$store.getters.loggedinUser;
+      return this.$store.getters.loggedinUser
     },
     userProfile() {
-      if (!this.loggedinUser) return "";
-      return "/user/" + this.loggedinUser._id;
+      if (!this.loggedinUser) return ""
+      return "/user/" + this.loggedinUser._id
     },
     fullname() {
-      if (!this.loggedinUser) return "";
-      return this.loggedinUser.fullname;
+      if (!this.loggedinUser) return ""
+      return this.loggedinUser.fullname
     },
     userImg() {
-      if (!this.loggedinUser) return "";
-      return this.loggedinUser.imgUrl;
+      if (!this.loggedinUser) return ""
+      return this.loggedinUser.imgUrl
     },
     loggedinUser() {
-      return this.$store.getters.loggedinUser;
+      return this.$store.getters.loggedinUser
     },
   },
   watch: {
-    "$route.params": {
-      handler: function () {
-        if (this.isHomePage) {
-          window.scrollTo(0, 0);
-        }
-      },
-    },
+
   },
   methods: {
     searchGigs() {
-      const searchQuery = this.searchText.trim();
+      const searchQuery = this.searchText.trim()
       if (searchQuery) {
         this.$router.push({
           path: "/explore",
           query: { txt: searchQuery },
-        });
+        })
       }
     },
     handleScroll() {
-      // Check the scroll position
-      const scrollPosition = window.scrollY;
+      const scrollPosition = window.scrollY
 
-      // Define the scroll thresholds for the two stages
-      const firstStageThreshold = 20; // Adjust this value as needed
-      const secondStageThreshold = 90; // Adjust this value as needed
+      const firstStageThreshold = 20
+      const secondStageThreshold = 90
 
-      // Update the scrolled state based on the scroll position
-      this.scrolled = scrollPosition >= firstStageThreshold;
 
-      // Show/hide the search input and categories-menu-package based on the scroll position
+      this.scrolled = scrollPosition >= firstStageThreshold
+
       if (scrollPosition >= firstStageThreshold) {
-        // Show the search input
+
       } else {
-        // Hide the search input
-        this.searchVisible = false;
+        this.searchVisible = false
       }
 
       if (scrollPosition >= secondStageThreshold) {
-        // Show the categories-menu-package
-        this.categoriesVisible = true;
-        this.searchVisible = true;
+        this.categoriesVisible = true
+        this.searchVisible = true
       } else {
-        // Hide the categories-menu-package
-        this.categoriesVisible = false;
+        this.categoriesVisible = false
       }
     },
     filterByCategory(category) {
-      const filterBy = { category, searchText: this.searchText };
-      this.$store.dispatch({ type: "loadGigs", filterBy });
+      const filterBy = { category, searchText: this.searchText }
+      this.$store.dispatch({ type: "loadGigs", filterBy })
 
-      const searchQuery = this.searchText.trim();
+      const searchQuery = this.searchText.trim()
       if (searchQuery) {
         this.$router.push({
           path: "/explore",
           query: { txt: searchQuery, category },
-        });
+        })
       } else {
         this.$router.push({
           path: "/explore",
           query: { category },
-        });
+        })
       }
     },
   },
-};
+}
 </script>
