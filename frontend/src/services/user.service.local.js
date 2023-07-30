@@ -12,7 +12,6 @@ export const userService = {
   getById,
   remove,
   update,
-  changeScore,
 }
 
 window.userService = userService
@@ -49,7 +48,6 @@ async function login(userCred) {
 }
 
 async function signup(userCred) {
-  userCred.score = 100
   if (!userCred.imgUrl)
     userCred.imgUrl =
       'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
@@ -61,20 +59,12 @@ async function logout() {
   sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
 }
 
-async function changeScore(by) {
-  const user = getLoggedinUser()
-  if (!user) throw new Error('Not loggedin')
-  user.score = user.score + by || by
-  await update(user)
-  return user.score
-}
 
 function saveLocalUser(user) {
   user = {
     _id: user._id,
     fullname: user.fullname,
     imgUrl: user.imgUrl,
-    score: user.score,
   }
   sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
   return user
@@ -100,6 +90,7 @@ function _saveUsersToFile() {
 // ;(async () => {
 //   await userService.signup({
 //     _id: 'u101',
+//     isSeller: true,
 //     fullname: 'User 1',
 //     imgUrl: '/img/img1.jpg',
 //     username: 'user1',
@@ -142,6 +133,7 @@ function _saveUsersToFile() {
 //   })
 //   await userService.signup({
 //     _id: 'u103',
+//     isSeller: true,
 //     fullname: 'User 3',
 //     imgUrl: '/img/img3.jpg',
 //     username: 'user3',

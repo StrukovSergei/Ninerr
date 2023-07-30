@@ -70,7 +70,7 @@
                 </div>
 
                 <RouterLink v-if="user" :to="{ name: 'UserDetails', params: { id: user._id } }">
-                    <button class="btn-confirm">Confirm & Pay</button>
+                    <button @click="test()" class="btn-confirm">Confirm & Pay</button>
                 </RouterLink>
                 <button v-else class="btn-confirm" @click="handleConfirmAndPay()">Confirm & Pay</button>
 
@@ -127,6 +127,10 @@ export default {
 
             alert('Login required')
 
+        },
+        test(){
+            console.log(gig)
+            console.log(user)
         }
 
     }
