@@ -6,6 +6,7 @@ import svgPlugin from './plugins/svg-plugin.js'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
+import './assets/styles/setup/_typography.scss'
 import './assets/styles/main.scss'
 import App from './App.vue'
 

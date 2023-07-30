@@ -30,15 +30,16 @@
     </header>
     <section class="categories-menu-package full">
       <ul class="flex clean-list header-categories">
-        <li @click="filterByCategory('Graphics & Design')">Graphics & Design</li>
-        <li @click="filterByCategory('Digital Marketing')">Digital Marketing</li>
-        <li @click="filterByCategory('Writing & Translation')">Writing & Translation</li>
-        <li @click="filterByCategory('Video & Animation')">Video & Animation</li>
-        <li @click="filterByCategory('Music & Audio')">Music & Audio</li>
-        <li @click="filterByCategory('Programming & Tech')">Programming & Tech</li>
-        <li @click="filterByCategory('Photography')">Photography</li>
-        <li @click="filterByCategory('Business')">Business</li>
-        <li @click="filterByCategory('AI Services')">AI Services</li>
+        <RouterLink to="/explore?category=Graphics+%26+Design">Graphics & Design</RouterLink>
+        <RouterLink to="/explore?category=Digital+Marketing">Digital Marketing</RouterLink>
+        <RouterLink to="/explore?category=Writing+%26+Translation">Writing & Translation</RouterLink>
+        <RouterLink to="/explore?category=Video+%26+Animation">Video & Animation</RouterLink>
+        <RouterLink to="/explore?category=Music+%26+Audio">Music & Audio</RouterLink>
+        <RouterLink to="/explore?category=Programming+%26+Tech">Programming & Tech</RouterLink>
+        <RouterLink to="/explore?category=Photography">Photography</RouterLink>
+        <RouterLink to="/explore?category=Business">Business</RouterLink>
+        <RouterLink to="/explore?category=AI+Services">AI Services</RouterLink>
+
       </ul>
     </section>
   </div>
@@ -55,13 +56,12 @@ export default {
       categoriesVisible: false,
     }
   },
-
   mounted() {
-    if (this.isHomePage) {
-      window.addEventListener("scroll", this.handleScroll)
-    } else {
-      this.scrolled = true
-    }
+    // if (this.isHomePage) {
+    window.addEventListener("scroll", this.handleScroll)
+    // } else {
+    //   this.scrolled = true
+    // }
   },
   beforeDestroy() {
     if (this.isHomePage) {
@@ -105,17 +105,19 @@ export default {
       }
     },
     handleScroll() {
+      if (!this.isHomePage) return
       const scrollPosition = window.scrollY
 
       const firstStageThreshold = 20
       const secondStageThreshold = 90
 
 
-      this.scrolled = scrollPosition >= firstStageThreshold
+      // this.scrolled = scrollPosition >= firstStageThreshold
 
       if (scrollPosition >= firstStageThreshold) {
-
+        this.scrolled = true
       } else {
+        this.scrolled = false
         this.searchVisible = false
       }
 
@@ -126,23 +128,7 @@ export default {
         this.categoriesVisible = false
       }
     },
-    filterByCategory(category) {
-      const filterBy = { category, searchText: this.searchText }
-      this.$store.dispatch({ type: "loadGigs", filterBy })
 
-      const searchQuery = this.searchText.trim()
-      if (searchQuery) {
-        this.$router.push({
-          path: "/explore",
-          query: { txt: searchQuery, category },
-        })
-      } else {
-        this.$router.push({
-          path: "/explore",
-          query: { category },
-        })
-      }
-    },
   },
 }
 </script>

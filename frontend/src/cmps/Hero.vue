@@ -39,16 +39,16 @@
             </div>
             <div class="categories flex">
                 <span> Popular: </span>
-                <RouterLink to="/gig?tag=website-design">
+                <RouterLink to="/explore?category=Digital+Marketing">
                     <div class="category flex">Website Design</div>
                 </RouterLink>
-                <RouterLink to="/gig?tag=word-press">
+                <RouterLink to="/explore?category=Writing+%26+Translation">
                     <div class="category flex">WordPress</div>
                 </RouterLink>
-                <RouterLink to="/gig?tag=logo-design">
+                <RouterLink to="/explore?category=Graphics+%26+Design">
                     <div class="category flex">Logo Design</div>
                 </RouterLink>
-                <RouterLink to="/gig?tag=ai-services">
+                <RouterLink to="/explore?category=AI+Services">
                     <div class="category flex">AI Services</div>
                 </RouterLink>
             </div>
@@ -152,6 +152,9 @@ export default {
                 },
             ],
         };
+    },
+    methods: {
+
     },
     components: { VueperSlides, VueperSlide },
 };
