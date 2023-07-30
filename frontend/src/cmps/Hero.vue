@@ -26,8 +26,8 @@
         <div class="search-container main-layout">
             <h1>
                 Find the right
-                <i class="fancy-word">freelance services,</i>
-                right away
+                <i class="fancy-word">freelance </i>
+                services, right away
             </h1>
             <div class="hero-search flex">
                 <div class="input-container flex">
@@ -39,16 +39,16 @@
             </div>
             <div class="categories flex">
                 <span> Popular: </span>
-                <RouterLink to="/gig?tag=website-design">
+                <RouterLink to="/explore?category=Digital+Marketing">
                     <div class="category flex">Website Design</div>
                 </RouterLink>
-                <RouterLink to="/gig?tag=word-press">
+                <RouterLink to="/explore?category=Writing+%26+Translation">
                     <div class="category flex">WordPress</div>
                 </RouterLink>
-                <RouterLink to="/gig?tag=logo-design">
+                <RouterLink to="/explore?category=Graphics+%26+Design">
                     <div class="category flex">Logo Design</div>
                 </RouterLink>
-                <RouterLink to="/gig?tag=ai-services">
+                <RouterLink to="/explore?category=AI+Services">
                     <div class="category flex">AI Services</div>
                 </RouterLink>
             </div>
@@ -94,23 +94,28 @@ export default {
             },
             pic: [
                 {
-                    content: `<img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_40,dpr_1.0/v1/attachments/generic_asset/asset/7539ee9d7a6ab02e3d23069ebefb32c8-1690386499422/christina-2x.png"`,
+                    content:
+                        "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_40,dpr_1.0/v1/attachments/generic_asset/asset/7539ee9d7a6ab02e3d23069ebefb32c8-1690386499422/christina-2x.png",
                 },
 
                 {
-                    content: `<img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_40,dpr_1.0/v1/attachments/generic_asset/asset/7539ee9d7a6ab02e3d23069ebefb32c8-1690386499430/jenny-2x.png"`,
+                    content:
+                        "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_40,dpr_1.0/v1/attachments/generic_asset/asset/7539ee9d7a6ab02e3d23069ebefb32c8-1690386499430/jenny-2x.png",
                 },
 
                 {
-                    content: `<img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_40,dpr_1.0/v1/attachments/generic_asset/asset/7539ee9d7a6ab02e3d23069ebefb32c8-1690386499432/colin-2x.png"`,
+                    content:
+                        "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_40,dpr_1.0/v1/attachments/generic_asset/asset/7539ee9d7a6ab02e3d23069ebefb32c8-1690386499432/colin-2x.png",
                 },
 
                 {
-                    content: `<img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_40,dpr_1.0/v1/attachments/generic_asset/asset/7539ee9d7a6ab02e3d23069ebefb32c8-1690386499428/scarlett-2x.png"`,
+                    content:
+                        "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_40,dpr_1.0/v1/attachments/generic_asset/asset/7539ee9d7a6ab02e3d23069ebefb32c8-1690386499428/scarlett-2x.png",
                 },
 
                 {
-                    content: `<img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_40,dpr_1.0/v1/attachments/generic_asset/asset/7539ee9d7a6ab02e3d23069ebefb32c8-1690386499439/jordan-2x.png"`,
+                    content:
+                        "https://fiverr-res.cloudinary.com/q_auto,f_auto,w_40,dpr_1.0/v1/attachments/generic_asset/asset/7539ee9d7a6ab02e3d23069ebefb32c8-1690386499439/jordan-2x.png",
                 },
             ],
             info: {
@@ -152,6 +157,9 @@ export default {
                 },
             ],
         };
+    },
+    methods: {
+
     },
     components: { VueperSlides, VueperSlide },
 };
