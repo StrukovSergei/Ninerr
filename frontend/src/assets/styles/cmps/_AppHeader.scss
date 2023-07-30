@@ -87,6 +87,7 @@
 
             a {
                 color: white;
+
             }
 
             &>* {
@@ -112,8 +113,9 @@
         border-bottom: 1px solid $clr22;
         border-top: 1px solid $clr22;
         padding-inline: 2rem;
+        height: 41px;
         a{
-
+            font-family: Macan-regular;
             color: $clr3;
         }
 
@@ -122,6 +124,7 @@
             justify-content: space-between;
             margin: 0 auto;
             padding: 0;
+            margin-block-start: 5px;
 
             & li {
                 color: $clr3;
