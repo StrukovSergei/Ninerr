@@ -3,6 +3,8 @@
     <!-- <ul class="gig-list"> -->
     <!-- @click="goToDetail" -->
     <li class="gig-preview">
+
+
         <vueper-slides class="product_img" ref="vueperslides1" :touchable="false" fade :autoplay="false" :infinite="false"
             disable-arrows-on-edges>
             <template #arrow-left>
@@ -11,8 +13,12 @@
             <template #arrow-right>
                 <i class="fa-solid fa-angle-right"></i>
             </template>
-            <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide"> </vueper-slide>
+            <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide" :link="`/#/gig/${gig._id}`">
+                <!-- Wrap the image inside the RouterLink -->
+                <img :src="slide" class="product_img" />
+            </vueper-slide>
         </vueper-slides>
+
         <!-- visible-slides='slidesNum' -->
         <!-- <img :src="gig.imgUrls[0]" class="product_img"/> -->
         <section class="user_preview">
@@ -30,6 +36,7 @@
             <p class="txt_body">{{ gig?.owner.rate }}</p>
         </div>
         <p class="price_product txt_body">From ${{ gig.price?.toLocaleString() }}</p>
+
         <!-- <button @click="removeGig(gig._id)">x</button> -->
     </li>
     <!-- </ul> -->

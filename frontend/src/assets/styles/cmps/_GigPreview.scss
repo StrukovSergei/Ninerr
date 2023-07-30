@@ -13,10 +13,12 @@ li.gig-preview {
 
     &:hover {
         .vueperslides__arrows .vueperslides__arrow--next {
-        display: block;
+       opacity: 1;
+        right: 0.5rem;
         }
     & .vueperslides__arrows .vueperslides__arrow--prev {
-        display: block;
+        opacity: 1;
+        left: 0.5rem;
         }
     }
     .vueperslides__bullet .default {
@@ -26,8 +28,8 @@ li.gig-preview {
         border: 1px solid currentColor;
         background-color: #fff;
         box-shadow: 0 0 1px #00000080, 0 0 3px #0000004d;
-        transition: .4s ease-in-out;
         box-sizing: border-box;
+        transition: .4s ease-in-out;
     }
 
     .vueperslides__bullet--active .default {    
@@ -37,27 +39,27 @@ li.gig-preview {
         & .vueperslides__arrows .vueperslides__arrow--next {
             color: #222325;
             left: auto;
-            right: 0.5em;
+            right: -1rem;
             border: 1px solid #ffffff;
             border-radius: 50%;
             background-color: #ffffff;
             opacity: 1;
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);    
-            display: none;
-            transition: 0.3s ease-in-out;
+            opacity: 0;
+            transition: .4s ease-in-out;
             }
         
         & .vueperslides__arrows .vueperslides__arrow--prev {
             color: #222325;
             right: auto;
-            left: 0.5em;
+            left: -1rem;
             border: 1px solid #ffffff;
             border-radius: 50%;
             background-color: #ffffff;
             opacity: 1;
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
-            display: none;
-            transition: 0.3s ease-in-out;
+            opacity: 0;
+            transition: .4s ease-in-out;
         }
 
     }
