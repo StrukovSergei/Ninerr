@@ -1,5 +1,7 @@
 li.gig-preview {
     background-color: white;
+    display: flex;
+    flex-direction: column;
 
     & .product_img {
         width: 100%;
@@ -9,7 +11,9 @@ li.gig-preview {
         object-fit: cover;
         object-position: center;
     }
-    
+    & .con{
+        background:none;
+    }
 // .gig-preview {
 //     position: relative; /* Ensure proper positioning for the absolutely positioned image */
 //     background-color: white;
@@ -38,7 +42,6 @@ li.gig-preview {
         cursor: pointer;
         font-size: rem(16px);
         font-weight: 400;
-        height: 41.6px;
 
     }
 

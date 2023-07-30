@@ -1,17 +1,18 @@
 <template>
     <!-- <section> -->
     <!-- <ul class="gig-list"> -->
-        <!-- @click="goToDetail" -->
-    <li class="gig-preview" @click="goToDetail" >
-        <vueper-slides  class="product_img" ref="vueperslides1" :touchable="false" fade :autoplay="false" :bullets="false"
-             fixed-height="400px">
+    <!-- @click="goToDetail" -->
+    <li class="gig-preview" @click="goToDetail">
+        <vueper-slides  ref="vueperslides1" :touchable="false" fade :autoplay="false" :bullets="false"
+            height="40%" >
+            <!-- fixed-height="400px"> -->
             <!-- <template #arrow-left>
                 <i class="fa-solid fa-angle-left"></i>
             </template>
             <template #arrow-right>
                 <i class="fa-solid fa-angle-right"></i>
             </template> -->
-            <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide">
+            <vueper-slide class="product_img" v-for="(slide, i) in slides" :key="i" :image="slide">
             </vueper-slide>
         </vueper-slides>
         <!-- visible-slides='slidesNum' -->
@@ -69,12 +70,15 @@ export default {
 
                 this.slides = newGig.imgUrls
             },
-            immediate: true 
+            immediate: true
         },
     },
     methods: {
         goToDetail() {
             this.$router.push(`/gig/${this.gig._id}`)
+        },
+        preventSlideClick(event) {
+            event.stopPropagation()
         },
     },
     components: { VueperSlides, VueperSlide, },
