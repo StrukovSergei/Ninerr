@@ -1,18 +1,14 @@
 .header-main-layout {
-
     position: sticky;
     top: 0;
     background-color: transparent;
-    transition: background-color 0.3s ease;
-    // border-bottom: 1px solid $clr22;
+    transition: background-color 0.3s ease;    
     z-index: 100;
-
-
 
     .header-container {
         min-height: 80px;
         align-items: center;
-        padding-inline: 2rem;
+        // padding-inline: 2rem;
     }
 
     .border-helper {
@@ -23,13 +19,9 @@
     header {
         display: flex;
         align-items: center;
-        // padding: 0 32px;
-        // margin: 0 5rem;
-
-
+        
         & .site-logo {
             margin: 0;
-
 
             & img {
                 padding-top: 7px;
@@ -37,7 +29,7 @@
             }
         }
 
-        & .search {
+        & .search {            
             position: relative;
             flex: 1;
             display: flex;
@@ -50,6 +42,7 @@
 
             .header-main-layout.search-visible .search {
                 opacity: 1;
+                
             }
 
             input[type="text"] {
@@ -117,10 +110,9 @@
             color: $clr3;
         }
 
-
         & ul {
             justify-content: space-between;
-            margin: 0 auto;
+            margin: 0 ;
             padding: 0;
 
             & li {
@@ -135,10 +127,7 @@
             }
         }
     }
-
 }
-
-
 
 .header-main-layout.scrolled .header-container {
     background-color: white;
@@ -151,7 +140,6 @@
 .header-main-layout.search-visible .border-helper {
     opacity: 1;
 }
-
 
 .header-main-layout.search-visible .search,
 .header-main-layout.categories-visible .categories-menu-package {
@@ -169,8 +157,6 @@
                 color: $CLR00;
             }
         }
-    }
-
-
+   }
 
 }

@@ -4,9 +4,7 @@
     <!-- @click="goToDetail" -->
 
     <li class="gig-preview">
-
-
-        <vueper-slides class="product_img" ref="vueperslides1" :touchable="false" fade :autoplay="false" :infinite="false"
+        <vueper-slides class="product_img" ref="vueperslides1" :touchable="false" :autoplay="false" :infinite="false"
             disable-arrows-on-edges>
             <template #arrow-left>
                 <i class="fa-solid fa-angle-left"></i>
@@ -19,7 +17,6 @@
                 <img :src="slide" class="product_img" />
             </vueper-slide>
         </vueper-slides>
-
         <!-- visible-slides='slidesNum' -->
         <!-- <img :src="gig.imgUrls[0]" class="product_img"/> -->
         <section class="user_preview">

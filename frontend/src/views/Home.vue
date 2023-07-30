@@ -17,74 +17,56 @@
         <template #arrow-right>
           <i class="fa-solid fa-angle-right"></i>
         </template>
-        <vueper-slide v-for="(slide, i) in slides" :key="i" :content="slide.content" :link="slide.link"
-          />
+        <vueper-slide v-for="(slide, i) in slides" :key="i" :content="slide.content" :link="slide.link" />
       </vueper-slides>
     </div>
   </section>
 
   <div class="selling-proposition-wrapper main-layout full">
-    <div class="selling-proposition">
-      <div class="selling-container">
-        <div class="selling-info">
-          <h2>The best part? Everything.</h2>
-          <ul class="clean-list">
-            <li>
-              <section class="flex align-center">
-                <h6>
-                  <span class="check-svg" v-html="$svg('check')"></span>
-                  <h3>Stick to your budget</h3>
-                </h6>
-              </section>
-              <p>
-                Find the right service for every price point. No hourly rates, just
-                project-based pricing.
-              </p>
-            </li>
-            <li>
-              <section class="flex align-center">
-                <h6>
-                  <span class="check-svg" v-html="$svg('check')"></span>
-                  <h3>Get quality work done quickly</h3>
-                </h6>
-              </section>
-              <p>
-                Hand your project over to a talented freelancer in minutes, get
-                long-lasting results.
-              </p>
-            </li>
-            <li>
-              <section class="flex align-center">
-                <h6>
-                  <span class="check-svg" v-html="$svg('check')"></span>
-                  <h3>Pay when you're happy</h3>
-                </h6>
-              </section>
-              <p>
-                Upfront quotes mean no surprises. Payments only get released when you
-                approve.
-              </p>
-            </li>
-            <li>
-              <section class="flex align-center">
-                <h6>
-                  <span class="check-svg" v-html="$svg('check')"></span>
-                  <h3>Count on 24/7 support</h3>
-                </h6>
-              </section>
-              <p>
-                Our round-the-clock support team is available to help anytime, anywhere.
-              </p>
-            </li>
-          </ul>
-        </div>
-        <div class="selling-video">
-          <div class="picture-wrapper">
-            <img src="https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793711/gigs/ostlxosopzlu6ccomezg.webp"
-              alt="" />
-          </div>
-        </div>
-      </div>
+    <div class="selling-info">
+      <h2>The best part? Everything.</h2>
+      <ul class="clean-list">
+        <li>
+          <h6>
+            <span class="check-svg" v-html="$svg('check')"></span>
+            Stick to your budget
+          </h6>
+
+          <p>
+            Find the right service for every price point. No hourly rates, just
+            project-based pricing.
+          </p>
+        </li>
+        <li>
+          <h6>
+            <span class="check-svg" v-html="$svg('check')"></span>
+            Get quality work done quickly
+          </h6>
+          <p>
+            Hand your project over to a talented freelancer in minutes, get long-lasting
+            results.
+          </p>
+        </li>
+        <li>
+          <h6>
+            <span class="check-svg" v-html="$svg('check')"></span>
+            Pay when you're happy
+          </h6>
+          <p>
+            Upfront quotes mean no surprises. Payments only get released when you approve.
+          </p>
+        </li>
+        <li>
+          <h6>
+            <span class="check-svg" v-html="$svg('check')"></span>
+            Count on 24/7 support
+          </h6>
+          <p>Our round-the-clock support team is available to help anytime, anywhere.</p>
+        </li>
+      </ul>
+    </div>
+    <div class="picture-wrapper">
+      <img src="https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793711/gigs/ostlxosopzlu6ccomezg.webp" alt="" />
     </div>
   </div>
   <section class="icon-category main-layout">
@@ -99,6 +81,7 @@
             </div>
           </span>
         </RouterLink>
+
         <RouterLink to="/explore?category=Digital+Marketing">
           <span class="flex">
             <div>
@@ -134,6 +117,7 @@
             </div>
           </span>
         </RouterLink>
+
         <RouterLink to="/explore?category=Programming+%26+Tech">
           <span class="flex">
             <div>
