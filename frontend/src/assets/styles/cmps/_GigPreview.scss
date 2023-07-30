@@ -1,5 +1,6 @@
 li.gig-preview {
     background-color: white;
+    height: fit-content;
 
     & .product_img {
         width: 100%;
@@ -8,13 +9,61 @@ li.gig-preview {
         aspect-ratio: 1.66;
         object-fit: cover;
         object-position: center;
+
+    .vueperslides__bullet .default {
+        width: 8px;
+        height: 8px;
+        border-radius: 12px;
+        border: 1px solid currentColor;
+        background-color: #fff;
+        box-shadow: 0 0 1px #00000080, 0 0 3px #0000004d;
+        transition: .4s ease-in-out;
+        box-sizing: border-box;
+    }
+
+    .vueperslides__bullet--active .default {    
+       transform: scale(1.5);
+    }
+
+        & .vueperslides__arrows .vueperslides__arrow--next {
+            color: #222325;
+            left: auto;
+            right: -1.5em;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            background-color: #ffffff;
+            opacity: 1;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+            }
+        
+        & .vueperslides__arrows .vueperslides__arrow--prev {
+            color: #222325;
+            right: auto;
+            left: -1.5em;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            background-color: #ffffff;
+            opacity: 1;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+        }
+
     }
     
+    .vueperslides__parallax-wrapper{
+        padding-bottom: 50%;
+        height: 168px;
+        border-radius: 8px;
+    }
+
+   
+
 // .gig-preview {
 //     position: relative; /* Ensure proper positioning for the absolutely positioned image */
 //     background-color: white;
 //     border-radius: 10px;
  
+
+
 
 
     & .slides-overlay {

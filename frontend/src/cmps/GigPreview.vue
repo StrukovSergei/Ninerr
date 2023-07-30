@@ -3,15 +3,15 @@
     <!-- <ul class="gig-list"> -->
     <!-- @click="goToDetail" -->
 
-    <li class="gig-preview" @click="goToDetail">
-        <vueper-slides class="product_img" ref="vueperslides1" :touchable="false" fade :autoplay="false" :bullets="false"
-            fixed-height="400px">
-            <!-- <template #arrow-left>
+    <li class="gig-preview">
+        <vueper-slides class="product_img" ref="vueperslides1" :touchable="false" fade :autoplay="false" :infinite="false"
+            disable-arrows-on-edges>
+            <template #arrow-left>
                 <i class="fa-solid fa-angle-left"></i>
             </template>
             <template #arrow-right>
                 <i class="fa-solid fa-angle-right"></i>
-            </template> -->
+            </template>
             <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide"> </vueper-slide>
         </vueper-slides>
         <!-- visible-slides='slidesNum' -->
