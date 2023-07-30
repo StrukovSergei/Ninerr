@@ -4,7 +4,7 @@
       <div class="flex flex-wrap items-center">
         <el-dropdown trigger="click">
           <el-button type="primary">
-            Budget <span v-html="$svg('arrowDown')"></span><el-icon class="el-icon--right"><arrow-down /></el-icon>
+            Budget <span v-html="$svg('arrowDown')"></span><el-icon class="el-icon--right"></el-icon>
           </el-button>
           <template #dropdown>
             <el-dropdown-menu>
@@ -20,7 +20,7 @@
       <div class="flex flex-wrap items-center">
         <el-dropdown trigger="click">
           <el-button type="primary">
-            Delivery time<span v-html="$svg('arrowDown')"></span><el-icon class="el-icon--right"><arrow-down /></el-icon>
+            Delivery time<span v-html="$svg('arrowDown')"></span><el-icon class="el-icon--right"></el-icon>
           </el-button>
           <template #dropdown>
             <el-dropdown-menu>
