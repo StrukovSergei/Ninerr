@@ -70,7 +70,7 @@
     </div>
   </div>
   <section class="icon-category main-layout">
-    <h2 class="bold">Explore the marketplace</h2>
+    <h2 class="bold">You need it, we've got it</h2>
     <section class="category-list main-layout">
       <section class="icons full">
         <RouterLink to="/explore?category=Graphics+%26+Design">
