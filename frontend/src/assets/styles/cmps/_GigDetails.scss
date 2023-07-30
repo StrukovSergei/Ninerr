@@ -8,7 +8,7 @@
     color: $clr11;
     font-family: macan;
 
-    .gig-description{
+    .gig-description {
         font-size: 16px;
         color: $clr3;
         font-family: Macan-Light;
@@ -23,6 +23,7 @@
     .gig-small-nav {
 
         margin-top: 10px;
+
         .home-icon {
             cursor: pointer;
             display: inline-block;
@@ -44,7 +45,7 @@
         }
     }
 
-    .aboutgig-container{
+    .aboutgig-container {
         padding-bottom: 90px;
     }
 
@@ -61,7 +62,7 @@
         margin-top: 10px;
 
         grid-template-columns: 1fr 1fr;
-    
+
         grid-template-areas:
             "header header"
             "offer price"
@@ -89,7 +90,7 @@
 
         .order-offer {
 
-            text-align: left; 
+            text-align: left;
         }
 
         .order-price {
@@ -100,12 +101,12 @@
             top: -28px;
         }
 
-        .order-properties{
+        .order-properties {
             inline-size: max-content;
         }
 
         .order-mini-info {
-            padding: 30px 0;
+            padding-bottom: 30px;
             font-family: Macan-Regular;
         }
 
@@ -117,18 +118,18 @@
             font-weight: 600;
             padding: 12px 24px;
             border: 1px solid transparent;
-            margin: 0 24px 20px 24px;
+            margin: 0 24px 24px 24px;
             width: 88%;
             cursor: pointer;
 
 
-            .btn-continue-arrow{
+            .btn-continue-arrow {
                 position: relative;
                 top: 3px;
                 right: -113px;
             }
 
-            .btn-continue-route{
+            .btn-continue-route {
                 color: white;
                 text-decoration: none;
             }
@@ -138,10 +139,26 @@
             color: $CLR00;
             opacity: 0.7;
             font-size: 16px;
-            
+
         }
 
- 
+        .payment-features-list {
+            font-size: 16px;
+            font-weight: 400;
+            font-family: Macan-Regular;
+            margin-bottom: 30px;
+
+            .payment-feature-icon svg {
+                fill: $clr1;
+
+            }
+
+            .payment-feature-text {
+                padding-left: 7px;
+                position: relative;
+                top: -3px
+            }
+        }
     }
 
     .vueperslide__content-wrapper {}
@@ -182,7 +199,16 @@
         .mini-user-title {
             margin: 0;
             position: relative;
-            top: -5px;
+            top: -1px;
+
+            .mini-user-level {
+                font-family: Macan-Regular;
+                font-weight: 400;
+            }
+
+            .mini-user-devider {
+                position: absolute;
+            }
         }
 
         .owner-small-logo {
@@ -213,7 +239,7 @@
         top: 2px;
     }
 
-    .seller-title{
+    .seller-title {
         font-size: 20px;
     }
 }

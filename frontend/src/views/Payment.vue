@@ -9,23 +9,23 @@
                 <div class="card-container grid">
 
                     <span class="card-number grid">
-                        <label for="cardNumber">Card Number:</label>
+                        <label for="cardNumber">Card Number</label>
                         <input type="text" id="cardNumber" name="cardNumber" value="4580 5926 2262 7546" required><br><br>
                     </span>
                     <span class="card-date grid">
-                        <label for="expirationDate">Expiration Date:</label>
+                        <label for="expirationDate">Expiration Date</label>
                         <input type="text" id="expirationDate" name="expirationDate" value="12 / 26" required><br><br>
                     </span>
                     <span class="card-security grid">
-                        <label for="securityCode">Security Code:</label>
+                        <label for="securityCode">Security Code</label>
                         <input type="text" id="securityCode" name="securityCode" value="999" required><br><br>
                     </span>
                     <span class="card-name grid">
-                        <label for="firstName">First Name:</label>
+                        <label for="firstName">First Name</label>
                         <input type="text" id="firstName" name="firstName" required><br><br>
                     </span>
                     <span class="card-lname grid">
-                        <label for="lastName">Last Name:</label>
+                        <label for="lastName">Last Name</label>
                         <input type="text" id="lastName" name="lastName" required><br><br>
                     </span>
 
