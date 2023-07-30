@@ -2,6 +2,7 @@
   <section v-if="user" class="main-user">
     <h1>User Details - {{ user.fullname }}</h1>
     <h2 v-if="isMe">Its me</h2>
+    <button @click="onLogout()">Logout</button>
     <img style="max-width: 200px;" :src="user.imgUrl" />
     <ul>
       <li v-for="review in user.givenReviews" :key="review._id">
@@ -168,6 +169,13 @@ export default {
         'btn-pending': status === 'pending',
       }
     },
+    onLogout() {
+      userService.logout()
+      this.$router.push('/')
+      setTimeout(() => {
+        location.reload()
+      }, 500)
+    }
 
   },
   components: {

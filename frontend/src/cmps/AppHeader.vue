@@ -98,7 +98,7 @@ export default {
         this.$router.push({
           path: "/explore",
           query: { txt: searchQuery },
-        });
+        })
       }
     },
     handleScroll() {
