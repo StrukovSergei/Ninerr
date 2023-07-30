@@ -34,6 +34,7 @@
       <p>No gigs available.</p>
     </div>
     <pre>{{ orders }}</pre>
+    <button @click="test()">XXXX</button>
   </section>
 </template>
 
@@ -59,7 +60,11 @@ export default {
   watch: {
     userId: {
       handler() {
-        this.loadUser()
+        if (this.userId) {
+          this.loadUser()
+          this.$store.dispatch({ type: 'loadOrders', filterBy: { id: this.userId } })
+        }
+
       },
       immediate: true,
     },
@@ -79,13 +84,7 @@ export default {
     }
   },
   created() {
-  this.$store.dispatch({ type: 'loadGigs' })
-
-  if (this.user && this.user._id) {
-    this.$store.dispatch({ type: 'loadOrders', filterBy: { id: this.user._id } })
-    console.log('hi')
-  }
-},
+  },
   methods: {
     async loadUser() {
       if (!this.userId) return
@@ -170,6 +169,10 @@ export default {
         'btn-pending': status === 'pending',
       }
     },
+    test() {
+      this.$store.dispatch({ type: 'loadOrders', filterBy: { id: this.user._id } })
+      console.log(this.orders)
+    }
   },
   components: {
     AddGigModal

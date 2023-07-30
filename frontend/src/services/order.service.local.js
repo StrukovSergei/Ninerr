@@ -19,9 +19,7 @@ async function query(
   var orders = await storageService.query(STORAGE_KEY)
 
   if (filterBy.id) {
-    orders = orders.filter(
-      (order) => filterBy.id.test(order.sellerId)
-    )
+    orders = orders.filter((order) => order.sellerId === filterBy.id)
   }
   if (filterBy.searchText) {
     const regex = new RegExp(filterBy.searchText, 'i')
