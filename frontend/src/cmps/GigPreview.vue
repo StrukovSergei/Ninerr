@@ -5,7 +5,7 @@
     <li class="gig-preview">
 
 
-        <vueper-slides class="product_img" ref="vueperslides1" fade :touchable="false"  :autoplay="false" :infinite="false"
+        <vueper-slides class="product_img" ref="vueperslides1"  :touchable="false"  :autoplay="false" :infinite="false"
             disable-arrows-on-edges>
             <template #arrow-left>
                 <i class="fa-solid fa-angle-left"></i>
@@ -16,8 +16,12 @@
             <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide" :link="`/#/gig/${gig._id}`">
                 <!-- Wrap the image inside the RouterLink -->
                 <img :src="slide" class="product_img" />
+
             </vueper-slide>
         </vueper-slides>
+        <button class="button_hurt">
+
+        </button>
 
         <!-- visible-slides='slidesNum' -->
         <!-- <img :src="gig.imgUrls[0]" class="product_img"/> -->
@@ -30,7 +34,7 @@
                 <h3 class="level txt_body">{{ gig.owner.level }}</h3>
             </div>
         </section>
-        <h3 class="title_product txt_body">{{ gig?.title }}</h3>
+        <h3 class="title_product">{{ gig?.title }}</h3>
         <div class="rate">
             <span v-html="$svg('blackStar')"></span>
             <p class="txt_body">{{ gig?.owner.rate }}</p>

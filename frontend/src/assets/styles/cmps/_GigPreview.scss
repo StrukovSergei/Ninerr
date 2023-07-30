@@ -1,9 +1,26 @@
 li.gig-preview {
     background-color: white;
-    height: fit-content;  
-    display: flex; 
+    height: fit-content;
+    display: flex;
     flex-direction: column;
-    
+    position: relative;
+
+
+    & .button_hurt {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        background-image: url(https://fiverr-res.cloudinary.com/npm-assets/@fiverr/search_perseus/collect.9f36825.svg);
+        padding: 15px;
+        background-position: 0 0;
+        height: 32px;
+        width: 34px;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+
 
     & .product_img {
         width: 100%;
@@ -13,30 +30,33 @@ li.gig-preview {
         object-fit: cover;
         object-position: center;
 
-    &:hover {
-        .vueperslides__arrows .vueperslides__arrow--next {
-       opacity: 1;
-        right: 0.5rem;
-        }
-    & .vueperslides__arrows .vueperslides__arrow--prev {
-        opacity: 1;
-        left: 0.5rem;
-        }
-    }
-    .vueperslides__bullet .default {
-        width: 8px;
-        height: 8px;
-        border-radius: 12px;
-        border: 1px solid currentColor;
-        background-color: #fff;
-        box-shadow: 0 0 1px #00000080, 0 0 3px #0000004d;
-        box-sizing: border-box;
-        transition: .4s ease-in-out;
-    }
+        &:hover {
+            .vueperslides__arrows .vueperslides__arrow--next {
+                opacity: 1;
+                right: 0.5rem;
+            }
 
-    .vueperslides__bullet--active .default {    
-       transform: scale(1.5);
-    }
+            & .vueperslides__arrows .vueperslides__arrow--prev {
+                opacity: 1;
+                left: 0.5rem;
+            }
+        }
+
+        .vueperslides__bullet .default {
+            width: 5px;
+            height: 5px;
+            border-radius: 12px;
+            border: 1px solid currentColor;
+            background-color: #fff;
+            box-shadow: 0 0 1px #00000080, 0 0 3px #0000004d;
+            box-sizing: border-box;
+            transition: .4s ease-in-out;
+            padding: 0 2px;
+        }
+
+        .vueperslides__bullet--active .default {
+            transform: scale(1.5);
+        }
 
         & .vueperslides__arrows .vueperslides__arrow--next {
             color: #222325;
@@ -46,11 +66,11 @@ li.gig-preview {
             border-radius: 50%;
             background-color: #ffffff;
             opacity: 1;
-            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);    
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
             opacity: 0;
             transition: .4s ease-in-out;
-            }
-        
+        }
+
         & .vueperslides__arrows .vueperslides__arrow--prev {
             color: #222325;
             right: auto;
@@ -65,20 +85,20 @@ li.gig-preview {
         }
 
     }
-    
-    .vueperslides__parallax-wrapper{
+
+    .vueperslides__parallax-wrapper {
         padding-bottom: 50%;
         height: 168px;
         border-radius: 8px;
     }
 
-   
 
-// .gig-preview {
-//     position: relative; /* Ensure proper positioning for the absolutely positioned image */
-//     background-color: white;
-//     border-radius: 10px;
- 
+
+    // .gig-preview {
+    //     position: relative; /* Ensure proper positioning for the absolutely positioned image */
+    //     background-color: white;
+    //     border-radius: 10px;
+
 
 
 
@@ -89,7 +109,7 @@ li.gig-preview {
         left: 0;
         width: 100%;
         height: 100%;
-      }
+    }
 
     & .user_name {
         cursor: pointer;
@@ -100,13 +120,31 @@ li.gig-preview {
 
     }
 
+    // & .title_product {
+    //     cursor: pointer;
+    //     font-size: rem(16px);
+    //     font-weight: 400;
+
+
+    // }
     & .title_product {
         cursor: pointer;
         font-size: rem(16px);
+        font-family: Macan-Regular;
+        color: #222325;
+
+
         font-weight: 400;
-
+        // display: -webkit-box; /* Required for -webkit-line-clamp */
+        // -webkit-box-orient: vertical; /* Required for -webkit-line-clamp */
+        
+        /* Limit the title to two rows */
+        -webkit-line-clamp: 2; /* Number of lines to display */
+        line-clamp: 2; /* Standardized version of line-clamp */
+        // text-overflow: ellipsis; /* Add ellipsis (...) if content overflows */
+        /* Add any other styles you want for the title */
     }
-
+    
     & .title_product:hover {
         text-decoration: underline;
 
@@ -117,7 +155,8 @@ li.gig-preview {
         display: flex;
         flex-direction: row;
     }
-    & .level{
+
+    & .level {
         font-size: rem(14px);
         font-weight: 600;
         height: 20px;
@@ -138,7 +177,7 @@ li.gig-preview {
         padding-bottom: 0px;
         padding-left: 4px;
         padding-right: 0px;
-        padding-top: 0px;     
+        padding-top: 0px;
     }
 
     & .price_product {
@@ -156,6 +195,8 @@ li.gig-preview {
         align-items: center;
 
         & .user_info {
+            display: flex;
+            align-items: center;
             & .user_img {
                 height: 24px;
                 border-radius: 50%;
