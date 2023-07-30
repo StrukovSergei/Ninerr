@@ -12,7 +12,9 @@
             <h2 class="gig-details__title">{{ currGig.title }}</h2>
             <div class="mini-user-info flex">
                 <img :src="currGig.owner.imgUrl" alt="" class="owner-small-logo">
-                <h3 class="mini-user-title">{{ currGig.owner.fullname }}, {{ currGig.owner.level }}</h3>
+                <h3 class="mini-user-title">{{ currGig.owner.fullname }} <span class="mini-user-level fs14">{{ currGig.owner.level }} </span>
+                <span class="mini-user-devider fs14">|</span>
+                </h3>
                 <div v-if="currGig.owner.rate" class="star-rating">
                     <span v-for="(star, index) in generateStars(currGig.owner.rate).fullStars" :key="index">
                         <span v-html="$svg('star')"></span>
@@ -42,7 +44,7 @@
 
             </div>
             <div class="aboutgig-container">
-                <h2 class="gig-title fs20">About this gig:</h2>
+                <h2 class="gig-title fs20">About this gig</h2>
                 <span class="gig-description">{{ currGig.description }}</span>
             </div>
 
@@ -65,9 +67,17 @@
                 <p>Basic</p>
             </div>
             <div class="order-details flex">
-                <span class="order-offer">Special offer:</span>
+                <span class="order-offer">Special offer</span>
                 <span class="order-price">${{ currGig.price }}</span>
                 <span class="order-mini-info">{{ currGig.info }}</span>
+                <div class="payment-features-list ">
+                    <template v-for="(feature, index) in currGig.features" :key="index">
+                        <div class="payment-feature">
+                            <span class="payment-feature-icon" v-html="$svg('greenCheck')"></span>
+                            <span class="payment-feature-text">{{ feature }}</span>
+                        </div>
+                    </template>
+                </div>
                 <span class="order-properties"><span v-html="$svg('clock')" class="clock-icon"></span> {{
                     currGig.daysToMake }} Days Delivery</span>
             </div>

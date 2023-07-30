@@ -5,7 +5,7 @@
     'categories-visible': categoriesVisible || !isHomePage,
     'header-position': !isHomePage,
   }">
-    <header class="header-container main-layout flex full">
+    <header class="header-container flex ">
       <RouterLink to="/" class="site-logo">
         <img src="../assets/imgs/main-logo.png" alt="" />
       </RouterLink>
@@ -98,7 +98,7 @@ export default {
         this.$router.push({
           path: "/explore",
           query: { txt: searchQuery },
-        });
+        })
       }
     },
     handleScroll() {
