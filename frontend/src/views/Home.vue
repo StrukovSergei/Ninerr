@@ -193,7 +193,7 @@ export default {
   data: () => ({
     slides: [
       {
-        content: `<a href="#/explore?category=ai-services">
+        content: `<a href="#/explore?category=AI+Services">
                 <div class="subcategory-warper"
                     style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161238/book-covers-2x.png) ;">
                     <span>Add talent to AI</span>
@@ -208,7 +208,7 @@ export default {
         // title: 'Slide #2',
         content: `
                 
-                    <a href="#/explore?category=logo-design">
+                    <a href="#/explore?category=Graphics+%26+Design">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161247/ai-artists-2x.png) ;">
                             <span>Build your brand</span>
@@ -218,7 +218,7 @@ export default {
       },
       {
         // title: 'Slide #3',
-        content: `<a href="#/explore?category=word-press">
+        content: `<a href="#/explore?category=Writing+%26+Translation">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161257/logo-design-2x.png) ;">
                             <span>Customize your site</span>
@@ -228,7 +228,7 @@ export default {
       },
       {
         // title: 'Slide #4',
-        content: `<a href="#/explore?category=voice-over">
+        content: `<a href="#/explore?category=Music+%26+Audio">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161257/wordpress-2x.png) ;">
                             <span>Share your message</span>
@@ -238,7 +238,7 @@ export default {
       },
       {
         // title: 'Slide #5',
-        content: `<a href="#/explore?category=video">
+        content: `<a href="#/explore?category=Video+%26+Animation">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161245/animated-explainer-2x.png) ;">
                             <span>Engage your audience</span>
@@ -248,7 +248,7 @@ export default {
       },
       {
         // title: 'Slide #6',
-        content: `<a href="#/explore?category=social-media">
+        content: `<a href="#/explore?category=Digital+Marketing">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161249/social-2x.png) ;">
                             <span>Reach more costumers</span>
@@ -258,7 +258,7 @@ export default {
       },
       {
         // title: 'Slide #7',
-        content: `<a href="#/explore?category=marketing">
+        content: `<a href="#/explore?category=Digital+Marketing">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/27f914ed7984fdd2d55aa1fb5e74bd6a-1690384243592/seo-2x.png);">
                             <span>Unlock growth online</span>
@@ -268,7 +268,7 @@ export default {
       },
       {
         // title: 'Slide #8',
-        content: `<a href="#/explore?category=graphics-design">
+        content: `<a href="#/explore?category=Graphics+%26+Design">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161236/illustration-2x.png) ;">
                             <span>Color your dreams</span>
@@ -278,7 +278,7 @@ export default {
       },
       {
         // title: 'Slide #9',
-        content: `<a href="#/explore?category=word-press">
+        content: `<a href="#/explore?category=Writing+%26+Translation">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161247/translation-2x.png) ;">
                             <span>Go global</span>
@@ -288,7 +288,7 @@ export default {
       },
       {
         // title: 'Slide #10',
-        content: `<a href="#/explore?category=data">
+        content: `<a href="#/explore?category=Data">
                         <div class="subcategory-warper"
                             style="background-image: url(https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/7ead3b2056987e6fa3aad69cf897a50b-1690383161248/data-entry-2x.png) ;">
                             <span>Learn your business</span>
