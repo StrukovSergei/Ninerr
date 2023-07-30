@@ -2,17 +2,16 @@
     <!-- <section class="main-layout"> -->
     <!-- <ul class="gig-list"> -->
     <!-- @click="goToDetail" -->
-
-    <li class="gig-preview" @click="goToDetail">
+    <li class="gig-preview" >
         <vueper-slides class="product_img" ref="vueperslides1" :touchable="false" fade :autoplay="false" :bullets="false"
             fixed-height="400px">
             <!-- <template #arrow-left>
-                <i class="fa-solid fa-angle-left"></i>
+                <i  class="fa-solid fa-angle-left"></i>
             </template>
             <template #arrow-right>
                 <i class="fa-solid fa-angle-right"></i>
             </template> -->
-            <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide"> </vueper-slide>
+            <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide" :link="`/#/gig/${this.gig._id}`"> </vueper-slide>
         </vueper-slides>
         <!-- visible-slides='slidesNum' -->
         <!-- <img :src="gig.imgUrls[0]" class="product_img"/> -->

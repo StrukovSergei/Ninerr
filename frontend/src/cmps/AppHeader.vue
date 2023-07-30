@@ -2,8 +2,9 @@
   <!-- <div :class="['header-main-layout full main-layout', { 'fixed-header': isHomePage }]"> -->
   <div class="header-main-layout main-layout full" :class="{
     scrolled: scrolled,
-    'search-visible': searchVisible,
-    'categories-visible': categoriesVisible,
+    'search-visible': searchVisible || !isHomePage,
+    'categories-visible': categoriesVisible || !isHomePage,
+    'header-position': !isHomePage
   }">
     <header class="header-container flex full">
       <RouterLink to="/" class="site-logo">
@@ -69,7 +70,7 @@ export default {
   },
   computed: {
     isHomePage() {
-      return this.$route.path === "/";
+      return this.$route.name === "Home";
     },
     isHome() {
       return this.isHomePage ? (this.isDoubleScrolled ? "grid" : "none") : "grid";
@@ -100,13 +101,7 @@ export default {
     },
   },
   watch: {
-    "$route.params": {
-      handler: function () {
-        if (this.isHomePage) {
-          window.scrollTo(0, 0);
-        }
-      },
-    },
+
   },
   methods: {
     searchGigs() {

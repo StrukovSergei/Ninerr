@@ -1,6 +1,8 @@
 <template>
   <div class="container home main-layout">
     <section class="index-filter">
+
+
       <div class="price-filter-section">
         <input type="number" v-model="minPrice" placeholder="Min Price" />
         <input type="number" v-model="maxPrice" placeholder="Max Price" />
@@ -32,6 +34,8 @@
 <script>
 import GigList from '../cmps/GigList.vue'
 
+
+
 export default {
   name: 'GigIndex',
   components: { GigList },
@@ -41,6 +45,7 @@ export default {
       minPrice: null,
       maxPrice: null,
       deliveryTime: '',
+      visible: false,
       gigs: []
     }
   },
