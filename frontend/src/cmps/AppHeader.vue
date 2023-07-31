@@ -5,7 +5,7 @@
     'categories-visible': categoriesVisible || !isHomePage,
     'header-position': !isHomePage,
   }">
-    <header class="header-container flex ">
+    <header class="header-container flex">
       <RouterLink to="/" class="site-logo">
         <img src="../assets/imgs/main-logo.png" alt="" />
       </RouterLink>
@@ -23,7 +23,7 @@
             <img :src="userImg" alt="Profile Photo" />
           </span>
           <span v-else>
-            <RouterLink to="/login">Login <span> Signup</span> </RouterLink>
+            <RouterLink to="/login"> Sign in <span class="join"> Join</span> </RouterLink>
           </span>
         </RouterLink>
       </div>
@@ -98,7 +98,7 @@ export default {
         this.$router.push({
           path: "/explore",
           query: { txt: searchQuery },
-        })
+        });
       }
     },
     handleScroll() {
