@@ -119,6 +119,32 @@
             img {
                 width: 2.5em;
             }
+
+            .user-profile-photo {
+                position: absolute;
+                top:20px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                }
+
+                .img-user-alt{
+                    position: absolute;
+                    background-color: #A23F6E;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #fff;
+                }
+            }
         }
     }
 
@@ -186,6 +212,7 @@
         border: 1px solid $clr1;
         color: $clr1;
     }
+
     & span.join:hover {
         background-color: $clr1;
         color: white;
@@ -219,7 +246,7 @@
 
             a {
                 color: $CLR00;
-                
+
             }
         }
     }
