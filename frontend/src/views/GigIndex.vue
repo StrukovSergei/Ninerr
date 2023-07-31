@@ -1,5 +1,12 @@
 <template>
   <div class="container home main-layout">
+    <div class="gig-small-nav index-nav flex">
+      <RouterLink class="home-icon" to="/">
+        <span v-html="$svg('home')"></span>
+      </RouterLink>
+      <span class="small-devider">/</span>
+      <RouterLink class="btn-back" to="/explore">All Gigs</RouterLink>
+    </div>
     <section class="index-filter ">
       <div class="flex flex-wrap items-center">
         <el-dropdown trigger="click">

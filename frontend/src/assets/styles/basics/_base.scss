@@ -14,8 +14,12 @@ html {
 }
 
 body {
-    font-size: rem(18px);
+    font-size: 1.125rem;
     margin: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 

@@ -2,14 +2,14 @@
     position: sticky;
     top: 0;
     background-color: transparent;
-    transition: background-color 0.3s ease;    
+    // transition: background-color 0.3s ease;    
     z-index: 100;
     height: 80px;
+    text-decoration: none;
 
     .header-container {
         min-height: 80px;
         align-items: center;
-        // padding-inline: 2rem;
     }
 
     .border-helper {
@@ -20,7 +20,7 @@
     header {
         display: flex;
         align-items: center;
-        
+
         & .site-logo {
             margin: 0;
 
@@ -30,12 +30,13 @@
             }
         }
 
-        & .search {            
+        & .search {
             position: relative;
             flex: 1;
             display: flex;
             align-items: center;
-            min-width: 200px;
+            min-width: rem(200px);
+            max-width: rem(500px);
             padding-left: 20px;
             padding-right: 20px;
             transition: opacity 0.3s ease;
@@ -43,12 +44,13 @@
 
             .header-main-layout.search-visible .search {
                 opacity: 1;
-                
+
             }
 
             input[type="text"] {
                 flex: 1;
-                padding: 8px;
+                padding: 10px 16px 10px 2px;
+                height: 2.6rem;
                 border: 1px solid $clr2;
                 border-radius: 4px 0 0 4px;
                 border-right: 0;
@@ -62,13 +64,12 @@
                 border-radius: 0 4px 4px 0;
                 display: block;
                 font-size: 14px;
-                padding: 8px 16px;
+                padding: 11.1px 16px;
                 text-shadow: none;
 
                 .search-icon svg {
                     fill: $CLR0;
                 }
-
             }
         }
 
@@ -78,14 +79,27 @@
             justify-self: end;
             text-decoration: none;
             display: flex;
+            margin-inline-start: auto;
+
+            & span.join {
+                margin-inline-start: 1rem;
+                border: 1px solid #fff;
+                padding: rem(10px) rem(16px);
+                border-radius: 5px;
+            }
 
             a {
                 color: white;
+                text-decoration:none;
 
-            }
+                &:hover {
+                    color: #1dbf73;       
+
+                    }
+                }
 
             &>* {
-                padding-inline-end: rem(20px);
+                padding-inline-start: rem(20px);
 
             }
 
@@ -106,19 +120,20 @@
         opacity: 0;
         border-bottom: 1px solid $clr22;
         border-top: 1px solid $clr22;
-        padding-inline: 2rem;
         height: 41px;
-        a{
+
+        a {
             font-family: Macan-regular;
-            color: $clr3;
-        }
+            color: #62646a;
+            text-decoration: none;
+            }
 
         & ul {
             justify-content: space-between;
-            margin: 0 ;
+            margin: 0;
             padding: 0;
             margin-block-start: 5px;
-
+    
             & li {
                 color: $clr3;
                 display: block;
@@ -127,20 +142,24 @@
                 padding: rem(8px) 0;
                 position: relative;
                 text-decoration: none;
-                cursor: pointer;
+                cursor: pointer;             
             }
         }
     }
 }
 
-.header-main-layout.scrolled{
+.header-main-layout.scrolled {
     background-color: white;
-    transition: background-color 0;
+    // transition: background-color 0.3s ease;
 }
 
 .header-main-layout.scrolled .header-container {
     background-color: white;
+    // transition: background-color 0.3s ease;
 
+    & span.join {
+        border: 1px solid #1dbf73;
+    }
 
     a {
         color: $CLR00;
@@ -148,6 +167,7 @@
 }
 
 .header-main-layout.search-visible .border-helper {
+    // transition: background-color 0.3s ease;
     opacity: 1;
 }
 
@@ -155,7 +175,6 @@
 .header-main-layout.categories-visible .categories-menu-package {
     opacity: 1;
     background-color: white;
-
 }
 
 .header-position {
@@ -163,10 +182,13 @@
 
     .header-container {
         .links {
+            & span.join {
+                    border: 1px solid #1dbf73;
+                }
             a {
                 color: $CLR00;
             }
         }
-   }
+    }
 
 }

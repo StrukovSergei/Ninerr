@@ -8,17 +8,25 @@
     //   border: 1px solid #dadbdd;
     // }
 
-    // .vueperslides__inner {
-    //   height: inherit;
-    //   position: relative;
-    //   user-select: none;
-    // }
-    margin-block-end: 3em;
-
-    .categories-list section.type-card .vueperslides__parallax-wrapper {
-      position: relative;
-      overflow: hidden;      
+    .vueperslides__inner {
+      // height: inherit;
+      // position: relative;
+      // user-select: none;
+    & .vueperslides__parallax-wrapper{
+      &:before{
+        box-shadow: none !important;
+      }          
+      &:after {
+        box-shadow: none !important;
+      }
     }
+    }
+    margin-block-end: 3em;
+    
+        // .vueperslides__parallax-wrapper {
+        //   box-shadow: none;
+          
+        // }   
 
     .vueperslides__track {
       position: absolute;
@@ -99,16 +107,22 @@
 }
 
 .selling-proposition-wrapper{
-  display: flex;
+background-color: #f3fdf9;
+
+& .selling-proposition{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   padding: rem(96px) rem(32px) rem(96px) rem(32px);
-  background-color: #f3fdf9;
+  
   align-items: center;
   justify-content: center;
+  gap: 30px;
   
 
   & .selling-info{
     padding-inline: 1rem rem(137.375px);    
     color: #404145;
+    grid-column: 1;
     & h2{
       margin: 0;
       padding-bottom: rem(24px);
@@ -132,6 +146,7 @@
       
     }
   } 
+}
 }
 
 .icon-category {
@@ -165,25 +180,23 @@
       cursor: pointer;
       position: relative;
       font-family: 'Macan-light', sans-serif;
-      height: 100%;
-      margin-block-end:15px;
-      
-    
+      height: 100%;    
+          
       &.flex::after {
         content: "";
         position: absolute;
-        top: 58px;
+        top: rem(58px);
         right: 50%;
         transform: translate(50%);
         padding: 0 0 8px;
-        width: 48px;
+        width: rem(48px);
         border-bottom: 2px solid #c5c6c9;
         transition: border-color 0.2s ease-in-out, width 0.2s ease-in-out;
         
       }
       &:hover::after {
         border-color: #1dbf73;
-        width: 90px;
+        width: rem(90px);
         transition: border-color 0.2s ease-in-out, width 0.2s ease-in-out;
         text-decoration: none;
 
