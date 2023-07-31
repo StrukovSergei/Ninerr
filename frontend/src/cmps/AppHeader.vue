@@ -23,7 +23,8 @@
             <img :src="userImg" alt="Profile Photo" />
           </span>
           <span v-else>
-            <RouterLink to="/login"> Sign in <span class="join"> Join</span> </RouterLink>
+            <RouterLink to="/login"> Sign in </RouterLink>
+            <RouterLink to="/login"><span class="join"> Join</span> </RouterLink>
           </span>
         </RouterLink>
       </div>

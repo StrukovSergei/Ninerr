@@ -8,11 +8,19 @@
     //   border: 1px solid #dadbdd;
     // }
 
-    // .vueperslides__inner {
-    //   height: inherit;
-    //   position: relative;
-    //   user-select: none;
-    // }
+    .vueperslides__inner {
+      // height: inherit;
+      // position: relative;
+      // user-select: none;
+    & .vueperslides__parallax-wrapper{
+      &:before{
+        box-shadow: none !important;
+      }          
+      &:after {
+        box-shadow: none !important;
+      }
+    }
+    }
     margin-block-end: 3em;
     
         // .vueperslides__parallax-wrapper {
