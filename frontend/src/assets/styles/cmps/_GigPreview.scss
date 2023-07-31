@@ -1,6 +1,7 @@
 li.gig-preview {
     background-color: white;
-    height: fit-content;   
+    height: fit-content;  
+    position: relative; 
     
     & .product_img {
         width: 100%;
@@ -10,30 +11,33 @@ li.gig-preview {
         object-fit: cover;
         object-position: center;
 
-    &:hover {
-        .vueperslides__arrows .vueperslides__arrow--next {
-       opacity: 1;
-        right: 0.5rem;
-        }
-    & .vueperslides__arrows .vueperslides__arrow--prev {
-        opacity: 1;
-        left: 0.5rem;
-        }
-    }
-    .vueperslides__bullet .default {
-        width: 8px;
-        height: 8px;
-        border-radius: 12px;
-        border: 1px solid currentColor;
-        background-color: #fff;
-        box-shadow: 0 0 1px #00000080, 0 0 3px #0000004d;
-        box-sizing: border-box;
-        transition: .4s ease-in-out;
-    }
+        &:hover {
+            .vueperslides__arrows .vueperslides__arrow--next {
+                opacity: 1;
+                right: 0.5rem;
+            }
 
-    .vueperslides__bullet--active .default {    
-       transform: scale(1.5);
-    }
+            & .vueperslides__arrows .vueperslides__arrow--prev {
+                opacity: 1;
+                left: 0.5rem;
+            }
+        }
+
+        .vueperslides__bullet .default {
+            width: 5px;
+            height: 5px;
+            border-radius: 12px;
+            border: 1px solid currentColor;
+            background-color: #fff;
+            box-shadow: 0 0 1px #00000080, 0 0 3px #0000004d;
+            box-sizing: border-box;
+            transition: .4s ease-in-out;
+            padding: 0 2px;
+        }
+
+        .vueperslides__bullet--active .default {
+            transform: scale(1.5);
+        }
 
     & .vueperslides__arrows .vueperslides__arrow--next {
         color: #222325;
@@ -61,12 +65,25 @@ li.gig-preview {
         transition: .3s ease-in-out;
         }
     }
-    
-    .vueperslides__parallax-wrapper{
+
+    .vueperslides__parallax-wrapper {
         padding-bottom: 50%;
         height: 168px;
         border-radius: 8px;
     }
+    & .button_hurt{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        background-image: url(https://fiverr-res.cloudinary.com/npm-assets/@fiverr/search_perseus/collect.9f36825.svg);
+        background-position: 0 0;
+        height: 32px;
+        width: 34px;
+        background-color: unset;
+    
+    }
+
 
 // .gig-preview {
 //     position: relative; /* Ensure proper positioning for the absolutely positioned image */
@@ -89,11 +106,21 @@ li.gig-preview {
         line-height: rem(21px);
         }
 
+    // & .title_product {
+    //     cursor: pointer;
+    //     font-size: rem(16px);
+    //     font-weight: 400;
+
+
+    // }
     & .title_product {
         cursor: pointer;
         font-size: rem(16px);
+        font-family: Macan-Regular;
+        color: #222325;
+
+
         font-weight: 400;
-        height: 41.6px;
         }
 
     & .title_product:hover {
@@ -126,7 +153,7 @@ li.gig-preview {
         padding-bottom: 0px;
         padding-left: 4px;
         padding-right: 0px;
-        padding-top: 0px;     
+        padding-top: 0px;
     }
 
     & .price_product {
@@ -144,6 +171,8 @@ li.gig-preview {
         align-items: center;
 
         & .user_info {
+            display: flex;
+            align-items: center;
             & .user_img {
                 height: 24px;
                 border-radius: 50%;
@@ -154,7 +183,7 @@ li.gig-preview {
     & .txt_body {
         color: #222325;
         font-family: "Macan", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-style: normal;
+        // font-style: normal;
     }
 
 }

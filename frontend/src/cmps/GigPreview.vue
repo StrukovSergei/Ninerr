@@ -10,8 +10,12 @@
             </template>
             <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide" :link="`/#/gig/${gig._id}`">
                 <img :src="slide" class="product_img" />
+
             </vueper-slide>
         </vueper-slides>
+        <button class="button_hurt">
+
+        </button>
 
 
         <section class="user_preview">
@@ -23,7 +27,7 @@
                 <h3 class="level txt_body">{{ gig.owner.level }}</h3>
             </div>
         </section>
-        <h3 class="title_product txt_body">{{ gig?.title }}</h3>
+        <h3 class="title_product">{{ gig?.title }}</h3>
         <div class="rate">
             <span v-html="$svg('blackStar')"></span>
             <p class="txt_body">{{ gig?.owner.rate }}</p>
@@ -60,7 +64,6 @@ export default {
         },
     },
     methods: {
-
     },
     components: { VueperSlides, VueperSlide },
 };
