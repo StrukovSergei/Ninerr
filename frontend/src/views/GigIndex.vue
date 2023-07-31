@@ -9,16 +9,31 @@
     </div>
     <section class="index-filter ">
       <div class="flex flex-wrap items-center">
-        <el-dropdown trigger="click">
+        <el-dropdown trigger="click" placement="bottom-start">
           <el-button type="primary">
             Budget <span v-html="$svg('arrowDown')"></span><el-icon class="el-icon--right"></el-icon>
           </el-button>
           <template #dropdown>
             <el-dropdown-menu>
-              <div class="price-filter-section">
-                <input type="number" v-model="minPrice" placeholder="Min Price" />
-                <input type="number" v-model="maxPrice" placeholder="Max Price" />
-                <button @click="applyFilter">Apply</button>
+              <div >
+                <span class="demo-input-suffix">
+                  <el-row :gutter="20" class="price-filter-section ">
+                    <span class="input-min">
+                      <span>MIN.</span>
+                      <el-input type="number" v-model="minPrice" class="w-50 m-2" placeholder="Any" maxlength="40px"  />
+                    </span>
+                    <span class="input-max">
+                      <span>MAX.</span>
+                      <el-input type="number" v-model="maxPrice" class="w-50 m-2" placeholder="Any"  />
+                      
+                    </span>
+                    <span class="border-helper"></span>
+                    <button @click="applyFilter">Apply</button>
+
+                  </el-row>
+                </span>
+                <!-- <input type="number" v-model="minPrice" placeholder="Min Price" />
+                <input type="number" v-model="maxPrice" placeholder="Max Price" /> -->
               </div>
             </el-dropdown-menu>
           </template>
