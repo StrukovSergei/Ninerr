@@ -1,8 +1,8 @@
 li.gig-preview {
     background-color: white;
-    height: fit-content;  
-    position: relative; 
-    
+    height: fit-content;
+    position: relative;
+
     & .product_img {
         width: 100%;
         border-radius: 10px;
@@ -29,9 +29,11 @@ li.gig-preview {
             border-radius: 12px;
             border: 1px solid currentColor;
             background-color: #fff;
-            box-shadow: 0 0 1px #00000080, 0 0 3px #0000004d;
+            box-shadow:
+                0 0 1px #00000080,
+                0 0 3px #0000004d;
             box-sizing: border-box;
-            transition: .4s ease-in-out;
+            transition: 0.4s ease-in-out;
             padding: 0 2px;
         }
 
@@ -39,30 +41,30 @@ li.gig-preview {
             transform: scale(1.5);
         }
 
-    & .vueperslides__arrows .vueperslides__arrow--next {
-        color: #222325;
-        left: auto;
-        right: -1rem;
-        border: 1px solid #ffffff;
-        border-radius: 50%;
-        background-color: #ffffff;
-        opacity: 1;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);    
-        opacity: 0;
-        transition: .3s ease-in-out;
+        & .vueperslides__arrows .vueperslides__arrow--next {
+            color: #222325;
+            left: auto;
+            right: -1rem;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            background-color: #ffffff;
+            opacity: 1;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transition: 0.3s ease-in-out;
         }
-    
-    & .vueperslides__arrows .vueperslides__arrow--prev {
-        color: #222325;
-        right: auto;
-        left: -1rem;
-        border: 1px solid #ffffff;
-        border-radius: 50%;
-        background-color: #ffffff;
-        opacity: 1;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
-        opacity: 0;
-        transition: .3s ease-in-out;
+
+        & .vueperslides__arrows .vueperslides__arrow--prev {
+            color: #222325;
+            right: auto;
+            left: -1rem;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            background-color: #ffffff;
+            opacity: 1;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transition: 0.3s ease-in-out;
         }
     }
 
@@ -71,7 +73,8 @@ li.gig-preview {
         height: 168px;
         border-radius: 8px;
     }
-    & .button_hurt{
+
+    & .button_hurt {
         position: absolute;
         top: 0;
         right: 0;
@@ -81,22 +84,15 @@ li.gig-preview {
         height: 32px;
         width: 34px;
         background-color: unset;
-    
     }
 
-
-// .gig-preview {
-//     position: relative; /* Ensure proper positioning for the absolutely positioned image */
-//     background-color: white;
-//     border-radius: 10px;
- 
     & .slides-overlay {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        }
+    }
 
     & .user_name {
         cursor: pointer;
@@ -104,35 +100,27 @@ li.gig-preview {
         font-weight: 700;
         height: auto;
         line-height: rem(21px);
-        }
+    }
 
-    // & .title_product {
-    //     cursor: pointer;
-    //     font-size: rem(16px);
-    //     font-weight: 400;
-
-
-    // }
     & .title_product {
         cursor: pointer;
         font-size: rem(16px);
         font-family: Macan-Regular;
         color: #222325;
 
-
         font-weight: 400;
-        }
+    }
 
     & .title_product:hover {
         text-decoration: underline;
-        }
+    }
 
     & .rate {
         display: flex;
         flex-direction: row;
     }
-    
-    & .level{
+
+    & .level {
         font-size: rem(14px);
         font-weight: 600;
         height: 20px;
@@ -173,6 +161,7 @@ li.gig-preview {
         & .user_info {
             display: flex;
             align-items: center;
+
             & .user_img {
                 height: 24px;
                 border-radius: 50%;
@@ -183,7 +172,5 @@ li.gig-preview {
     & .txt_body {
         color: #222325;
         font-family: "Macan", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        // font-style: normal;
     }
-
 }

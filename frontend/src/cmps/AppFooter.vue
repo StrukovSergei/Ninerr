@@ -1,5 +1,5 @@
 <template>
-    <section class="app-footer main-layout full">
+    <footer class="app-footer main-layout full">
         <div class="content-container flex align-center">
             <div class="title flex align-center">
                 <span class="logo"><img src="../assets/imgs/footer-logo.png" alt="" /><span class="smallRForLogo">®</span>
@@ -24,7 +24,7 @@
                 </li>
             </ul>
         </div>
-    </section>
+    </footer>
 </template>
 
 <script>

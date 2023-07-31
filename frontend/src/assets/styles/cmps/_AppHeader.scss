@@ -90,13 +90,9 @@
 
             a {
                 color: white;
-                text-decoration:none;
+                text-decoration: none;
 
-                &:hover {
-                    color: #1dbf73;       
-
-                    }
-                }
+            }
 
             &>* {
                 padding-inline-start: rem(20px);
@@ -126,14 +122,14 @@
             font-family: Macan-regular;
             color: #62646a;
             text-decoration: none;
-            }
+        }
 
         & ul {
             justify-content: space-between;
             margin: 0;
             padding: 0;
             margin-block-start: 5px;
-    
+
             & li {
                 color: $clr3;
                 display: block;
@@ -142,7 +138,14 @@
                 padding: rem(8px) 0;
                 position: relative;
                 text-decoration: none;
-                cursor: pointer;             
+                cursor: pointer;
+            }
+
+            & .header-link {
+                &:hover {
+                    text-decoration: underline #1dbf73 2.5px;
+                    text-underline-offset: 12px;
+                }
             }
         }
     }
@@ -183,8 +186,9 @@
     .header-container {
         .links {
             & span.join {
-                    border: 1px solid #1dbf73;
-                }
+                border: 1px solid #1dbf73;
+            }
+
             a {
                 color: $CLR00;
             }
