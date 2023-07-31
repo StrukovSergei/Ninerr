@@ -31,6 +31,10 @@
         }
 
         & .search {
+            @include for-mobile-layout {
+                display: none;
+            }
+
             position: relative;
             flex: 1;
             display: flex;
@@ -74,7 +78,15 @@
         }
 
         & .links {
-            font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            @include for-mobile-layout {
+                display: none;
+            }
+
+            font-family: Macan,
+            "Helvetica Neue",
+            Helvetica,
+            Arial,
+            sans-serif;
             font-size: 1rem;
             justify-self: end;
             text-decoration: none;
@@ -106,12 +118,17 @@
     }
 
     .categories-menu-package {
+
+        @include for-mobile-layout {
+            display: none;
+        }
+
         justify-content: space-between;
         font-family: Macan,
-            "Helvetica Neue",
-            Helvetica,
-            Arial,
-            sans-serif;
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
         transition: opacity 0.3s ease;
         opacity: 0;
         border-bottom: 1px solid $clr22;

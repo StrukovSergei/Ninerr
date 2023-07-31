@@ -1,19 +1,46 @@
 .vueperslides {
 
+  @include for-mobile-layout {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    top: 2rem;
+  }
+
   & h2 {
     margin-block-end: -3rem;
+
+    @include for-mobile-layout {
+      font-size: 1rem;
+      margin-block: 2px;
+    }
   }
 
   .vueperslides__inner {
     margin-block-end: 3em;
 
     & .vueperslides__parallax-wrapper {
+
+      @include for-mobile-layout {
+        &:before {
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+        }
+      }
+
       &:before {
         box-shadow: none !important;
+
+        @include for-mobile-layout {
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+        }
       }
 
       &:after {
         box-shadow: none !important;
+
+        @include for-mobile-layout {
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+        }
       }
     }
   }
@@ -36,10 +63,19 @@
   }
 
   .vueperslide__content-wrapper {
+    @include for-mobile-layout {
+      box-shadow: 2px 2px 2px 2px #cac4c4;
+    }
+
     width: 100%;
   }
 
   .subcategory-warper {
+
+    @include for-mobile-layout {
+      height: 10rem;
+    }
+
     position: relative;
     display: flex;
     flex-direction: column;
@@ -52,11 +88,21 @@
     cursor: pointer;
 
     span {
+      @include for-mobile-layout {
+        font-size: 12px;
+      }
+
       font-size: em(14px);
       text-align: left;
     }
 
     h4 {
+      @include for-mobile-layout {
+        font-size: 8px;
+        margin-block-start: 8.5rem;
+        color: black;
+      }
+
       color: white;
       text-align: left;
       font-size: em(23px);
@@ -65,6 +111,13 @@
   }
 
   .vueperslide__content {
+
+    // @include for-mobile-layout {
+    //   width: 100%;
+    //   min-height: 20.5rem;
+    //   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+    // }
+
     min-height: rem(300px);
     width: 100%;
     color: white;
@@ -80,6 +133,10 @@
     background-color: #ffffff;
     opacity: 1;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+
+    @include for-mobile-layout {
+      display: none;
+    }
   }
 
   & .vueperslides__arrows--outside .vueperslides__arrow--prev {
@@ -92,11 +149,19 @@
     background-color: #ffffff;
     opacity: 1;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+
+    @include for-mobile-layout {
+      display: none;
+    }
   }
 }
 
 .selling-proposition-wrapper {
   background-color: #f3fdf9;
+
+  @include for-mobile-layout {
+    display: none;
+  }
 
   & .selling-proposition {
     display: grid;
@@ -139,6 +204,10 @@
 }
 
 .icon-category {
+  @include for-mobile-layout {
+    display: none;
+  }
+
   margin-block-end: 4.9rem;
   text-decoration: none;
 
