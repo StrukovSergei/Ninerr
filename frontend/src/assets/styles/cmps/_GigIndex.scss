@@ -1,11 +1,44 @@
+.index-nav {
+    margin-top: 80px;
+    font-family: Macan;
+
+    .home-icon {
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .small-devider {
+        color: $clr2;
+        font-size: 14px;
+        margin-top: 3px;
+        margin-right: 10px;
+    }
+
+    .btn-back {
+        font-size: 14px;
+        margin-top: 3px;
+        color: $clr4;
+        cursor: pointer;
+    }
+}
+
+
 .index-filter {
 
     display: flex;
     padding-top: 20px;
-    padding-left: 40px;
+    margin-top: 20px;
+    gap: 10px;
 
     button {
         cursor: pointer;
+        margin-left: 0;
+        border-radius: 8px;
+    }
+
+    button:hover{
+        border: 1px solid $clr4;
     }
 
     svg {
@@ -15,7 +48,7 @@
         width: 12px;
     }
 
-    .el-button{
+    .el-button {
         position: relative;
         background-color: transparent;
         color: $clr4;

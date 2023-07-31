@@ -7,6 +7,7 @@
     gap: 2rem;
     color: $clr11;
     font-family: macan;
+    margin-top: 70px;
 
     .gig-description {
         font-size: 16px;
@@ -202,12 +203,19 @@
             top: -1px;
 
             .mini-user-level {
+                position: relative;
+                top: -2px;
                 font-family: Macan-Regular;
                 font-weight: 400;
+                color: $clr10;
             }
 
             .mini-user-devider {
+                font-size: 17px;
                 position: absolute;
+                padding-left: 8px;
+                top: 3px;
+                color:$clr2;
             }
         }
 
@@ -220,6 +228,12 @@
             overflow: clip;
         }
 
+    }
+
+    .star-rating {
+        position: relative;
+        margin-left: 10px;
+        top: 2px;
     }
 
     .star-rating svg {
@@ -236,7 +250,8 @@
         font-weight: bold;
         font-size: 16px;
         position: relative;
-        top: 2px;
+        top: 4px;
+        left: -6px;
     }
 
     .seller-title {
