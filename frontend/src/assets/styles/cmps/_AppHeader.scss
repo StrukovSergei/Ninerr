@@ -252,6 +252,9 @@
     a {
         color: $CLR00;
     }
+    a:hover {
+        color: $clr1;
+    }
 }
 
 .header-main-layout.search-visible .border-helper {
