@@ -10,6 +10,11 @@
     .header-container {
         min-height: 80px;
         align-items: center;
+
+        & span.join:hover {
+            background-color: $clr1;
+            color: white;
+        }
     }
 
     .border-helper {
@@ -178,8 +183,14 @@
     // transition: background-color 0.3s ease;
 
     & span.join {
-        border: 1px solid #1dbf73;
+        border: 1px solid $clr1;
+        color: $clr1;
     }
+    & span.join:hover {
+        background-color: $clr1;
+        color: white;
+    }
+
 
     a {
         color: $CLR00;
