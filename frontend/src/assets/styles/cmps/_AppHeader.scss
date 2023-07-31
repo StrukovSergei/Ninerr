@@ -241,16 +241,19 @@
     & span.join {
         border: 1px solid $clr1;
         color: $clr1;
+        transition: all .2s ease;
     }
 
     & span.join:hover {
         background-color: $clr1;
         color: white;
+        
     }
 
 
     a {
         color: $CLR00;
+        transition: color .2s;
     }
     a:hover {
         color: $clr1;
