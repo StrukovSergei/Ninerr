@@ -20,7 +20,7 @@
                   <el-row :gutter="20" class="price-filter-section ">
                     <span class="input-min">
                       <span>MIN.</span>
-                      <el-input type="number" v-model="minPrice" class="w-50 m-2" placeholder="Any" maxlength="40px" />
+                      <el-input type="number" v-model="minPrice" class="w-50 m-2" placeholder="Any" />
                     </span>
                     <span class="input-max">
                       <span>MAX.</span>
@@ -47,7 +47,7 @@
             
                 <div class="delivery-filter-section flex">
                   <div class="mb-2 flex items-center text-sm">
-                    <el-radio-group size="40" v-model="deliveryTime" class="ml-4" >
+                    <el-radio-group v-model="deliveryTime" class="ml-4" >
                       <el-radio label="3" size="large">Up to 3 days</el-radio>
                       <el-radio label="5" size="large">Up to 5 days</el-radio>
                       <el-radio label="" size="large">Anytime</el-radio>
