@@ -21,6 +21,7 @@
         <RouterLink to="/user/:id">Become a Seller </RouterLink>
         <RouterLink :to="userProfile">
           <span v-if="loggedinUser" class="user-profile-photo">
+            <div class="online-dot"></div>
             <span v-if="userImg">
               <img :src="userImg" :alt="userImgAlt" />
             </span>
