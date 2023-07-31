@@ -1,4 +1,5 @@
 <template>
+    <!-- <section class="main-layout"> -->
     <li class="gig-preview">
         <vueper-slides class="product_img" ref="vueperslides1" :touchable="false" :autoplay="false" :infinite="false"
             disable-arrows-on-edges>
@@ -35,6 +36,7 @@
         <p class="price_product txt_body">From ${{ gig.price?.toLocaleString() }}</p>
 
     </li>
+<!-- </section> -->
 </template>
 <script>
 import { VueperSlides, VueperSlide } from "vueperslides"
