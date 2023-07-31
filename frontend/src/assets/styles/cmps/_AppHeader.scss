@@ -2,13 +2,14 @@
     position: sticky;
     top: 0;
     background-color: transparent;
-    transition: background-color 0.3s ease;    
+    // transition: background-color 0.3s ease;    
     z-index: 100;
     height: 80px;
+    text-decoration: none;
 
     .header-container {
         min-height: 80px;
-        align-items: center;        
+        align-items: center;
     }
 
     .border-helper {
@@ -19,7 +20,7 @@
     header {
         display: flex;
         align-items: center;
-        
+
         & .site-logo {
             margin: 0;
 
@@ -29,7 +30,7 @@
             }
         }
 
-        & .search {            
+        & .search {
             position: relative;
             flex: 1;
             display: flex;
@@ -42,7 +43,8 @@
             opacity: 0;
 
             .header-main-layout.search-visible .search {
-                opacity: 1;                
+                opacity: 1;
+
             }
 
             input[type="text"] {
@@ -62,7 +64,7 @@
                 border-radius: 0 4px 4px 0;
                 display: block;
                 font-size: 14px;
-                padding: 10px 16px;
+                padding: 11.1px 16px;
                 text-shadow: none;
 
                 .search-icon svg {
@@ -79,10 +81,10 @@
             display: flex;
             margin-inline-start: auto;
 
-            & span.join{
+            & span.join {
                 margin-inline-start: 1rem;
                 border: 1px solid #fff;
-                padding:rem(10px) rem(16px);
+                padding: rem(10px) rem(16px);
                 border-radius: 5px;
             }
 
@@ -119,8 +121,8 @@
         border-bottom: 1px solid $clr22;
         border-top: 1px solid $clr22;
         height: 41px;
-       
-        a{
+
+        a {
             font-family: Macan-regular;
             color: #62646a;
             text-decoration: none;
@@ -128,7 +130,7 @@
 
         & ul {
             justify-content: space-between;
-            margin: 0 ;
+            margin: 0;
             padding: 0;
             margin-block-start: 5px;
     
@@ -146,24 +148,26 @@
     }
 }
 
-.header-main-layout.scrolled{
+.header-main-layout.scrolled {
     background-color: white;
-    transition: background-color 0;
+    // transition: background-color 0.3s ease;
 }
 
 .header-main-layout.scrolled .header-container {
     background-color: white;
+    // transition: background-color 0.3s ease;
 
-    & span.join {       
-        border: 1px solid #1dbf73;       
+    & span.join {
+        border: 1px solid #1dbf73;
     }
-    
+
     a {
         color: $CLR00;
     }
 }
 
 .header-main-layout.search-visible .border-helper {
+    // transition: background-color 0.3s ease;
     opacity: 1;
 }
 
@@ -185,6 +189,6 @@
                 color: $CLR00;
             }
         }
-   }
+    }
 
 }
