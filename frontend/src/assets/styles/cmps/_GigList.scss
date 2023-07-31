@@ -2,8 +2,9 @@
     list-style: none;
     // display: grid;
     padding: 0;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        li {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    li {
         background-color: none;
         color: $clr6;
         padding: 5px;
@@ -13,16 +14,13 @@
     a {
         color: $clr1;
         padding: 10px;
-    } 
-    
+    }
+
     pre {
         background-color: #ddd;
         font-size: .5em;
         color: #553f3f;
         padding: .2em;
         margin: .2em;
-    }    
+    }
 }
-
-
-

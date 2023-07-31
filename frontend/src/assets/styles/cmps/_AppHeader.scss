@@ -31,6 +31,10 @@
         }
 
         & .search {
+            @include for-mobile-layout {
+                display: none;
+            }
+
             position: relative;
             flex: 1;
             display: flex;
@@ -74,7 +78,15 @@
         }
 
         & .links {
-            font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            @include for-mobile-layout {
+                display: none;
+            }
+
+            font-family: Macan,
+            "Helvetica Neue",
+            Helvetica,
+            Arial,
+            sans-serif;
             font-size: 1rem;
             justify-self: end;
             text-decoration: none;
@@ -90,13 +102,9 @@
 
             a {
                 color: white;
-                text-decoration:none;
+                text-decoration: none;
 
-                &:hover {
-                    color: $clr1;       
-
-                    }
-                }
+            }
 
             &>* {
                 padding-inline-start: rem(20px);
@@ -110,12 +118,17 @@
     }
 
     .categories-menu-package {
+
+        @include for-mobile-layout {
+            display: none;
+        }
+
         justify-content: space-between;
         font-family: Macan,
-            "Helvetica Neue",
-            Helvetica,
-            Arial,
-            sans-serif;
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
         transition: opacity 0.3s ease;
         opacity: 0;
         border-bottom: 1px solid $clr22;
@@ -126,14 +139,14 @@
             font-family: Macan-regular;
             color: #62646a;
             text-decoration: none;
-            }
+        }
 
         & ul {
             justify-content: space-between;
             margin: 0;
             padding: 0;
             margin-block-start: 5px;
-    
+
             & li {
                 color: $clr3;
                 display: block;
@@ -142,7 +155,14 @@
                 padding: rem(8px) 0;
                 position: relative;
                 text-decoration: none;
-                cursor: pointer;             
+                cursor: pointer;
+            }
+
+            & .header-link {
+                &:hover {
+                    text-decoration: underline #1dbf73 2.5px;
+                    text-underline-offset: 12px;
+                }
             }
         }
     }
@@ -183,8 +203,9 @@
     .header-container {
         .links {
             & span.join {
-                    border: 1px solid #1dbf73;
-                }
+                border: 1px solid #1dbf73;
+            }
+
             a {
                 color: $CLR00;
                 

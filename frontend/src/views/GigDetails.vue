@@ -12,8 +12,9 @@
             <h2 class="gig-details__title">{{ currGig.title }}</h2>
             <div class="mini-user-info flex">
                 <img :src="currGig.owner.imgUrl" alt="" class="owner-small-logo">
-                <h3 class="mini-user-title">{{ currGig.owner.fullname }} <span class="mini-user-level fs14">{{ currGig.owner.level }} </span>
-                <span class="mini-user-devider fs14">|</span>
+                <h3 class="mini-user-title">{{ currGig.owner.fullname }} <span class="mini-user-level fs14">{{
+                    currGig.owner.level }} </span>
+                    <span class="mini-user-devider fs14">|</span>
                 </h3>
                 <div v-if="currGig.owner.rate" class="star-rating">
                     <span v-for="(star, index) in generateStars(currGig.owner.rate).fullStars" :key="index">
@@ -35,7 +36,7 @@
 
                 <vueper-slides class="no-shadow thumbnails" ref="vueperslides2"
                     @slide="$refs.vueperslides1.goToSlide($event.currentSlide.index, { emit: false })"
-                    :visible-slides="slides.length" fixed-height="75px" :bullets="false" :touchable="false" :gap="2.5"
+                    :visible-slides="slides.length" fixed-height="80px" :bullets="false" :touchable="false" :gap="1.5"
                     :arrows="false">
                     <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image"
                         @click.native="$refs.vueperslides2.goToSlide(i)">

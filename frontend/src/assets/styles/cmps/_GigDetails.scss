@@ -161,8 +161,6 @@
         }
     }
 
-    .vueperslide__content-wrapper {}
-
     .vueperslides__arrow svg {
         background-color: #fff;
         -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
@@ -256,4 +254,11 @@
     .seller-title {
         font-size: 20px;
     }
+    .vueperslide{
+        margin-top: 10px;
+        flex-basis: 200px;
+    }
+
+
 }
+
