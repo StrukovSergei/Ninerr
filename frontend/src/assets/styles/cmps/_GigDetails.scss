@@ -123,7 +123,6 @@
             width: 88%;
             cursor: pointer;
 
-
             .btn-continue-arrow {
                 position: relative;
                 top: 3px;
@@ -161,8 +160,6 @@
             }
         }
     }
-
-    .vueperslide__content-wrapper {}
 
     .vueperslides__arrow svg {
         background-color: #fff;
@@ -257,4 +254,11 @@
     .seller-title {
         font-size: 20px;
     }
+    .vueperslide{
+        margin-top: 10px;
+        flex-basis: 200px;
+    }
+
+
 }
+

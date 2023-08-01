@@ -11,13 +11,9 @@
             </template>
             <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide" :link="`/#/gig/${gig._id}`">
                 <img :src="slide" class="product_img" />
-
             </vueper-slide>
         </vueper-slides>
-        <button class="button_hurt">
-
-        </button>
-
+        <button class="button_hurt"></button>
 
         <section class="user_preview">
             <div class="user_info">
@@ -34,13 +30,12 @@
             <p class="txt_body">{{ gig?.owner.rate }}</p>
         </div>
         <p class="price_product txt_body">From ${{ gig.price?.toLocaleString() }}</p>
-
     </li>
-<!-- </section> -->
+    <!-- </section> -->
 </template>
 <script>
-import { VueperSlides, VueperSlide } from "vueperslides"
-import "vueperslides/dist/vueperslides.css"
+import { VueperSlides, VueperSlide } from "vueperslides";
+import "vueperslides/dist/vueperslides.css";
 export default {
     name: "GigPreview",
     props: {
@@ -53,20 +48,19 @@ export default {
     },
     computed: {
         gigs() {
-            console.log(this.$store.getters.gigs)
-            return this.$store.getters.gigs
+            console.log(this.$store.getters.gigs);
+            return this.$store.getters.gigs;
         },
     },
     watch: {
         gig: {
             handler(newGig) {
-                this.slides = newGig.imgUrls
+                this.slides = newGig.imgUrls;
             },
             immediate: true,
         },
     },
-    methods: {
-    },
+    methods: {},
     components: { VueperSlides, VueperSlide },
 };
 </script>

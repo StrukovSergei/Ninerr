@@ -57,7 +57,7 @@
 
     <div class="trusted-container main-layout full">
         <div class="logos flex align-center justify-center">
-            <span>Trusted By:</span>
+            <span class="trusted-by-title">Trusted By:</span>
             <div class="icon-container">
                 <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/meta.12b5e5c.png"
                     alt="" />

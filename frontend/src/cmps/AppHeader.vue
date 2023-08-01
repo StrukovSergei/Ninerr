@@ -21,7 +21,11 @@
         <RouterLink to="/user/:id">Become a Seller </RouterLink>
         <RouterLink :to="userProfile">
           <span v-if="loggedinUser" class="user-profile-photo">
-            <img :src="userImg" alt="Profile Photo" />
+            <div class="online-dot"></div>
+            <span v-if="userImg">
+              <img :src="userImg" :alt="userImgAlt" />
+            </span>
+            <span v-else class="img-user-alt"> {{ userImgAlt }}</span>
           </span>
           <span v-else>
             <RouterLink to="/login"> Sign in </RouterLink>
@@ -32,15 +36,33 @@
     </header>
     <section class="categories-menu-package main-layout full">
       <ul class="flex clean-list header-categories">
-        <RouterLink to="/explore?category=Graphics+%26+Design">Graphics & Design</RouterLink>
-        <RouterLink to="/explore?category=Digital+Marketing">Digital Marketing</RouterLink>
-        <RouterLink to="/explore?category=Writing+%26+Translation">Writing & Translation</RouterLink>
-        <RouterLink to="/explore?category=Video+%26+Animation">Video & Animation</RouterLink>
-        <RouterLink to="/explore?category=Music+%26+Audio">Music & Audio</RouterLink>
-        <RouterLink to="/explore?category=Programming+%26+Tech">Programming & Tech</RouterLink>
-        <RouterLink to="/explore?category=Photography">Photography</RouterLink>
-        <RouterLink to="/explore?category=Business">Business</RouterLink>
-        <RouterLink to="/explore?category=AI+Services">AI Services</RouterLink>
+        <div class="header-link">
+          <RouterLink to="/explore?category=Graphics+%26+Design">Graphics & Design</RouterLink>
+        </div>
+        <div class="header-link">
+          <RouterLink to="/explore?category=Digital+Marketing">Digital Marketing</RouterLink>
+        </div>
+        <div class="header-link">
+          <RouterLink to="/explore?category=Writing+%26+Translation">Writing & Translation</RouterLink>
+        </div>
+        <div class="header-link">
+          <RouterLink to="/explore?category=Video+%26+Animation">Video & Animation</RouterLink>
+        </div>
+        <div class="header-link">
+          <RouterLink to="/explore?category=Music+%26+Audio">Music & Audio</RouterLink>
+        </div>
+        <div class="header-link">
+          <RouterLink to="/explore?category=Programming+%26+Tech">Programming & Tech</RouterLink>
+        </div>
+        <div class="header-link">
+          <RouterLink to="/explore?category=Photography">Photography</RouterLink>
+        </div>
+        <div class="header-link">
+          <RouterLink to="/explore?category=Business">Business</RouterLink>
+        </div>
+        <div class="header-link">
+          <RouterLink to="/explore?category=AI+Services">AI Services</RouterLink>
+        </div>
       </ul>
     </section>
   </div>
@@ -88,11 +110,16 @@ export default {
     },
     userImg() {
       if (!this.loggedinUser) return ""
+      console.log("🚀 ~ file: AppHeader.vue:112 ~ userImg ~ this.loggedinUser.imgUrl:", this.loggedinUser)
       return this.loggedinUser.imgUrl
     },
     loggedinUser() {
       return this.$store.getters.loggedinUser
     },
+    userImgAlt() {
+      return this.loggedinUser.fullname.charAt(0).toUpperCase()
+    }
+
   },
   watch: {},
   methods: {
@@ -106,7 +133,7 @@ export default {
       }
     },
     handleScroll() {
-      if (!this.isHomePage) return;
+      if (!this.isHomePage) return
       const scrollPosition = window.scrollY
 
       const firstStageThreshold = 20

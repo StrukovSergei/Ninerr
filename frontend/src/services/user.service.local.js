@@ -48,9 +48,7 @@ async function login(userCred) {
 }
 
 async function signup(userCred) {
-  if (!userCred.imgUrl)
-    userCred.imgUrl =
-      'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
+
   const user = await storageService.post('user', userCred)
   return saveLocalUser(user)
 }
@@ -92,7 +90,7 @@ function _saveUsersToFile() {
 //     _id: 'u101',
 //     isSeller: true,
 //     fullname: 'User 1',
-//     imgUrl: '/img/img1.jpg',
+//     imgUrl: '',
 //     username: 'user1',
 //     password: '123',
 //     level: 'basic/premium',
@@ -113,7 +111,7 @@ function _saveUsersToFile() {
 //   await userService.signup({
 //     _id: 'u102',
 //     fullname: 'User 2',
-//     imgUrl: '/img/img2.jpg',
+//     imgUrl: 'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/9f500b4b629e3dcb09a311b29525d40d-1647197131685/eccd2987-a403-4069-a42d-1c844ef2b0b4.jpg',
 //     username: 'user2',
 //     password: '123',
 //     level: 'basic/premium',
@@ -126,7 +124,7 @@ function _saveUsersToFile() {
 //         by: {
 //           _id: 'u102',
 //           fullname: 'user2',
-//           imgUrl: '/img/img2.jpg',
+//           imgUrl: '',
 //         },
 //       },
 //     ],
@@ -135,7 +133,7 @@ function _saveUsersToFile() {
 //     _id: 'u103',
 //     isSeller: true,
 //     fullname: 'User 3',
-//     imgUrl: '/img/img3.jpg',
+//     imgUrl: '',
 //     username: 'user3',
 //     password: '123',
 //     level: 'basic/premium',
