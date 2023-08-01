@@ -33,7 +33,7 @@ li.gig-preview {
             box-sizing: border-box;
             transition: .4s ease-in-out;
             // padding: 0 2px;
-            margin: 0px;
+            margin: -3px;
         }
 
         .vueperslides__bullet--active .default {
@@ -70,6 +70,15 @@ li.gig-preview {
             margin-block-end: 0px;
             height: 100%;
         }
+    }
+    h3 {
+        display: block;
+        font-size: 1.17em;
+        margin-block-start: 4px;
+        margin-block-end: 6px;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
     }
 
     .vueperslides__parallax-wrapper {
@@ -120,6 +129,8 @@ li.gig-preview {
     }
 
     & .title_product {
+        height: 53.2px;
+        padding-block-start: 4px;
         cursor: pointer;
         font-size: rem(16px);
         font-family: Macan-Regular;
@@ -148,6 +159,10 @@ li.gig-preview {
         font-size: rem(14px);
         font-weight: 600;
         height: 20px;
+        color: #404145;
+        font-family: "Macan", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
     }
 
     & .rate p {
@@ -167,6 +182,16 @@ li.gig-preview {
         padding-right: 0px;
         padding-top: 0px;
     }
+    & .rate span{
+        margin-inline-start: rem(5px);
+        color: #74767e;
+        font-size: rem(16px);
+        font-family: Macan-Regular;
+        font-weight: 400;
+
+
+    }
+
 
     & .price_product {
         cursor: pointer;
@@ -185,6 +210,9 @@ li.gig-preview {
         & .user_info {
             display: flex;
             align-items: center;
+            margin-block-start: rem(4px);
+
+
 
             & .user_img {
                 height: 24px;
