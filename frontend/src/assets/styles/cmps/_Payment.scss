@@ -1,5 +1,6 @@
 .gig-payment {
 
+    margin-top: 70px;
     .payment-container {
         border: 1px solid $clr9;
         border-radius: 0.1875em;
@@ -7,7 +8,6 @@
         margin-block-end: 64px;
         color: $clr5;
         margin-inline-end: 50px;
-        height: 860px;
         flex: 1;
 
 
@@ -29,7 +29,7 @@
         .card-container {
             font-family: Macan;
             grid-template-columns: 290px 145px 145px;
-            grid-template-rows: 110px 110px;
+            grid-template-rows: 65px 65px;
             grid-template-areas:
                 "number date security"
                 "name lname lname";
@@ -81,7 +81,6 @@
         padding: 1.5em;
         margin-block-end: 64px;
         color: $clr5;
-        margin-inline-end: 50px;
         max-height: 650px;
         max-width: 440px;
 
