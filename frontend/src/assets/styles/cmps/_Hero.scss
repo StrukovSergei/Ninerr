@@ -113,6 +113,7 @@
       span {
         font-family: "Macan-light";
         fill: #fcfcfc;
+
       }
     }
 
@@ -210,8 +211,8 @@
 
   padding: 8px 24px 0px 12px;
   display: grid;
-  grid-template-areas: 'pic name . . star'
-  'pic exp exp exp exp';
+  grid-template-areas: 'pic inf'
+  'pic exp ';
 
 
   backdrop-filter: blur(30px);
@@ -237,13 +238,13 @@
   & .info-pic {
     margin-inline-end: rem(10px);
     width: rem(40px);
-
+    grid-area: pic;
   }
 
   & .info-txt {
+    grid-area: inf;
 
     & span.fullname {
-      grid-area: name;
       font-size: 12px;
       font-weight: 600;
       align-self: center;
@@ -258,10 +259,11 @@
       fill: #fff;
       line-height: 1rem;
     }
+  }
 
-    & p.expert {
-      grid-area: exp;
-    }
+  & p.expert {
+    grid-area: exp;
+    color: #fff;
   }
 }
 

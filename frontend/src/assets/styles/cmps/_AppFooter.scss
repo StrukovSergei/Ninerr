@@ -51,10 +51,11 @@
     display: none;
 
     @include for-mobile-layout {
+        position: sticky;
         display: flex;
-        position: static;
         margin-top: auto;
         bottom: 0;
+        background-color: #fff;
         box-shadow: 0px -1px 20px 0px #e4e5e7;
 
         & li {
