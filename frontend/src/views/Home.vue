@@ -3,7 +3,7 @@
     <Hero />
 
     <div class="main-layout vueperslides">
-      <h2>Popular services:</h2>
+      <h2>Popular services</h2>
       <vueper-slides class="no-shadow" :visible-slides="slidesNum" slide-multiple :gap="3" :slide-ratio="1 / 3"
         :bullets="false" :dragging-distance="200" :breakpoints="{
           600: { visibleSlides: 2, slideMultiple: 2 },
@@ -21,7 +21,6 @@
       </vueper-slides>
     </div>
   </section>
-  <div class="for-mobil"></div>
 
   <div class="selling-proposition-wrapper main-layout full">
     <div class="selling-proposition">
@@ -75,6 +74,7 @@
       </div>
     </div>
   </div>
+
   <section class="icon-category main-layout">
     <h2 class="bold">You need it, we've got it</h2>
     <section class="category-list main-layout">
@@ -171,6 +171,21 @@
       </section>
     </section>
   </section>
+  <!-- ---------------For Mobil Only------------------------- -->
+  <section class="for-mobil">
+    <div class="vueperslides">
+      <h2>Popular services <RouterLink to="/mobile">See All</RouterLink>
+      </h2>
+      <vueper-slides class="no-shadow" :visible-slides="3" :slide-ratio="1 / 3" :gap="3" :dragging-distance="20"
+        :bullets="false">
+        <vueper-slide v-for="(slide, i) in slides" :key="i" :content="slide.content" :link="slide.link" />
+      </vueper-slides>
+    </div>
+    <div class="pic">
+      <img src="../assets/imgs/fiverr-mobil.png" alt="" />
+    </div>
+  </section>
+  <!-- ---------------End For Mobil Only------------------------- -->
 </template>
 
 <script>

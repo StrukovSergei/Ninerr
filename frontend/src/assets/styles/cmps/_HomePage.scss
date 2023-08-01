@@ -1,7 +1,7 @@
 .vueperslides {
 
   @include for-mobile-layout {
-    display: flex;
+    display: none;
     flex-direction: column;
     font-size: 1rem;
     top: 2rem;
@@ -59,9 +59,6 @@
     overflow: hidden;
     z-index: 1;
 
-    @include for-mobile-layout {
-      box-shadow: inset 4px 1px 20px 0px #cac4c4;
-    }
   }
 
   .vueperslides__track-inner {
@@ -103,9 +100,9 @@
 
     h4 {
       @include for-mobile-layout {
-        font-size: 8px;
-        margin-block-start: 8.5rem;
-        color: black;
+        font-size: 10px;
+        margin-block-start: 7.5rem;
+        color: #5e5c5c;
       }
 
       color: white;
@@ -334,6 +331,42 @@
       font-family: Macan-light;
       color: #222325;
       line-height: 26px;
+    }
+  }
+}
+
+.for-mobil {
+
+  @include for-narrow-layout {
+    display: none;
+  }
+
+  margin-inline: rem(20px);
+
+  & h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & span {
+      color: #1dbf73;
+      font-size: 12px;
+    }
+  }
+
+  & .vueperslides {
+    display: flex;
+
+    & .vueperslide--visible {
+      box-shadow: inset 4px 1px 20px 0px #cac4c4;
+      border-radius: 5px;
+    }
+  }
+
+  & .pic {
+    & img {
+      width: 100%;
+      margin-top: 4.5rem;
     }
   }
 }

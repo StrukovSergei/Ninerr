@@ -8,54 +8,58 @@ import LoginSignup from './views/LoginSignup.vue'
 import UserDetails from './views/UserDetails.vue'
 import GigDetails from './views/GigDetails.vue'
 import Payment from './views/Payment.vue'
+import MobileCategory from './cmps/MobileCategory.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+  },
+  {
+    path: '/mobile',
+    name: 'Mobile',
+    component: MobileCategory,
   },
   {
     path: '/explore',
     name: 'GigIndex',
-    component: GigIndex
+    component: GigIndex,
   },
   {
     path: '/review',
     name: 'ReviewIndex',
-    component: ReviewIndex
+    component: ReviewIndex,
   },
   {
     path: '/chat',
     name: 'Chat',
-    component: Chat
+    component: Chat,
   },
   {
     path: '/login',
     name: 'LoginSignup',
-    component: LoginSignup
+    component: LoginSignup,
   },
   {
     path: '/user/:id',
     name: 'UserDetails',
-    component: UserDetails
+    component: UserDetails,
   },
   {
-      path: '/gig/:gigId',
-      name: 'gig-details',
-      component: GigDetails,
+    path: '/gig/:gigId',
+    name: 'gig-details',
+    component: GigDetails,
   },
   {
-      path: '/payment/:gigId',
-      name: 'payment-details',
-      component: Payment,
+    path: '/payment/:gigId',
+    name: 'payment-details',
+    component: Payment,
   },
 ]
 
-
 export const router = createRouter({
   routes,
-  history: createWebHashHistory()
+  history: createWebHashHistory(),
   // base: process.env.BASE_URL,
 })
-

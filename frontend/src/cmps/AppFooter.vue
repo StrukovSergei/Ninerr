@@ -25,6 +25,25 @@
             </ul>
         </div>
     </footer>
+    <footer class="mobil-footer full">
+        <ul class="menu-icons clean-list flex space-between">
+            <li>
+                <a v-html="$svg('home')"> </a>
+            </li>
+            <li>
+                <a v-html="$svg('envelope')"> </a>
+            </li>
+            <li>
+                <a v-html="$svg('magnifyingGlass')"> </a>
+            </li>
+            <li>
+                <a v-html="$svg('note')"> </a>
+            </li>
+            <li>
+                <a v-html="$svg('user')"> </a>
+            </li>
+        </ul>
+    </footer>
 </template>
 
 <script>

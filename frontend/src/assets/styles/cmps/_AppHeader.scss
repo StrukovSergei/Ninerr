@@ -11,6 +11,15 @@
         min-height: 80px;
         align-items: center;
 
+        @include for-mobile-layout {
+            grid-column: 1/-1;
+            box-shadow: 0 0 2px 0 #62646a;
+
+            & .site-logo {
+                margin-inline-start: 20px;
+            }
+        }
+
         & span.join:hover {
             background-color: $clr1;
             color: white;
@@ -27,6 +36,10 @@
         align-items: center;
 
         & .site-logo {
+            @include for-mobile-layout {
+                fill: #62646a;
+            }
+
             margin: 0;
 
             & img {
@@ -247,7 +260,7 @@
     & span.join:hover {
         background-color: $clr1;
         color: white;
-        
+
     }
 
 
@@ -255,6 +268,7 @@
         color: $CLR00;
         transition: color .2s;
     }
+
     a:hover {
         color: $clr1;
     }
