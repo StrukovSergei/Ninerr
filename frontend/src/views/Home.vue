@@ -21,6 +21,7 @@
       </vueper-slides>
     </div>
   </section>
+  <div class="for-mobil"></div>
 
   <div class="selling-proposition-wrapper main-layout full">
     <div class="selling-proposition">

@@ -22,7 +22,11 @@
     & .vueperslides__parallax-wrapper {
 
       @include for-mobile-layout {
-        &:before {
+        &::before {
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+        }
+
+        &::after {
           box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
         }
       }
@@ -54,6 +58,10 @@
     right: 0;
     overflow: hidden;
     z-index: 1;
+
+    @include for-mobile-layout {
+      box-shadow: inset 4px 1px 20px 0px #cac4c4;
+    }
   }
 
   .vueperslides__track-inner {
@@ -63,9 +71,6 @@
   }
 
   .vueperslide__content-wrapper {
-    @include for-mobile-layout {
-      box-shadow: 2px 2px 2px 2px #cac4c4;
-    }
 
     width: 100%;
   }
@@ -156,6 +161,7 @@
   }
 }
 
+// --------------Not Shown On Mobil---------------------//
 .selling-proposition-wrapper {
   background-color: #f3fdf9;
 
@@ -250,7 +256,6 @@
         width: rem(48px);
         border-bottom: 2px solid #c5c6c9;
         transition: border-color 0.2s ease-in-out, width 0.2s ease-in-out;
-
       }
 
       &:hover::after {
