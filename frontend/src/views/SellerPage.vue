@@ -8,6 +8,30 @@
         <add-gig-modal :is-modal-open="isModalOpen" @close="closeModal" @add="handleAddGig"></add-gig-modal>
 
 
+        <el-row class="earning-table">
+            <el-col :span="8">
+                <section>
+                    <h3>Total completed orders</h3>
+                    <p>{{ getTotalEarningsFromAllOrders() }}</p>
+                </section>
+            </el-col>
+
+            <el-col :span="8">
+                <section>
+                    <h3>Total earnings</h3>
+                    <p>{{ getTotalEarningsWithoutPendingOrders() }}</p>
+                </section>
+            </el-col>
+
+            <el-col :span="8">
+                <section>
+                    <h3>Orders Pending</h3>
+                    <p>{{ getNumberOfPendingOrders() }}</p>
+                </section>
+            </el-col>
+        </el-row>
+
+
 
         <p>Manage gigs</p>
         <button class="addgig-btn" @click="openModal">Add Gig</button>
@@ -116,6 +140,21 @@ export default {
         userProfile() {
             return "/user/" + this.userId
         },
+        totalEarningsFromAllOrders() {
+            return this.orders.reduce((total, order) => total + order.price, 0)
+        },
+        totalEarningsWithoutPendingOrders() {
+            return this.orders
+                .filter((order) => {
+                    order.status !== 'pending'
+                    order.status !== 'rejected'
+                    order.status !== 'in progress'
+                })
+                .reduce((total, order) => total + order.price, 0)
+        },
+        numberOfPendingOrders() {
+            return this.orders.filter((order) => order.status === 'pending').length
+        },
     },
     created() {
     },
@@ -222,11 +261,21 @@ export default {
                 showErrorMsg('Cannot update gig status')
             }
         },
-
+        getTotalEarningsFromAllOrders() {
+            return this.totalEarningsFromAllOrders.toFixed(2)
+        },
+        getTotalEarningsWithoutPendingOrders() {
+            return this.totalEarningsWithoutPendingOrders.toFixed(2)
+        },
+        getNumberOfPendingOrders() {
+            return this.numberOfPendingOrders
+        },
     },
+
     components: {
         AddGigModal
     }
 }
+
 
 </script>
