@@ -26,8 +26,8 @@
         </section>
         <h3 class="title_product">{{ gig?.title }}</h3>
         <div class="rate">
-            <span v-html="$svg('blackStar')"></span>
-            <p class="txt_body">{{ gig?.owner.rate }} <span> (1k+)</span></p>
+            <span v-html="$svg('blackStar')" class="flex align-center"></span>
+            <p class="txt_body">{{ gig?.owner.rate }} <span class="rate-count"> (1k+)</span></p>
         </div>
         <p class="price_product txt_body">From ${{ gig.price?.toLocaleString() }}</p>
     </li>
