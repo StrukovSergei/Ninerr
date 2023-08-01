@@ -116,10 +116,11 @@
             & span.join {
                 margin-inline-start: 1rem;
                 border: 1px solid #fff;
-                padding: rem(10px) rem(16px);
+                padding: rem(6px) rem(15px);
                 border-radius: 5px;
                 display: flex;
                 align-items: center;
+                font-size: 14px;
             }
 
             a {

@@ -4,7 +4,7 @@
         <div class="gig-details-overview">
             <div class="gig-small-nav flex">
                 <RouterLink class="home-icon" to="/">
-                    <span v-html="$svg('home')"></span>
+                    <span v-html="$svg('homeExplore')"></span>
                 </RouterLink>
                 <span class="small-devider">/</span>
                 <RouterLink class="btn-back" to="/explore">All Gigs</RouterLink>

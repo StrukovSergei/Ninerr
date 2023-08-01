@@ -21,13 +21,13 @@
                 <a class="user_name txt_body">{{ gig?.owner.fullname }}</a>
             </div>
             <div>
-                <h3 class="level txt_body">{{ gig.owner.level }}</h3>
+                <h3 class="level ">{{ gig.owner.level }}</h3>
             </div>
         </section>
         <h3 class="title_product">{{ gig?.title }}</h3>
         <div class="rate">
-            <span v-html="$svg('blackStar')"></span>
-            <p class="txt_body">{{ gig?.owner.rate }}</p>
+            <span v-html="$svg('blackStar')" class="flex align-center"></span>
+            <p class="txt_body">{{ gig?.owner.rate }} <span class="rate-count"> (1k+)</span></p>
         </div>
         <p class="price_product txt_body">From ${{ gig.price?.toLocaleString() }}</p>
     </li>
