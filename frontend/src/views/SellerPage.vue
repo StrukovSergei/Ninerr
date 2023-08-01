@@ -1,43 +1,44 @@
 <template>
-    <section v-if="user" class="main-user">
-        <h1>User Details - {{ user.fullname }}</h1>
-        <h2 v-if="isMe">Its me</h2>
+    <section v-if="user" class="main-seller flex">
         <button @click="onLogout()">Logout</button>
-        <img style="max-width: 200px;" :src="user.imgUrl" />
 
         <RouterLink :to="userProfile">Things I bought</RouterLink>
 
-        <button @click="openModal">Add Gig</button>
         <add-gig-modal :is-modal-open="isModalOpen" @close="closeModal" @add="handleAddGig"></add-gig-modal>
-
-
-
+        
+        
+        
+        <p>Manage gigs</p>
+        <button @click="openModal">Add Gig</button>
         <div v-if="gigs && gigs.length">
-            <h2>Current gigs</h2>
-            <ul>
-                <li v-for="gig in gigs" :key="gig._id">
-                    Buyer {{ gig.title }} - Price {{ gig.price }}
-
-
-                </li>
-            </ul>
+            <el-table :border="true" :data="gigs" style="width: 100%">
+                <el-table-column prop="title" label="Gig" width="750" />
+                <el-table-column prop="price" label="Price" width="120" />
+            </el-table>
         </div>
         <div v-else>
             <p>No gigs available.</p>
         </div>
 
+        <p>Manage orders</p>
         <div v-if="orders && orders.length">
-            <h2>Current orders</h2>
-            <ul>
-                <li v-for="order in orders" :key="order._id">
-                    Buyer {{ order.buyerId }} - Price {{ order.price }}
-                    <button :class="getStatusButtonClass(order.status)">{{ order.status }}</button>
-                    <select v-model="selectedStatus" @change="updateStatus(order)">
-                        <option v-for="status in statusOptions" :key="status">{{ status }}</option>
-                    </select>
-
-                </li>
-            </ul>
+            <el-table :border="true" :data="orders" style="width: 100%">
+                <el-table-column prop="buyerId" label="Buyer" width="150" />
+                <el-table-column prop="price" label="Price" width="120" />
+                <el-table-column prop="gigId" label="Gig" width="160" />
+                <el-table-column prop="status" label="Status" width="160">
+                    <template #default="{ row }">
+                        <el-button :class="getStatusButtonClass(row.status)">{{ row.status }}</el-button>
+                    </template>
+                </el-table-column>
+                <el-table-column prop="selectedStatus" label="Update Status" width="160">
+                    <template #default="{ row }">
+                        <select v-model="row.selectedStatus" @change="updateStatus(row)">
+                            <option v-for="status in statusOptions" :key="status">{{ status }}</option>
+                        </select>
+                    </template>
+                </el-table-column>
+            </el-table>
         </div>
         <div v-else>
             <p>No orders available.</p>
@@ -85,9 +86,7 @@ export default {
         userId() {
             return this.$route.params.id
         },
-        isMe() {
-            return this.userId === this.$store.getters.loggedinUser._id
-        },
+
         gigs() {
             return this.user && this.user.isSeller ? this.$store.getters.gigs : []
         },
@@ -169,6 +168,7 @@ export default {
         },
         async updateStatus(order) {
             order = { ...order, status: this.selectedStatus }
+            
             try {
                 await this.$store.dispatch(getActionUpdateOrder(order))
                 showSuccessMsg('order status updated')

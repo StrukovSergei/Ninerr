@@ -102,7 +102,8 @@ export default {
     },
     userProfile() {
       if (!this.loggedinUser) return ""
-      return "/user/" + this.loggedinUser._id
+      if (this.loggedinUser.isSeller) return "/seller/" + this.loggedinUser._id
+      if (!this.loggedinUser.isSeller) return "/user/" + this.loggedinUser._id
     },
     fullname() {
       if (!this.loggedinUser) return ""

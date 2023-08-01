@@ -1,27 +1,30 @@
 <template>
-  <section v-if="user" class="main-user">
-    <h1>User Details - {{ user.fullname }}</h1>
-    <h2 v-if="isMe">Its me</h2>
+  <section v-if="user" class="main-user flex">
+    <h1>{{ user.fullname }}</h1>
+
     <button @click="onLogout()">Logout</button>
     <img style="max-width: 200px;" :src="user.imgUrl" />
 
 
 
 
-    <div v-if="orders && orders.length">
-      <h2>Manage orders</h2>
-      <ul>
-        <li v-for="order in orders" :key="order._id">
-          Buyer {{ order.buyerId }} - Price {{ order.price }}
-          <button title="Order status" :class="getStatusButtonClass(order.status)">{{ order.status }}</button>
+    <p>Manage orders</p>
+        <div v-if="orders && orders.length">
+            <el-table :border="true" :data="orders" style="width: 100%">
+                <el-table-column prop="buyerId" label="Buyer" width="150" />
+                <el-table-column prop="price" label="Price" width="120" />
+                <el-table-column prop="gigId" label="Gig" width="160" />
+                <el-table-column prop="status" label="Status" width="160">
+                    <template #default="{ row }">
+                        <el-button :class="getStatusButtonClass(row.status)">{{ row.status }}</el-button>
+                    </template>
+                </el-table-column>
 
-
-        </li>
-      </ul>
-    </div>
-    <div v-else>
-      <p>No orders available.</p>
-    </div>
+            </el-table>
+        </div>
+        <div v-else>
+            <p>No orders available.</p>
+        </div>
 
   
 
