@@ -14,13 +14,18 @@ export const orderService = {
 window.cs = orderService
 
 async function query(
-  filterBy = { txt: '', minPrice: 0, maxPrice: 0, category: '', delivery: 0, id: '' }
+  filterBy = { txt: '', minPrice: 0, maxPrice: 0, category: '', delivery: 0, id: '', buyerId: '' }
 ) {
   var orders = await storageService.query(STORAGE_KEY)
 
   if (filterBy.id) {
     orders = orders.filter((order) => order.sellerId === filterBy.id)
   }
+
+  if (filterBy.buyerId) {
+    orders = orders.filter((order) => order.buyerId === filterBy.buyerId)
+  }
+
   if (filterBy.searchText) {
     const regex = new RegExp(filterBy.searchText, 'i')
     orders = orders.filter(

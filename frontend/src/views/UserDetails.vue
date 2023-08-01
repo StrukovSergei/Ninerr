@@ -15,7 +15,22 @@
     <button @click="openModal">Add Gig</button>
     <add-gig-modal :is-modal-open="isModalOpen" @close="closeModal" @add="handleAddGig"></add-gig-modal>
 
-    <!-- List of Current Gigs -->
+    
+
+    <div v-if="gigs && gigs.length">
+      <h2>Current gigs</h2>
+      <ul>
+        <li v-for="gig in gigs" :key="gig._id">
+          Buyer {{ gig.title }} - Price {{ gig.price }}
+
+
+        </li>
+      </ul>
+    </div>
+    <div v-else>
+      <p>No gigs available.</p>
+    </div>
+
     <div v-if="orders && orders.length">
       <h2>Current orders</h2>
       <ul>
@@ -30,8 +45,10 @@
       </ul>
     </div>
     <div v-else>
-      <p>No gigs available.</p>
+      <p>No orders available.</p>
     </div>
+
+  
 
   </section>
 </template>
@@ -62,6 +79,8 @@ export default {
         if (this.userId) {
           this.loadUser()
           this.$store.dispatch({ type: 'loadOrders', filterBy: { id: this.userId } })
+          this.$store.dispatch({ type: 'loadGigs', filterBy: { id: this.userId } })
+          this.$store.dispatch({ type: 'loadOrders', filterBy: { buyerId: this.userId } })
         }
 
       },
@@ -174,7 +193,7 @@ export default {
       this.$router.push('/')
       setTimeout(() => {
         location.reload()
-      }, 200)
+      }, 100)
     }
 
   },

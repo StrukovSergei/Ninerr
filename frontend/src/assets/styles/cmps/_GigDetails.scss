@@ -235,6 +235,7 @@
 
     .star-rating svg {
         fill: $clr10;
+        margin-left: 3px;
     }
 
     .star-rating svg.empty {
@@ -256,7 +257,7 @@
     }
     .vueperslide{
         margin-top: 10px;
-        flex-basis: 200px;
+        flex-basis: 100px;
     }
 
 
