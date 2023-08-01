@@ -5,6 +5,10 @@
     border-bottom: 1px solid $clr9;
     padding-bottom: 30px;
     font-family: Macan-Regular;
+
+
+
+
     tr {
       display: flex;
       font-size: rem(16px);
@@ -41,4 +45,39 @@
     .faded {
       opacity: 20%;
     }
-  }
+
+
+}
+.rate-review-number{
+    display: flex;
+    font-family: Macan;
+    font-size: 16px;
+    margin-bottom: rem(10px);
+
+    .rate-avg-stars{
+        position: relative;
+        margin-left: 10px;
+        top: 2px;
+    }
+
+    .rate-avg-stars svg {
+        fill: $clr10;
+        margin-left: 3px;
+    }
+
+    .rate-avg-stars svg.empty {
+        fill: none;
+        stroke: $clr10;
+    }
+
+    .rate-avg-number {
+        color: $clr10;
+        font-weight: bold;
+        font-size: 16px;
+        position: relative;
+        left: -6px;
+        margin-left: 9px;
+        top: -1px;
+    
+    }
+}
