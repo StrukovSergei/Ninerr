@@ -87,6 +87,8 @@
                 display: none;
             }
 
+            align-items: center;
+
             font-family: Macan,
             "Helvetica Neue",
             Helvetica,
@@ -151,27 +153,27 @@
                     }
                 }
 
-                position: absolute;
-                top:22px;
+                position: relative;
+                background-color: #A23F6E;
                 width: 32px;
                 height: 32px;
                 border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 img {
-                    width: 32px;
-                    height: 32px;
+                    position: relative;
+                    top: 4px;
+                    width: 34px;
+                    height: 33px;
                     border-radius: 50%;
+
                 }
 
                 .img-user-alt {
-                    position: absolute;
-                    background-color: #A23F6E;
-                    width: 32px;
-                    height: 32px;
-                    border-radius: 50%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    position: relative;
+                    top: 1px;
                     color: #fff;
                 }
             }
@@ -247,7 +249,7 @@
     & span.join:hover {
         background-color: $clr1;
         color: white;
-        
+
     }
 
 
@@ -255,6 +257,7 @@
         color: $CLR00;
         transition: color .2s;
     }
+
     a:hover {
         color: $clr1;
     }
