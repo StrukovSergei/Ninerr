@@ -16,8 +16,8 @@
                                     5
                                     <span v-html="$svg('star')"> </span>
                                 </span>
-                                <p class="expert">{{ info.expert[i] }}</p>
                             </div>
+                            <p class="expert">{{ info.expert[i] }}</p>
                         </div>
                     </template>
                 </vueper-slide>

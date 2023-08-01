@@ -118,6 +118,8 @@
                 border: 1px solid #fff;
                 padding: rem(10px) rem(16px);
                 border-radius: 5px;
+                display: flex;
+                align-items: center;
             }
 
             a {
@@ -264,7 +266,6 @@
         color: white;
 
     }
-
 
     a {
         color: $CLR00;

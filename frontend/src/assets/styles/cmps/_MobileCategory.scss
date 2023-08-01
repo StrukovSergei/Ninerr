@@ -1,0 +1,31 @@
+.mobil {
+    flex-direction: column;
+    margin-inline-start: 10px;
+    font-family: Macan;
+
+    & h3 {
+        color: #222325;
+    }
+
+    & .item {
+        border-block-end: 1px solid #c2c2c2;
+        gap: 1rem;
+    }
+
+    & span:not(.flex) {
+        display: flex;
+        height: 60px;
+    }
+
+    h4 {
+        font-family: Macan-semi-bold;
+        color: #222325;
+        margin: 0;
+        margin-block-start: 8px;
+    }
+
+    p {
+        font-family: Macan-Light;
+        color: #222325;
+    }
+}
