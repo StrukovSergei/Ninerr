@@ -1,15 +1,16 @@
 <template>
     <section v-if="user" class="main-seller flex">
-        <button @click="onLogout()">Logout</button>
+        <span class="top-btns flex">
+            <button @click="onLogout()"><span>Logout</span></button>
 
-        <RouterLink :to="userProfile">Things I bought</RouterLink>
-
+            <RouterLink :to="userProfile">Gigs I bought</RouterLink>
+        </span>
         <add-gig-modal :is-modal-open="isModalOpen" @close="closeModal" @add="handleAddGig"></add-gig-modal>
 
 
 
         <p>Manage gigs</p>
-        <button @click="openModal">Add Gig</button>
+        <button class="addgig-btn" @click="openModal">Add Gig</button>
         <div v-if="gigs && gigs.length">
             <el-table :border="true" :data="gigs" style="width: 100%">
                 <el-table-column prop="title" label="Gig" width="450" />

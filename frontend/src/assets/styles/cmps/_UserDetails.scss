@@ -11,6 +11,23 @@
     margin-top: 70px;
     flex-direction: column;
 
+    button{
+        display: flex;
+        justify-content: center;
+        grid-area: btn;
+        border-radius: 4px;
+        background-color: black;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 14px;
+        border: 1px solid transparent;
+        margin: 10px 24px 14px 24px;
+        width: 75%;
+        cursor: pointer;
+        text-decoration: none;
+        color: #fff;
+    }
+
 
     color: black;
 
