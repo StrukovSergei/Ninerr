@@ -6,8 +6,8 @@
     display: block;
     height: 3rem;
     min-height: 1.5rem;
-    margin-block-start: 6rem;
-
+    margin-block-start: 1rem;
+    margin-inline: rem(20px);
 
     .hero-pos-container {
       display: none
@@ -54,6 +54,8 @@
     @include for-mobile-layout {
       font-size: 12px;
       display: block;
+      margin-block: 0;
+
 
       .hero-search {
         flex-direction: column;
@@ -130,6 +132,7 @@
       margin: 0;
       width: rem(41px);
       padding-top: rem(3px);
+
     }
 
     .input-container {
@@ -293,4 +296,8 @@
       padding-right: 60px;
     }
   }
+}
+
+.mobil-hero {
+  display: flex;
 }

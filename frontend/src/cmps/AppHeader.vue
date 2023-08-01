@@ -110,7 +110,6 @@ export default {
     },
     userImg() {
       if (!this.loggedinUser) return ""
-      console.log("🚀 ~ file: AppHeader.vue:112 ~ userImg ~ this.loggedinUser.imgUrl:", this.loggedinUser)
       return this.loggedinUser.imgUrl
     },
     loggedinUser() {

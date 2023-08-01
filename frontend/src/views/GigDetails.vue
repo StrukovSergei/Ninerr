@@ -59,6 +59,7 @@
             </div>
             <div v-if="reviews" class="">
                 <h2 class="review-header">Reviews</h2>
+                <ReviewBar :reviews="reviews"></ReviewBar>
                 <ReviewList :reviews="reviews"></ReviewList>
 
             </div>
@@ -105,6 +106,7 @@ import { userService } from '../services/user.service.js'
 import { reviewService } from '../services/review.service.local'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
+import ReviewBar from '../cmps/ReviewBar.vue'
 
 export default {
     name: 'GigDetails',
@@ -169,6 +171,6 @@ export default {
         //     return this.$store.getters.getReviews
         // },
     },
-    components: { VueperSlides, VueperSlide, SellerDetails, RouterLink, ReviewList },
+    components: { VueperSlides, VueperSlide, SellerDetails, RouterLink, ReviewList, ReviewBar },
 }
 </script>

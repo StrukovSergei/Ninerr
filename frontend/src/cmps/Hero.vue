@@ -31,7 +31,7 @@
             </h1>
             <div class="hero-search flex">
                 <div class="input-container flex">
-                    <input type="text" name="" placeholder='Try "Logo Design"' />
+                    <input type="text" name="" placeholder=' Try "Logo Design"' />
                 </div>
                 <button class="el-button">
                     <span class="search-icon" v-html="$svg('search')"></span>
@@ -158,9 +158,7 @@ export default {
             ],
         };
     },
-    methods: {
-
-    },
+    methods: {},
     components: { VueperSlides, VueperSlide },
 };
 </script>

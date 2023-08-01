@@ -1,7 +1,7 @@
 .vueperslides {
 
   @include for-mobile-layout {
-    display: flex;
+    display: none;
     flex-direction: column;
     font-size: 1rem;
     top: 2rem;
@@ -22,7 +22,11 @@
     & .vueperslides__parallax-wrapper {
 
       @include for-mobile-layout {
-        &:before {
+        &::before {
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
+        }
+
+        &::after {
           box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
         }
       }
@@ -54,6 +58,7 @@
     right: 0;
     overflow: hidden;
     z-index: 1;
+
   }
 
   .vueperslides__track-inner {
@@ -63,9 +68,6 @@
   }
 
   .vueperslide__content-wrapper {
-    @include for-mobile-layout {
-      box-shadow: 2px 2px 2px 2px #cac4c4;
-    }
 
     width: 100%;
   }
@@ -98,9 +100,9 @@
 
     h4 {
       @include for-mobile-layout {
-        font-size: 8px;
-        margin-block-start: 8.5rem;
-        color: black;
+        font-size: 10px;
+        margin-block-start: 7.5rem;
+        color: #5e5c5c;
       }
 
       color: white;
@@ -156,6 +158,7 @@
   }
 }
 
+// --------------Not Shown On Mobil---------------------//
 .selling-proposition-wrapper {
   background-color: #f3fdf9;
 
@@ -250,7 +253,6 @@
         width: rem(48px);
         border-bottom: 2px solid #c5c6c9;
         transition: border-color 0.2s ease-in-out, width 0.2s ease-in-out;
-
       }
 
       &:hover::after {
@@ -329,6 +331,42 @@
       font-family: Macan-light;
       color: #222325;
       line-height: 26px;
+    }
+  }
+}
+
+.for-mobil {
+
+  @include for-narrow-layout {
+    display: none;
+  }
+
+  margin-inline: rem(20px);
+
+  & h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & span {
+      color: #1dbf73;
+      font-size: 12px;
+    }
+  }
+
+  & .vueperslides {
+    display: flex;
+
+    & .vueperslide--visible {
+      box-shadow: inset 4px 1px 20px 0px #cac4c4;
+      border-radius: 5px;
+    }
+  }
+
+  & .pic {
+    & img {
+      width: 100%;
+      margin-top: 4.5rem;
     }
   }
 }
