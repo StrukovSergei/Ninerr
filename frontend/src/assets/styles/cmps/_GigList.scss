@@ -1,6 +1,7 @@
 .gig-list {
     list-style: none;
-    // display: grid;
+    gap: 15px;
+    display: grid;
     padding: 0;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
