@@ -5,15 +5,33 @@
         <RouterLink :to="userProfile">Things I bought</RouterLink>
 
         <add-gig-modal :is-modal-open="isModalOpen" @close="closeModal" @add="handleAddGig"></add-gig-modal>
-        
-        
-        
+
+
+
         <p>Manage gigs</p>
         <button @click="openModal">Add Gig</button>
         <div v-if="gigs && gigs.length">
             <el-table :border="true" :data="gigs" style="width: 100%">
-                <el-table-column prop="title" label="Gig" width="750" />
+                <el-table-column prop="title" label="Gig" width="450" />
                 <el-table-column prop="price" label="Price" width="120" />
+                <el-table-column prop="status" label="Status" width="160">
+                    <template #default="{ row }">
+                        <el-button :class="getStatusButtonClass(row.status)">{{ row.status }}</el-button>
+                    </template>
+                </el-table-column>
+                <el-table-column prop="selectedStatus" label="Update Status" width="160">
+                    <template #default="{ row }">
+                        <select v-model="row.selectedStatus" @change="updateGigStatus(row)">
+                            <option v-for="status in gigStatusOptions" :key="status">{{ status }}</option>
+                        </select>
+                    </template>
+                </el-table-column>
+                <!-- Add the new column for the remove button -->
+                <el-table-column label="Remove" width="100">
+                    <template #default="{ row }">
+                        <el-button @click="removeGig(row._id)" type="danger" icon="el-icon-delete">X</el-button>
+                    </template>
+                </el-table-column>
             </el-table>
         </div>
         <div v-else>
@@ -67,6 +85,7 @@ export default {
             isModalOpen: false,
             selectedStatus: '',
             statusOptions: ['rejected', 'completed', 'in progress', 'pending'],
+            gigStatusOptions: ['active', 'paused'],
         }
     },
     watch: {
@@ -157,7 +176,7 @@ export default {
             this.isModalOpen = false
         },
         async handleAddGig(gig) {
-            gig.owner._id = this.user._id
+            gig.owner = { _id: this.userId }
             try {
                 await this.$store.dispatch({ type: 'addGig', gig })
                 showSuccessMsg('Gig added')
@@ -168,7 +187,7 @@ export default {
         },
         async updateStatus(order) {
             order = { ...order, status: this.selectedStatus }
-            
+
             try {
                 await this.$store.dispatch(getActionUpdateOrder(order))
                 showSuccessMsg('order status updated')
@@ -191,7 +210,17 @@ export default {
             setTimeout(() => {
                 location.reload()
             }, 100)
-        }
+        },
+        async updateGigStatus(gig) {
+            gig = { ...gig, status: gig.selectedStatus }
+            try {
+                await this.$store.dispatch(getActionUpdateGig(gig))
+                showSuccessMsg('Gig status updated')
+            } catch (err) {
+                console.log(err)
+                showErrorMsg('Cannot update gig status')
+            }
+        },
 
     },
     components: {
