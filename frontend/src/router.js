@@ -6,6 +6,7 @@ import GigIndex from './views/GigIndex.vue'
 import ReviewIndex from './views/ReviewIndex.vue'
 import LoginSignup from './views/LoginSignup.vue'
 import UserDetails from './views/UserDetails.vue'
+import SellerDetails from './views/SellerDetails.vue'
 import GigDetails from './views/GigDetails.vue'
 import Payment from './views/Payment.vue'
 import MobileCategory from './cmps/MobileCategory.vue'
@@ -45,6 +46,11 @@ const routes = [
     path: '/user/:id',
     name: 'UserDetails',
     component: UserDetails,
+  },
+  {
+    path: '/seller/:id',
+    name: 'SellerDetails',
+    component: SellerDetails,
   },
   {
     path: '/gig/:gigId',
