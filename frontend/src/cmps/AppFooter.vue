@@ -28,13 +28,17 @@
     <footer class="mobil-footer full">
         <ul class="menu-icons clean-list flex space-between">
             <li>
-                <a v-html="$svg('home')"> </a>
+                <RouterLink to="/">
+                    <a v-html="$svg('home')"> </a>
+                </RouterLink>
             </li>
             <li>
                 <a v-html="$svg('envelope')"> </a>
             </li>
             <li>
-                <a v-html="$svg('magnifyingGlass')"> </a>
+                <RouterLink to="/mobile">
+                    <a v-html="$svg('magnifyingGlass')"> </a>
+                </RouterLink>
             </li>
             <li>
                 <a v-html="$svg('note')"> </a>

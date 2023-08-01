@@ -9,6 +9,9 @@
 
   & h2 {
     margin-block-end: -3rem;
+    font-family: Macan;
+    color: $clr11;
+    font-size: 32px;
 
     @include for-mobile-layout {
       font-size: 1rem;
@@ -175,6 +178,7 @@
     justify-content: center;
     gap: 30px;
 
+    font-family: Macan-Regular;
 
     & .selling-info {
       padding-inline: 1rem rem(137.375px);
@@ -185,11 +189,15 @@
         margin: 0;
         padding-bottom: rem(24px);
         font-size: 2rem;
-        font-weight: 700;
-        color: #404145;
+        font-family: Macan-Regular;
+
+        color: $clr11;
+
       }
 
       & h6 {
+        font-family: Macan-Regular;
+
         margin-block: 0;
         display: flex;
         gap: 10px;
@@ -215,10 +223,13 @@
   text-decoration: none;
 
   h2 {
-    font-size: 2em;
+    font-size: 32px;
     line-height: 118%;
     padding-bottom: rem(24px);
     margin-bottom: rem(40px);
+    font-family: Macan-Regular;
+    color: $clr11;
+
   }
 
   .icons {
@@ -262,63 +273,6 @@
         text-decoration: none;
 
       }
-
-      svg {
-
-        &.svg-graphic {
-          .cls-4 {
-            fill: none;
-            stroke: #4d535b;
-            stroke-miterlimit: 10;
-            stroke-width: 2px;
-          }
-        }
-
-        &.svg-writing {
-          .cls-5 {
-            fill: none;
-            stroke: #4d535b;
-            stroke-miterlimit: 10;
-            stroke-width: 2px;
-          }
-        }
-
-        &.svg-sound {
-          .cls-4 {
-            fill: none;
-            stroke: #4d535b;
-            stroke-miterlimit: 10;
-            stroke-width: 2px;
-          }
-        }
-
-        &.svg-tech {
-          .cls-4 {
-            fill: none;
-            stroke: #4d535b;
-            stroke-miterlimit: 10;
-            stroke-width: 2px;
-          }
-        }
-
-        &.svg-lifestyle {
-          .cls-4 {
-            fill: none;
-            stroke: #4d535b;
-            stroke-miterlimit: 10;
-          }
-
-          .cls-4 {
-            stroke-width: 2.1px;
-          }
-        }
-
-        &.svg-business {
-          .cls-2 {
-            fill: #fff;
-          }
-        }
-      }
     }
 
     span:not(.flex) {
@@ -348,7 +302,7 @@
     justify-content: space-between;
     align-items: center;
 
-    & span {
+    & RouterLink {
       color: #1dbf73;
       font-size: 12px;
     }

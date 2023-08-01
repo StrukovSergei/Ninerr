@@ -1,52 +1,30 @@
 <template>
-  <section v-if="user" class="main-user">
-    <h1>User Details - {{ user.fullname }}</h1>
-    <h2 v-if="isMe">Its me</h2>
+  <section v-if="user" class="main-user flex">
+    <h1>{{ user.fullname }}</h1>
+
     <button @click="onLogout()">Logout</button>
     <img style="max-width: 200px;" :src="user.imgUrl" />
-    <ul>
-      <li v-for="review in user.givenReviews" :key="review._id">
-        {{ review.txt }}
-        <RouterLink :to="`/user/${review.aboutUser._id}`">
-          About {{ review.aboutUser.fullname }}
-        </RouterLink>
-      </li>
-    </ul>
-    <button @click="openModal">Add Gig</button>
-    <add-gig-modal :is-modal-open="isModalOpen" @close="closeModal" @add="handleAddGig"></add-gig-modal>
-
-    
-
-    <div v-if="gigs && gigs.length">
-      <h2>Current gigs</h2>
-      <ul>
-        <li v-for="gig in gigs" :key="gig._id">
-          Buyer {{ gig.title }} - Price {{ gig.price }}
 
 
-        </li>
-      </ul>
-    </div>
-    <div v-else>
-      <p>No gigs available.</p>
-    </div>
 
-    <div v-if="orders && orders.length">
-      <h2>Current orders</h2>
-      <ul>
-        <li v-for="order in orders" :key="order._id">
-          Buyer {{ order.buyerId }} - Price {{ order.price }}
-          <button :class="getStatusButtonClass(order.status)">{{ order.status }}</button>
-          <select v-model="selectedStatus" @change="updateStatus(order)">
-            <option v-for="status in statusOptions" :key="status">{{ status }}</option>
-          </select>
 
-        </li>
-      </ul>
-    </div>
-    <div v-else>
-      <p>No orders available.</p>
-    </div>
+    <p>Manage orders</p>
+        <div v-if="orders && orders.length">
+            <el-table :border="true" :data="orders" style="width: 100%">
+                <el-table-column prop="buyerId" label="Buyer" width="150" />
+                <el-table-column prop="price" label="Price" width="120" />
+                <el-table-column prop="gigId" label="Gig" width="160" />
+                <el-table-column prop="status" label="Status" width="160">
+                    <template #default="{ row }">
+                        <el-button :class="getStatusButtonClass(row.status)">{{ row.status }}</el-button>
+                    </template>
+                </el-table-column>
+
+            </el-table>
+        </div>
+        <div v-else>
+            <p>No orders available.</p>
+        </div>
 
   
 
@@ -57,20 +35,12 @@
 // import { SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED, socketService } from '../services/socket.service'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { userService } from '../services/user.service.local'
-import GigList from '../cmps/GigList.vue'
-import { gigService } from '../services/gig.service.local'
-import { getActionRemoveGig, getActionUpdateGig } from '../store/gig.store'
-import { getActionUpdateOrder } from '../store/order.store'
-import AddGigModal from '../cmps/AddGigModal.vue'
+
 
 export default {
-  components: { GigList },
   data() {
     return {
       user: null,
-      isModalOpen: false,
-      selectedStatus: '',
-      statusOptions: ['rejected', 'completed', 'in progress', 'pending'],
     }
   },
   watch: {
@@ -78,8 +48,6 @@ export default {
       handler() {
         if (this.userId) {
           this.loadUser()
-          this.$store.dispatch({ type: 'loadOrders', filterBy: { id: this.userId } })
-          this.$store.dispatch({ type: 'loadGigs', filterBy: { id: this.userId } })
           this.$store.dispatch({ type: 'loadOrders', filterBy: { buyerId: this.userId } })
         }
 
@@ -93,9 +61,6 @@ export default {
     },
     isMe() {
       return this.userId === this.$store.getters.loggedinUser._id
-    },
-    gigs() {
-      return this.user && this.user.isSeller ? this.$store.getters.gigs : []
     },
     orders() {
       return this.$store.getters.orders
@@ -121,65 +86,6 @@ export default {
     // unmounted() {
     //   socketService.off(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
     // },
-    async addGig() {
-      try {
-        await this.$store.dispatch({ type: 'addGig', gig: this.gigToAdd })
-        showSuccessMsg('Gig added')
-        this.gigToAdd = gigService.getEmptyGig()
-      } catch (err) {
-        console.log(err)
-        showErrorMsg('Cannot add gig')
-      }
-    },
-    async removeGig(gigId) {
-      try {
-        await this.$store.dispatch(getActionRemoveGig(gigId))
-        showSuccessMsg('Gig removed')
-
-      } catch (err) {
-        console.log(err)
-        showErrorMsg('Cannot remove gig')
-      }
-    },
-    async updateGig(gig) {
-      try {
-        gig = { ...gig }
-        gig.price = +prompt('New price?', gig.price)
-        await this.$store.dispatch(getActionUpdateGig(gig))
-        showSuccessMsg('Gig updated')
-
-      } catch (err) {
-        console.log(err)
-        showErrorMsg('Cannot update gig')
-      }
-    },
-    openModal() {
-      this.isModalOpen = true
-
-    },
-    closeModal() {
-      this.isModalOpen = false
-    },
-    async handleAddGig(gig) {
-      gig.owner._id = this.user._id
-      try {
-        await this.$store.dispatch({ type: 'addGig', gig })
-        showSuccessMsg('Gig added')
-      } catch (err) {
-        console.log(err)
-        showErrorMsg('Cannot add gig')
-      }
-    },
-    async updateStatus(order) {
-      order = { ...order, status: this.selectedStatus }
-      try {
-        await this.$store.dispatch(getActionUpdateOrder(order))
-        showSuccessMsg('order status updated')
-      } catch (err) {
-        console.log(err)
-        showErrorMsg('Cannot update order status')
-      }
-    },
     getStatusButtonClass(status) {
       return {
         'btn-rejected': status === 'rejected',
@@ -198,7 +104,7 @@ export default {
 
   },
   components: {
-    AddGigModal
+   
   }
 }
 

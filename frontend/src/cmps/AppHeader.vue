@@ -27,7 +27,7 @@
             </span>
             <span v-else class="img-user-alt"> {{ userImgAlt }}</span>
           </span>
-          <span v-else>
+          <span v-else class="login-join flex align-center">
             <RouterLink to="/login"> Sign in </RouterLink>
             <RouterLink to="/login"><span class="join"> Join</span> </RouterLink>
           </span>
@@ -102,7 +102,8 @@ export default {
     },
     userProfile() {
       if (!this.loggedinUser) return ""
-      return "/user/" + this.loggedinUser._id
+      if (this.loggedinUser.isSeller) return "/seller/" + this.loggedinUser._id
+      if (!this.loggedinUser.isSeller) return "/user/" + this.loggedinUser._id
     },
     fullname() {
       if (!this.loggedinUser) return ""
@@ -117,8 +118,7 @@ export default {
     },
     userImgAlt() {
       return this.loggedinUser.fullname.charAt(0).toUpperCase()
-    }
-
+    },
   },
   watch: {},
   methods: {
