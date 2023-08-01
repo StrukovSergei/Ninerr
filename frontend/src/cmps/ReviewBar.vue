@@ -29,8 +29,7 @@
             </tr>
         </table>
 
-        <!-- Your existing review list template goes here -->
-        <!-- ... -->
+
     </div>
 </template>
 
