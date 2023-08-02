@@ -191,12 +191,20 @@
         border-radius: 30px;
         color: rgb(19, 18, 18);
         font-size: medium;
+        opacity: 1;
 
 
     }
 
+    .vueperslides__arrow--next {
+
+        opacity: 1;
+
+    }
     .vueperslides__arrow--prev {
-        left: -39px
+        left: -39px;
+        opacity: 1;
+
     }
 
     .gig-details-overview {
