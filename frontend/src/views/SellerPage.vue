@@ -66,15 +66,15 @@
         <p>Manage orders</p>
         <div v-if="orders && orders.length">
             <el-table :border="true" :data="orders" style="width: 100%">
-                <el-table-column prop="buyerId" label="Buyer" width="150" />
-                <el-table-column prop="price" label="Price" width="120" />
-                <el-table-column prop="gigId" label="Gig" width="160" />
-                <el-table-column prop="status" label="Status" width="160">
+                <el-table-column prop="buyerId" label="Buyer" width="190" />
+                <el-table-column prop="price" label="Price" width="150" />
+                <el-table-column prop="gigId" label="Gig" width="250" />
+                <el-table-column prop="status" label="Status" width="210">
                     <template #default="{ row }">
                         <el-button :class="getStatusButtonClass(row.status)">{{ row.status }}</el-button>
                     </template>
                 </el-table-column>
-                <el-table-column prop="status" label="Update Status" width="160">
+                <el-table-column prop="status" label="Update Status" width="190">
                     <template #default="{ row }">
                         <select v-model="row.status" @change="updateStatus(row)">
                             <option v-for="status in statusOptions" :key="status">{{ status }}</option>
