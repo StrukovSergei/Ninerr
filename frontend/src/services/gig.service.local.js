@@ -104,7 +104,7 @@ function getEmptyGig() {
 //       fullname: 'Dudu Da',
 //       imgUrl:
 //         'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5344c10fd4820db3626c4fc24968783d-1588608774469/1e4a3bd9-b71d-48ce-8ac0-0ff6d667caf4.jpeg',
-//       level: 'basic/premium',
+//       level: 'pro',
 //       rate: 4.8,
 //       country: 'India',
 //       since: 'Nov 2016',
@@ -143,7 +143,7 @@ function getEmptyGig() {
 //       imgUrl:
 //         'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/044fb5914a845a4eb59fc2b69f7f7b32-1634120039750/4dbc2acb-7322-4cd0-9afb-e5190e8e8a0d.jpg',
 //       level: 'basic/premium',
-//       rate: 2.6,
+//       rate: 4.6,
 //       country: 'India',
 //       since: 'Jan 2018',
 //       response: '1 Hour',
@@ -219,7 +219,7 @@ function getEmptyGig() {
 //       fullname: 'Gugu Gu',
 //       imgUrl:
 //         'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/3949d5821f00df73d26614f6cd4e1f3d-1240311201670599379.534255/874FB21E-A700-4A74-9F4F-D0C524CBCE38',
-//       level: 'basic/premium',
+//       level: 'pro',
 //       rate: 4.9,
 //       country: 'United Kingdom',
 //       since: 'Nov 2016',
@@ -334,7 +334,7 @@ function getEmptyGig() {
 //       fullname: 'Kuku Ku',
 //       imgUrl:
 //         'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/1172433/original/j.jpg',
-//       level: 'basic/premium',
+//       level: 'pro',
 //       rate: 4.6,
 //       country: 'Canada',
 //       since: 'Jan 2015',
@@ -409,7 +409,7 @@ function getEmptyGig() {
 //       fullname: 'Mumu Mu',
 //       imgUrl:
 //         'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/c1bf7fa52003d4e01f32bf2ffc13eda4-846921031687736065.32306/27E1B7AF-E6E3-4D76-A6D0-66761E0B5FD8',
-//       level: 'basic/premium',
+//       level: 'pro',
 //       rate: 4.3,
 //       country: 'Germany',
 //       since: 'May 2018',
@@ -522,7 +522,7 @@ function getEmptyGig() {
 //       fullname: 'Pupu Pa',
 //       imgUrl:
 //         'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/0abd97962ff9b1846d70a59afc509019-1376642671675088247.55062/840047FC-8953-4B50-9FF8-7B7B22F4ADA5',
-//       level: 'basic/premium',
+//       level: 'pro',
 //       rate: 4.7,
 //       country: 'United States',
 //       since: 'Dec 2017',

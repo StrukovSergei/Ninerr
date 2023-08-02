@@ -22,7 +22,7 @@
             <span class="stat-since">Member since <div class="fw700">{{ gig.owner.since }}</div></span>
             <span class="stat-response">Avg. response time <div class="fw700">{{ gig.owner.response }}</div></span>
             <span class="stat-lastDelivery">Last delivery<div class="fw700">{{ gig.owner.lastDelivery }}</div></span>
-            <span class="stat-language">Languages: <div class="fw700">{{ gig.owner.language.join(', ') }}</div></span>
+            <span class="stat-language">Languages <div class="fw700">{{ gig.owner.language.join(', ') }}</div></span>
         </div>
         <div class="user-about">{{ gig.owner.about }}</div>
     </section>
