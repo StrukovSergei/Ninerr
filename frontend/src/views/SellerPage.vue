@@ -44,7 +44,7 @@
                         <el-button :class="getStatusButtonClass(row.status)">{{ row.status }}</el-button>
                     </template>
                 </el-table-column>
-                <el-table-column prop="selectedStatus" label="Update Status" width="160">
+                <el-table-column prop="status" label="Update Status" width="160">
                     <template #default="{ row }">
                         <select v-model="row.status" @change="updateGigStatus(row)">
                             <option v-for="status in gigStatusOptions" :key="status">{{ status }}</option>
@@ -74,7 +74,7 @@
                         <el-button :class="getStatusButtonClass(row.status)">{{ row.status }}</el-button>
                     </template>
                 </el-table-column>
-                <el-table-column prop="selectedStatus" label="Update Status" width="160">
+                <el-table-column prop="status" label="Update Status" width="160">
                     <template #default="{ row }">
                         <select v-model="row.status" @change="updateStatus(row)">
                             <option v-for="status in statusOptions" :key="status">{{ status }}</option>
@@ -98,6 +98,7 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { userService } from '../services/user.service.local'
 import GigList from '../cmps/GigList.vue'
 import { gigService } from '../services/gig.service.local'
+import { orderService } from '../services/order.service.local'
 import { getActionRemoveGig, getActionUpdateGig } from '../store/gig.store'
 import { getActionUpdateOrder } from '../store/order.store'
 import AddGigModal from '../cmps/AddGigModal.vue'
@@ -108,7 +109,6 @@ export default {
         return {
             user: null,
             isModalOpen: false,
-            selectedStatus: '',
             statusOptions: ['rejected', 'completed', 'in progress', 'pending'],
             gigStatusOptions: ['active', 'paused'],
         }
@@ -136,7 +136,6 @@ export default {
         },
         orders() {
             return JSON.parse(JSON.stringify(this.$store.getters.orders))
-            // return this.$store.getters.orders
         },
         userProfile() {
             return "/user/" + this.userId
@@ -157,6 +156,7 @@ export default {
         },
     },
     created() {
+
     },
     methods: {
         async loadUser() {
@@ -227,7 +227,7 @@ export default {
         },
         async updateStatus(order) {
             const newOrder = JSON.parse(JSON.stringify(order))
-            newOrder.status = this.selectedStatus
+            newOrder.status = order.status
 
             try {
                 await this.$store.dispatch(getActionUpdateOrder(newOrder))
@@ -254,7 +254,7 @@ export default {
         },
         async updateGigStatus(gig) {
             const newGig = JSON.parse(JSON.stringify(gig))
-            newGig.status = gig.selectedStatus
+            newGig.status = gig.status
 
             try {
                 await this.$store.dispatch(getActionUpdateGig(newGig))
