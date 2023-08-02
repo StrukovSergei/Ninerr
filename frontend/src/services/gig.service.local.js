@@ -115,7 +115,7 @@ function getEmptyGig() {
 //     },
 //     daysToMake: 3,
 //     description:
-//       'I will design a professional, Mobile friendly, And user-friendly Website for your business/ Enterprises or an organization.',
+//       `Are you looking for a professional, mobile-friendly, and user-friendly website for your business or organization? Look no further! I am Abhi, a passionate graphic designer with over 7 years of experience based in India. My expertise lies in creating modern and stylish website designs that not only impress your audience but also drive results. I have collaborated with notable clients like Nike, Cisco, EA Sports, and Fiverr internal communications, among others. My services include a fully responsive design that adapts to all devices, a user-friendly interface for seamless navigation, high-quality graphics to enhance your brand's image, and SEO optimization to boost your online visibility. With unlimited revisions, I ensure your complete satisfaction with the final product. Let's connect and bring your vision to life! Available for communication from Monday to Saturday, 12 am to 12 pm (EST).`,
 //     imgUrls: [
 //       'https://res.cloudinary.com/dcwibf9o5/image/upload/v1673726966/q1msdqaht5dsqu22ip62.webp',
 //       'https://res.cloudinary.com/dcwibf9o5/image/upload/v1673726973/jjkh0hwshulmatnflwhz.webp',
@@ -153,7 +153,7 @@ function getEmptyGig() {
 //     },
 //     daysToMake: 7,
 //     description:
-//       'Talented Logo Maker Team, Fully custom made, creative, original, UNIQUE and AWESOME designs',
+//       `Get ready to stand out with a unique and captivating logo design for your brand! I am Budu Ba, a skilled logo maker with a team of talented artists who specialize in creating fully custom-made, creative, original, and AWESOME logo designs. Whether you're a small business or a premium brand, I can craft a logo that perfectly represents your identity. My services include 1 concept with unlimited revisions, logo transparency for versatile use, a high-resolution printable file, and an impressive 3D mockup to showcase your brand in style. With my attention to detail and dedication to perfection, I guarantee a logo that leaves a lasting impression. Let's collaborate and make your brand shine!`,
 //     imgUrls: [
 //       'https://res.cloudinary.com/dja6gjgcd/image/upload/v1670579338/samples/higherr/ddf38ce88cd6f0ab8ee9c1097f3727a452715f19_xknjtm.webp',
 //       'https://res.cloudinary.com/dja6gjgcd/image/upload/v1670579338/samples/higherr/14c7f411ab4958c13cccf3f46e6b3be04797ce59_cp8j4w.webp',
@@ -192,7 +192,7 @@ function getEmptyGig() {
 //     },
 //     daysToMake: 5,
 //     description:
-//       'Get a modern and stylish website design to impress your audience.',
+//       `Impress your audience with a modern and stylish website design that captures attention and leaves a lasting impact. I am Fifi Fu, a creative illustrator with a passion for bringing ideas to life through art. With over 6 years of experience, I have collaborated with clients worldwide to create visually stunning websites. My services include a fully responsive design that adapts to all devices, a user-friendly interface for seamless navigation, high-quality graphics to enhance your brand's image, and SEO optimization to boost your online presence. Though this gig is currently in progress, I assure you the final product will be nothing short of perfection. Let's make your project a visual masterpiece together!`,
 //     imgUrls: [
 //       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/124548693/original/f898f0bde16135e197651d044c923661f6d2de08/clone-duplicate-or-create-any-page-or-website-to-divi-theme.png',
 //       'https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/43aa46e39b0ca1520de3004c84ffc930-1683684175/virgilbrewster.com/clone-duplicate-or-create-any-page-or-website-to-divi-theme.png',
@@ -230,7 +230,7 @@ function getEmptyGig() {
 //     },
 //     daysToMake: 10,
 //     description:
-//       'Boost your social media presence with our professional marketing services.',
+//       `Boost your brand's online presence with professional social media marketing services that drive results. I am Gugu Gu, a social media marketing expert with a proven track record of success. With 8+ years of experience, I have helped businesses of all sizes achieve their marketing goals. My services include content creation and scheduling to keep your audience engaged, audience targeting to reach the right customers, performance analysis to track progress, and ad campaign management to maximize your ROI. With detailed analytics, I provide insights into the effectiveness of your campaigns. Let's collaborate and take your brand to new heights!`,
 //     imgUrls: [
 //       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/174169384/original/a06805520cd70790a09205879fc0677c49953e74/be-your-social-media-marketing-manager-and-content-creator.png',
 //       'https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/80c8869311384e882c6b8fd9f1cb025d-1690449640/dwayne752%20feed%20preview(1)/be-your-social-media-marketing-manager-and-content-creator.png',
@@ -269,7 +269,7 @@ function getEmptyGig() {
 //     },
 //     daysToMake: 2,
 //     description:
-//       'Get high-quality blog posts that engage your readers and boost your SEO.',
+//       `Get high-quality blog posts that engage your readers and boost your website's SEO. I am Huhu Ha, a talented content writer known for creating captivating and informative blog posts. My services include well-researched content that resonates with your target audience, keyword optimization to improve your search engine rankings, plagiarism-free writing for originality, and quick turnaround times to meet your deadlines. With my writing skills and attention to detail, I ensure each blog post exceeds your expectations. Whether you need content for a beauty and lifestyle blog or any other niche, I've got you covered. Let's create content that leaves a lasting impact!`,
 //     imgUrls: [
 //       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/173769270/original/4d73c4c4e249fde66b651e8384e4835772c0d25b/write-content-for-your-beauty-and-lifestyle-blog.png',
 //       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/173769270/original/502392c13e1b777d4a69eb89d51278f90fd4e60f/write-content-for-your-beauty-and-lifestyle-blog.png',
@@ -307,7 +307,7 @@ function getEmptyGig() {
 //     },
 //     daysToMake: 3,
 //     description:
-//       'Stand out with unique and eye-catching flyer designs for your events or promotions.',
+//       `Make a statement with eye-catching flyer designs that promote your events or promotions in style. I am Jiju Ja, a professional content writer with a passion for creating compelling visual content. With a keen eye for detail, I craft flyer designs that captivate your audience and deliver your message effectively. My services include customized design options to match your brand's identity, high-resolution print files for quality prints, quick revisions to ensure your satisfaction, and creative and original artwork that stands out from the crowd. Let's collaborate and create flyers that make a lasting impression!`,
 //     imgUrls: [
 //       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/35055940/original/093fc49670c402f25619a89439a905d945b1b238/design-professional-clear-business-flyer.png',
 //       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/35055940/original/f381950c405e7a0652067bdf705c2601bab1d5fd/design-professional-clear-business-flyer.jpg',
@@ -345,7 +345,7 @@ function getEmptyGig() {
 //     },
 //     daysToMake: 6,
 //     description:
-//       'Get your videos professionally edited for a polished and captivating look.',
+//       `Give your videos a polished and captivating look with professional video editing services. I am Kuku Ku, a skilled video editor with 7+ years of experience in the industry. My services include video color grading to enhance visuals, audio enhancement for crystal-clear sound, motion graphics for added visual appeal, and custom animations to bring your footage to life. Whether you're creating content for social media, websites, or any other platform, I ensure your videos leave a lasting impact on your audience. Let's collaborate and take your videos to the next level!`,
 //     imgUrls: [
 //       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/289213291/original/cab40eb7567465c82d59f2c6d7395e78734317d2/do-professional-creative-video-edit-for-facebook-and-youtube.png',
 //     ],
@@ -381,7 +381,7 @@ function getEmptyGig() {
 //     },
 //     daysToMake: 8,
 //     description:
-//       'Get unique and creative custom illustrations to enhance your project.',
+//       `Enhance your project with unique and creative custom illustrations that leave a lasting impression. I am Lulu Lu, a creative web designer with over 5 years of experience in illustration. My services include personalized illustrations that align with your project's theme and style, quick delivery to meet your deadlines, and full ownership rights for unlimited usage. Whether you need illustrations for children's books, website designs, or any other project, I can bring your ideas to life through art. Let's collaborate and create illustrations that tell your story!`,
 //     imgUrls: [
 //       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/169347675/original/9681d62d3c532ab70d3160d81de051e621ae4ca4/draw-a-car-motorcyle-vehicle-and-animate-it.jpg',
 //       'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/169347675/original/dadd0fab5e9788dcfe8f30f089b6de0608eb0c47/draw-a-car-motorcyle-vehicle-and-animate-it.jpeg',
@@ -420,7 +420,7 @@ function getEmptyGig() {
 //     },
 //     daysToMake: 4,
 //     description:
-//       'Hire a virtual assistant to handle administrative tasks and improve productivity.',
+//       `Elevate your videos, commercials, and narrations with professional voice over services that add a touch of excellence. I am Mama Ma, a voice over artist with a melodious and versatile voice. My services include high-quality audio recordings with studio-grade equipment, quick turnaround times to meet your deadlines, and multiple revisions to ensure your satisfaction. Whether you need a warm and friendly tone or a captivating and authoritative voice, I can deliver the perfect voice over that suits your project's needs. Let's collaborate and bring your content to life with exceptional voice overs!`,
 //     imgUrls: [
 //       'https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/215431426/original/3da3155be9bd3e63aa73e322c067c0c1c6f63383/be-your-virtual-assistant-for-data-entry-data-mining-typing-web-research.jpg',
 //       'https://fiverr-res.cloudinary.com/images/w_1260,q_auto,f_auto,pg_1/attachments/delivery/asset/e17f222458f1877bbfb7a6f60dd9a895-1680368139/Logo-Updated/be-your-virtual-assistant-for-data-entry-data-mining-typing-web-research',
@@ -458,7 +458,7 @@ function getEmptyGig() {
 //     },
 //     daysToMake: 2,
 //     description:
-//       'Accurate and reliable translation services between English and Spanish.',
+//       `Unlock the power of data with AI-powered data analysis services that provide valuable insights and drive informed decision-making. I am Nunu Nu, a data scientist with a passion for harnessing the potential of artificial intelligence. My services include data preprocessing to ensure accuracy, machine learning algorithms for predictive analysis, and data visualization to present findings in a clear and concise manner. Whether you need to analyze customer behavior, financial trends, or any other data-driven insights, I can help you make sense of complex data sets. Let's collaborate and uncover the hidden patterns in your data!`,
 //     imgUrls: [
 //       'https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/180205136/original/31f37986ef5c773f8304a7b1c109bbd459446afb/translate-handwritten-documents-from-russian-ukrainian-into-english.jpg',
 //       'https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/180205136/original/cff327673a51840e53219b9005794f4ac5bd0ee7/translate-handwritten-documents-from-russian-ukrainian-into-english.jpg',
