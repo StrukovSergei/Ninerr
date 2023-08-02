@@ -36,7 +36,7 @@
                 <a v-html="$svg('envelope')"> </a>
             </li>
             <li>
-                <RouterLink active-class="active" to="/mobile">
+                <RouterLink active-class="active" to="/mobileCategory">
                     <a v-html="$svg('magnifyingGlass')"> </a>
                 </RouterLink>
             </li>

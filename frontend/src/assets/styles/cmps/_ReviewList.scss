@@ -50,7 +50,20 @@
         font-family: Macan-Regular;
         padding-top: 13px;
         padding-left: 60px;
+        margin: 0;
+        font-size: 16px;
 
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Number of lines to show */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        .show-more{
+            cursor: pointer;
+            text-decoration: underline;
+
+        }
     }
 
     .review-btns {
@@ -59,6 +72,8 @@
         font-size: 16px;
         cursor: pointer;
         padding-bottom: 30px;
+        padding-top: 30px;
+
 
         .review-btn-yes {
             padding-left: 10px;
@@ -93,3 +108,8 @@
     font-size: 16px;
     color: $clr7;
 }
+
+.expand-text {
+    -webkit-line-clamp: unset;
+}
+

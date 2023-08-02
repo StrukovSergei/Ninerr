@@ -61,7 +61,7 @@
 
 }
 
-.price-filter-section{
+.price-filter-section {
     width: 317px;
     height: 211px;
     font-family: Macan;
@@ -69,38 +69,38 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 0.4fr;
-    grid-template-areas: 
-    "min max"
-    "clear btn";
+    grid-template-areas:
+        "min max"
+        "clear btn";
     align-items: center;
     padding: 0 20px;
 
-    .border-helper{
+    .border-helper {
         position: absolute;
         border-top: 1px solid $clr22;
 
     }
 
-    .input-min{
-        grid-area: min; 
+    .input-min {
+        grid-area: min;
         padding-right: 10px;
         padding-left: 10px;
 
-        
-        input{
+
+        input {
             font-family: Macan;
             color: $clr11;
             height: 40px;
-            
+
         }
     }
 
-    .input-max{
+    .input-max {
         grid-area: max;
         padding-right: 10px;
         padding-left: 10px;
 
-        input{
+        input {
             font-family: Macan;
             color: $clr11;
             width: 60px;
@@ -109,7 +109,7 @@
 
     }
 
-    button{
+    button {
         grid-area: btn;
         border-radius: 4px;
         background-color: black;
@@ -120,24 +120,25 @@
         margin: 10px 24px 14px 24px;
         width: 75%;
         cursor: pointer;
-        
+
     }
 
-    
+
 }
-.delivery-filter-section{
+
+.delivery-filter-section {
 
     font-family: Macan;
     color: $clr13;
     flex-direction: column;
     width: 210px;
     padding: 20px;
-    
 
-    button{
+
+    button {
         position: relative;
         top: 10px;
-        right:-60px;
+        right: -60px;
         border-radius: 4px;
         background-color: black;
         font-size: 16px;
@@ -147,6 +148,32 @@
         margin: 10px 24px 14px 24px;
         width: 50%;
         cursor: pointer;
-        
+
     }
+}
+
+.el-radio.el-radio--large .el-radio__inner {
+    height: 22px;
+    width: 22px;
+    background: #fff;
+    border-color: $clr4;
+}
+
+.el-radio__input.is-checked+.el-radio__label {
+    color: $clr11;
+}
+
+.el-radio.el-radio--large .el-radio__label {
+    color: $clr11;
+}
+
+.el-radio__inner::after {
+    width: 8px;
+    height: 8px;
+    background: $clr4;
+
+}
+
+.el-input__wrapper.is-focus{
+    box-shadow: 0 0 0 1px $clr11;
 }

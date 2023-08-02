@@ -19,8 +19,8 @@ const routes = [
     component: Home,
   },
   {
-    path: '/mobile',
-    name: 'Mobile',
+    path: '/mobileCategory',
+    name: 'MobileCategory',
     component: MobileCategory,
   },
   {
@@ -46,6 +46,11 @@ const routes = [
   {
     path: '/user/:id',
     name: 'UserDetails',
+    component: UserDetails,
+  },
+  {
+    path: '/register/:id',
+    name: 'SellerRegister',
     component: SellerRegister,
   },
   {

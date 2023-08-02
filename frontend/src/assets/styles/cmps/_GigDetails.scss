@@ -47,7 +47,7 @@
     }
 
     .aboutgig-container {
-        padding-bottom: 90px;
+        padding-bottom: 50px;
     }
 
     .order-container {
@@ -71,22 +71,38 @@
             "properties properties"
             "btn btn ";
 
-        .order-header {
-            position: relative;
-            grid-area: header;
-            color: $clr1;
-            border-bottom: 1px solid #dadbdd;
-            top: 15px;
-            font-size: 16px;
-            text-align: center;
-            max-height: 59px;
-            font-weight: 700;
+        .underline-helper{
+            border-bottom: solid $clr1 2.5px;
+            position: absolute;
+            height: 59px;
 
+            width: 133px;        
+        }
+
+        .order-header {
+            //////////////////////////////////////
+            width: 133px;
+            height: 59px;
+
+            p {
+                position: relative;
+                grid-area: header;
+                color: $clr1;
+                top: 18px;
+                font-size: 16px;
+                font-weight: 700;
+                padding-inline-start: 47px;
+                width: 104px;
+
+            }
+            border-right: 1px solid $clr9;
         }
 
         .order-details {
-            padding: 32px;
+            padding: 15px 32px;
             display: grid;
+            border-top: 1px solid $clr9;
+
         }
 
         .order-offer {
@@ -212,7 +228,7 @@
                 position: absolute;
                 padding-left: 8px;
                 top: 3px;
-                color:$clr2;
+                color: $clr2;
             }
         }
 
@@ -255,11 +271,11 @@
     .seller-title {
         font-size: 20px;
     }
-    .vueperslide{
+
+    .vueperslide {
         margin-top: 10px;
         flex-basis: 100px;
     }
 
 
 }
-

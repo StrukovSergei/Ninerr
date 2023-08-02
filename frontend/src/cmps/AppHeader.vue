@@ -18,7 +18,8 @@
       </div>
       <div class="links">
         <RouterLink to="/explore">Explore</RouterLink>
-        <RouterLink to="/user/:id">Become a Seller </RouterLink>
+        <RouterLink v-if="!this.loggedinUser?.isSeller" :to="becomeSeller">Become a Seller
+        </RouterLink>
         <RouterLink :to="userProfile">
           <span v-if="loggedinUser" class="user-profile-photo">
             <div class="online-dot"></div>
@@ -32,6 +33,9 @@
             <RouterLink to="/login"><span class="join"> Join</span> </RouterLink>
           </span>
         </RouterLink>
+      </div>
+      <div class="mobil-diamond">
+        <span v-html="$svg('diamond')"></span>
       </div>
     </header>
     <section class="categories-menu-package main-layout full">
@@ -78,84 +82,88 @@ export default {
       searchVisible: false,
       categoriesVisible: false,
       isHomePageNotScrolled: false,
-    }
+    };
   },
   mounted() {
     // if (this.isHomePage) {
-    window.addEventListener("scroll", this.handleScroll)
-    this.isHomePageNotScrolled = this.isHomePage
+    window.addEventListener("scroll", this.handleScroll);
+    this.isHomePageNotScrolled = this.isHomePage;
     // } else {
     //   this.scrolled = true
     // }
   },
   beforeDestroy() {
     if (this.isHomePage) {
-      window.removeEventListener("scroll", this.handleScroll)
+      window.removeEventListener("scroll", this.handleScroll);
     }
   },
   computed: {
     isHomePage() {
-      return this.$route.name === "Home"
+      return this.$route.name === "Home";
     },
     loggedinUser() {
-      return this.$store.getters.loggedinUser
+      return this.$store.getters.loggedinUser;
     },
     userProfile() {
-      if (!this.loggedinUser) return ""
-      if (this.loggedinUser.isSeller) return "/seller/" + this.loggedinUser._id
-      if (!this.loggedinUser.isSeller) return "/user/" + this.loggedinUser._id
+      if (!this.loggedinUser) return "";
+      if (this.loggedinUser.isSeller) return "/seller/" + this.loggedinUser._id;
+      if (!this.loggedinUser.isSeller) return "/user/" + this.loggedinUser._id;
+    },
+    becomeSeller() {
+      if (!this.loggedinUser) return "/login";
+      return "/register/" + this.loggedinUser._id;
     },
     fullname() {
-      if (!this.loggedinUser) return ""
-      return this.loggedinUser.fullname
+      if (!this.loggedinUser) return "";
+      return this.loggedinUser.fullname;
     },
     userImg() {
-      if (!this.loggedinUser) return ""
-      return this.loggedinUser.imgUrl
+      if (!this.loggedinUser) return "";
+      return this.loggedinUser.imgUrl;
     },
     loggedinUser() {
-      return this.$store.getters.loggedinUser
+      return this.$store.getters.loggedinUser;
     },
     userImgAlt() {
-      return this.loggedinUser.fullname.charAt(0).toUpperCase()
+      return this.loggedinUser.fullname.charAt(0).toUpperCase();
     },
   },
   watch: {},
   methods: {
     searchGigs() {
-      const searchQuery = this.searchText.trim()
+      const searchQuery = this.searchText.trim();
       if (searchQuery) {
         this.$router.push({
           path: "/explore",
           query: { txt: searchQuery },
-        })
+        });
       }
     },
     handleScroll() {
-      if (!this.isHomePage) return
-      const scrollPosition = window.scrollY
+      if (!this.isHomePage) return;
+      const scrollPosition = window.scrollY;
 
-      const firstStageThreshold = 20
-      const secondStageThreshold = 90
+      const firstStageThreshold = 20;
+      const secondStageThreshold = 90;
 
       // this.scrolled = scrollPosition >= firstStageThreshold
 
       if (scrollPosition >= firstStageThreshold) {
-        this.isHomePageNotScrolled = false
-        this.scrolled = true
+        this.isHomePageNotScrolled = false;
+        this.scrolled = true;
       } else {
-        this.isHomePageNotScrolled = true
-        this.scrolled = false
-        this.searchVisible = false
+        this.isHomePageNotScrolled = true;
+        this.scrolled = false;
+        this.searchVisible = false;
       }
 
       if (scrollPosition >= secondStageThreshold) {
-        this.categoriesVisible = true
-        this.searchVisible = true
+        this.categoriesVisible = true;
+        this.searchVisible = true;
       } else {
-        this.categoriesVisible = false
+        this.categoriesVisible = false;
       }
     },
   },
-}
+};
 </script>

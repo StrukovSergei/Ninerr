@@ -46,7 +46,8 @@
             </div>
             <div class="aboutgig-container">
                 <h2 class="gig-title fs20">About this gig</h2>
-                <span class="gig-description">{{ currGig.description }}</span>
+                <!-- Use the computed property formattedDescriptionHTML to display the description with line breaks -->
+                <div class="gig-description" v-html="formattedDescriptionHTML"></div>
             </div>
 
             <div class="aboutseller-container">
@@ -66,6 +67,8 @@
         </div>
         <div class="order-container ">
             <div class="order-header">
+                <div class="underline-helper">
+                </div>
                 <p>Basic</p>
             </div>
             <div class="order-details flex">
@@ -170,6 +173,11 @@ export default {
         // reviews() {
         //     return this.$store.getters.getReviews
         // },
+        formattedDescriptionHTML() {
+
+            const formattedDesc = this.currGig.description.replace(/\./g, ".<br>")
+            return `<div>${formattedDesc}</div>`
+        },
     },
     components: { VueperSlides, VueperSlide, SellerDetails, RouterLink, ReviewList, ReviewBar },
 }

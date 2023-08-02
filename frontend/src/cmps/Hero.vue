@@ -127,7 +127,6 @@ export default {
                     "Business Founder",
                     "Production Assistant",
                 ],
-                rate: [5, 0, 5, 0, 0, 5],
             },
             slides: [
                 {

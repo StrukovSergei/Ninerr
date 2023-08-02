@@ -146,6 +146,7 @@ li.gig-preview {
         height: 32px;
         width: 34px;
         background-color: unset;
+        cursor: pointer;
         @include for-mobile-layout {
             top: 30px;
             right: 18px;

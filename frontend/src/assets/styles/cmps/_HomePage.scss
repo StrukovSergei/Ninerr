@@ -190,7 +190,7 @@
         padding-bottom: rem(24px);
         font-size: 2rem;
         font-family: Macan-Regular;
-
+        padding-bottom: 14px;
         color: $clr11;
 
       }
@@ -205,6 +205,7 @@
         justify-content: flex-start;
         padding-bottom: rem(8px);
         font-size: rem(18px);
+        padding: 0;
 
         & span.check-svg {
           fill: #7a7d85;

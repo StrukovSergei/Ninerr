@@ -18,8 +18,17 @@
                 <span class="review-rate-number">{{ review.rate }}</span>
 
             </div>
-            <p class="review-txt fs18">{{ review.title }}</p>
-
+            <div class="review-txt fs18" :class="{ 'expanded': review.showFullReview }">
+                <div v-if="!review.showFullReview">
+                    {{ review.title.substring(0, truncateLength) }}
+                    <span v-if="shouldShowShowMore(review.title)" @click="expandReview(index)">... <span
+                            class="show-more">Show more</span></span>
+                </div>
+                <div v-else>
+                    {{ review.title }}
+                    <span @click="collapseReview(index)">... <span class="show-more">Show less</span></span>
+                </div>
+            </div>
             <section class="review-btns">
                 <span>Helpful?</span>
                 <span class="review-btn-yes"><span v-html="$svg('thumbsUp')"></span>Yes</span>
@@ -40,6 +49,7 @@ export default {
         return {
             reviewsToShow: 4,
             reviewsToAdd: 4,
+            truncateLength: 140,
         }
     },
     created() { },
@@ -74,6 +84,17 @@ export default {
         },
         showMoreReviews() {
             this.reviewsToShow += this.reviewsToAdd
+        },
+        shouldShowShowMore(text) {
+            return text.length > this.truncateLength
+        },
+
+        expandReview(index) {
+            this.reviews[index].showFullReview = true
+        },
+
+        collapseReview(index) {
+            this.reviews[index].showFullReview = false
         },
     },
     computed: {
