@@ -12,14 +12,14 @@
             <el-col :span="8">
                 <section>
                     <h3>Total completed orders</h3>
-                    <p>{{ getTotalEarningsFromAllOrders() }}</p>
+                    <p>{{ getTotalEarningsWithoutPendingOrders() }}</p>
                 </section>
             </el-col>
 
             <el-col :span="8">
                 <section>
                     <h3>Total earnings</h3>
-                    <p>{{ getTotalEarningsWithoutPendingOrders() }}</p>
+                    <p>{{ getTotalEarningsFromAllOrders() }}$</p>
                 </section>
             </el-col>
 
@@ -46,7 +46,7 @@
                 </el-table-column>
                 <el-table-column prop="selectedStatus" label="Update Status" width="160">
                     <template #default="{ row }">
-                        <select v-model="row.selectedStatus" @change="updateGigStatus(row)">
+                        <select v-model="row.status" @change="updateGigStatus(row)">
                             <option v-for="status in gigStatusOptions" :key="status">{{ status }}</option>
                         </select>
                     </template>
@@ -76,7 +76,7 @@
                 </el-table-column>
                 <el-table-column prop="selectedStatus" label="Update Status" width="160">
                     <template #default="{ row }">
-                        <select v-model="row.selectedStatus" @change="updateStatus(row)">
+                        <select v-model="row.status" @change="updateStatus(row)">
                             <option v-for="status in statusOptions" :key="status">{{ status }}</option>
                         </select>
                     </template>
@@ -132,25 +132,25 @@ export default {
         },
 
         gigs() {
-            return this.user && this.user.isSeller ? this.$store.getters.gigs : []
+            return this.user && this.user.isSeller ? JSON.parse(JSON.stringify(this.$store.getters.gigs)) : [] 
         },
         orders() {
-            return this.$store.getters.orders
+            return JSON.parse(JSON.stringify(this.$store.getters.orders))
+            // return this.$store.getters.orders
         },
         userProfile() {
             return "/user/" + this.userId
         },
         totalEarningsFromAllOrders() {
-            return this.orders.reduce((total, order) => total + order.price, 0)
+            return this.orders.reduce((total, order) => {
+                if (order.status !== 'rejected') {
+                    return total + order.price
+                }
+                return total
+            }, 0)
         },
         totalEarningsWithoutPendingOrders() {
-            return this.orders
-                .filter((order) => {
-                    order.status !== 'pending'
-                    order.status !== 'rejected'
-                    order.status !== 'in progress'
-                })
-                .reduce((total, order) => total + order.price, 0)
+            return this.orders.filter((order) => order.status === 'completed').length
         },
         numberOfPendingOrders() {
             return this.orders.filter((order) => order.status === 'pending').length
@@ -226,10 +226,11 @@ export default {
             }
         },
         async updateStatus(order) {
-            order = { ...order, status: this.selectedStatus }
+            const newOrder = JSON.parse(JSON.stringify(order))
+            newOrder.status = this.selectedStatus
 
             try {
-                await this.$store.dispatch(getActionUpdateOrder(order))
+                await this.$store.dispatch(getActionUpdateOrder(newOrder))
                 showSuccessMsg('order status updated')
             } catch (err) {
                 console.log(err)
@@ -252,9 +253,11 @@ export default {
             }, 100)
         },
         async updateGigStatus(gig) {
-            gig = { ...gig, status: gig.selectedStatus }
+            const newGig = JSON.parse(JSON.stringify(gig))
+            newGig.status = gig.selectedStatus
+
             try {
-                await this.$store.dispatch(getActionUpdateGig(gig))
+                await this.$store.dispatch(getActionUpdateGig(newGig))
                 showSuccessMsg('Gig status updated')
             } catch (err) {
                 console.log(err)
@@ -265,7 +268,7 @@ export default {
             return this.totalEarningsFromAllOrders.toFixed(2)
         },
         getTotalEarningsWithoutPendingOrders() {
-            return this.totalEarningsWithoutPendingOrders.toFixed(2)
+            return this.totalEarningsWithoutPendingOrders
         },
         getNumberOfPendingOrders() {
             return this.numberOfPendingOrders
