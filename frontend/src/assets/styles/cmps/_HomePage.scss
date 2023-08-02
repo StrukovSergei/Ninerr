@@ -172,7 +172,7 @@
   & .selling-proposition {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: rem(96px) rem(32px) rem(96px) rem(32px);
+    padding: rem(96px) 0 rem(96px) 0;
 
     align-items: center;
     justify-content: center;
@@ -181,7 +181,7 @@
     font-family: Macan-Regular;
 
     & .selling-info {
-      padding-inline: 1rem rem(137.375px);
+      padding-inline-end: rem(137.375px);
       color: #404145;
       grid-column: 1;
 
@@ -234,8 +234,6 @@
 
   .icons {
     display: grid;
-    padding-inline-start: rem(20px);
-    padding-inline-end: rem(20px);
     grid-template-columns: repeat(5, 1fr);
     gap: rem(55px);
 
