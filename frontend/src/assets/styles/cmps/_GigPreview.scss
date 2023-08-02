@@ -4,7 +4,28 @@ li.gig-preview {
     position: relative;
 
     @include for-mobile-layout {
-        background-color: #404145;
+        background-color: #fff;
+        height: 100px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        width: 100%;
+        height: 79%;
+        & .info-product{
+            
+       
+
+        }
+    }
+
+    & .rate-star {
+
+
+        @include for-mobile-layout {
+            fill: rgb(255, 183, 0);
+        }
     }
 
     & .product_img {
@@ -14,6 +35,12 @@ li.gig-preview {
         aspect-ratio: 1.66;
         object-fit: cover;
         object-position: center;
+
+        @include for-mobile-layout {
+            display: block;
+            grid-row:1/-2;
+            grid-column:1/2;
+        }
 
         &:hover {
             .vueperslides__arrows .vueperslides__arrow--next {
@@ -38,7 +65,12 @@ li.gig-preview {
             transition: .4s ease-in-out;
             // padding: 0 2px;
             margin: -3px;
+
+            @include for-mobile-layout {
+                display: none;
+            }
         }
+
 
         .vueperslides__bullet--active .default {
             transform: scale(1.5);
@@ -55,6 +87,10 @@ li.gig-preview {
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
             opacity: 0;
             transition: .3s ease-in-out;
+
+            @include for-mobile-layout {
+                display: none;
+            }
         }
 
         & .vueperslides__arrows .vueperslides__arrow--prev {
@@ -68,6 +104,10 @@ li.gig-preview {
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
             opacity: 0;
             transition: .3s ease-in-out;
+
+            @include for-mobile-layout {
+                display: none;
+            }
         }
 
         &.vueperslides .vueperslides__inner {
@@ -92,6 +132,7 @@ li.gig-preview {
     & .vueperslides {
         margin-block-end: 0px;
 
+
     }
 
 
@@ -105,6 +146,10 @@ li.gig-preview {
         height: 32px;
         width: 34px;
         background-color: unset;
+        @include for-mobile-layout {
+            top: 30px;
+            right: 18px;
+        }
 
     }
 
@@ -128,6 +173,10 @@ li.gig-preview {
         font-weight: 700;
         height: auto;
         line-height: rem(21px);
+
+        @include for-mobile-layout {
+            display: none;
+        }
     }
 
     & .title_product {
@@ -146,6 +195,15 @@ li.gig-preview {
         // line-height:51.2px
         line-height: rem(23.6px);
         max-height: rem(51.2px);
+        @include for-mobile-layout {
+            grid-row:2;
+            grid-column:2/3;
+            margin-inline-start: 10px;
+            justify-content: end;
+            align-content: end;
+
+        }
+
     }
 
     & .title_product:hover {
@@ -155,6 +213,13 @@ li.gig-preview {
     & .rate {
         display: flex;
         flex-direction: row;
+        @include for-mobile-layout {
+            grid-row:1;
+            grid-column:2/3;
+            margin-inline-start: 10px;
+            position: absolute;
+            top:30px
+        }
     }
 
     & .level {
@@ -163,6 +228,10 @@ li.gig-preview {
         height: 20px;
         color: #404145;
         font-family: "Macan", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+        @include for-mobile-layout {
+            display: none;
+        }
 
 
     }
@@ -183,6 +252,10 @@ li.gig-preview {
         padding-left: 4px;
         padding-right: 0px;
         padding-top: 0px;
+
+        @include for-mobile-layout {
+            color: rgb(255, 183, 0);
+        }
     }
 
     & .rate .rate-count {
@@ -203,6 +276,24 @@ li.gig-preview {
         font-weight: 700;
         height: auto;
         margin-top: 8px;
+        @include for-mobile-layout {
+            position: absolute;
+            right: 30px;
+            bottom:5px;
+            z-index: 1;
+        }
+
+        & span {
+
+            @include for-mobile-layout {
+                color: #74767e;
+                font-size: rem(14px);
+                font-family: Macan-Regular;
+                font-weight: 200;
+
+            }
+
+        }
     }
 
     & .user_preview {
@@ -216,11 +307,19 @@ li.gig-preview {
             align-items: center;
             margin-block-start: rem(4px);
 
+            @include for-mobile-layout {
+                display: none;
+            }
+
 
 
             & .user_img {
                 height: 24px;
                 border-radius: 50%;
+
+                @include for-mobile-layout {
+                    display: none;
+                }
             }
         }
     }
