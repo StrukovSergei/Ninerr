@@ -1,5 +1,6 @@
 <template>
   <div class="container home main-layout">
+    <h1 class="main-index-title">{{ filterHeading }}</h1>
     <div class="gig-small-nav index-nav flex">
       <RouterLink class="home-icon" to="/">
         <span v-html="$svg('homeExplore')"></span>
@@ -44,17 +45,17 @@
           </el-button>
           <template #dropdown>
             <el-dropdown-menu>
-            
-                <div class="delivery-filter-section flex">
-                  <div class="mb-2 flex items-center text-sm">
-                    <el-radio-group v-model="deliveryTime" class="ml-4" >
-                      <el-radio label="3" size="large">Up to 3 days</el-radio>
-                      <el-radio label="5" size="large">Up to 5 days</el-radio>
-                      <el-radio label="" size="large">Anytime</el-radio>
-                    </el-radio-group>
-                  </div>
-                  <button @click="applyFilter">Apply</button>
+
+              <div class="delivery-filter-section flex">
+                <div class="mb-2 flex items-center text-sm">
+                  <el-radio-group v-model="deliveryTime" class="ml-4">
+                    <el-radio label="3" size="large">Up to 3 days</el-radio>
+                    <el-radio label="5" size="large">Up to 5 days</el-radio>
+                    <el-radio label="" size="large">Anytime</el-radio>
+                  </el-radio-group>
                 </div>
+                <button @click="applyFilter">Apply</button>
+              </div>
 
             </el-dropdown-menu>
           </template>
@@ -96,9 +97,17 @@ export default {
     filteredGigs() {
       return this.$store.getters.gigs
     },
+    filterHeading() {
+      const hasCategoryFilter = this.$route.query.category
+      if (hasCategoryFilter) {
+        return this.$route.query.category
+      } else {
+        return "All services"
+      }
+    },
   },
   created() {
-
+    this.updateHeadingFromQuery()
   },
   watch: {
 
@@ -110,6 +119,7 @@ export default {
         this.deliveryTime = query.deliveryTime ? parseInt(query.deliveryTime) : null
         const filterBy = { category: query.category, searchText: this.searchText, minPrice: this.minPrice, maxPrice: this.maxPrice, delivery: this.deliveryTime }
         this.$store.dispatch({ type: 'loadGigs', filterBy })
+        this.updateHeadingFromQuery()
       },
       immediate: true,
     }
@@ -128,6 +138,11 @@ export default {
 
       const query = { ...this.$route.query, ...filterBy }
       this.$router.push({ path: this.$route.path, query })
+    },
+    updateHeadingFromQuery() {
+      if (this.$route.query.category) {
+        this.$store.dispatch({ type: 'loadGigs', filterBy: { category: this.$route.query.category } })
+      }
     },
 
   }
