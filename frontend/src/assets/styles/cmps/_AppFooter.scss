@@ -31,8 +31,7 @@
         }
 
         & .social-links {
-            padding-inline-end: 2rem;
-            gap: 1.5rem;
+            gap: 2rem;
 
             &>* {
                 width: rem(20px);
@@ -44,16 +43,13 @@
 
                 &:hover {
                     background-color: #efeff0;
-
                 }
             }
         }
 
-        .smallRForLogo{
+        .smallRForLogo {
             font-size: 11px;
-            
             color: $clr12;
-
         }
     }
 }

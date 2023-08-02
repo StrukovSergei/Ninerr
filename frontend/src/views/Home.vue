@@ -174,7 +174,7 @@
   <!-- ---------------For Mobil Only------------------------- -->
   <section class="for-mobil">
     <div class="vueperslides">
-      <h2>Popular services <RouterLink to="/mobile">See All</RouterLink>
+      <h2>Popular services <RouterLink to="/mobileCategory">See All</RouterLink>
       </h2>
       <vueper-slides class="no-shadow" :visible-slides="3" :slide-ratio="1 / 3" :gap="3" :dragging-distance="20"
         :bullets="false">

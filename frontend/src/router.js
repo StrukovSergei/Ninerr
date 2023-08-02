@@ -19,8 +19,8 @@ const routes = [
     component: Home,
   },
   {
-    path: '/mobile',
-    name: 'Mobile',
+    path: '/mobileCategory',
+    name: 'MobileCategory',
     component: MobileCategory,
   },
   {
