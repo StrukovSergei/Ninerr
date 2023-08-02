@@ -9,6 +9,7 @@ import UserDetails from './views/UserDetails.vue'
 import SellerPage from './views/SellerPage.vue'
 import GigDetails from './views/GigDetails.vue'
 import Payment from './views/Payment.vue'
+import SellerRegister from './views/SellerRegister.vue'
 import MobileCategory from './cmps/MobileCategory.vue'
 
 const routes = [
@@ -45,7 +46,7 @@ const routes = [
   {
     path: '/user/:id',
     name: 'UserDetails',
-    component: UserDetails,
+    component: SellerRegister,
   },
   {
     path: '/seller/:id',

@@ -25,7 +25,8 @@
 
     .vueperslides {
       &__parallax-wrapper {
-        height: rem(680px);
+        height: 48rem;
+
       }
     }
   }
@@ -282,7 +283,7 @@
   padding-bottom: 0;
   padding-top: 0;
   position: relative;
-  top: -5.5rem;
+  top: 0;
   background-color: #fafafa;
   height: rem(95px);
 
