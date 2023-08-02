@@ -18,7 +18,7 @@
       </div>
       <div class="links">
         <RouterLink to="/explore">Explore</RouterLink>
-        <RouterLink :to="becomeSeller">Become a Seller </RouterLink>
+        <RouterLink v-if="!this.loggedinUser?.isSeller" :to="becomeSeller">Become a Seller </RouterLink>
         <RouterLink :to="userProfile">
           <span v-if="loggedinUser" class="user-profile-photo">
             <div class="online-dot"></div>
@@ -106,7 +106,7 @@ export default {
       if (!this.loggedinUser.isSeller) return "/user/" + this.loggedinUser._id
     },
     becomeSeller(){
-      if (!this.loggedinUser) return ""
+      if (!this.loggedinUser) return "/login"
       return "/register/" + this.loggedinUser._id
     },
     fullname() {
