@@ -11,7 +11,7 @@
     <section class="index-filter ">
       <div class="flex flex-wrap items-center">
         <el-dropdown trigger="click" placement="bottom-start" ref="dropdownBudget">
-          <el-button type="primary" >
+          <el-button type="primary">
             Budget <span v-html="$svg('arrowDown')"></span><el-icon class="el-icon--right"></el-icon>
           </el-button>
           <template #dropdown>
@@ -54,8 +54,12 @@
                     <el-radio label="" size="large">Anytime</el-radio>
                   </el-radio-group>
                 </div>
-                <button class="btn-apply" @click="applyFilter">Apply</button>
-                <button class="btn-clear" @click="clearFilter('delivery')">Clear All</button>
+                <span class="border-helper"></span>
+
+                <div class="btn-container flex">
+                  <button class="btn-clear" @click="clearFilter('delivery')">Clear All</button>
+                  <button class="btn-apply" @click="applyFilter">Apply</button>
+                </div>
               </div>
 
             </el-dropdown-menu>

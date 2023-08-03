@@ -160,39 +160,52 @@
     font-family: Macan;
     color: $clr13;
     flex-direction: column;
-    width: 232px;
+    width: 255px;
     padding: 20px;
+    height: 260px;
 
-
-    .btn-apply {
-        position: relative;
-        top: 10px;
-        right: -60px;
-        border-radius: 4px;
-        background-color: black;
-        font-size: 16px;
-        font-weight: 600;
-        padding: 14px;
-        border: 1px solid transparent;
-        width: 50%;
-        cursor: pointer;
-
+    .border-helper {
+        position: absolute;
+        border-bottom: 1px solid $clr22;
+        width: 255px;
+        bottom: 80px;
+        margin-bottom: 4px;
+        left: 0;
     }
+    .btn-container {
 
-    .btn-apply:hover {
-        background-color: $clr11;
-    }
+        margin-top: 24px;
+        gap: 10px;
 
-    .btn-clear {
-        font-family: Macan;
-        color: $CLR00;
-        font-size: 16px;
-        background-color: transparent;
-        cursor: pointer;
-    }
+        .btn-apply {
+            top: 10px;
+            right: -60px;
+            border-radius: 4px;
+            background-color: black;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 14px;
+            border: 1px solid transparent;
+            width: 45%;
+            cursor: pointer;
 
-    .btn-clear:hover {
-        color: $clr5;
+        }
+
+        .btn-apply:hover {
+            background-color: $clr11;
+        }
+
+        .btn-clear {
+            font-family: Macan;
+            color: $CLR00;
+            font-size: 16px;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .btn-clear:hover {
+            color: $clr5;
+        }
     }
 }
 
@@ -220,4 +233,9 @@
 
 .el-input__wrapper.is-focus {
     box-shadow: 0 0 0 1px $clr11;
+}
+
+.el-radio.el-radio--large {
+    margin-bottom: 10px;
+
 }
