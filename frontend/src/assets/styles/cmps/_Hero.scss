@@ -51,6 +51,7 @@
     line-height: 1.2;
     align-self: center;
     margin-block-end: 10rem;
+    margin-inline-start: -1.2rem;
 
     @include for-mobile-layout {
       font-size: 12px;
