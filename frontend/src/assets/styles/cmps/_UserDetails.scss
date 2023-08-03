@@ -8,20 +8,84 @@
     font-family: macan;
     margin-top: 70px;
 
-    button{
-        display: flex;
-        justify-content: center;
-        grid-area: btn;
-        border-radius: 4px;
-        background-color: black;
-        font-size: 16px;
-        font-weight: 600;
-        padding: 14px;
-        border: 1px solid transparent;
-        margin: 10px 24px 14px 24px;
-        width: 75%;
-        text-decoration: none;
-        color: #fff;
+    .user-container {
+        color: #606266;
+        border: 1px solid #ebeef5;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+
+        .user-name {
+            color: black;
+        }
+
+        .user-photo {
+            position: relative;
+            background-color: #A23F6E;
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                position: relative;
+                width: 89px;
+                height: 89px;
+                border-radius: 50%;
+
+            }
+
+            .user-initials {
+                font-size: 30px;
+                position: relative;
+                top: 1px;
+                color: #fff;
+            }
+
+
+        }
+
+        .total-orders {
+            margin-top: 20px;
+
+        }
+
+        .user-country-title {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .user-country {
+            font-size: 16px;
+
+
+
+            .user-coutry-img {
+                position: relative;
+                width: 20px;
+                top: 4px;
+            }
+
+        }
+
+        button {
+
+            display: flex;
+            justify-content: center;
+            grid-area: btn;
+            border-radius: 4px;
+            background-color: black;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 14px;
+            border: 1px solid transparent;
+            margin: 10px 24px 14px 24px;
+            width: 75%;
+            text-decoration: none;
+            color: #fff;
+        }
     }
 
 
@@ -31,17 +95,28 @@
 
     .btn-rejected {
         background-color: red;
+        color: #fff;
+        cursor: auto;
     }
 
     .btn-completed {
         background-color: green;
+        color: #fff;
+        cursor: auto;
+
     }
 
     .btn-in-progress {
         background-color: orange;
+        color: #fff;
+        cursor: auto;
+
     }
 
     .btn-pending {
         background-color: blue;
+        color: #fff;
+        cursor: auto;
+
     }
 }
