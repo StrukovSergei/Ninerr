@@ -48,7 +48,7 @@
 
               <div class="delivery-filter-section flex">
                 <div class="mb-2 flex items-center text-sm">
-                  <el-radio-group v-model="deliveryTime" class="ml-4">
+                  <el-radio-group v-model="delivery" class="ml-4">
                     <el-radio label="3" size="large">Up to 3 days</el-radio>
                     <el-radio label="5" size="large">Up to 5 days</el-radio>
                     <el-radio label="" size="large">Anytime</el-radio>
@@ -67,9 +67,19 @@
         </el-dropdown>
       </div>
 
-
-
     </section>
+    <template v-if="showFilters">
+      <div class="applied-filters flex">
+        <div v-if="minPrice || (maxPrice && maxPrice !== 99999)" class="filter-pill" @click="clearFilter('budget')">
+          {{ minPrice }}$ - {{ maxPrice }}$
+          <button @click="clearFilter('budget')">✕</button>
+        </div>
+        <div v-if="delivery !== 999 && delivery" class="filter-pill" @click="clearFilter('delivery')">
+          Up to {{ this.delivery }} days
+          <button @click="clearFilter('delivery')">✕</button>
+        </div>
+      </div>
+    </template>
     <GigList v-if="gigs" :gigs="filteredGigs" />
 
 
@@ -89,7 +99,8 @@ export default {
       searchText: '',
       minPrice: null,
       maxPrice: null,
-      deliveryTime: '',
+      delivery: '',
+      showFilters: false,
       gigs: []
     }
   },
@@ -116,11 +127,13 @@ export default {
   watch: {
     '$route.query': {
       handler(query) {
-        this.searchText = query.txt || ''
-        this.minPrice = query.minPrice ? parseInt(query.minPrice) : null
-        this.maxPrice = query.maxPrice ? parseInt(query.maxPrice) : null
-        this.deliveryTime = query.deliveryTime ? parseInt(query.deliveryTime) : null
-        const filterBy = { category: query.category, searchText: this.searchText, minPrice: this.minPrice, maxPrice: this.maxPrice, delivery: this.deliveryTime }
+        const filterBy = {
+          category: query.category,
+          searchText: query.txt || '',
+          minPrice: query.minPrice ? parseInt(query.minPrice) : null,
+          maxPrice: query.maxPrice ? parseInt(query.maxPrice) : null,
+          delivery: query.delivery ? parseInt(query.delivery) : null
+        }
         this.$store.dispatch({ type: 'loadGigs', filterBy })
         this.updateHeadingFromQuery()
       },
@@ -135,12 +148,13 @@ export default {
         minPrice: this.minPrice,
         maxPrice: this.maxPrice,
         category: this.$route.query.category,
-        deliveryTime: this.deliveryTime
+        delivery: this.delivery
       }
       const query = { ...this.$route.query, ...filterBy }
       this.$router.replace({ query })
       this.$refs.dropdownBudget.handleClose()
       this.$refs.dropdownDelivery.handleClose()
+      this.showFilters = true
     },
     updateHeadingFromQuery() {
       if (this.$route.query.category) {
@@ -148,13 +162,18 @@ export default {
       }
     },
     clearFilter(filterType) {
+      const query = { ...this.$route.query }
       if (filterType === 'budget') {
+        query.minPrice = null
+        query.maxPrice = null
         this.minPrice = null
         this.maxPrice = null
       } else if (filterType === 'delivery') {
-        this.deliveryTime = ''
+        query.delivery = null
+        this.delivery = ''
       }
-      this.applyFilter()
+      this.$router.replace({ query })
+      this.showFilters = Object.values(query).some(val => val !== null && val !== '')
     },
   }
 }

@@ -147,6 +147,10 @@
         cursor: pointer;
         position: relative;
         top: -1px;
+        margin-left: 0;
+        margin-right: 20px;
+        padding-left: 0;
+        width: 100px;
     }
 
     .btn-clear:hover {
@@ -188,7 +192,7 @@
             border: 1px solid transparent;
             width: 45%;
             cursor: pointer;
-
+            margin-right: 0;
         }
 
         .btn-apply:hover {
@@ -201,6 +205,9 @@
             font-size: 16px;
             background-color: transparent;
             cursor: pointer;
+            margin-left: 0;
+            margin-right: 20px;
+            padding-left: 0;
         }
 
         .btn-clear:hover {
@@ -208,6 +215,43 @@
         }
     }
 }
+
+.applied-filters{
+    gap: 10px;
+    margin-top: 30px;
+    .filter-pill{
+        background-color: $clr15;
+        border-radius: 56px;
+        color: $clr4;
+        font-size: 14px;
+        font-family: Macan;
+        padding: 4px 16px;
+        cursor: pointer;
+
+    }
+
+    button{
+        background-color: transparent;
+        color: $clr5;
+        padding: 0;
+        margin: 0;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    .filter-pill:hover{
+        color: $clr5;
+    }
+}
+
+
+
+
+
+
+
+
+
 
 .el-radio.el-radio--large .el-radio__inner {
     height: 22px;
@@ -239,3 +283,4 @@
     margin-bottom: 10px;
 
 }
+
