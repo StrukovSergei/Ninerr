@@ -75,6 +75,7 @@
     }
 
     .confirm-container {
+        font-family: Macan-Regular;
 
         border: 1px solid $clr9;
         border-radius: 0.1875em;
@@ -149,7 +150,6 @@
             .payment-total {
                 margin-top: 28px;
                 font-weight: 700;
-                max-width: 360px;
                 border-top: 1px solid $clr9;
             }
         }
@@ -162,7 +162,6 @@
             padding: 12px 24px;
             border: 1px solid transparent;
             width: 100%;
-            max-width: 360px;
 
             cursor: pointer;
         }

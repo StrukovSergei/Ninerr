@@ -1,5 +1,6 @@
-.main-index-title{
+.main-index-title {
     margin-top: 80px;
+    font-family: Macan;
 }
 
 .index-nav {
@@ -113,7 +114,14 @@
 
     }
 
-    button {
+    .border-helper {
+        position: absolute;
+        border-bottom: 1px solid $clr22;
+        width: 317px;
+        bottom: 80px;
+    }
+
+    .btn-apply {
         grid-area: btn;
         border-radius: 4px;
         background-color: black;
@@ -127,6 +135,27 @@
 
     }
 
+    .btn-apply:hover {
+        background-color: $clr11;
+    }
+
+    .btn-clear {
+        font-family: Macan;
+        color: $CLR00;
+        font-size: 16px;
+        background-color: transparent;
+        cursor: pointer;
+        position: relative;
+        top: -1px;
+        margin-left: 0;
+        margin-right: 20px;
+        padding-left: 0;
+        width: 100px;
+    }
+
+    .btn-clear:hover {
+        color: $clr5;
+    }
 
 }
 
@@ -135,26 +164,94 @@
     font-family: Macan;
     color: $clr13;
     flex-direction: column;
-    width: 210px;
+    width: 255px;
     padding: 20px;
+    height: 260px;
 
+    .border-helper {
+        position: absolute;
+        border-bottom: 1px solid $clr22;
+        width: 255px;
+        bottom: 80px;
+        margin-bottom: 4px;
+        left: 0;
+    }
+    .btn-container {
 
-    button {
-        position: relative;
-        top: 10px;
-        right: -60px;
-        border-radius: 4px;
-        background-color: black;
-        font-size: 16px;
-        font-weight: 600;
-        padding: 14px;
-        border: 1px solid transparent;
-        margin: 10px 24px 14px 24px;
-        width: 50%;
+        margin-top: 24px;
+        gap: 10px;
+
+        .btn-apply {
+            top: 10px;
+            right: -60px;
+            border-radius: 4px;
+            background-color: black;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 14px;
+            border: 1px solid transparent;
+            width: 45%;
+            cursor: pointer;
+            margin-right: 0;
+        }
+
+        .btn-apply:hover {
+            background-color: $clr11;
+        }
+
+        .btn-clear {
+            font-family: Macan;
+            color: $CLR00;
+            font-size: 16px;
+            background-color: transparent;
+            cursor: pointer;
+            margin-left: 0;
+            margin-right: 20px;
+            padding-left: 0;
+        }
+
+        .btn-clear:hover {
+            color: $clr5;
+        }
+    }
+}
+
+.applied-filters{
+    gap: 10px;
+    margin-top: 30px;
+    .filter-pill{
+        background-color: $clr15;
+        border-radius: 56px;
+        color: $clr4;
+        font-size: 14px;
+        font-family: Macan;
+        padding: 4px 16px;
         cursor: pointer;
 
     }
+
+    button{
+        background-color: transparent;
+        color: $clr5;
+        padding: 0;
+        margin: 0;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    .filter-pill:hover{
+        color: $clr5;
+    }
 }
+
+
+
+
+
+
+
+
+
 
 .el-radio.el-radio--large .el-radio__inner {
     height: 22px;
@@ -178,6 +275,12 @@
 
 }
 
-.el-input__wrapper.is-focus{
+.el-input__wrapper.is-focus {
     box-shadow: 0 0 0 1px $clr11;
 }
+
+.el-radio.el-radio--large {
+    margin-bottom: 10px;
+
+}
+

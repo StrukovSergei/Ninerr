@@ -1,27 +1,43 @@
 <template>
-  <section v-if="user" class="main-user flex">
-    <h1>{{ user.fullname }}</h1>
-
-    <button @click="onLogout()">Logout</button>
-    <img style="max-width: 200px" :src="user.imgUrl" />
-
-    <p>Manage orders</p>
-    <div v-if="orders && orders.length">
-      <el-table :border="true" :data="orders" style="width: 100%">
-        <el-table-column prop="buyerId" label="Buyer" width="150" />
-        <el-table-column prop="price" label="Price" width="120" />
-        <el-table-column prop="gigId" label="Gig" width="160" />
-        <el-table-column prop="status" label="Status" width="160">
-          <template #default="{ row }">
-            <el-button :class="getStatusButtonClass(row.status)">{{
-              row.status
-            }}</el-button>
-          </template>
-        </el-table-column>
-      </el-table>
+  <section v-if="user" class="main-user grid">
+    <div class="user-container flex">
+      <h1 class="user-name">{{ user.fullname }}</h1>
+      <div class="user-photo">
+        <img v-if="user.imgUrl" :src="user.imgUrl" alt="User Photo" style="max-width: 200px" />
+        <div v-else class="user-initials">
+          {{ user.fullname.charAt(0).toUpperCase() }}
+        </div>
+      </div>
+      <div class="total-orders">Total orders</div>
+      <div class="total-orders-num">{{ orders.length }}</div>
+      <div class="user-country-title">From</div>
+      <div class="user-country">
+        Israel
+        <img class="user-coutry-img" src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f1.png"
+          alt="" />
+      </div>
+      <button @click="onLogout()">Logout</button>
+      <!-- <img style="max-width: 200px;" :src="user.imgUrl" /> -->
     </div>
-    <div v-else>
-      <p>No orders available.</p>
+
+    <div class="orders-container">
+      <p>Manage orders</p>
+      <div v-if="orders && orders.length">
+        <el-table :border="true" :data="orders" style="width: 100%">
+          <el-table-column prop="gigId" label="Gig" width="360" />
+          <el-table-column prop="price" label="Price" width="120" />
+          <el-table-column prop="status" label="Status" width="160">
+            <template #default="{ row }">
+              <el-button :class="getStatusButtonClass(row.status)">{{
+                row.status
+              }}</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
+      </div>
+      <div v-else>
+        <p>No orders available.</p>
+      </div>
     </div>
   </section>
 </template>
