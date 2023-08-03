@@ -309,6 +309,7 @@
 
   & .vueperslides {
     display: flex;
+    font-family: Macan;
 
     & .vueperslide--visible {
       box-shadow: inset 4px 1px 20px 0px #cac4c4;
@@ -322,4 +323,9 @@
       margin-top: 4.5rem;
     }
   }
+}
+
+.vueperslides .subcategory-warper {
+
+  font-family: Macan-Regular;
 }

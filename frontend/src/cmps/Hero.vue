@@ -23,7 +23,7 @@
                 </vueper-slide>
             </vueper-slides>
         </div>
-        <div class="search-container main-layout">
+        <div class="search-container ">
             <h1>
                 Find the right
                 <i class="fancy-word">freelance </i>
