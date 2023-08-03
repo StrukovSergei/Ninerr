@@ -1,4 +1,4 @@
-.main-index-title{
+.main-index-title {
     margin-top: 80px;
     font-family: Macan;
 }
@@ -114,7 +114,14 @@
 
     }
 
-    button {
+    .border-helper {
+        position: absolute;
+        border-bottom: 1px solid $clr22;
+        width: 317px;
+        bottom: 80px;
+    }
+
+    .btn-apply {
         grid-area: btn;
         border-radius: 4px;
         background-color: black;
@@ -128,6 +135,23 @@
 
     }
 
+    .btn-apply:hover {
+        background-color: $clr11;
+    }
+
+    .btn-clear {
+        font-family: Macan;
+        color: $CLR00;
+        font-size: 16px;
+        background-color: transparent;
+        cursor: pointer;
+        position: relative;
+        top: -1px;
+    }
+
+    .btn-clear:hover {
+        color: $clr5;
+    }
 
 }
 
@@ -136,11 +160,11 @@
     font-family: Macan;
     color: $clr13;
     flex-direction: column;
-    width: 210px;
+    width: 232px;
     padding: 20px;
 
 
-    button {
+    .btn-apply {
         position: relative;
         top: 10px;
         right: -60px;
@@ -150,10 +174,25 @@
         font-weight: 600;
         padding: 14px;
         border: 1px solid transparent;
-        margin: 10px 24px 14px 24px;
         width: 50%;
         cursor: pointer;
 
+    }
+
+    .btn-apply:hover {
+        background-color: $clr11;
+    }
+
+    .btn-clear {
+        font-family: Macan;
+        color: $CLR00;
+        font-size: 16px;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .btn-clear:hover {
+        color: $clr5;
     }
 }
 
@@ -179,6 +218,6 @@
 
 }
 
-.el-input__wrapper.is-focus{
+.el-input__wrapper.is-focus {
     box-shadow: 0 0 0 1px $clr11;
 }

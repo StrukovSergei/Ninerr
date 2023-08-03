@@ -10,8 +10,8 @@
     </div>
     <section class="index-filter ">
       <div class="flex flex-wrap items-center">
-        <el-dropdown trigger="click" placement="bottom-start">
-          <el-button type="primary">
+        <el-dropdown trigger="click" placement="bottom-start" ref="dropdownBudget">
+          <el-button type="primary" >
             Budget <span v-html="$svg('arrowDown')"></span><el-icon class="el-icon--right"></el-icon>
           </el-button>
           <template #dropdown>
@@ -29,8 +29,8 @@
 
                     </span>
                     <span class="border-helper"></span>
-                    <button @click="applyFilter">Apply</button>
-
+                    <button class="btn-apply" @click="applyFilter">Apply</button>
+                    <button class="btn-clear" @click="clearFilter('budget')">Clear All</button>
                   </el-row>
                 </span>
               </div>
@@ -39,7 +39,7 @@
         </el-dropdown>
       </div>
       <div class="flex flex-wrap items-center">
-        <el-dropdown trigger="click" placement="bottom-start">
+        <el-dropdown trigger="click" placement="bottom-start" ref="dropdownDelivery">
           <el-button type="primary">
             Delivery time<span v-html="$svg('arrowDown')"></span><el-icon class="el-icon--right"></el-icon>
           </el-button>
@@ -54,7 +54,8 @@
                     <el-radio label="" size="large">Anytime</el-radio>
                   </el-radio-group>
                 </div>
-                <button @click="applyFilter">Apply</button>
+                <button class="btn-apply" @click="applyFilter">Apply</button>
+                <button class="btn-clear" @click="clearFilter('delivery')">Clear All</button>
               </div>
 
             </el-dropdown-menu>
@@ -76,7 +77,6 @@
 import GigList from '../cmps/GigList.vue'
 
 
-
 export default {
   name: 'GigIndex',
   components: { GigList },
@@ -86,7 +86,6 @@ export default {
       minPrice: null,
       maxPrice: null,
       deliveryTime: '',
-      visible: false,
       gigs: []
     }
   },
@@ -105,12 +104,12 @@ export default {
         return "All services"
       }
     },
+
   },
   created() {
     this.updateHeadingFromQuery()
   },
   watch: {
-
     '$route.query': {
       handler(query) {
         this.searchText = query.txt || ''
@@ -123,11 +122,10 @@ export default {
       },
       immediate: true,
     }
-
   },
 
   methods: {
-    applyFilter() {
+    applyFilter(ev) {
       const filterBy = {
         txt: this.searchText,
         minPrice: this.minPrice,
@@ -135,16 +133,25 @@ export default {
         category: this.$route.query.category,
         deliveryTime: this.deliveryTime
       }
-
       const query = { ...this.$route.query, ...filterBy }
-      this.$router.push({ path: this.$route.path, query })
+      this.$router.replace({ query })
+      this.$refs.dropdownBudget.handleClose()
+      this.$refs.dropdownDelivery.handleClose()
     },
     updateHeadingFromQuery() {
       if (this.$route.query.category) {
         this.$store.dispatch({ type: 'loadGigs', filterBy: { category: this.$route.query.category } })
       }
     },
-
+    clearFilter(filterType) {
+      if (filterType === 'budget') {
+        this.minPrice = null
+        this.maxPrice = null
+      } else if (filterType === 'delivery') {
+        this.deliveryTime = ''
+      }
+      this.applyFilter()
+    },
   }
 }
 
