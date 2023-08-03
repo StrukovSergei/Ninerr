@@ -96,7 +96,7 @@
 import { showSuccessMsg, showErrorMsg } from "../services/event-bus.service";
 import { userService } from "../services/user.service.local";
 import GigList from "../cmps/GigList.vue";
-import { gigService } from "../services/gig.service.local";
+import { gigService } from "../services/gig.service";
 import { orderService } from "../services/order.service.local";
 import { getActionRemoveGig, getActionUpdateGig } from "../store/gig.store";
 import { getActionUpdateOrder } from "../store/order.store";

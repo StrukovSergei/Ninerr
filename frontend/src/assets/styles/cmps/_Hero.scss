@@ -57,11 +57,9 @@
       display: block;
       margin-block: 0;
 
-
       .hero-search {
         flex-direction: column;
       }
-
     }
 
     h1 {
@@ -123,7 +121,6 @@
       margin-block-end: rem(24px);
       max-width: rem(650px);
       background-color: #fcfcfc;
-      ;
       border-radius: rem(4px) rem(4px) rem(4px) rem(4px);
     }
 
@@ -139,8 +136,6 @@
 
     .input-container {
       width: 100%;
-
-
 
       input {
         border-radius: 4px 0 0 4px;
@@ -158,12 +153,14 @@
           box-shadow: 0px 0px 2px 0px #817d7d;
           width: 100%;
           border-radius: 2px 2px;
+          margin-inline-start: 20px;
         }
       }
     }
 
     .categories {
       font-family: Macan;
+
       @include for-mobile-layout {
         display: none;
       }
@@ -182,7 +179,6 @@
 
       & div {
         display: block;
-
         color: #fff;
         border: 1px solid white;
         border-radius: 2.5rem;
@@ -216,7 +212,6 @@
   grid-template-areas: 'pic inf'
   'pic exp ';
 
-
   backdrop-filter: blur(30px);
   background: hsla(0, 0%, 100%, .14);
   border: 1px solid hsla(0, 0%, 100%, .4);
@@ -232,7 +227,6 @@
   Helvetica,
   Arial,
   sans-serif;
-
   font-size: 1rem;
   font-weight: 700;
   line-height: 1rem;

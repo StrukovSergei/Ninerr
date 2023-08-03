@@ -3,45 +3,81 @@ import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
 
 export const gigService = {
-    query,
-    getById,
-    save,
-    remove,
-    getEmptyGig,
-    // addCarMsg
+  query,
+  getById,
+  save,
+  remove,
+  getEmptyGig,
+  // addCarMsg
 }
 
 window.cs = gigService // for console usage
 
-async function query(filterBy = { txt: '', price: 0 }) {
-    return httpService.get('gig', filterBy)
+async function query(
+  filterBy = {
+    txt: '',
+    minPrice: 0,
+    maxPrice: 0,
+    category: '',
+    delivery: 0,
+    id: '',
+  }
+) {
+  let gigs = []
+  if (filterBy.searchText) {
+    const regex = new RegExp(filterBy.searchText, 'i')
+    gigs = gigs.filter(
+      (gig) => regex.test(gig.title) || regex.test(gig.description)
+    )
+  }
+
+  if (filterBy.minPrice) {
+    gigs = gigs.filter((gig) => gig.price >= filterBy.minPrice)
+  }
+
+  if (filterBy.maxPrice) {
+    gigs = gigs.filter((gig) => gig.price <= filterBy.maxPrice)
+  }
+
+  if (filterBy.delivery) {
+    gigs = gigs.filter((gig) => gig.daysToMake <= filterBy.delivery)
+  }
+
+  if (filterBy.category) {
+    gigs = gigs.filter((gig) => gig.categories.includes(filterBy.category))
+  }
+
+  if (filterBy.id) {
+    gigs = gigs.filter((gig) => gig.owner._id.includes(filterBy.id))
+  }
+
+  return httpService.get('gig', filterBy)
 }
+
 function getById(gigId) {
-    return httpService.get(`gig/${gigId}`)
+  console.log('🚀 ~ file: gig.service.js:59 ~ getById ~ gigId:', gigId)
+  return httpService.get(`gig/${gigId}`)
 }
 
 async function remove(gigId) {
-    return httpService.delete(`gig/${gigId}`)
+  return httpService.delete(`gig/${gigId}`)
 }
+
 async function save(gig) {
-    var savedGig
-    if (gig._id) {
-        savedGig = await httpService.put(`gig/${gig._id}`, gig)
-    } else {
-        savedGig = await httpService.post('gig', gig)
-    }
-    return savedGig
+  console.log('🚀 ~ file: gig.service.js:67 ~ save ~ gig:', gig)
+  let savedGig
+  console.log('🚀 ~ file: gig.service.js:68 ~ save ~ savedGig:', savedGig)
+  if (gig._id) {
+    savedGig = await httpService.put(`gig/${gig._id}`, gig)
+  } else {
+    savedGig = await httpService.post('gig', gig)
+  }
+  return savedGig
 }
-
-// async function addCarMsg(carId, txt) {
-//     const savedMsg = await httpService.post(`car/${carId}/msg`, {txt})
-//     return savedMsg
-// }
-
 
 function getEmptyGig() {
-    return {
-        title: 'random gig' ,
-        price: utilService.getRandomIntInclusive(10, 90),
-    }
+  return {
+    title: 'random gig',
+    price: utilService.getRandomIntInclusive(10, 90),
+  }
 }

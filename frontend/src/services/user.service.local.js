@@ -48,7 +48,6 @@ async function login(userCred) {
 }
 
 async function signup(userCred) {
-
   const user = await storageService.post('user', userCred)
   return saveLocalUser(user)
 }
@@ -56,7 +55,6 @@ async function signup(userCred) {
 async function logout() {
   sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
 }
-
 
 function saveLocalUser(user) {
   user = {
@@ -112,7 +110,8 @@ function _saveUsersToFile() {
 //   await userService.signup({
 //     _id: 'u102',
 //     fullname: 'User 2',
-//     imgUrl: 'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/9f500b4b629e3dcb09a311b29525d40d-1647197131685/eccd2987-a403-4069-a42d-1c844ef2b0b4.jpg',
+//     imgUrl:
+//       'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/9f500b4b629e3dcb09a311b29525d40d-1647197131685/eccd2987-a403-4069-a42d-1c844ef2b0b4.jpg',
 //     username: 'user2',
 //     password: '123',
 //     level: 'basic/premium',

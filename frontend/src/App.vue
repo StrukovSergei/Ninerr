@@ -15,9 +15,11 @@ import AppHeader from "./cmps/AppHeader.vue";
 import UserMsg from "./cmps/UserMsg.vue";
 
 export default {
+  name: "App",
   created() {
     const user = userService.getLoggedinUser();
     if (user) store.commit({ type: "setLoggedinUser", user });
+    // this.$store.dispatch({ type: "loadGigs" });
   },
   components: {
     AppHeader,
