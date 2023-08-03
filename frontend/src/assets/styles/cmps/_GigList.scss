@@ -5,6 +5,12 @@
     padding: 0;
     grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
 
+    @include for-mobile-layout {
+        gap: -1px;
+        margin: 0px;
+
+        }
+
     li {
         background-color: none;
         color: $clr6;

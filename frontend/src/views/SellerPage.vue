@@ -29,10 +29,10 @@
                 </section>
             </el-col>
         </el-row>
-        <p>Manage gigs</p>
+        <p class="Manage-gigs">Manage gigs</p>
         <button class="addgig-btn" @click="openModal">Add Gig</button>
-        <div v-if="gigs && gigs.length">
-            <el-table :border="true" :data="gigs" style="width: 100%">
+        <div v-if="gigs && gigs.length" class="Manage-gigsT">
+            <el-table  :border="true" :data="gigs" style="width: 100%">
                 <el-table-column prop="title" label="Gig" width="450" />
                 <el-table-column prop="price" label="Price" width="120" />
                 <el-table-column prop="status" label="Status" width="160">
@@ -63,7 +63,7 @@
             <p>No gigs available.</p>
         </div>
 
-        <p>Manage orders</p>
+        <p class="Manage-orders">Manage orders</p>
         <div v-if="orders && orders.length">
             <el-table :border="true" :data="orders" style="width: 100%">
                 <el-table-column prop="buyerId" label="Buyer" width="190" />
@@ -85,8 +85,8 @@
                 </el-table-column>
             </el-table>
         </div>
-        <div v-else>
-            <p>No orders available.</p>
+        <div v-else class="No-orders-available">
+            <p >No orders available.</p>
         </div>
     </section>
 </template>

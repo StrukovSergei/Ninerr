@@ -44,7 +44,7 @@
                 <a v-html="$svg('note')"> </a>
             </li>
             <li>
-                <RouterLink active-class="active" to="/user/:id">
+                <RouterLink active-class="active" to="/seller/:id">
                     <a v-html="$svg('user')"> </a>
                 </RouterLink>
             </li>
