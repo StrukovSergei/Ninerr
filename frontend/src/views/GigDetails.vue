@@ -66,8 +66,12 @@
         <div class="order-container">
             <div class="order-header">
                 <div class="underline-helper"></div>
-                <p>Basic</p>
+                <p class="title-basic">Basic</p>
             </div>
+            <p class="title-standard">Standard</p>
+            <div class="border-helper"></div>
+
+            <p class="title-premium">Premium</p>
             <div class="order-details flex">
                 <span class="order-offer">Special offer</span>
                 <span class="order-price">${{ currGig.price }}</span>

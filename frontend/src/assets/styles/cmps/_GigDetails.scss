@@ -71,12 +71,12 @@
             "properties properties"
             "btn btn ";
 
-        .underline-helper{
+        .underline-helper {
             border-bottom: solid $clr1 2.5px;
             position: absolute;
             height: 59px;
 
-            width: 133px;        
+            width: 133px;
         }
 
         .order-header {
@@ -93,10 +93,13 @@
                 font-weight: 700;
                 padding-inline-start: 47px;
                 width: 104px;
+                cursor: pointer;
 
             }
+
             border-right: 1px solid $clr9;
         }
+
 
         .order-details {
             padding: 15px 32px;
@@ -201,6 +204,7 @@
         opacity: 1;
 
     }
+
     .vueperslides__arrow--prev {
         left: -39px;
         opacity: 1;
@@ -285,5 +289,39 @@
         flex-basis: 100px;
     }
 
+
+
+
+}
+
+
+.title-standard {
+    position: absolute;
+    font-size: 16px;
+    top: 18px;
+    left: 165px;
+    width: 100px;
+    height: 59px;
+    color: $clr5;
+    cursor: pointer;
+}
+
+.border-helper {
+    position: absolute;
+    font-size: 16px;
+    left: 265px;
+    border-right: 1px solid $clr9;
+    height: 59px;
+    top: 0;
+
+}
+
+.title-premium {
+    position: absolute;
+    font-size: 16px;
+    top: 18px;
+    left: 299px;
+    color: $clr5;
+    cursor: pointer;
 
 }
