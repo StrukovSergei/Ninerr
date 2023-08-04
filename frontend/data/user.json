@@ -1,64 +1,52 @@
 [
   {
     "_id": "u101",
-    "fullname": "User 1",
+    "fullname": "Shlomi",
     "imgUrl": "/img/img1.jpg",
-    "username": "user1",
-    "password": "secret",
+    "username": "shlomi",
+    "password": "123",
     "level": "basic/premium",
     "reviews": [
       {
         "id": "madeId",
         "gig": "{optional-mini-gig}",
         "txt": "Very kind and works fast",
-        "rate": 4,
-        "by": {
-          "_id": "u102",
-          "fullname": "user2",
-          "imgUrl": "/img/img2.jpg"
-        }
+        "rate": 4
+      
       }
     ]
   },
   {
     "_id": "u102",
-    "fullname": "User 2",
+    "fullname": "Daniel",
     "imgUrl": "/img/img2.jpg",
-    "username": "user2",
-    "password": "secret",
+    "username": "daniel",
+    "password": "123",
     "level": "basic/premium",
     "reviews": [
       {
         "id": "madeId",
         "gig": "{optional-mini-gig}",
         "txt": "Very kind and works fast",
-        "rate": 4,
-        "by": {
-          "_id": "u103",
-          "fullname": "user3",
-          "imgUrl": "/img/img3.jpg"
-        }
+        "rate": 4
+        
       }
     ]
   },
   {
     "_id": "u103",
-    "fullname": "User 3",
+    "fullname": "Sergei",
     "imgUrl": "/img/img3.jpg",
-    "username": "user3",
-    "password": "secret",
+    "username": "sergei",
+    "password": "123",
     "level": "basic/premium",
     "reviews": [
       {
         "id": "madeId",
         "gig": "{optional-mini-gig}",
         "txt": "Very kind and works fast",
-        "rate": 4,
-        "by": {
-          "_id": "u101",
-          "fullname": "user1",
-          "imgUrl": "/img/img1.jpg"
-        }
+        "rate": 4
+        
       }
     ]
   }

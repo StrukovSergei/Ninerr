@@ -114,8 +114,9 @@ function _saveUsersToFile() {
 //           imgUrl: '',
 //         },
 //       },
-//     ],
-//   })
+//     },
+//   ],
+// })
 //   await userService.signup({
 //     _id: 'u103',
 //     isSeller: true,
