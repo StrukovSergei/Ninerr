@@ -23,6 +23,7 @@ async function query(
     id: '',
   }
 ) {
+  
   let gigs = []
   if (filterBy.searchText) {
     const regex = new RegExp(filterBy.searchText, 'i')
@@ -49,8 +50,10 @@ async function query(
 
   if (filterBy.id) {
     gigs = gigs.filter((gig) => gig.owner._id.includes(filterBy.id))
+    console.log("🚀 ~ file: gig.service.js:54 ~ gigs:", gigs)
   }
 
+  console.log("🚀 ~ file: gig.service.js:57 ~ httpService.get('gig', filterBy):", httpService.get('gig', filterBy))
   return httpService.get('gig', filterBy)
 }
 
