@@ -85,6 +85,7 @@ function _saveUsersToFile() {
 
 // Initial data
 // ;(async () => {
+<<<<<<< HEAD
 // await userService.signup({
 //   _id: 'u101',
 //   isSeller: true,
@@ -106,11 +107,26 @@ function _saveUsersToFile() {
 //       },
 <<<<<<< HEAD
 //     ],
+=======
+//   await userService.signup({
+//     _id: 'u101',
+//     isSeller: true,
+//     fullname: 'User 1',
+//     imgUrl: '',
+//     username: 'user1',
+//     password: '123',
+//     level: 'basic/premium',
+>>>>>>> e9b7d4a28ec5f72e1fb20c3526f838dc34de56e7
 //   })
 //   await userService.signup({
 //     _id: 'u102',
 //     fullname: 'User 2',
+<<<<<<< HEAD
 //     imgUrl: 'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/9f500b4b629e3dcb09a311b29525d40d-1647197131685/eccd2987-a403-4069-a42d-1c844ef2b0b4.jpg',
+=======
+//     imgUrl:
+//       'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/9f500b4b629e3dcb09a311b29525d40d-1647197131685/eccd2987-a403-4069-a42d-1c844ef2b0b4.jpg',
+>>>>>>> e9b7d4a28ec5f72e1fb20c3526f838dc34de56e7
 //     username: 'user2',
 //     password: '123',
 //     level: 'basic/premium',
@@ -125,6 +141,7 @@ function _saveUsersToFile() {
 //           fullname: 'user2',
 //           imgUrl: '',
 //         },
+<<<<<<< HEAD
 =======
 //     },
 //   ],
@@ -148,6 +165,8 @@ function _saveUsersToFile() {
 //         fullname: 'user2',
 //         imgUrl: '',
 >>>>>>> 49888280ed4fbddc91848fd560171c0acb880ec0
+=======
+>>>>>>> e9b7d4a28ec5f72e1fb20c3526f838dc34de56e7
 //       },
 //     },
 //   ],

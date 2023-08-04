@@ -81,9 +81,11 @@
 </template>
 
 <script>
-import { userService } from "../services/user.service";
-import { gigService } from "../services/gig.service";
-import { showSuccessMsg, showErrorMsg } from "../services/event-bus.service";
+
+import { userService } from '../services/user.service'
+import { gigService } from '../services/gig.service'
+import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
+
 
 export default {
     name: "Payment",

@@ -70,11 +70,10 @@ export const gigStore = {
     async loadGigs({ commit }, { filterBy }) {
       try {
         const gigs = await gigService.query(filterBy)
-        console.log('🚀 ~ file: gig.store.js:71 ~ loadGigs ~ gigs:', gigs)
         commit({ type: 'setGigs', gigs })
       } catch (err) {
         console.log('gigStore: Error in loadGigs', err)
-        // throw err
+        throw err
       }
     },
     async removeGig(context, { gigId }) {

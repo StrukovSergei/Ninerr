@@ -21,7 +21,7 @@
     </div>
 
     <div class="orders-container">
-      <p>Manage orders</p>
+      <p class="fs20">Manage orders</p>
       <div v-if="orders && orders.length">
         <el-table :border="true" :data="orders" style="width: 100%">
           <el-table-column prop="gigId" label="Gig" width="360" />
@@ -44,8 +44,9 @@
 
 <script>
 // import { SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED, socketService } from '../services/socket.service'
-import { showSuccessMsg, showErrorMsg } from "../services/event-bus.service";
-import { userService } from "../services/user.service";
+import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
+import { userService } from '../services/user.service'
+
 
 export default {
   data() {
