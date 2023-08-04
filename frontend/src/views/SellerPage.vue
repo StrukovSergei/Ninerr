@@ -108,6 +108,7 @@
 
 <script>
 // import { SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED, socketService } from '../services/socket.service'
+<<<<<<< HEAD
 import { showSuccessMsg, showErrorMsg } from "../services/event-bus.service"
 import { userService } from "../services/user.service.local"
 import GigList from "../cmps/GigList.vue"
@@ -116,6 +117,16 @@ import { orderService } from "../services/order.service.local"
 import { getActionRemoveGig, getActionUpdateGig } from "../store/gig.store"
 import { getActionUpdateOrder } from "../store/order.store"
 import AddGigModal from "../cmps/AddGigModal.vue"
+=======
+import { showSuccessMsg, showErrorMsg } from "../services/event-bus.service";
+import { userService } from "../services/user.service";
+import GigList from "../cmps/GigList.vue";
+import { gigService } from "../services/gig.service";
+import { orderService } from "../services/order.service.local";
+import { getActionRemoveGig, getActionUpdateGig } from "../store/gig.store";
+import { getActionUpdateOrder } from "../store/order.store";
+import AddGigModal from "../cmps/AddGigModal.vue";
+>>>>>>> 49888280ed4fbddc91848fd560171c0acb880ec0
 
 export default {
     components: { GigList },
