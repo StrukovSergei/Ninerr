@@ -125,20 +125,19 @@ export default {
     },
     async created() {
         try {
-            const user = userService.getLoggedinUser();
+            const user = userService.getLoggedinUser()
             if (user) {
-                this.$store.commit({ type: "setLoggedinUser", user });
+                this.$store.commit({ type: "setLoggedinUser", user })
             }
-            console.log("🚀 ~ file: GigDetails.vue:135 ~ created ~ currGig:", this.currGig);
-            const { id } = this.$route.params;
-            await this.loadGig();
-            await this.loadReviews();
+            const { id } = this.$route.params
+            await this.loadGig()
+            await this.loadReviews()
             await this.$store.dispatch({
                 type: "loadReviews",
                 filterBy: { gigId: id },
             });
 
-            // this.slides = this.currGig.imgUrls.map((imageUrl) => ({ image: imageUrl }));
+            this.slides = this.currGig.imgUrls.map((imageUrl) => ({ image: imageUrl }))
         } catch (err) {
             console.error(err);
         }
@@ -146,26 +145,24 @@ export default {
     methods: {
         async loadGig() {
             try {
-                const { gigId } = this.$route.params;
-                console.log("🚀 ~ file: GigDetails.vue:150 ~ loadGig ~ gigId:", gigId);
-                const gig = await gigService.getById(gigId);
-                this.currGig = gig;
-                console.log("🚀 ~ file: GigDetails.vue:152 ~ loadGig ~ currGig:", this.currGig);
+                const { gigId } = this.$route.params
+                const gig = await gigService.getById(gigId)
+                this.currGig = gig
             } catch {
-                console.log("Could Not load gig");
+                console.log("Could Not load gig")
             }
         },
         async loadReviews() {
             try {
-                const reviews = await reviewService.query();
-                this.reviews = reviews;
+                const reviews = await reviewService.query()
+                this.reviews = reviews
             } catch {
-                console.log("Could Not load reviews");
+                console.log("Could Not load reviews")
             }
         },
         generateStars(rate) {
-            const fullStars = Math.floor(rate);
-            const emptyStars = 5 - fullStars;
+            const fullStars = Math.floor(rate)
+            const emptyStars = 5 - fullStars
 
             return {
                 fullStars: Array(fullStars).fill(1),
@@ -175,14 +172,14 @@ export default {
     },
     computed: {
         user() {
-            return this.$store.getters.loggedInUser;
+            return this.$store.getters.loggedInUser
         },
         // reviews() {
         //     return this.$store.getters.getReviews
         // },
         formattedDescriptionHTML() {
-            const formattedDesc = this.currGig.description.replace(/\./g, ".<br>");
-            return `<div>${formattedDesc}</div>`;
+            const formattedDesc = this.currGig.description.replace(/\./g, ".<br>")
+            return `<div>${formattedDesc}</div>`
         },
     },
     components: {
