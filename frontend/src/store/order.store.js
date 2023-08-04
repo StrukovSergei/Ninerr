@@ -73,7 +73,7 @@ export const orderStore = {
         throw err
       }
     },
-    async loadOrders(context, { filterBy }) {
+    async loadOrders(context, { filterBy }) {      
       try {
         const orders = await orderService.query(filterBy)
         context.commit({ type: 'setOrders', orders })

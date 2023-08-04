@@ -56,7 +56,6 @@ async function query(
 }
 
 function getById(gigId) {
-  console.log('🚀 ~ file: gig.service.js:59 ~ getById ~ gigId:', gigId)
   return httpService.get(`gig/${gigId}`)
 }
 

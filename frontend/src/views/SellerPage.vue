@@ -18,7 +18,7 @@
             <el-col :span="8">
                 <section>
                     <h3>Total earnings</h3>
-                    <p>{{ getTotalEarningsFromAllOrders() }}$</p>
+                    <p>{{ totalEarningsFromAllOrders }}</p>
                 </section>
             </el-col>
 
@@ -116,7 +116,7 @@ export default {
         userId: {
             handler() {
                 if (this.userId) {
-                    this.loadUser();
+                    this.loadUser()
                     this.$store.dispatch({ type: "loadOrders", filterBy: { id: this.userId } })
                     this.$store.dispatch({ type: "loadGigs", filterBy: { id: this.userId } })
                 }
@@ -132,7 +132,7 @@ export default {
         gigs() {
             return this.user && this.user.isSeller
                 ? JSON.parse(JSON.stringify(this.$store.getters.gigs))
-                : [];
+                : []
         },
         orders() {
             return JSON.parse(JSON.stringify(this.$store.getters.orders))
@@ -143,10 +143,12 @@ export default {
         totalEarningsFromAllOrders() {
             return this.orders.reduce((total, order) => {
                 if (order.status !== "rejected") {
-                    return total + order.price
+
+                    const orderPrice = parseFloat(order.price)
+                    return total + orderPrice
                 }
-                return total
-            }, 0)
+                return total;
+            }, 0).toFixed(2)
         },
         totalEarningsWithoutPendingOrders() {
             return this.orders.filter((order) => order.status === "completed").length
@@ -259,9 +261,7 @@ export default {
                 showErrorMsg("Cannot update gig status")
             }
         },
-        getTotalEarningsFromAllOrders() {
-            return this.totalEarningsFromAllOrders.toFixed(2)
-        },
+
         getTotalEarningsWithoutPendingOrders() {
             return this.totalEarningsWithoutPendingOrders
         },
