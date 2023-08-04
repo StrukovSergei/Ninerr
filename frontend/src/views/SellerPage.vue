@@ -47,7 +47,7 @@
         <p class="Manage-gigs">Manage gigs</p>
         <button class="addgig-btn" @click="openModal">Add Gig</button>
         <div v-if="gigs && gigs.length" class="Manage-gigsT">
-            <el-table :border="true" :data="gigs" style="width: 100%">
+            <el-table class="gigsT" :border="true" :data="gigs" style="width: 100%">
                 <el-table-column prop="title" label="Gig" width="450" />
                 <el-table-column prop="price" label="Price" width="120" />
                 <el-table-column prop="status" label="Status" width="160">
@@ -66,7 +66,7 @@
                         </select>
                     </template>
                 </el-table-column>
-                <!-- Add the new column for the remove button -->
+            <!-- Add the new column for the remove button -->
                 <el-table-column label="Remove" width="100">
                     <template #default="{ row }">
                         <el-button @click="removeGig(row._id)" type="danger" icon="el-icon-delete">X</el-button>
@@ -131,7 +131,7 @@ export default {
         userId: {
             handler() {
                 if (this.userId) {
-                    this.loadUser()
+                    this.loadUser();
                     this.$store.dispatch({ type: "loadOrders", filterBy: { id: this.userId } })
                     this.$store.dispatch({ type: "loadGigs", filterBy: { id: this.userId } })
                 }

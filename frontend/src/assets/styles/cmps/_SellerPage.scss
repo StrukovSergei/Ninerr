@@ -11,6 +11,9 @@
     flex-direction: column;
     @include for-mobile-layout {
         max-width: 100vw;
+        margin-block-start: 20px;
+        padding: 20px;
+        gap: 15px;
 
     }
 
@@ -18,7 +21,8 @@
     .earning-table{
         border: 1px solid $clr22;
         @include for-mobile-layout {
-            // margin: 0;
+            // height: 500px;
+            margin-block-start: 0;
             order: 1;
             
 
@@ -95,7 +99,7 @@
         color: #fff;
         max-width: 150px;
         @include for-mobile-layout{
-            order:3;
+            order:8;
         }
     }
     .Manage-gigs{
@@ -108,9 +112,12 @@
     .Manage-gigsT{
         @include for-mobile-layout{
             order:6;
-            // display: none;
+               
+            }
         }
-    }
+        
+
+    
     .No-orders-available{
         @include for-mobile-layout{
             order:5;
@@ -131,6 +138,8 @@
         }
     }
     .anlaytics-for-mobile{
+        display: none;
+        margin-block-start: 0;
         & div{
 
             position: relative;
@@ -146,7 +155,6 @@
             }
 
         }
-        display: none;
         @include for-mobile-layout{
             display: block;
             order:2;
