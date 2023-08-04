@@ -33,8 +33,8 @@ li.gig-preview {
 
         @include for-mobile-layout {
             display: block;
-            grid-row:1/-2;
-            grid-column:1/2;
+            grid-row: 1/-2;
+            grid-column: 1/2;
         }
 
         &:hover {
@@ -142,6 +142,7 @@ li.gig-preview {
         width: 34px;
         background-color: unset;
         cursor: pointer;
+
         @include for-mobile-layout {
             top: 30px;
             right: 18px;
@@ -193,9 +194,10 @@ li.gig-preview {
         // line-height:51.2px
         line-height: rem(23.6px);
         max-height: rem(51.2px);
+
         @include for-mobile-layout {
-            grid-row:2;
-            grid-column:2/3;
+            grid-row: 2;
+            grid-column: 2/3;
             margin-inline-start: 10px;
             justify-content: end;
             align-content: end;
@@ -211,12 +213,13 @@ li.gig-preview {
     & .rate {
         display: flex;
         flex-direction: row;
+
         @include for-mobile-layout {
-            grid-row:1;
-            grid-column:2/3;
+            grid-row: 1;
+            grid-column: 2/3;
             margin-inline-start: 10px;
             position: absolute;
-            top:30px
+            top: 30px
         }
     }
 
@@ -274,10 +277,11 @@ li.gig-preview {
         font-weight: 700;
         height: auto;
         margin-top: 8px;
+
         @include for-mobile-layout {
             position: absolute;
             right: 30px;
-            bottom:5px;
+            bottom: 5px;
             z-index: 1;
         }
 
@@ -329,3 +333,33 @@ li.gig-preview {
     }
 
 }
+
+.card-container {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    height: fit-content;
+    transition: box-shadow 0.2s ease-in-out;
+
+    /* Other existing styles for the card go here */
+
+    &:hover {
+
+        .vueperslides__arrows .vueperslides__arrow--next {
+            opacity: 1;
+            right: 0.5rem;
+        }
+
+        .vueperslides__arrows .vueperslides__arrow--prev {
+            opacity: 1;
+            left: 0.5rem;
+        }
+
+        .title_product {
+            text-decoration: underline;
+        }
+    }
+
+
+}
+

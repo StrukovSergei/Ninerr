@@ -1,6 +1,6 @@
 <template>
     <!-- <section class="main-layout"> -->
-    <li class="gig-preview">
+    <li class="gig-preview card-container">
         <vueper-slides class="product_img" ref="vueperslides1" :touchable="false" :autoplay="false" :infinite="false"
             disable-arrows-on-edges>
             <template #arrow-left>

@@ -29,10 +29,25 @@
                 </section>
             </el-col>
         </el-row>
+        <section class="anlaytics-for-mobile">
+            <h3 class="align-center">Analytics</h3>
+            <div class="flex">
+                <h2>Earing in July</h2>
+                <h1>$0</h1>
+            </div>
+            <div class="flex">
+                <h2>Avg. selling price</h2>
+                <h1>$189.23</h1>
+            </div>
+            <div class="flex">
+                <h2>Active orders</h2>
+                <h1>0<span>($0)</span></h1>
+            </div>
+        </section>
         <p class="Manage-gigs">Manage gigs</p>
         <button class="addgig-btn" @click="openModal">Add Gig</button>
         <div v-if="gigs && gigs.length" class="Manage-gigsT">
-            <el-table  :border="true" :data="gigs" style="width: 100%">
+            <el-table :border="true" :data="gigs" style="width: 100%">
                 <el-table-column prop="title" label="Gig" width="450" />
                 <el-table-column prop="price" label="Price" width="120" />
                 <el-table-column prop="status" label="Status" width="160">
@@ -59,7 +74,7 @@
                 </el-table-column>
             </el-table>
         </div>
-        <div v-else>
+        <div v-else class="No-gigs-available">
             <p>No gigs available.</p>
         </div>
 
@@ -86,21 +101,21 @@
             </el-table>
         </div>
         <div v-else class="No-orders-available">
-            <p >No orders available.</p>
+            <p>No orders available.</p>
         </div>
     </section>
 </template>
 
 <script>
 // import { SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED, socketService } from '../services/socket.service'
-import { showSuccessMsg, showErrorMsg } from "../services/event-bus.service";
-import { userService } from "../services/user.service.local";
-import GigList from "../cmps/GigList.vue";
-import { gigService } from "../services/gig.service.local";
-import { orderService } from "../services/order.service.local";
-import { getActionRemoveGig, getActionUpdateGig } from "../store/gig.store";
-import { getActionUpdateOrder } from "../store/order.store";
-import AddGigModal from "../cmps/AddGigModal.vue";
+import { showSuccessMsg, showErrorMsg } from "../services/event-bus.service"
+import { userService } from "../services/user.service.local"
+import GigList from "../cmps/GigList.vue"
+import { gigService } from "../services/gig.service"
+import { orderService } from "../services/order.service.local"
+import { getActionRemoveGig, getActionUpdateGig } from "../store/gig.store"
+import { getActionUpdateOrder } from "../store/order.store"
+import AddGigModal from "../cmps/AddGigModal.vue"
 
 export default {
     components: { GigList },
@@ -110,15 +125,15 @@ export default {
             isModalOpen: false,
             statusOptions: ["rejected", "completed", "in progress", "pending"],
             gigStatusOptions: ["active", "paused"],
-        };
+        }
     },
     watch: {
         userId: {
             handler() {
                 if (this.userId) {
-                    this.loadUser();
-                    this.$store.dispatch({ type: "loadOrders", filterBy: { id: this.userId } });
-                    this.$store.dispatch({ type: "loadGigs", filterBy: { id: this.userId } });
+                    this.loadUser()
+                    this.$store.dispatch({ type: "loadOrders", filterBy: { id: this.userId } })
+                    this.$store.dispatch({ type: "loadGigs", filterBy: { id: this.userId } })
                 }
             },
             immediate: true,
@@ -126,49 +141,49 @@ export default {
     },
     computed: {
         userId() {
-            return this.$route.params.id;
+            return this.$route.params.id
         },
 
         gigs() {
             return this.user && this.user.isSeller
                 ? JSON.parse(JSON.stringify(this.$store.getters.gigs))
-                : [];
+                : []
         },
         orders() {
-            return JSON.parse(JSON.stringify(this.$store.getters.orders));
+            return JSON.parse(JSON.stringify(this.$store.getters.orders))
         },
         userProfile() {
-            return "/user/" + this.userId;
+            return "/user/" + this.userId
         },
         totalEarningsFromAllOrders() {
             return this.orders.reduce((total, order) => {
                 if (order.status !== "rejected") {
-                    return total + order.price;
+                    return total + order.price
                 }
-                return total;
-            }, 0);
+                return total
+            }, 0)
         },
         totalEarningsWithoutPendingOrders() {
-            return this.orders.filter((order) => order.status === "completed").length;
+            return this.orders.filter((order) => order.status === "completed").length
         },
         numberOfPendingOrders() {
-            return this.orders.filter((order) => order.status === "pending").length;
+            return this.orders.filter((order) => order.status === "pending").length
         },
     },
     created() { },
     methods: {
         async loadUser() {
-            if (!this.userId) return;
+            if (!this.userId) return
             try {
-                const user = await userService.getById(this.userId);
+                const user = await userService.getById(this.userId)
                 // socketService.off(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
 
                 // socketService.emit(SOCKET_EMIT_USER_WATCH, this.userId)
                 // socketService.on(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
-                this.user = user;
+                this.user = user
             } catch (err) {
-                showErrorMsg("Cannot load user: " + this.userId);
-                console.error("Failed to load user", err);
+                showErrorMsg("Cannot load user: " + this.userId)
+                console.error("Failed to load user", err)
             }
         },
         // unmounted() {
@@ -176,60 +191,60 @@ export default {
         // },
         async addGig() {
             try {
-                await this.$store.dispatch({ type: "addGig", gig: this.gigToAdd });
-                showSuccessMsg("Gig added");
-                this.gigToAdd = gigService.getEmptyGig();
+                await this.$store.dispatch({ type: "addGig", gig: this.gigToAdd })
+                showSuccessMsg("Gig added")
+                this.gigToAdd = gigService.getEmptyGig()
             } catch (err) {
-                console.log(err);
-                showErrorMsg("Cannot add gig");
+                console.log(err)
+                showErrorMsg("Cannot add gig")
             }
         },
         async removeGig(gigId) {
             try {
-                await this.$store.dispatch(getActionRemoveGig(gigId));
-                showSuccessMsg("Gig removed");
+                await this.$store.dispatch(getActionRemoveGig(gigId))
+                showSuccessMsg("Gig removed")
             } catch (err) {
-                console.log(err);
-                showErrorMsg("Cannot remove gig");
+                console.log(err)
+                showErrorMsg("Cannot remove gig")
             }
         },
         async updateGig(gig) {
             try {
-                gig = { ...gig };
-                gig.price = +prompt("New price?", gig.price);
-                await this.$store.dispatch(getActionUpdateGig(gig));
-                showSuccessMsg("Gig updated");
+                gig = { ...gig }
+                gig.price = +prompt("New price?", gig.price)
+                await this.$store.dispatch(getActionUpdateGig(gig))
+                showSuccessMsg("Gig updated")
             } catch (err) {
-                console.log(err);
-                showErrorMsg("Cannot update gig");
+                console.log(err)
+                showErrorMsg("Cannot update gig")
             }
         },
         openModal() {
-            this.isModalOpen = true;
+            this.isModalOpen = true
         },
         closeModal() {
-            this.isModalOpen = false;
+            this.isModalOpen = false
         },
         async handleAddGig(gig) {
-            gig.owner = { _id: this.userId };
+            gig.owner = { _id: this.userId }
             try {
-                await this.$store.dispatch({ type: "addGig", gig });
-                showSuccessMsg("Gig added");
+                await this.$store.dispatch({ type: "addGig", gig })
+                showSuccessMsg("Gig added")
             } catch (err) {
-                console.log(err);
-                showErrorMsg("Cannot add gig");
+                console.log(err)
+                showErrorMsg("Cannot add gig")
             }
         },
         async updateStatus(order) {
-            const newOrder = JSON.parse(JSON.stringify(order));
-            newOrder.status = order.status;
+            const newOrder = JSON.parse(JSON.stringify(order))
+            newOrder.status = order.status
 
             try {
-                await this.$store.dispatch(getActionUpdateOrder(newOrder));
-                showSuccessMsg("order status updated");
+                await this.$store.dispatch(getActionUpdateOrder(newOrder))
+                showSuccessMsg("order status updated")
             } catch (err) {
-                console.log(err);
-                showErrorMsg("Cannot update order status");
+                console.log(err)
+                showErrorMsg("Cannot update order status")
             }
         },
         getStatusButtonClass(status) {
@@ -238,40 +253,40 @@ export default {
                 "btn-completed": status === "completed",
                 "btn-in-progress": status === "in progress",
                 "btn-pending": status === "pending",
-            };
+            }
         },
         onLogout() {
-            userService.logout();
-            this.$router.push("/");
+            userService.logout()
+            this.$router.push("/")
             setTimeout(() => {
-                location.reload();
-            }, 100);
+                location.reload()
+            }, 100)
         },
         async updateGigStatus(gig) {
-            const newGig = JSON.parse(JSON.stringify(gig));
-            newGig.status = gig.status;
+            const newGig = JSON.parse(JSON.stringify(gig))
+            newGig.status = gig.status
 
             try {
-                await this.$store.dispatch(getActionUpdateGig(newGig));
-                showSuccessMsg("Gig status updated");
+                await this.$store.dispatch(getActionUpdateGig(newGig))
+                showSuccessMsg("Gig status updated")
             } catch (err) {
-                console.log(err);
-                showErrorMsg("Cannot update gig status");
+                console.log(err)
+                showErrorMsg("Cannot update gig status")
             }
         },
         getTotalEarningsFromAllOrders() {
-            return this.totalEarningsFromAllOrders.toFixed(2);
+            return this.totalEarningsFromAllOrders.toFixed(2)
         },
         getTotalEarningsWithoutPendingOrders() {
-            return this.totalEarningsWithoutPendingOrders;
+            return this.totalEarningsWithoutPendingOrders
         },
         getNumberOfPendingOrders() {
-            return this.numberOfPendingOrders;
+            return this.numberOfPendingOrders
         },
     },
 
     components: {
         AddGigModal,
     },
-};
+}
 </script>

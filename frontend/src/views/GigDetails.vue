@@ -1,6 +1,5 @@
 <template>
     <section v-if="currGig" class="gig-details flex gap-2">
-
         <div class="gig-details-overview">
             <div class="gig-small-nav flex">
                 <RouterLink class="home-icon" to="/">
@@ -11,9 +10,10 @@
             </div>
             <h2 class="gig-details__title">{{ currGig.title }}</h2>
             <div class="mini-user-info flex">
-                <img :src="currGig.owner.imgUrl" alt="" class="owner-small-logo">
-                <h3 class="mini-user-title">{{ currGig.owner.fullname }} <span class="mini-user-level fs14">{{
-                    currGig.owner.level }} </span>
+                <img :src="currGig.owner.imgUrl" alt="" class="owner-small-logo" />
+                <h3 class="mini-user-title">
+                    {{ currGig.owner.fullname }}
+                    <span class="mini-user-level fs14">{{ currGig.owner.level }} </span>
                     <span class="mini-user-devider fs14">|</span>
                 </h3>
                 <div v-if="currGig.owner.rate" class="star-rating">
@@ -21,28 +21,27 @@
                         <span v-html="$svg('star')"></span>
                     </span>
                     <span v-for="(star, index) in generateStars(currGig.owner.rate).emptyStars" :key="index">
-
                         <span v-html="$svg('emptyStar')"></span>
                     </span>
                 </div>
                 <span class="rate-number">{{ currGig.owner.rate }}</span>
             </div>
             <div>
-                <vueper-slides ref="vueperslides1" :touchable="false" fade :autoplay="false" :bullets="false"
-                    @slide="$refs.vueperslides2.goToSlide($event.currentSlide.index, { emit: false })" fixed-height="400px">
+                <vueper-slides ref="vueperslides1" :touchable="false" fade :autoplay="false" :bullets="false" @slide="
+                    $refs.vueperslides2.goToSlide($event.currentSlide.index, { emit: false })
+                    " fixed-height="400px">
                     <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image">
                     </vueper-slide>
                 </vueper-slides>
 
-                <vueper-slides class="no-shadow thumbnails" ref="vueperslides2"
-                    @slide="$refs.vueperslides1.goToSlide($event.currentSlide.index, { emit: false })"
-                    :visible-slides="slides.length" fixed-height="80px" :bullets="false" :touchable="false" :gap="1.5"
+                <vueper-slides class="no-shadow thumbnails" ref="vueperslides2" @slide="
+                    $refs.vueperslides1.goToSlide($event.currentSlide.index, { emit: false })
+                    " :visible-slides="slides.length" fixed-height="80px" :bullets="false" :touchable="false" :gap="1.5"
                     :arrows="false">
                     <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image"
                         @click.native="$refs.vueperslides2.goToSlide(i)">
                     </vueper-slide>
                 </vueper-slides>
-
             </div>
             <div class="aboutgig-container">
                 <h2 class="gig-title fs20">About this gig</h2>
@@ -62,20 +61,18 @@
                 <h2 class="review-header">Reviews</h2>
                 <ReviewBar :reviews="reviews"></ReviewBar>
                 <ReviewList :reviews="reviews"></ReviewList>
-
             </div>
         </div>
-        <div class="order-container ">
+        <div class="order-container">
             <div class="order-header">
-                <div class="underline-helper">
-                </div>
+                <div class="underline-helper"></div>
                 <p>Basic</p>
             </div>
             <div class="order-details flex">
                 <span class="order-offer">Special offer</span>
                 <span class="order-price">${{ currGig.price }}</span>
                 <span class="order-mini-info">{{ currGig.info }}</span>
-                <div class="payment-features-list ">
+                <div class="payment-features-list">
                     <template v-for="(feature, index) in currGig.features" :key="index">
                         <div class="payment-feature">
                             <span class="payment-feature-icon" v-html="$svg('greenCheck')"></span>
@@ -83,15 +80,18 @@
                         </div>
                     </template>
                 </div>
-                <span class="order-properties"><span v-html="$svg('clock')" class="clock-icon"></span> {{
-                    currGig.daysToMake }} Days Delivery</span>
+                <span class="order-properties"><span v-html="$svg('clock')" class="clock-icon"></span>
+                    {{ currGig.daysToMake }} Days Delivery</span>
             </div>
-            <RouterLink class="btn-continue-route"
-                :to="{ name: 'payment-details', params: { gigId: currGig._id }, props: { gig: currGig } }">
+            <RouterLink class="btn-continue-route" :to="{
+                name: 'payment-details',
+                params: { gigId: currGig._id },
+                props: { gig: currGig },
+            }">
                 <button class="btn-continue">
                     Continue
 
-                    <span class="btn-continue-arrow" aria-hidden="true" style="width: 16px; height: 16px; fill: white;">
+                    <span class="btn-continue-arrow" aria-hidden="true" style="width: 16px; height: 16px; fill: white">
                         <span v-html="$svg('arrowRight')"></span>
                     </span>
                 </button>
@@ -101,18 +101,18 @@
 </template>
 
 <script>
-import { RouterLink } from 'vue-router'
-import SellerDetails from '../cmps/SellerDetails.vue'
-import ReviewList from '../cmps/ReviewList.vue'
-import { gigService } from '../services/gig.service.local'
-import { userService } from '../services/user.service.js'
-import { reviewService } from '../services/review.service.local'
-import { VueperSlides, VueperSlide } from 'vueperslides'
-import 'vueperslides/dist/vueperslides.css'
-import ReviewBar from '../cmps/ReviewBar.vue'
+import { RouterLink } from "vue-router";
+import SellerDetails from "../cmps/SellerDetails.vue";
+import ReviewList from "../cmps/ReviewList.vue";
+import { gigService } from "../services/gig.service";
+import { userService } from "../services/user.service.js";
+import { reviewService } from "../services/review.service.local";
+import { VueperSlides, VueperSlide } from "vueperslides";
+import "vueperslides/dist/vueperslides.css";
+import ReviewBar from "../cmps/ReviewBar.vue";
 
 export default {
-    name: 'GigDetails',
+    name: "GigDetails",
     props: {
         gig: Object,
     },
@@ -120,65 +120,78 @@ export default {
         return {
             currGig: null,
             slides: [],
-            reviews: null
-        }
+            reviews: null,
+        };
     },
     async created() {
         try {
-            const user = userService.getLoggedinUser()
+            const user = userService.getLoggedinUser();
             if (user) {
-                this.$store.commit({ type: 'setLoggedinUser', user })
+                this.$store.commit({ type: "setLoggedinUser", user });
             }
-            await this.loadGig()
-            await this.loadReviews()
-            await this.$store.dispatch({ type: 'loadReviews', filterBy: { gigId: this.currGig._id } })
+            console.log("🚀 ~ file: GigDetails.vue:135 ~ created ~ currGig:", this.currGig);
+            const { id } = this.$route.params;
+            await this.loadGig();
+            await this.loadReviews();
+            await this.$store.dispatch({
+                type: "loadReviews",
+                filterBy: { gigId: id },
+            });
 
-            this.slides = this.currGig.imgUrls.map(imageUrl => ({ image: imageUrl }))
+            // this.slides = this.currGig.imgUrls.map((imageUrl) => ({ image: imageUrl }));
         } catch (err) {
-            console.error(err)
+            console.error(err);
         }
     },
     methods: {
         async loadGig() {
             try {
-                const { gigId } = this.$route.params
-                const gig = await gigService.getById(gigId)
-                this.currGig = gig
+                const { gigId } = this.$route.params;
+                console.log("🚀 ~ file: GigDetails.vue:150 ~ loadGig ~ gigId:", gigId);
+                const gig = await gigService.getById(gigId);
+                this.currGig = gig;
+                console.log("🚀 ~ file: GigDetails.vue:152 ~ loadGig ~ currGig:", this.currGig);
             } catch {
-                console.log('Could Not load gig')
+                console.log("Could Not load gig");
             }
         },
         async loadReviews() {
             try {
-                const reviews = await reviewService.query()
-                this.reviews = reviews
+                const reviews = await reviewService.query();
+                this.reviews = reviews;
             } catch {
-                console.log('Could Not load reviews')
+                console.log("Could Not load reviews");
             }
         },
         generateStars(rate) {
-            const fullStars = Math.floor(rate)
-            const emptyStars = 5 - fullStars
+            const fullStars = Math.floor(rate);
+            const emptyStars = 5 - fullStars;
 
             return {
                 fullStars: Array(fullStars).fill(1),
                 emptyStars: Array(emptyStars).fill(0),
-            }
+            };
         },
     },
     computed: {
         user() {
-            return this.$store.getters.loggedInUser
+            return this.$store.getters.loggedInUser;
         },
         // reviews() {
         //     return this.$store.getters.getReviews
         // },
         formattedDescriptionHTML() {
-
-            const formattedDesc = this.currGig.description.replace(/\./g, ".<br>")
-            return `<div>${formattedDesc}</div>`
+            const formattedDesc = this.currGig.description.replace(/\./g, ".<br>");
+            return `<div>${formattedDesc}</div>`;
         },
     },
-    components: { VueperSlides, VueperSlide, SellerDetails, RouterLink, ReviewList, ReviewBar },
-}
+    components: {
+        VueperSlides,
+        VueperSlide,
+        SellerDetails,
+        RouterLink,
+        ReviewList,
+        ReviewBar,
+    },
+};
 </script>

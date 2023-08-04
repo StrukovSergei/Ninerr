@@ -14,7 +14,15 @@ export const orderService = {
 window.cs = orderService
 
 async function query(
-  filterBy = { txt: '', minPrice: 0, maxPrice: 0, category: '', delivery: 0, id: '', buyerId: '' }
+  filterBy = {
+    txt: '',
+    minPrice: 0,
+    maxPrice: 0,
+    category: '',
+    delivery: 0,
+    id: '',
+    buyerId: '',
+  }
 ) {
   var orders = await storageService.query(STORAGE_KEY)
 
@@ -45,7 +53,9 @@ async function query(
   }
 
   if (filterBy.category) {
-    orders = orders.filter((order) => order.categories.includes(filterBy.category))
+    orders = orders.filter((order) =>
+      order.categories.includes(filterBy.category)
+    )
   }
 
   return orders
@@ -104,7 +114,6 @@ function getEmptyOrder() {
 //     price: 123,
 //     status: 'pending',
 //     level: 'basic/premium',
-
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'o102',
@@ -114,7 +123,6 @@ function getEmptyOrder() {
 //     price: 123,
 //     status: 'rejected',
 //     level: 'basic/premium',
-
 //   })
 //   await storageService.post(STORAGE_KEY, {
 //     _id: 'o103',

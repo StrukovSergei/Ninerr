@@ -1,5 +1,5 @@
-import { gigService } from '../services/gig.service.local'
-// import { gigService } from '../services/gig.service'
+// import { gigService } from '../services/gig.service.local'
+import { gigService } from '../services/gig.service'
 
 export function getActionRemoveGig(gigId) {
   return {
@@ -19,13 +19,6 @@ export function getActionUpdateGig(gig) {
     gig,
   }
 }
-// export function getActionAddCarMsg(carId) {
-//     return {
-//         type: 'addCarMsg',
-//         carId,
-//         txt: 'Stam txt'
-//     }
-// }
 
 export const gigStore = {
   state: {
@@ -50,12 +43,13 @@ export const gigStore = {
     removeGig(state, { gigId }) {
       state.gigs = state.gigs.filter((gig) => gig._id !== gigId)
     },
-
   },
   actions: {
     async addGig(context, { gig }) {
+      console.log('🚀 ~ file: gig.store.js:49 ~ addGig ~ gig:', gig)
       try {
         gig = await gigService.save(gig)
+        console.log('🚀 ~ file: gig.store.js:52 ~ addGig ~ gig:', gig)
         context.commit(getActionAddGig(gig))
         return gig
       } catch (err) {
@@ -73,13 +67,14 @@ export const gigStore = {
         throw err
       }
     },
-    async loadGigs(context, { filterBy }) {
+    async loadGigs({ commit }, { filterBy }) {
       try {
         const gigs = await gigService.query(filterBy)
-        context.commit({ type: 'setGigs', gigs })
+        console.log('🚀 ~ file: gig.store.js:71 ~ loadGigs ~ gigs:', gigs)
+        commit({ type: 'setGigs', gigs })
       } catch (err) {
         console.log('gigStore: Error in loadGigs', err)
-        throw err
+        // throw err
       }
     },
     async removeGig(context, { gigId }) {
@@ -91,6 +86,5 @@ export const gigStore = {
         throw err
       }
     },
-
   },
 }

@@ -55,6 +55,9 @@
             cursor: pointer;
             text-decoration: none;
             color: #fff;
+            @include for-mobile-layout {
+                display: none;
+            }
            
            
         }
@@ -98,6 +101,7 @@
     .Manage-gigs{
         @include for-mobile-layout{
             order:4;
+            display: none;
         }
        
     }
@@ -110,7 +114,60 @@
     .No-orders-available{
         @include for-mobile-layout{
             order:5;
-            // display: none;
+            display: none;
+            
+        }
+    }
+    .No-gigs-available{
+        @include for-mobile-layout{
+            display: none;
+            
+        }
+    }
+    .Manage-orders{
+        @include for-mobile-layout{
+            display: none;
+            
+        }
+    }
+    .anlaytics-for-mobile{
+        & div{
+
+            position: relative;
+            & h1{
+                position: absolute;
+                right: 0;
+                margin-block-start: 5px;
+
+                & span{
+                    color:#c2c2c2;
+
+                }
+            }
+
+        }
+        display: none;
+        @include for-mobile-layout{
+            display: block;
+            order:2;
+            
+            
+            border-block-end: 1px solid #c2c2c2;
+            h3{
+                border-block-end: 1px solid #c2c2c2;
+                color:#c2c2c2;
+                font-size: rem(14px);
+                font-family: Macan-Regular;
+                font-weight: 200;
+            }
+            h2{
+                color:#3f3b3b;
+                font-size: rem(14px);
+                font-family: Macan-Regular;
+                font-weight: 200;
+            }
+
+            
             
         }
     }
