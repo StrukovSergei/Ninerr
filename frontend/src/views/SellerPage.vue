@@ -94,7 +94,7 @@
 <script>
 // import { SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED, socketService } from '../services/socket.service'
 import { showSuccessMsg, showErrorMsg } from "../services/event-bus.service";
-import { userService } from "../services/user.service.local";
+import { userService } from "../services/user.service";
 import GigList from "../cmps/GigList.vue";
 import { gigService } from "../services/gig.service";
 import { orderService } from "../services/order.service.local";

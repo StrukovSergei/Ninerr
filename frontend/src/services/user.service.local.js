@@ -93,19 +93,6 @@ function _saveUsersToFile() {
 //     username: 'user1',
 //     password: '123',
 //     level: 'basic/premium',
-//     reviews: [
-//       {
-//         id: 'madeId',
-//         gig: '{optional-mini-gig}',
-//         txt: 'Very kind and works fast',
-//         rate: 4,
-//         by: {
-//           _id: 'u102',
-//           fullname: 'user2',
-//           imgUrl: '/img/img2.jpg',
-//         },
-//       },
-//     ],
 //   })
 //   await userService.signup({
 //     _id: 'u102',

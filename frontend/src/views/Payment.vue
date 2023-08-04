@@ -82,7 +82,7 @@
 <script>
 
 import { userService } from '../services/user.service'
-import { gigService } from '../services/gig.service.local'
+import { gigService } from '../services/gig.service'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 
 
