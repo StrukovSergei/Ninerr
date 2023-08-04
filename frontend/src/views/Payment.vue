@@ -98,54 +98,53 @@ export default {
     },
     async created() {
         try {
-            const user = userService.getLoggedinUser();
+            const user = userService.getLoggedinUser()
             if (user) {
-                this.$store.commit({ type: "setLoggedinUser", user });
-                this.user = user;
+                this.$store.commit({ type: "setLoggedinUser", user })
+                this.user = user
             }
 
-            const { gigId } = this.$route.params;
+            const { gigId } = this.$route.params
             if (gigId) {
-                this.gig = await gigService.getById(gigId);
+                this.gig = await gigService.getById(gigId)
                 await this.$store.dispatch({
                     type: "loadReviews",
                     filterBy: { gigId: this.gig._id },
                 });
             }
         } catch (err) {
-            console.error(err);
+            console.error(err)
         }
     },
     computed: {
         serviceFee() {
-            return this.gig ? this.gig.price * 0.15 : 0;
+            return this.gig ? this.gig.price * 0.15 : 0
         },
 
         vat() {
-            return this.gig ? this.gig.price * 0.17 : 0;
+            return this.gig ? this.gig.price * 0.17 : 0
         },
 
         total() {
-            return this.gig ? this.gig.price + this.serviceFee + this.vat : 0;
+            return this.gig ? this.gig.price + this.serviceFee + this.vat : 0
         },
     },
     methods: {
         handleConfirmAndPay() {
-            alert("Login required");
+            alert("Login required")
         },
         async addOrder() {
-            this.order.sellerId = this.gig.owner._id;
-            this.order.buyerId = this.user._id;
-            this.order.gigId = this.gig._id;
-            this.order.price = this.total.toFixed(2);
-            this.order.status = "pending";
-            console.log(this.order);
+            this.order.sellerId = this.gig.owner._id
+            this.order.buyerId = this.user._id
+            this.order.gigId = this.gig._id
+            this.order.price = this.total.toFixed(2)
+            this.order.status = "pending"
             try {
-                await this.$store.dispatch({ type: "addOrder", order: this.order });
-                showSuccessMsg("Order added");
+                await this.$store.dispatch({ type: "addOrder", order: this.order })
+                showSuccessMsg("Order added")
             } catch (err) {
-                console.log(err);
-                showErrorMsg("Cannot add order");
+                console.log(err)
+                showErrorMsg("Cannot add order")
             }
         },
     },
