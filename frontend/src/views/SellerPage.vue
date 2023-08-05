@@ -7,7 +7,7 @@
         </span>
         <add-gig-modal :is-modal-open="isModalOpen" @close="closeModal" @add="handleAddGig"></add-gig-modal>
         <section class="anlaytics-for-mobile">
-            <h3 class="align-center">Analytics</h3>
+
             <el-row class="earning-table">
                 <el-col :span="7">
                     <section>
@@ -30,18 +30,19 @@
                     </section>
                 </el-col>
             </el-row>
-
-            <div class="flex">
-                <h2>Earing in August</h2>
-                <h1>${{ totalEarningsFromAllOrders }}</h1>
-            </div>
-            <div class="flex">
-                <h2>Avg. selling price</h2>
-                <h1>$29.23</h1>
-            </div>
-            <div class="flex">
-                <h2>Active orders</h2>
-                <h1>{{ numberOfInProgressOrders }}<span> (${{ earningsInProgressOrders }})</span></h1>
+            <div class="analytics-rows">
+                <div class="flex">
+                    <h2>Earing in August</h2>
+                    <h1>${{ totalEarningsFromAllOrders }}</h1>
+                </div>
+                <div class="flex">
+                    <h2>Avg. selling price</h2>
+                    <h1>$29.23</h1>
+                </div>
+                <div class="flex">
+                    <h2>Active orders</h2>
+                    <h1>{{ numberOfInProgressOrders }}<span> (${{ earningsInProgressOrders }})</span></h1>
+                </div>
             </div>
         </section>
         <section class="manage-gigs-container">
@@ -97,12 +98,13 @@
                                 Change status
                                 <span v-html="$svg('arrowDown')"></span>
                                 <el-icon class="el-icon--right">
-       
+
                                 </el-icon>
                             </span>
                             <template #dropdown>
                                 <el-dropdown-menu>
-                                    <el-dropdown-item v-for="status in statusOptions" @click="updateStatus(order, status)">{{status}} </el-dropdown-item>
+                                    <el-dropdown-item v-for="status in statusOptions"
+                                        @click="updateStatus(order, status)">{{ status }} </el-dropdown-item>
 
                                 </el-dropdown-menu>
                             </template>
@@ -343,7 +345,7 @@ export default {
         getCustomTitle() {
             return `${this.order.buyerName} - ${this.order.status}`
         },
-        test(order, status){
+        test(order, status) {
             console.log(status)
             console.log("Order:", order)
         }

@@ -60,7 +60,7 @@ export default {
             return this.$store.getters.loggedinUser
         },
         sellerProfile() {
-            return "/seller/" + this.loggedinUser._id
+            return "/seller/" + this.loggedinUser?._id
         }
     }
 };
