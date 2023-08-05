@@ -101,43 +101,7 @@ function getEmptyGig() {
 
 // Initial data
 // ;(async () => {
-// await storageService.post(STORAGE_KEY, {
-//   _id: 'g101',
-//   title: 'I will build responsive wordpress website design',
-//   price: 12,
-//   status: 'pending',
-//   owner: {
-//     _id: 'u101',
-//     fullname: 'Dudu Da',
-//     imgUrl:
-//       'https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5344c10fd4820db3626c4fc24968783d-1588608774469/1e4a3bd9-b71d-48ce-8ac0-0ff6d667caf4.jpeg',
-//     level: 'pro',
-//     rate: 4.8,
-//     country: 'India',
-//     since: 'Nov 2016',
-//     response: '3 Hours',
-//     lastDelivery: 'Just now',
-//     language: ['English', 'Hindi'],
-//     about: `I'm Abhi, a passionate graphic designer based in India, with 7+ years of experience. I've worked with many notable clients like Nike, Cisco, EA Sports, DC Pro, Fiverr internal communications, etc. I am specialized in Logo Design and Brand Identity design. I'm available : Mon/Sat- 12am/12pm(EST). Let's connect :)`,
-//   },
-//   daysToMake: 3,
-//   description: `Are you looking for a professional, mobile-friendly, and user-friendly website for your business or organization? Look no further! I am Abhi, a passionate graphic designer with over 7 years of experience based in India. My expertise lies in creating modern and stylish website designs that not only impress your audience but also drive results. I have collaborated with notable clients like Nike, Cisco, EA Sports, and Fiverr internal communications, among others. My services include a fully responsive design that adapts to all devices, a user-friendly interface for seamless navigation, high-quality graphics to enhance your brand's image, and SEO optimization to boost your online visibility. With unlimited revisions, I ensure your complete satisfaction with the final product. Let's connect and bring your vision to life! Available for communication from Monday to Saturday, 12 am to 12 pm (EST).`,
-//   imgUrls: [
-//     'https://res.cloudinary.com/dcwibf9o5/image/upload/v1673726966/q1msdqaht5dsqu22ip62.webp',
-//     'https://res.cloudinary.com/dcwibf9o5/image/upload/v1673726973/jjkh0hwshulmatnflwhz.webp',
-//     'https://res.cloudinary.com/dcwibf9o5/image/upload/v1673726960/hm6yg2uc0c3ktwjnw2eg.webp',
-//   ],
-//   tags: ['proffesional', 'accessible'],
-//   likedByUsers: ['mini-user'],
-//   info: 'Modern and stylish website design with unlimited revisions',
-//   features: [
-//     'Fully responsive design',
-//     'User-friendly interface',
-//     'High-quality graphics',
-//     'SEO optimized',
-//   ],
-//   categories: ['Graphics & Design', 'Digital Marketing'],
-// })
+
 // await storageService.post(STORAGE_KEY, {
 //   _id: 'g102',
 //   title: 'I will design best custom hand drawn logo with unlimited revisions',
@@ -288,43 +252,7 @@ function getEmptyGig() {
 //   ],
 //   categories: ['Photography', 'Music & Audio'],
 // })
-// await storageService.post(STORAGE_KEY, {
-//   _id: 'g106',
-//   title: 'I will create eye-catching flyer designs',
-//   price: 20,
-//   status: 'progress',
-//   owner: {
-//     _id: 'u106',
-//     fullname: 'Jiju Ja',
-//     imgUrl:
-//       'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/9b8f8d3cd42f034d2b0ab40b885db4f4-1626302890625/b3d6c17c-c9ef-4357-9026-294ec9e3e068.jpg',
-//     level: 'basic/premium',
-//     rate: 4.2,
-//     country: 'Australia',
-//     since: 'Aug 2019',
-//     response: '1 Hour',
-//     lastDelivery: '2 days ago',
-//     language: ['English'],
-//     about: `Hi, I'm Huhu, a professional content writer specializing in engaging and SEO-friendly blog posts. My words have the power to captivate readers and drive traffic to your website. Let's create compelling content for your audience!`,
-//   },
-//   daysToMake: 3,
-//   description: `Make a statement with eye-catching flyer designs that promote your events or promotions in style. I am Jiju Ja, a professional content writer with a passion for creating compelling visual content. With a keen eye for detail, I craft flyer designs that captivate your audience and deliver your message effectively. My services include customized design options to match your brand's identity, high-resolution print files for quality prints, quick revisions to ensure your satisfaction, and creative and original artwork that stands out from the crowd. Let's collaborate and create flyers that make a lasting impression!`,
-//   imgUrls: [
-//     'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/35055940/original/093fc49670c402f25619a89439a905d945b1b238/design-professional-clear-business-flyer.png',
-//     'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/35055940/original/f381950c405e7a0652067bdf705c2601bab1d5fd/design-professional-clear-business-flyer.jpg',
-//     'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/35055940/original/11d68b30ef4462e3099219ac48dcb5913a6377ed/design-professional-clear-business-flyer.jpg',
-//   ],
-//   tags: ['flyer-design', 'eye-catching'],
-//   likedByUsers: [],
-//   info: 'Eye-catching flyer designs for various occasions',
-//   features: [
-//     'Customized design options',
-//     'High-resolution print files',
-//     'Quick revisions',
-//     'Creative and original artwork',
-//   ],
-//   categories: ['Business', 'AI Services'],
-// })
+
 // await storageService.post(STORAGE_KEY, {
 //   _id: 'g107',
 //   title: 'I will provide professional video editing services',
@@ -471,44 +399,7 @@ function getEmptyGig() {
 //   ],
 //   categories: ['Writing & Translation'],
 // })
-// await storageService.post(STORAGE_KEY, {
-//   _id: 'g111',
-//   title: 'I will design unique and creative t-shirt graphics',
-//   price: 22,
-//   status: 'progress',
-//   owner: {
-//     _id: 'u111',
-//     fullname: 'Ouou Oa',
-//     imgUrl:
-//       'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/77aa04a51d12a47a9dd663a58f1e040f-695136681685414307344/JPEG_20230530_073824_4160025611441147309.jpg',
-//     level: 'basic/premium',
-//     rate: 4.5,
-//     country: 'India',
-//     since: 'Jan 2018',
-//     response: '1 Hour',
-//     lastDelivery: '6 hours ago',
-//     language: ['English', 'Hindi'],
-//     about: `Namaste! I'm Mumu, a reliable virtual assistant with a knack for organization and multitasking. With my support, you can focus on what matters most while I handle the rest. Let's streamline your tasks together!`,
-//   },
-//   daysToMake: 5,
-//   description:
-//     'Stand out with custom and creative t-shirt graphics for your brand.',
-//   imgUrls: [
-//     'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/104718396/original/1e0b01d1a3436421057d972b37e26c13d2200d32/make-creative-excellent-t-shirt-design.jpg',
-//     'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/104718396/original/3e2e8c00f5b7dd3eff283ab78fa23246b2a5d2d4/make-creative-excellent-t-shirt-design.jpg',
-//     'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/104718396/original/90806bfa84c0418c6dd57ccccd4ea5eb8202a1ec/make-creative-excellent-t-shirt-design.jpg',
-//   ],
-//   tags: ['t-shirt-design', 'creative'],
-//   likedByUsers: [],
-//   info: 'Custom t-shirt designs for merchandise and apparel',
-//   features: [
-//     'Variety of design styles',
-//     'Multiple color options',
-//     'Print-ready files',
-//     'Editable source files',
-//   ],
-//   categories: ['Graphics & Design', 'Photography'],
-// })
+
 // await storageService.post(STORAGE_KEY, {
 //   _id: 'g112',
 //   title: 'I will provide professional voice-over services',

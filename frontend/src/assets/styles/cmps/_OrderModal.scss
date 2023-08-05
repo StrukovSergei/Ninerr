@@ -3,8 +3,7 @@
     max-height: 75vh;
     width: 400px;
     top: 55px;
-    right: 195px;
-    padding: 5px 5px 5px 0;
+    padding: 15px 15px 15px 10px;
     transform: translate(-27%, 12px);
     position: absolute;
     color: #62646a;
@@ -13,6 +12,18 @@
     padding: 5px 15px;
     border-radius: 4px;
     border: solid 1px #dadbdd;
+
+    .small-order-info {
+        max-height: 70px;
+
+        .gig-status {
+            position: relative;
+            left: 280px;
+            top: -75px;
+            font-size: 12px;
+            font-family: Macan-Regular;
+        }
+    }
 
     .modal-tip {
         position: absolute;
@@ -25,4 +36,19 @@
         margin-top: -13px;
         margin-inline-start: 86%;
     }
+
+
+    .gig-img {
+        position: relative;
+        width: 70px !important;
+        height: 50px;
+        top: 10px;
+    }
+
+    .gig-title {
+        position: relative;
+        margin-left: 80px;
+        top: -50px;
+    }
+
 }
