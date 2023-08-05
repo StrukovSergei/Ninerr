@@ -66,7 +66,7 @@
                         </select>
                     </template>
                 </el-table-column>
-            <!-- Add the new column for the remove button -->
+                <!-- Add the new column for the remove button -->
                 <el-table-column label="Remove" width="100">
                     <template #default="{ row }">
                         <el-button @click="removeGig(row._id)" type="danger" icon="el-icon-delete">X</el-button>
@@ -81,9 +81,9 @@
         <p class="Manage-orders">Manage orders</p>
         <div v-if="orders && orders.length">
             <el-table :border="true" :data="orders" style="width: 100%">
-                <el-table-column prop="buyerId" label="Buyer" width="190" />
+                <el-table-column prop="buyerName" label="Buyer" width="190" />
                 <el-table-column prop="price" label="Price" width="150" />
-                <el-table-column prop="gigId" label="Gig" width="250" />
+                <el-table-column prop="gigTitle" label="Gig" width="250" />
                 <el-table-column prop="status" label="Status" width="210">
                     <template #default="{ row }">
                         <el-button :class="getStatusButtonClass(row.status)">{{
@@ -157,12 +157,11 @@ export default {
         },
         totalEarningsFromAllOrders() {
             return this.orders.reduce((total, order) => {
-                if (order.status !== "rejected") {
-
+                if (order.status !== "rejected" && order.status !== "pending") {
                     const orderPrice = parseFloat(order.price)
                     return total + orderPrice
                 }
-                return total;
+                return total
             }, 0).toFixed(2)
         },
         totalEarningsWithoutPendingOrders() {

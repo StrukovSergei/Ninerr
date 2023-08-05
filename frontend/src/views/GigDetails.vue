@@ -110,7 +110,7 @@ import SellerDetails from "../cmps/SellerDetails.vue";
 import ReviewList from "../cmps/ReviewList.vue";
 import { gigService } from "../services/gig.service";
 import { userService } from "../services/user.service.js";
-import { reviewService } from "../services/review.service.local";
+import { reviewService } from "../services/review.service";
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 import ReviewBar from "../cmps/ReviewBar.vue";

@@ -35,7 +35,7 @@
 <script>
 
 import {showErrorMsg, showSuccessMsg} from '../services/event-bus.service'
-import { reviewService } from '../services/review.service.local'
+import { reviewService } from '../services/review.service'
 
 export default {
   data() {

@@ -22,7 +22,7 @@
                 <div v-if="!review.showFullReview">
                     {{ review.title.substring(0, truncateLength) }}
                     <span v-if="shouldShowShowMore(review.title)" @click="expandReview(index)">... <span
-                            class="show-more">Show more</span></span>
+                            class="show-more">See more</span></span>
                 </div>
                 <div v-else>
                     {{ review.title }}

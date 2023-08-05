@@ -23,7 +23,6 @@ async function query(
     id: '',
   }
   ) {
-  console.log("🚀 ~ file: gig.service.js:26 ~ filterBy:", filterBy)
   
   let gigs = []
   if (filterBy.searchText) {
@@ -65,9 +64,7 @@ async function remove(gigId) {
 }
 
 async function save(gig) {
-  console.log('🚀 ~ file: gig.service.js:67 ~ save ~ gig:', gig)
   let savedGig
-  console.log('🚀 ~ file: gig.service.js:68 ~ save ~ savedGig:', savedGig)
   if (gig._id) {
     savedGig = await httpService.put(`gig/${gig._id}`, gig)
   } else {
