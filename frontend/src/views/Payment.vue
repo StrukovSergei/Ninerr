@@ -139,10 +139,9 @@ export default {
             this.order.buyerName = this.user.fullname
             this.order.gigId = this.gig._id
             this.order.gigTitle = this.gig.title
-            this.order.imgUrls = this.gig.imgUrls
+            this.order.imgUrl = this.gig.imgUrls[0]
             this.order.price = this.total.toFixed(2)
             this.order.status = "pending"
-            console.log("🚀 ~ file: Payment.vue:144 ~ addOrder ~ this.order:", this.order)
             try {
                 await this.$store.dispatch({ type: "addOrder", order: this.order })
                 showSuccessMsg("Order added")

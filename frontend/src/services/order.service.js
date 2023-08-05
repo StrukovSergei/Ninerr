@@ -26,11 +26,15 @@ export const orderService = {
 }
 
 function query(filterBy) {
+console.log("🚀 ~ file: order.service.js:29 ~ query ~ filterBy:", filterBy)
 
   let orders = []
 
-  if (filterBy.id) {
-    orders = orders.filter((order) => order.sellerId.includes(filterBy.id))
+  if (filterBy.sellerId) {
+    orders = orders.filter((order) => order.sellerId.includes(filterBy.sellerId))
+  }
+  if (filterBy.buyerId) {
+    orders = orders.filter((order) => order.buyerId.includes(filterBy.buyerId))
   }
 
   return httpService.get('order', filterBy)
