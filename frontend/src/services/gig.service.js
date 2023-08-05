@@ -23,7 +23,6 @@ async function query(
     id: '',
   }
 ) {
-  
   let gigs = []
   if (filterBy.searchText) {
     const regex = new RegExp(filterBy.searchText, 'i')
@@ -50,15 +49,12 @@ async function query(
 
   if (filterBy.id) {
     gigs = gigs.filter((gig) => gig.owner._id.includes(filterBy.id))
-    console.log("🚀 ~ file: gig.service.js:54 ~ gigs:", gigs)
   }
 
-  console.log("🚀 ~ file: gig.service.js:57 ~ httpService.get('gig', filterBy):", httpService.get('gig', filterBy))
   return httpService.get('gig', filterBy)
 }
 
 function getById(gigId) {
-  console.log('🚀 ~ file: gig.service.js:59 ~ getById ~ gigId:', gigId)
   return httpService.get(`gig/${gigId}`)
 }
 
@@ -67,9 +63,7 @@ async function remove(gigId) {
 }
 
 async function save(gig) {
-  console.log('🚀 ~ file: gig.service.js:67 ~ save ~ gig:', gig)
   let savedGig
-  console.log('🚀 ~ file: gig.service.js:68 ~ save ~ savedGig:', savedGig)
   if (gig._id) {
     savedGig = await httpService.put(`gig/${gig._id}`, gig)
   } else {

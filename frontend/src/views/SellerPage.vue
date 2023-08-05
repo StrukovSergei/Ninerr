@@ -18,7 +18,7 @@
             <el-col :span="8">
                 <section>
                     <h3>Total earnings</h3>
-                    <p>{{ getTotalEarningsFromAllOrders() }}$</p>
+                    <p>{{ totalEarningsFromAllOrders }}</p>
                 </section>
             </el-col>
 
