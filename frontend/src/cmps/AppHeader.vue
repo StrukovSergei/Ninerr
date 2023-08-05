@@ -37,8 +37,10 @@
         </RouterLink>
       </div>
       <div class="mobil-diamond">
-        <span v-html="$svg('diamond')"></span>
+        <span @click="toggleSellerModal" class="letter" v-html="$svg('letter')"></span>
+        <span  v-html="$svg('diamond')"></span>
       </div>
+      <SellerModal v-if="ifSellerModalOpen"></SellerModal>
     </header>
     <section class="categories-menu-package main-layout full">
       <ul class="flex clean-list header-categories">
@@ -76,6 +78,7 @@
 
 <script>
 import OrderModal from '../cmps/OrderModal.vue'
+import SellerModal from '../cmps/SellerModal.vue'
 export default {
   name: "AppHeader",
   data() {
@@ -86,6 +89,7 @@ export default {
       categoriesVisible: false,
       isHomePageNotScrolled: false,
       orderModal: false,
+      sellerModal: false,
     }
   },
   mounted() {
@@ -133,6 +137,9 @@ export default {
     },
     ifModalOpen(){
       return this.orderModal
+    },
+    ifSellerModalOpen(){
+      return this.sellerModal
     }
   },
   watch: {},
@@ -174,10 +181,14 @@ export default {
     toggleOrderModal(){
       this.orderModal ? this.orderModal = false : this.orderModal = true
       
+    },
+    toggleSellerModal(){
+      this.sellerModal ? this.sellerModal = false : this.sellerModal = true
+      
     }
   },
   components:{
-    OrderModal
+    OrderModal , SellerModal
   }
 }
 
