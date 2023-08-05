@@ -48,9 +48,9 @@
         <button class="addgig-btn" @click="openModal">Add Gig</button>
         <div v-if="gigs && gigs.length" class="Manage-gigsT">
             <el-table class="gigsT" :border="true" :data="gigs" style="width: 100%">
-                <el-table-column prop="title" label="Gig" width="450" />
-                <el-table-column prop="price" label="Price" width="120" />
-                <el-table-column prop="status" label="Status" width="160">
+                <el-table-column prop="title" label="Gig" width="450" class-name="custom-title-column" />
+                <el-table-column prop="price" label="Price" width="120" class-name="custom-price-column" />
+                <el-table-column prop="status" label="Status" width="160" class-name="custom-column">
                     <template #default="{ row }">
                         <el-button :class="getStatusButtonClass(row.status)">{{
                             row.status
