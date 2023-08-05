@@ -44,7 +44,7 @@
                 <a v-html="$svg('note')"> </a>
             </li>
             <li>
-                <RouterLink active-class="active" to="/seller/:id">
+                <RouterLink active-class="active" :to="sellerProfile">
                     <a v-html="$svg('user')"> </a>
                 </RouterLink>
             </li>
@@ -55,5 +55,13 @@
 <script>
 export default {
     name: "AppFooter",
+    computed: {
+        loggedinUser() {
+            return this.$store.getters.loggedinUser
+        },
+        sellerProfile() {
+            return "/seller/" + this.loggedinUser._id
+        }
+    }
 };
 </script>

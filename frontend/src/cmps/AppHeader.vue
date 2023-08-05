@@ -105,9 +105,9 @@ export default {
       return this.$store.getters.loggedinUser;
     },
     userProfile() {
-      if (!this.loggedinUser) return "";
-      if (this.loggedinUser.isSeller) return "/seller/" + this.loggedinUser._id;
-      if (!this.loggedinUser.isSeller) return "/user/" + this.loggedinUser._id;
+      if (!this.loggedinUser) return ""
+      if (this.loggedinUser.isSeller) return "/seller/" + this.loggedinUser._id
+      if (!this.loggedinUser.isSeller) return "/user/" + this.loggedinUser._id
     },
     becomeSeller() {
       if (!this.loggedinUser) return "/login";
