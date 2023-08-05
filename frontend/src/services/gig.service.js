@@ -22,7 +22,8 @@ async function query(
     delivery: 0,
     id: '',
   }
-) {
+  ) {
+  console.log("🚀 ~ file: gig.service.js:26 ~ filterBy:", filterBy)
   
   let gigs = []
   if (filterBy.searchText) {

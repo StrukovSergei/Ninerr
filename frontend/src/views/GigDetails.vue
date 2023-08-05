@@ -69,7 +69,7 @@
                 <p class="title-basic">Basic</p>
             </div>
             <p class="title-standard">Standard</p>
-            <div class="border-helper"></div>
+            <div class="border-helper2"></div>
 
             <p class="title-premium">Premium</p>
             <div class="order-details flex">
