@@ -8,7 +8,6 @@
         </span>
         <add-gig-modal :is-modal-open="isModalOpen" @close="closeModal" @add="handleAddGig"></add-gig-modal>
         <section class="anlaytics-for-mobile">
-
             <el-row class="earning-table">
                 <el-col :span="7">
                     <section>
@@ -42,7 +41,9 @@
                 </div>
                 <div class="flex">
                     <h2>Active orders</h2>
-                    <h1>{{ numberOfInProgressOrders }}<span> (${{ earningsInProgressOrders }})</span></h1>
+                    <h1>
+                        {{ numberOfInProgressOrders }}<span> (${{ earningsInProgressOrders }})</span>
+                    </h1>
                 </div>
             </div>
         </section>
@@ -81,7 +82,6 @@
                 <p>No gigs available.</p>
             </div>
         </section>
-
     </section>
     <section class="manage-orders-container">
         <p class="Manage-orders">Manage orders</p>
@@ -111,25 +111,20 @@
                             <span class="el-dropdown-link">
                                 Change status
                                 <span v-html="$svg('arrowDown')"></span>
-                                <el-icon class="el-icon--right">
-
-                                </el-icon>
+                                <el-icon class="el-icon--right"> </el-icon>
                             </span>
                             <template #dropdown>
                                 <el-dropdown-menu>
                                     <el-dropdown-item v-for="status in statusOptions"
-                                        @click="updateStatus(order, status)">{{ status }} </el-dropdown-item>
-
+                                        @click="updateStatus(order, status)">{{ status }}
+                                    </el-dropdown-item>
                                 </el-dropdown-menu>
                             </template>
                         </el-dropdown> -->
                     </div>
-
                 </el-collapse-item>
             </el-collapse>
         </div>
-
-
     </section>
 </div></template>
 
@@ -140,6 +135,7 @@ import { userService } from "../services/user.service";
 import GigList from "../cmps/GigList.vue";
 import { gigService } from "../services/gig.service";
 import { orderService } from "../services/order.service.local";
+import { socketService } from "../services/socket.service";
 import { getActionRemoveGig, getActionUpdateGig } from "../store/gig.store";
 import { getActionUpdateOrder } from "../store/order.store";
 import AddGigModal from "../cmps/AddGigModal.vue";
@@ -161,9 +157,9 @@ export default {
         userId: {
             handler() {
                 if (this.userId) {
-                    this.loadUser()
-                    this.$store.dispatch({ type: "loadOrders", filterBy: { id: this.userId } })
-                    this.$store.dispatch({ type: "loadGigs", filterBy: { id: this.userId } })
+                    this.loadUser();
+                    this.$store.dispatch({ type: "loadOrders", filterBy: { id: this.userId } });
+                    this.$store.dispatch({ type: "loadGigs", filterBy: { id: this.userId } });
                 }
             },
             immediate: true,
@@ -171,46 +167,50 @@ export default {
     },
     computed: {
         userId() {
-            return this.$route.params.id
+            return this.$route.params.id;
         },
 
         gigs() {
             return this.user && this.user.isSeller
                 ? JSON.parse(JSON.stringify(this.$store.getters.gigs))
-                : []
+                : [];
         },
         orders() {
-            return JSON.parse(JSON.stringify(this.$store.getters.orders))
+            return JSON.parse(JSON.stringify(this.$store.getters.orders));
         },
         userProfile() {
-            return "/user/" + this.userId
+            return "/user/" + this.userId;
         },
         totalEarningsFromAllOrders() {
-            return this.orders.reduce((total, order) => {
-                if (order.status !== "rejected" && order.status !== "pending") {
-                    const orderPrice = parseFloat(order.price)
-                    return total + orderPrice
-                }
-                return total
-            }, 0).toFixed(2)
+            return this.orders
+                .reduce((total, order) => {
+                    if (order.status !== "rejected" && order.status !== "pending") {
+                        const orderPrice = parseFloat(order.price);
+                        return total + orderPrice;
+                    }
+                    return total;
+                }, 0)
+                .toFixed(2);
         },
         totalEarningsWithoutPendingOrders() {
-            return this.orders.filter((order) => order.status === "completed").length
+            return this.orders.filter((order) => order.status === "completed").length;
         },
         numberOfPendingOrders() {
-            return this.orders.filter((order) => order.status === "pending").length
+            return this.orders.filter((order) => order.status === "pending").length;
         },
         numberOfInProgressOrders() {
-            return this.orders.filter((order) => order.status === "in progress").length
+            return this.orders.filter((order) => order.status === "in progress").length;
         },
         earningsInProgressOrders() {
-            return this.orders.reduce((total, order) => {
-                if (order.status == "in progress") {
-                    const orderPrice = parseFloat(order.price)
-                    return total + orderPrice
-                }
-                return total
-            }, 0).toFixed(2)
+            return this.orders
+                .reduce((total, order) => {
+                    if (order.status == "in progress") {
+                        const orderPrice = parseFloat(order.price);
+                        return total + orderPrice;
+                    }
+                    return total;
+                }, 0)
+                .toFixed(2);
         },
         ifStatusOpen() {
             return this.statusOpen
@@ -219,17 +219,17 @@ export default {
     created() { },
     methods: {
         async loadUser() {
-            if (!this.userId) return
+            if (!this.userId) return;
             try {
-                const user = await userService.getById(this.userId)
+                const user = await userService.getById(this.userId);
                 // socketService.off(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
 
                 // socketService.emit(SOCKET_EMIT_USER_WATCH, this.userId)
                 // socketService.on(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
-                this.user = user
+                this.user = user;
             } catch (err) {
-                showErrorMsg("Cannot load user: " + this.userId)
-                console.error("Failed to load user", err)
+                showErrorMsg("Cannot load user: " + this.userId);
+                console.error("Failed to load user", err);
             }
         },
         // unmounted() {
@@ -237,48 +237,48 @@ export default {
         // },
         async addGig() {
             try {
-                await this.$store.dispatch({ type: "addGig", gig: this.gigToAdd })
-                showSuccessMsg("Gig added")
-                this.gigToAdd = gigService.getEmptyGig()
+                await this.$store.dispatch({ type: "addGig", gig: this.gigToAdd });
+                showSuccessMsg("Gig added");
+                this.gigToAdd = gigService.getEmptyGig();
             } catch (err) {
-                console.log(err)
-                showErrorMsg("Cannot add gig")
+                console.log(err);
+                showErrorMsg("Cannot add gig");
             }
         },
         async removeGig(gigId) {
             try {
-                await this.$store.dispatch(getActionRemoveGig(gigId))
-                showSuccessMsg("Gig removed")
+                await this.$store.dispatch(getActionRemoveGig(gigId));
+                showSuccessMsg("Gig removed");
             } catch (err) {
-                console.log(err)
-                showErrorMsg("Cannot remove gig")
+                console.log(err);
+                showErrorMsg("Cannot remove gig");
             }
         },
         async updateGig(gig) {
             try {
-                gig = { ...gig }
-                gig.price = +prompt("New price?", gig.price)
-                await this.$store.dispatch(getActionUpdateGig(gig))
-                showSuccessMsg("Gig updated")
+                gig = { ...gig };
+                gig.price = +prompt("New price?", gig.price);
+                await this.$store.dispatch(getActionUpdateGig(gig));
+                showSuccessMsg("Gig updated");
             } catch (err) {
-                console.log(err)
-                showErrorMsg("Cannot update gig")
+                console.log(err);
+                showErrorMsg("Cannot update gig");
             }
         },
         openModal() {
-            this.isModalOpen = true
+            this.isModalOpen = true;
         },
         closeModal() {
-            this.isModalOpen = false
+            this.isModalOpen = false;
         },
         async handleAddGig(gig) {
-            gig.owner = { _id: this.userId }
+            gig.owner = { _id: this.userId };
             try {
-                await this.$store.dispatch({ type: "addGig", gig })
-                showSuccessMsg("Gig added")
+                await this.$store.dispatch({ type: "addGig", gig });
+                showSuccessMsg("Gig added");
             } catch (err) {
-                console.log(err)
-                showErrorMsg("Cannot add gig")
+                console.log(err);
+                showErrorMsg("Cannot add gig");
             }
         },
         async updateStatus({ order, status }) {
@@ -286,11 +286,12 @@ export default {
             newOrder.status = status
             this.statusOpen = false
             try {
-                await this.$store.dispatch(getActionUpdateOrder(newOrder))
-                showSuccessMsg("order status updated")
+                await this.$store.dispatch(getActionUpdateOrder(newOrder));
+                socketService.emit("order-change-status", newOrder);
+                showSuccessMsg("order status updated");
             } catch (err) {
-                console.log(err)
-                showErrorMsg("Cannot update order status")
+                console.log(err);
+                showErrorMsg("Cannot update order status");
             }
         },
         getStatusButtonClass(status) {
@@ -299,42 +300,46 @@ export default {
                 "btn-completed": status === "completed",
                 "btn-in-progress": status === "in progress",
                 "btn-pending": status === "pending",
-            }
+            };
         },
         onLogout() {
-            userService.logout()
-            this.$router.push("/")
+            userService.logout();
+            this.$router.push("/");
             setTimeout(() => {
-                location.reload()
-            }, 100)
+                location.reload();
+            }, 100);
         },
         async updateGigStatus(gig) {
-            const newGig = JSON.parse(JSON.stringify(gig))
-            newGig.status = gig.status
+            const newGig = JSON.parse(JSON.stringify(gig));
+            newGig.status = gig.status;
 
             try {
-                await this.$store.dispatch(getActionUpdateGig(newGig))
-                showSuccessMsg("Gig status updated")
+                await this.$store.dispatch(getActionUpdateGig(newGig));
+                showSuccessMsg("Gig status updated");
             } catch (err) {
-                console.log(err)
-                showErrorMsg("Cannot update gig status")
+                console.log(err);
+                showErrorMsg("Cannot update gig status");
             }
         },
-
+        getTotalEarningsFromAllOrders() {
+            return this.totalEarningsFromAllOrders.toFixed(2);
+        },
         getTotalEarningsWithoutPendingOrders() {
-            return this.totalEarningsWithoutPendingOrders
+            return this.totalEarningsWithoutPendingOrders;
         },
         getNumberOfPendingOrders() {
-            return this.numberOfPendingOrders
+            return this.numberOfPendingOrders;
         },
         getTitle(order) {
-            return this.activeNames.includes(order.id) ? "Buyer and Status" : "Order Information";
+            return this.activeNames.includes(order.id)
+                ? "Buyer and Status"
+                : "Order Information";
         },
         isCollapsed(order) {
             return !this.activeNames.includes(order.id);
         },
         getCustomTitle() {
-            return `${this.order.buyerName} - ${this.order.status}`
+            return `${this.order.buyerName} - ${this.order.status}`;
         },
 
         getStatusClass(status) {
@@ -364,5 +369,5 @@ export default {
     components: {
         AddGigModal, StatusModal
     },
-}
+};
 </script>
