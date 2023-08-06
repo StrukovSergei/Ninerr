@@ -109,6 +109,7 @@ export default {
       return this.$store.getters.loggedinUser
     },
     filteredGigs() {
+      console.log("🚀 ~ file: GigIndex.vue:113 ~ filteredGigs ~ this.$store.getters.gigs:", this.$store.getters.gigs)
       return this.$store.getters.gigs
     },
     filterHeading() {
@@ -158,7 +159,7 @@ export default {
     },
     updateHeadingFromQuery() {
       if (this.$route.query.category) {
-        this.$store.dispatch({ type: 'loadGigs', filterBy: { category: this.$route.query.category } })
+        // this.$store.dispatch({ type: 'loadGigs', filterBy: { category: this.$route.query.category } })
       }
     },
     clearFilter(filterType) {
