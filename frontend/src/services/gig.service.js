@@ -50,6 +50,7 @@ async function query(
   if (filterBy.id) {
     gigs = gigs.filter((gig) => gig.owner._id.includes(filterBy.id))
   }
+  console.log('🚀 ~ file: gig.service.js:52 ~ gigs:', gigs)
 
   return httpService.get('gig', filterBy)
 }
