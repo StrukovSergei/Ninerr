@@ -4,6 +4,8 @@
             <section class="payment-container">
                 <h2>Payment option</h2>
                 <p class="semititle-payment">
+                    <span class="radio-dot"><el-radio size="large"></el-radio></span>
+
                     Credit & Debit Cards
                     <span><img src="../assets/imgs/paymentlogo.png" alt="" /></span>
                 </p>
@@ -29,6 +31,10 @@
                         <label for="lastName">Last Name</label>
                         <input type="text" id="lastName" name="lastName" required /><br /><br />
                     </span>
+                </div>
+                <div class="paypal">
+                    <span class="radio-dot"><el-radio size="large"></el-radio></span>
+                    <span v-html="$svg('paypal')"></span>
                 </div>
             </section>
 
