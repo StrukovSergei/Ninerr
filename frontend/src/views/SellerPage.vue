@@ -116,12 +116,9 @@
                             </template>
                         </el-dropdown>
                     </div>
-
                 </el-collapse-item>
             </el-collapse>
         </div>
-
-
     </section>
 </template>
 
@@ -132,6 +129,7 @@ import { userService } from "../services/user.service";
 import GigList from "../cmps/GigList.vue";
 import { gigService } from "../services/gig.service";
 import { orderService } from "../services/order.service.local";
+import { socketService } from "../services/socket.service";
 import { getActionRemoveGig, getActionUpdateGig } from "../store/gig.store";
 import { getActionUpdateOrder } from "../store/order.store";
 import AddGigModal from "../cmps/AddGigModal.vue";
@@ -278,6 +276,7 @@ export default {
 
             try {
                 await this.$store.dispatch(getActionUpdateOrder(newOrder));
+                socketService.emit("order-change-status", newOrder);
                 showSuccessMsg("order status updated");
             } catch (err) {
                 console.log(err);

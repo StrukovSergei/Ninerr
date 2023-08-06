@@ -1,10 +1,10 @@
 import io from 'socket.io-client'
 import { userService } from './user.service'
 
-export const SOCKET_EVENT_ADD_MSG = 'chat-add-msg'
 export const SOCKET_EMIT_SEND_MSG = 'chat-send-msg'
 export const SOCKET_EMIT_SET_TOPIC = 'chat-set-topic'
 export const SOCKET_EMIT_USER_WATCH = 'user-watch'
+export const SOCKET_EVENT_ADD_MSG = 'chat-add-msg'
 export const SOCKET_EVENT_USER_UPDATED = 'user-updated'
 export const SOCKET_EVENT_REVIEW_ADDED = 'review-added'
 export const SOCKET_EVENT_REVIEW_ABOUT_YOU = 'review-about-you'
@@ -22,7 +22,7 @@ window.socketService = socketService
 socketService.setup()
 
 function createSocketService() {
-  var socket = null
+  let socket = null
   const socketService = {
     setup() {
       socket = io(baseUrl)
@@ -32,6 +32,10 @@ function createSocketService() {
       }, 500)
     },
     on(eventName, cb) {
+      console.log(
+        '🚀 ~ file: socket.service.js:35 ~ on ~ eventName:',
+        eventName
+      )
       socket.on(eventName, cb)
     },
     off(eventName, cb = null) {
@@ -58,7 +62,7 @@ function createSocketService() {
 
 // eslint-disable-next-line
 function createDummySocketService() {
-  var listenersMap = {}
+  let listenersMap = {}
   const socketService = {
     listenersMap,
     setup() {
@@ -69,6 +73,7 @@ function createDummySocketService() {
     },
     login() {},
     logout() {},
+
     on(eventName, cb) {
       listenersMap[eventName] = [...(listenersMap[eventName] || []), cb]
     },
@@ -113,7 +118,9 @@ function createDummySocketService() {
 }
 
 // Basic Tests
-// function cb(x) {console.log('Socket Test - Expected Puk, Actual:', x)}
+// function cb(x) {
+//   console.log('Socket Test - Expected Puk, Actual:', x)
+// }
 // socketService.on('baba', cb)
 // socketService.on('baba', cb)
 // socketService.on('baba', cb)
