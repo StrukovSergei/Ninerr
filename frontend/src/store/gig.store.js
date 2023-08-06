@@ -71,6 +71,7 @@ export const gigStore = {
     },
 
     async loadGigs({ commit }, { filterBy }) {
+      
       try {
         const gigs = await gigService.query(filterBy)
         commit({ type: 'setGigs', gigs })

@@ -1,5 +1,5 @@
-import { reviewService } from '../services/review.service.local'
-// import { reviewService } from '../services/review.service'
+// import { reviewService } from '../services/review.service.local'
+import { reviewService } from '../services/review.service'
 
 export const reviewStore = {
     state: {

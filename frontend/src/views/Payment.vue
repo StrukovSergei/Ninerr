@@ -136,7 +136,10 @@ export default {
         async addOrder() {
             this.order.sellerId = this.gig.owner._id
             this.order.buyerId = this.user._id
+            this.order.buyerName = this.user.fullname
             this.order.gigId = this.gig._id
+            this.order.gigTitle = this.gig.title
+            this.order.imgUrl = this.gig.imgUrls[0]
             this.order.price = this.total.toFixed(2)
             this.order.status = "pending"
             try {

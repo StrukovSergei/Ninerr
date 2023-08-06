@@ -66,8 +66,12 @@
         <div class="order-container">
             <div class="order-header">
                 <div class="underline-helper"></div>
-                <p>Basic</p>
+                <p class="title-basic">Basic</p>
             </div>
+            <p class="title-standard">Standard</p>
+            <div class="border-helper2"></div>
+
+            <p class="title-premium">Premium</p>
             <div class="order-details flex">
                 <span class="order-offer">Special offer</span>
                 <span class="order-price">${{ currGig.price }}</span>
@@ -106,7 +110,7 @@ import SellerDetails from "../cmps/SellerDetails.vue";
 import ReviewList from "../cmps/ReviewList.vue";
 import { gigService } from "../services/gig.service";
 import { userService } from "../services/user.service.js";
-import { reviewService } from "../services/review.service.local";
+import { reviewService } from "../services/review.service";
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 import ReviewBar from "../cmps/ReviewBar.vue";

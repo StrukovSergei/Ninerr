@@ -85,6 +85,26 @@ function _saveUsersToFile() {
 
 // Initial data
 // ;(async () => {
+// await userService.signup({
+//   _id: 'u101',
+//   isSeller: true,
+//   fullname: 'User 1',
+//   imgUrl: '',
+//   username: 'user1',
+//   password: '123',
+//   level: 'basic/premium',
+//   reviews: [
+//     {
+//       id: 'madeId',
+//       gig: '{optional-mini-gig}',
+//       txt: 'Very kind and works fast',
+//       rate: 4,
+//       by: {
+//         _id: 'u102',
+//         fullname: 'user2',
+//         imgUrl: '/img/img2.jpg',
+//       },
+//     ],
 //   await userService.signup({
 //     _id: 'u101',
 //     isSeller: true,
@@ -97,6 +117,7 @@ function _saveUsersToFile() {
 //   await userService.signup({
 //     _id: 'u102',
 //     fullname: 'User 2',
+//     imgUrl: 'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/9f500b4b629e3dcb09a311b29525d40d-1647197131685/eccd2987-a403-4069-a42d-1c844ef2b0b4.jpg',
 //     imgUrl:
 //       'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/9f500b4b629e3dcb09a311b29525d40d-1647197131685/eccd2987-a403-4069-a42d-1c844ef2b0b4.jpg',
 //     username: 'user2',
@@ -113,6 +134,28 @@ function _saveUsersToFile() {
 //           fullname: 'user2',
 //           imgUrl: '',
 //         },
+//     },
+//   ],
+// })
+// await userService.signup({
+//   _id: 'u102',
+//   fullname: 'User 2',
+//   imgUrl:
+//     'https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/9f500b4b629e3dcb09a311b29525d40d-1647197131685/eccd2987-a403-4069-a42d-1c844ef2b0b4.jpg',
+//   username: 'user2',
+//   password: '123',
+//   level: 'basic/premium',
+//   reviews: [
+//     {
+//       id: 'madeId',
+//       gig: '{optional-mini-gig}',
+//       txt: 'Very kind and works fast',
+//       rate: 4,
+//       by: {
+//         _id: 'u102',
+//         fullname: 'user2',
+//         imgUrl: '',
+
 //       },
 //     },
 //   ],

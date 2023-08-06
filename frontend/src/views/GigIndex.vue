@@ -128,7 +128,7 @@ export default {
     '$route.query': {
       handler(query) {
         const filterBy = {
-          category: query.category,
+          category: query.category || '',
           searchText: query.txt || '',
           minPrice: query.minPrice ? parseInt(query.minPrice) : null,
           maxPrice: query.maxPrice ? parseInt(query.maxPrice) : null,

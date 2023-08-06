@@ -1,0 +1,61 @@
+.seller-modal{
+    min-height: 434px;
+    max-height: 75vh;
+    width: 300px;
+    right: -20px;
+    top: 60px;
+    padding: 15px 15px 15px 10px;
+    transform: translate(-27%, 12px);
+    position: absolute;
+    color: #62646a;
+    z-index: 100;
+    background-color: #fff;
+    padding: 5px 15px;
+    border-radius: 4px;
+    border: solid 1px #dadbdd;
+
+    .small-order-info- {
+        max-height: 70px;
+
+        .gig-status {
+            position: relative;
+            left: 280px;
+            top: -75px;
+            font-size: 12px;
+            font-family: Macan-Regular;
+        }
+    }
+
+    .modal-tip- {
+        position: absolute;
+        background-color: #fff;
+        width: 15px;
+        height: 15px;
+        transform: rotate(45deg);
+        border-top: 1px solid #dadbdd;
+        border-left: 1px solid #dadbdd;
+        margin-top: -13px;
+        margin-inline-start: 73%;
+    }
+
+
+    .gig-img- {
+        position: relative;
+        width: 70px !important;
+        height: 50px;
+        top: 10px;
+    }
+
+    .gig-title- {
+        position: relative;
+        margin-left: 80px;
+        top: -50px;
+        font-size: 16px;
+        justify-content: space-between;
+
+        .title-helper{
+            font-family: Macan;
+        }
+    }
+
+}

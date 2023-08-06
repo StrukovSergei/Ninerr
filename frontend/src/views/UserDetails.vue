@@ -23,9 +23,9 @@
     <div class="orders-container">
       <p class="fs20">Manage orders</p>
       <div v-if="orders && orders.length">
-        <el-table :border="true" :data="orders" style="width: 100%">
-          <el-table-column prop="gigId" label="Gig" width="360" />
-          <el-table-column prop="price" label="Price" width="120" />
+        <el-table :border="true" :data="orders" style="width: 80%">
+          <el-table-column prop="gigTitle" label="Gig" width="405" />
+          <el-table-column prop="price" label="Price" width="140" />
           <el-table-column prop="status" label="Status" width="160">
             <template #default="{ row }">
               <el-button :class="getStatusButtonClass(row.status)">{{
@@ -52,17 +52,17 @@ export default {
   data() {
     return {
       user: null,
-    };
+    }
   },
   watch: {
     userId: {
       handler() {
         if (this.userId) {
-          this.loadUser();
+          this.loadUser()
           this.$store.dispatch({
             type: "loadOrders",
             filterBy: { buyerId: this.userId },
-          });
+          })
         }
       },
       immediate: true,
@@ -70,13 +70,13 @@ export default {
   },
   computed: {
     userId() {
-      return this.$route.params.id;
+      return this.$route.params.id
     },
     isMe() {
-      return this.userId === this.$store.getters.loggedinUser._id;
+      return this.userId === this.$store.getters.loggedinUser._id
     },
     orders() {
-      return this.$store.getters.orders;
+      return this.$store.getters.orders
     },
   },
   created() { },
@@ -84,15 +84,15 @@ export default {
     async loadUser() {
       if (!this.userId) return;
       try {
-        const user = await userService.getById(this.userId);
+        const user = await userService.getById(this.userId)
         // socketService.off(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
 
         // socketService.emit(SOCKET_EMIT_USER_WATCH, this.userId)
         // socketService.on(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
         this.user = user;
       } catch (err) {
-        showErrorMsg("Cannot load user: " + this.userId);
-        console.error("Failed to load user", err);
+        showErrorMsg("Cannot load user: " + this.userId)
+        console.error("Failed to load user", err)
       }
     },
     // unmounted() {
@@ -107,11 +107,11 @@ export default {
       };
     },
     onLogout() {
-      userService.logout();
-      this.$router.push("/");
+      userService.logout()
+      this.$router.push("/")
       setTimeout(() => {
-        location.reload();
-      }, 100);
+        location.reload()
+      }, 100)
     },
   },
   components: {},
