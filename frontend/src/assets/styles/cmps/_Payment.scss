@@ -1,23 +1,39 @@
 .gig-payment {
 
     margin-top: 70px;
+
     .payment-container {
         border: 1px solid $clr9;
         border-radius: 0.1875em;
-        padding: 1.5em;
         margin-block-end: 64px;
         color: $clr5;
         margin-inline-end: 50px;
         flex: 1;
-
+        height: 450px;
 
         h2 {
             font-family: Macan;
+            border-bottom: 1px solid $clr9;
+            padding-left: 30px;
+            padding-bottom: 20px;
         }
 
         p {
             font-family: Macan-Regular;
+            padding-left: 30px;
 
+            .radio-dot {
+                position: relative;
+                top: 4px;
+
+                .el-radio.el-radio--large .el-radio__inner {
+                    border-color: $clr5;
+                }
+
+                .el-radio__inner::after{
+                    background:$clr5 ;
+                }
+            }
 
             img {
                 position: relative;
@@ -27,17 +43,26 @@
         }
 
         .card-container {
+            padding-left: 30px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid $clr9;
+            margin: 0;
             font-family: Macan;
             grid-template-columns: 290px 145px 145px;
-            grid-template-rows: 65px 65px;
+            grid-template-rows: 65px 75px;
             grid-template-areas:
                 "number date security"
                 "name lname lname";
 
             font-size: 16px;
+            border-radius: 0;
 
             input {
                 max-width: 235px;
+                padding-left: 15px;
+                height: 40px;
+                font-size: 16px;
+                font-family: Macan-Regular;
             }
 
             .card-number {
@@ -62,15 +87,35 @@
 
             .card-name {
                 grid-area: name;
+                margin-top: 20px;
             }
 
             .card-lname {
+                margin-top: 20px;
 
                 grid-area: lname;
             }
 
         }
 
+
+        .paypal{
+            padding-left: 30px;
+            margin-top: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $clr9;
+            .radio-dot {
+
+
+                .el-radio.el-radio--large .el-radio__inner {
+                    border-color: $clr5;
+                }
+
+                .el-radio__inner::after{
+                    background:white ;
+                }
+            }
+        }
 
     }
 
@@ -144,13 +189,14 @@
                 justify-content: space-between;
                 align-items: center;
                 margin-bottom: 8px;
-                margin-top: 18px;
+                margin-top: 12px;
             }
 
             .payment-total {
-                margin-top: 28px;
+                margin-top: 17px;
                 font-weight: 700;
                 border-top: 1px solid $clr9;
+                padding-top: 22px;
             }
         }
 

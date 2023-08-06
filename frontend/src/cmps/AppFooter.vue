@@ -36,17 +36,21 @@
                 <a v-html="$svg('envelope')"> </a>
             </li>
             <li>
-                <RouterLink active-class="active" to="/mobileCategory">
-                    <a v-html="$svg('magnifyingGlass')"> </a>
-                </RouterLink>
+                <span>
+                    <RouterLink active-class="active" to="/mobileCategory">
+                        <a class="search-svg" v-html="$svg('magnifyingGlass')"> </a>
+                    </RouterLink>
+                </span>
             </li>
             <li>
                 <a v-html="$svg('note')"> </a>
             </li>
             <li>
-                <RouterLink active-class="active" :to="sellerProfile">
-                    <a v-html="$svg('user')"> </a>
-                </RouterLink>
+                <span>
+                    <RouterLink active-class="active" :to="sellerProfile">
+                        <a class="profile-svg" v-html="$svg('user')"> </a>
+                    </RouterLink>
+                </span>
             </li>
         </ul>
     </footer>

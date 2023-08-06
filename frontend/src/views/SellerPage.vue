@@ -110,40 +110,12 @@
                             </template>
                         </el-dropdown>
                     </div>
-                    <!-- <div >
-                        <p>Status: {{ order.status }}</p>
-                        <p>Gig: {{ order.gigTitle }}</p>
-                        <p>Price: {{ order.price }}</p>
-                        <el-button @click="changeStatus(order)">Change Status</el-button>
-                    </div> -->
+
                 </el-collapse-item>
             </el-collapse>
         </div>
 
-        <!-- <div v-if="orders && orders.length">
-            <el-table :border="true" :data="orders" style="width: 100%">
-                <el-table-column prop="buyerName" label="Buyer" width="145" />
-                <el-table-column prop="price" label="Price" width="150" />
-                <el-table-column prop="gigTitle" label="Gig" width="250" />
-                <el-table-column prop="status" label="Status" width="210">
-                    <template #default="{ row }">
-                        <el-button :class="getStatusButtonClass(row.status)">{{
-                            row.status
-                        }}</el-button>
-                    </template>
-                </el-table-column>
-                <el-table-column prop="status" label="Update Status" width="190">
-                    <template #default="{ row }">
-                        <select v-model="row.status" @change="updateStatus(row)">
-                            <option v-for="status in statusOptions" :key="status">{{ status }}</option>
-                        </select>
-                    </template>
-                </el-table-column>
-            </el-table>
-        </div>
-        <div v-else class="No-orders-available">
-            <p>No orders available.</p>
-        </div> -->
+
     </section>
 </template>
 
