@@ -1,0 +1,33 @@
+.status-modal {
+
+    min-height: 204px;
+    max-height: 75vh;
+    width: 367px;
+    top: -25px;
+    padding: 15px 15px 15px 10px;
+    transform: translate(0, 462px);
+    position: fixed;
+    color: #62646a;
+    z-index: 100;
+    background-color: #fff;
+    padding: 5px 15px;
+    border-radius: 14px;
+    border: solid 1px #dadbdd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Macan;
+    font-size: 18px;
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+
+}

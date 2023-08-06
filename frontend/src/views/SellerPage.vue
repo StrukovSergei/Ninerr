@@ -1,4 +1,5 @@
 <template>
+    <div class="seller-box">
     <section v-if="user" class="main-seller flex">
         <span class="top-btns flex">
             <button @click="onLogout()"><span>Logout</span></button>
@@ -11,22 +12,22 @@
             <el-row class="earning-table">
                 <el-col :span="7">
                     <section>
-                        <h4>completed orders</h4>
-                        <span class="align-center">{{ getTotalEarningsWithoutPendingOrders() }}</span>
+                        <h4>Completed</h4>
+                        <span class="earnings-num">{{ getTotalEarningsWithoutPendingOrders() }}</span>
                     </section>
                 </el-col>
 
                 <el-col :span="8">
                     <section>
-                        <h4>Total earnings</h4>
-                        <span class="align-center">${{ totalEarningsFromAllOrders }}</span>
+                        <h4>Earnings</h4>
+                        <span class="total-earning">${{ totalEarningsFromAllOrders }}</span>
                     </section>
                 </el-col>
 
                 <el-col :span="8">
                     <section>
-                        <h4>Orders Pending</h4>
-                        <span class="align-center">{{ getNumberOfPendingOrders() }}</span>
+                        <h4>Pending</h4>
+                        <span class="pending-num">{{ getNumberOfPendingOrders() }}</span>
                     </section>
                 </el-col>
             </el-row>
@@ -84,16 +85,29 @@
     </section>
     <section class="manage-orders-container">
         <p class="Manage-orders">Manage orders</p>
-        <div class="demo-collapse">
-            <el-collapse accordion>
-                <el-collapse-item class="order-title" v-for="order in orders" :key="order.id"
-                    :title="`${order.buyerName} - ${order.status}`" :name="order.id">
+        <div class="demo-collapse" :class="{ 'dark-overlay': ifStatusOpen }"> 
+            <el-collapse accordion >
+                <el-collapse-item class="order-title" v-for="order in orders" :key="order.id" :name="order.id">
+                    <!-- :title="`${order.buyerName} - <span>${order.status}</span>`"  -->
+                    <template #title>
+                        <div class="collapse-title flex">
+                            <span> {{ order.buyerName }} </span> <span :class="getStatusClass(order.status)">{{ order.status
+                            }}</span>
+                        </div>
+                        <el-icon class="header-icon">
+
+                        </el-icon>
+                    </template>
                     <div>
-                        <p>Gig: <span class="order-inner-span">{{ order.gigTitle }}</span></p>
-                        <p>Status: <span class="order-inner-span">{{ order.status }}</span></p>
-                        <p>Price: <span class="order-inner-span">${{ order.price }}</span></p>
-                        <p>Buyer: <span class="order-inner-span">{{ order.buyerName }}</span></p>
-                        <el-dropdown placement="top-end">
+                        <p><span class="order-inner-img"><img :src="order.imgUrl" alt=""></span> <span
+                                class="order-inner-span">{{ order.gigTitle }}</span></p>
+                        <p>Status <span class="order-inner-span">{{ order.status }}</span></p>
+                        <p>Price<span class="order-inner-span">${{ order.price }}</span></p>
+                        <p>Buyer <span class="order-inner-span">{{ order.buyerName }}</span></p>
+                        <a class="status-btn" @click="toggleStatusModal">Change status</a>
+                        <StatusModal v-if="ifStatusOpen" :order="order" @status-changed="updateStatus">
+                        </StatusModal>
+                        <!-- <el-dropdown placement="top-end">
                             <span class="el-dropdown-link">
                                 Change status
                                 <span v-html="$svg('arrowDown')"></span>
@@ -108,7 +122,7 @@
 
                                 </el-dropdown-menu>
                             </template>
-                        </el-dropdown>
+                        </el-dropdown> -->
                     </div>
 
                 </el-collapse-item>
@@ -117,7 +131,7 @@
 
 
     </section>
-</template>
+</div></template>
 
 <script>
 // import { SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED, socketService } from '../services/socket.service'
@@ -129,6 +143,7 @@ import { orderService } from "../services/order.service.local";
 import { getActionRemoveGig, getActionUpdateGig } from "../store/gig.store";
 import { getActionUpdateOrder } from "../store/order.store";
 import AddGigModal from "../cmps/AddGigModal.vue";
+import StatusModal from "../cmps/StatusModal.vue"
 
 export default {
     components: { GigList },
@@ -139,6 +154,7 @@ export default {
             statusOptions: ["rejected", "completed", "in progress", "pending"],
             gigStatusOptions: ["active", "paused"],
             activeNames: [],
+            statusOpen: false,
         }
     },
     watch: {
@@ -195,6 +211,9 @@ export default {
                 }
                 return total
             }, 0).toFixed(2)
+        },
+        ifStatusOpen() {
+            return this.statusOpen
         },
     },
     created() { },
@@ -262,10 +281,10 @@ export default {
                 showErrorMsg("Cannot add gig")
             }
         },
-        async updateStatus(order, status) {
+        async updateStatus({ order, status }) {
             const newOrder = JSON.parse(JSON.stringify(order))
             newOrder.status = status
-
+            this.statusOpen = false
             try {
                 await this.$store.dispatch(getActionUpdateOrder(newOrder))
                 showSuccessMsg("order status updated")
@@ -317,15 +336,33 @@ export default {
         getCustomTitle() {
             return `${this.order.buyerName} - ${this.order.status}`
         },
-        test(order, status) {
-            console.log(status)
-            console.log("Order:", order)
-        }
 
+        getStatusClass(status) {
+            if (status === "completed") {
+                return "order-status-completed"
+            } else if (status === "pending") {
+                return "order-status-pending"
+            } else if (status === "in progress") {
+                return "order-status-progress"
+            } else if (status === "rejected") {
+                return "order-status-rejected"
+            }
+
+        },
+        toggleStatusModal() {
+            this.statusOpen ? this.statusOpen = false : this.statusOpen = true
+
+        },
+        handleStatusChanged({ order, status }) {
+            console.log("🚀 ~ file: SellerPage.vue:356 ~ handleStatusChanged ~ order:", order)
+            // Handle the emitted status here
+            console.log('New status:', status);
+
+            // You can perform any other actions or update data accordingly.
+        },
     },
-
     components: {
-        AddGigModal,
+        AddGigModal, StatusModal
     },
 }
 </script>

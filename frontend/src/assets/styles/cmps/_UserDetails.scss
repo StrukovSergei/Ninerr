@@ -14,7 +14,7 @@
         padding: 10px;
         flex-direction: column;
         align-items: center;
-
+max-width: 310px;
         .user-name {
             color: black;
         }
@@ -70,6 +70,32 @@
 
         }
 
+        .member {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .year {
+            font-size: 16px;
+        }
+
+        .active {
+            font-size: 16px;
+            color: $clr1;
+        }
+
+
+        .seller-btn {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #606266;
+
+        }
+
+        .seller-btn:hover {
+            color: $clr1;
+        }
+
         button {
             display: flex;
             justify-content: center;
@@ -93,30 +119,89 @@
 
 
 
+
+}
+
+.el-collapse-item__content {
+    div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+
+            display: flex;
+
+            justify-content: space-between;
+
+        }
+    }
+
+}
+
+.custom-table {
+    border-collapse: collapse;
+    margin-top: 20px;
+
+    th,
+    td {
+        padding: 10px;
+        border: 1px solid #ccc;
+
+        img {
+            width: 80px;
+        }
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .status-button {
+        display: flex;
+        /* Use flexbox for the status button */
+        justify-content: center;
+        /* Center the content horizontally */
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+
+    }
+
     .btn-rejected {
-        background-color: red;
-        color: #fff;
-        cursor: auto;
+        color: #ff0000;
     }
 
     .btn-completed {
-        background-color: green;
-        color: #fff;
-        cursor: auto;
-
+        color: $clr1;
     }
 
     .btn-in-progress {
-        background-color: orange;
-        color: #fff;
-        cursor: auto;
-
+        color: $clr14;
     }
 
     .btn-pending {
-        background-color: blue;
-        color: #fff;
-        cursor: auto;
-
+        color: $clr10;
     }
 }
+
+td div {
+    display: flex;
+    align-items: flex-start;
+    font-family: Macan-Regular;
+    max-width: 600px;
+}
+
+td img {
+    max-width: 80px;
+    margin-right: 10px;
+}
+
+
+td div {
+
+    text-overflow: ellipsis;
+}
+

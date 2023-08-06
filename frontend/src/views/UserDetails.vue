@@ -16,29 +16,44 @@
         <img class="user-coutry-img" src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f1.png"
           alt="" />
       </div>
-      <button @click="onLogout()">Logout</button>
+      <div class="member">Member since </div>
+      <div class="year">2023</div>
+      <div class="member">Last active </div>
+      <div class="active">online</div>
+      <RouterLink class="seller-btn" :to="becomeSeller">Become a Seller
+        </RouterLink>
+      <!-- <button @click="onLogout()">Logout</button> -->
       <!-- <img style="max-width: 200px;" :src="user.imgUrl" /> -->
     </div>
 
     <div class="orders-container">
-      <p class="fs20">Manage orders</p>
-      <div v-if="orders && orders.length">
-        <el-table :border="true" :data="orders" style="width: 80%">
-          <el-table-column prop="gigTitle" label="Gig" width="405" />
-          <el-table-column prop="price" label="Price" width="140" />
-          <el-table-column prop="status" label="Status" width="160">
-            <template #default="{ row }">
-              <el-button :class="getStatusButtonClass(row.status)">{{
-                row.status
-              }}</el-button>
-            </template>
-          </el-table-column>
-        </el-table>
+        <p class="fs20">Manage orders</p>
+        <div v-if="orders && orders.length">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Gig</th>
+                <th>Price</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="order in orders" :key="order._id">
+                <td><div><img :src="order.imgUrl" alt=""> {{ order.gigTitle }}</div></td>
+                <td>${{ order.price }}</td>
+                <td class="center-helper">
+                  <span :class="getStatusButtonClass(order.status)">
+                    {{ order.status }}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div v-else>
+          <p>No orders available.</p>
+        </div>
       </div>
-      <div v-else>
-        <p>No orders available.</p>
-      </div>
-    </div>
   </section>
 </template>
 
@@ -77,6 +92,10 @@ export default {
     },
     orders() {
       return this.$store.getters.orders
+    },
+    becomeSeller() {
+      
+      return "/register/" + this.userId
     },
   },
   created() { },

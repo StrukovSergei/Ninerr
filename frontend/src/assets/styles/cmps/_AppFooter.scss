@@ -59,7 +59,8 @@
     display: none;
 
     @include for-mobile-layout {
-        position: sticky;
+        position: fixed;
+
         display: flex;
         margin-top: auto;
         bottom: 0;
@@ -72,6 +73,7 @@
             padding-right: 1rem;
             padding-top: 1rem;
             margin-inline: 9px;
+
 
             .active {
                 & a {

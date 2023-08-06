@@ -13,6 +13,7 @@
 
         & .mobil-diamond {
             display: none;
+
             @include for-mobile-layout {
                 display: block;
                 width: 3rem;
@@ -21,17 +22,24 @@
                 margin-inline-end: 1rem;
                 margin-block-start: 1rem;
 
-                .letter svg{
+                span:nth-child(2) {
+                    position: relative;
+                    right: -8px;
+                }
+
+                .letter svg {
                     width: 32px;
                     height: 32px;
+                    z-index: 100;
                 }
-                
-                .XQskgrQ{
+
+                .XQskgrQ {
                     position: absolute;
                     top: 23px;
-                    left: 280px;
+                    left: 285px;
                 }
-                .XQskgrQ svg{
+
+                .XQskgrQ svg {
                     width: 32px;
                     height: 32px;
                 }
