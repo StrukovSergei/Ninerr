@@ -3,7 +3,7 @@
     min-height: 204px;
     max-height: 75vh;
     width: 367px;
-    top: -25px;
+    top: -1px;
     padding: 15px 15px 15px 10px;
     transform: translate(0, 462px);
     position: fixed;
@@ -30,4 +30,17 @@
     }
 
 
+
+    .statusmodal-rejected{
+        color: red;
+
+    }
+
+    .statusmodal-completed{
+        color: $clr1;
+    }
+
+    .statusmodal-progress{
+        color: $clr14;
+    }
 }

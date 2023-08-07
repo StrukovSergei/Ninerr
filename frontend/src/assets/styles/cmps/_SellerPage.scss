@@ -54,6 +54,10 @@
         section {
             margin: 0 24px 15px 24px;
 
+            .accepted-title{
+                margin-left: 10px;
+            }
+
 
             .earnings-num {
                 position: relative;
@@ -63,8 +67,7 @@
 
             .total-earning {
                 position: relative;
-                right: -2px;
-
+                right: -41px;
                 color: $clr14;
             }
 

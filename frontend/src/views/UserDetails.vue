@@ -131,7 +131,7 @@ export default {
       return {
         "btn-rejected": status === "rejected",
         "btn-completed": status === "completed",
-        "btn-in-progress": status === "in progress",
+        "btn-accepted": status === "accepted",
         "btn-pending": status === "pending",
       };
     },

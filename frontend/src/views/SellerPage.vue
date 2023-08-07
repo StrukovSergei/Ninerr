@@ -18,8 +18,8 @@
 
                     <el-col :span="8">
                         <section>
-                            <h4>Earnings</h4>
-                            <span class="total-earning">${{ totalEarningsFromAllOrders }}</span>
+                            <h4 class="accepted-title">Accepted</h4>
+                            <span class="total-earning">{{ numberOfInProgressOrders }}</span>
                         </section>
                     </el-col>
 
@@ -37,7 +37,7 @@
                     </div>
                     <div class="flex">
                         <h2>Avg. selling price</h2>
-                        <h1>$29.23</h1>
+                        <h1>$229.23</h1>
                     </div>
                     <div class="flex">
                         <h2>Active orders</h2>
@@ -187,8 +187,8 @@ export default {
             return this.orders
                 .reduce((total, order) => {
                     if (order.status !== "rejected" && order.status !== "pending") {
-                        const orderPrice = parseFloat(order.price);
-                        return total + orderPrice;
+                        const orderPrice = parseFloat(order.price) 
+                        return total + orderPrice 
                     }
                     return total;
                 }, 0)
@@ -201,12 +201,12 @@ export default {
             return this.orders.filter((order) => order.status === "pending").length;
         },
         numberOfInProgressOrders() {
-            return this.orders.filter((order) => order.status === "in progress").length;
+            return this.orders.filter((order) => order.status === "accepted").length;
         },
         earningsInProgressOrders() {
             return this.orders
                 .reduce((total, order) => {
-                    if (order.status == "in progress") {
+                    if (order.status == "accepted") {
                         const orderPrice = parseFloat(order.price);
                         return total + orderPrice;
                     }
@@ -307,7 +307,7 @@ export default {
             return {
                 "btn-rejected": status === "rejected",
                 "btn-completed": status === "completed",
-                "btn-in-progress": status === "in progress",
+                "btn-accepted": status === "accepted",
                 "btn-pending": status === "pending",
             };
         },
@@ -334,7 +334,7 @@ export default {
             return this.totalEarningsFromAllOrders.toFixed(2);
         },
         getTotalEarningsWithoutPendingOrders() {
-            return this.totalEarningsWithoutPendingOrders;
+            return this.totalEarningsWithoutPendingOrders + 32
         },
         getNumberOfPendingOrders() {
             return this.numberOfPendingOrders;
@@ -356,7 +356,7 @@ export default {
                 return "order-status-completed"
             } else if (status === "pending") {
                 return "order-status-pending"
-            } else if (status === "in progress") {
+            } else if (status === "accepted") {
                 return "order-status-progress"
             } else if (status === "rejected") {
                 return "order-status-rejected"
