@@ -84,7 +84,7 @@ export default {
         dotUpdate() {
             setTimeout(() => {
                 this.ifNewOrder = false
-            }, 300)
+            }, 1000)
 
 
         }
