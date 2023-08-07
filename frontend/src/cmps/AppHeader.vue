@@ -37,8 +37,8 @@
         </RouterLink>
       </div>
       <div class="mobil-diamond">
-        <span @click="toggleSellerModal" class="letter" v-html="$svg('letter')"></span>
-        <span  v-html="$svg('diamond')"></span>
+        <!-- <span @click="toggleSellerModal" class="letter" v-html="$svg('letter')"></span> -->
+        <span v-html="$svg('diamond')"></span>
       </div>
       <SellerModal v-if="ifSellerModalOpen"></SellerModal>
     </header>
@@ -79,6 +79,7 @@
 <script>
 import OrderModal from '../cmps/OrderModal.vue'
 import SellerModal from '../cmps/SellerModal.vue'
+
 export default {
   name: "AppHeader",
   data() {
@@ -90,6 +91,7 @@ export default {
       isHomePageNotScrolled: false,
       orderModal: false,
       sellerModal: false,
+      ifNewOrder: true,
     }
   },
   mounted() {
@@ -99,7 +101,9 @@ export default {
     // } else {
     //   this.scrolled = true
     // }
+
   },
+
   beforeDestroy() {
     if (this.isHomePage) {
       window.removeEventListener("scroll", this.handleScroll)
@@ -135,12 +139,14 @@ export default {
     userImgAlt() {
       return this.loggedinUser.fullname.charAt(0).toUpperCase()
     },
-    ifModalOpen(){
+    ifModalOpen() {
       return this.orderModal
     },
-    ifSellerModalOpen(){
+    ifSellerModalOpen() {
       return this.sellerModal
-    }
+    },
+
+
   },
   watch: {},
   methods: {
@@ -178,17 +184,19 @@ export default {
         this.categoriesVisible = false
       }
     },
-    toggleOrderModal(){
+    toggleOrderModal() {
       this.orderModal ? this.orderModal = false : this.orderModal = true
-      
+
     },
-    toggleSellerModal(){
+    toggleSellerModal() {
       this.sellerModal ? this.sellerModal = false : this.sellerModal = true
-      
-    }
+
+    },
+
+
   },
-  components:{
-    OrderModal , SellerModal
+  components: {
+    OrderModal, SellerModal
   }
 }
 
