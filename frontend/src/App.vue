@@ -9,6 +9,7 @@
 <script>
 import { userService } from "./services/user.service";
 import { store } from "./store/store";
+import { socketService } from "./services/socket.service";
 import AppFooter from "./cmps/AppFooter.vue";
 import AppHeader from "./cmps/AppHeader.vue";
 import UserMsg from "./cmps/UserMsg.vue";

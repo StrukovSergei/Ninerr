@@ -21,44 +21,46 @@
       <div class="member">Last active </div>
       <div class="active">online</div>
       <RouterLink class="seller-btn" :to="becomeSeller">Become a Seller
-        </RouterLink>
+      </RouterLink>
       <!-- <button @click="onLogout()">Logout</button> -->
       <!-- <img style="max-width: 200px;" :src="user.imgUrl" /> -->
     </div>
 
     <div class="orders-container">
-        <p class="fs20">Manage orders</p>
-        <div v-if="orders && orders.length">
-          <table class="custom-table">
-            <thead>
-              <tr>
-                <th>Gig</th>
-                <th>Price</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="order in orders" :key="order._id">
-                <td><div><img :src="order.imgUrl" alt=""> {{ order.gigTitle }}</div></td>
-                <td>${{ order.price }}</td>
-                <td class="center-helper">
-                  <span :class="getStatusButtonClass(order.status)">
-                    {{ order.status }}
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div v-else>
-          <p>No orders available.</p>
-        </div>
+      <p class="fs20">Manage orders</p>
+      <div v-if="orders && orders.length">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th>Gig</th>
+              <th>Price</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="order in orders" :key="order._id">
+              <td>
+                <div><img :src="order.imgUrl" alt=""> {{ order.gigTitle }}</div>
+              </td>
+              <td>${{ order.price }}</td>
+              <td class="center-helper">
+                <span :class="getStatusButtonClass(order.status)">
+                  {{ order.status }}
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+      <div v-else>
+        <p>No orders available.</p>
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
-import { SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED, socketService } from '../services/socket.service'
+import { SOCKET_EMIT_USER_WATCH, SOCKET_EVENT_USER_UPDATED, SOCKET_EVENT_ORDER_UPDATE, socketService } from '../services/socket.service'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { userService } from '../services/user.service'
 
@@ -94,11 +96,13 @@ export default {
       return this.$store.getters.orders
     },
     becomeSeller() {
-      
+
       return "/register/" + this.userId
     },
   },
-  created() { },
+  created() {
+    socketService.on(SOCKET_EVENT_ORDER_UPDATE, this.orderUpdate)
+  },
   methods: {
     async loadUser() {
       if (!this.userId) return;
@@ -114,9 +118,15 @@ export default {
         console.error("Failed to load user", err)
       }
     },
-    unmounted() {
-      socketService.off(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
+    orderUpdate(order) {
+      this.$store.dispatch({
+        type: "loadOrders",
+        filterBy: { buyerId: this.userId },
+      })
     },
+    // unmounted() {
+    //   socketService.off(SOCKET_EVENT_USER_UPDATED, this.onUserUpdate)
+    // },
     getStatusButtonClass(status) {
       return {
         "btn-rejected": status === "rejected",
