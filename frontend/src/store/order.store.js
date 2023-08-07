@@ -50,13 +50,13 @@ export const orderStore = {
     removeOrder(state, { orderId }) {
       state.orders = state.orders.filter((order) => order._id !== orderId)
     },
-
   },
   actions: {
     async addOrder(context, { order }) {
       try {
         order = await orderService.save(order)
         context.commit(getActionAddOrder(order))
+        console.log('order', order)
         return order
       } catch (err) {
         console.log('orderStore: Error in addOrder', err)
@@ -73,7 +73,7 @@ export const orderStore = {
         throw err
       }
     },
-    async loadOrders(context, { filterBy }) {      
+    async loadOrders(context, { filterBy }) {
       try {
         const orders = await orderService.query(filterBy)
         context.commit({ type: 'setOrders', orders })
@@ -91,7 +91,5 @@ export const orderStore = {
         throw err
       }
     },
-
   },
 }
-

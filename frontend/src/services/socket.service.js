@@ -8,6 +8,8 @@ export const SOCKET_EVENT_ADD_MSG = 'chat-add-msg'
 export const SOCKET_EVENT_USER_UPDATED = 'user-updated'
 export const SOCKET_EVENT_REVIEW_ADDED = 'review-added'
 export const SOCKET_EVENT_REVIEW_ABOUT_YOU = 'review-about-you'
+export const SOCKET_EVENT_ORDER_UPDATE = 'order-status-update'
+export const SOCKET_EVENT_GIG_ORDERED = 'user-ordered-gig'
 
 const SOCKET_EMIT_LOGIN = 'set-user-socket'
 const SOCKET_EMIT_LOGOUT = 'unset-user-socket'
@@ -32,10 +34,10 @@ function createSocketService() {
       }, 500)
     },
     on(eventName, cb) {
-      console.log(
-        '🚀 ~ file: socket.service.js:35 ~ on ~ eventName:',
-        eventName
-      )
+      // console.log(
+      //   '🚀 ~ file: socket.service.js:35 ~ on ~ eventName:',
+      //   eventName
+      // )
       socket.on(eventName, cb)
     },
     off(eventName, cb = null) {

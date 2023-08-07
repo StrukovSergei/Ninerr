@@ -148,7 +148,7 @@ export default {
             try {
                 await this.$store.dispatch({ type: "addOrder", order: this.order });
                 showSuccessMsg("Order added");
-                socketService.emit("gig-ordered", this.gig);
+                socketService.emit("gig-ordered", this.order);
             } catch (err) {
                 console.log(err);
                 showErrorMsg("Cannot add order");
