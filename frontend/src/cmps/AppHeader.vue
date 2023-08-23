@@ -94,10 +94,14 @@ export default {
       ifNewOrder: true,
     }
   },
+  created() {
+    
+  },
   mounted() {
     // if (this.isHomePage) {
     window.addEventListener("scroll", this.handleScroll)
     this.isHomePageNotScrolled = this.isHomePage
+    this.isHomePageNotScrolled = true
     // } else {
     //   this.scrolled = true
     // }
