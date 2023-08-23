@@ -35,18 +35,18 @@
       </p>
       <p class="mobile-sub-title">Success <span>starts</span> here.</p>
       <button class="ggl" @click="doLogin">
-        Continue with Google
+        <i v-html="$svg('glogin')"></i> Continue with Google
       </button>
       <button class="username" @click="loginByUsername">
-         Continue with email/username
+        <i v-html="$svg('elogin')"></i>   Continue with email/username
       </button>
       <p class="or">OR</p>
       <section class="social-media">
         <button class="apl" @click="doLogin">
-           Apple
+          <i v-html="$svg('alogin')"></i>   Apple
         </button>
         <button class="fbk" @click="doLogin">
-           Facebook
+          <i v-html="$svg('flogin')"></i>   Facebook
         </button>
         <p class="mobile-footer">
           By joining, you agree to the Myverr <span>Terms of Service</span> and
