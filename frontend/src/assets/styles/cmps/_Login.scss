@@ -1,5 +1,11 @@
 .login-signin {
-background-color: #f5f5f5;
+    button {
+        background-color: $CLR0;
+        border: 1px solid $clr22;
+        color: $clr4;
+    }
+
+    background-color: #f5f5f5;
     width: 875px;
     height: 505px;
     border: 1px solid transparent;
@@ -21,7 +27,7 @@ background-color: #f5f5f5;
         padding: 0;
         overflow-x: hidden;
         overflow-y: hidden;
-        
+
         .login {
             margin-bottom: -40px;
             padding-bottom: -70px;
@@ -30,24 +36,28 @@ background-color: #f5f5f5;
             border-top-right-radius: 12px;
             border-bottom-right-radius: 12px;
         }
+
         .login-backdrop {
             display: none;
             z-index: -1;
         }
+
         .mobile-title {
             margin-top: -30px;
             margin-left: 20px;
         }
+
         .mobile-sub-title {
             font-size: rem(32px);
         }
+
         .ggl,
         .username {
             text-align: center;
             align-self: center;
             width: 90vw;
         }
-        
+
     }
 
     img {
@@ -62,7 +72,7 @@ background-color: #f5f5f5;
         // font-size: rem(12px);
         // display: none;
         position: absolute;
-            bottom: 0;
+        bottom: 0;
     }
 
     .mobile-sub-title,
@@ -78,6 +88,7 @@ background-color: #f5f5f5;
         // justify-content: space-around;
         padding: 40px;
         padding-top: 60px;
+        color:$clr4;
 
 
         .title {
@@ -91,7 +102,7 @@ background-color: #f5f5f5;
         .sub-title {
             font-size: rem(16px);
             font-family: Macan-Regular;
-            color: $clr2;
+            color: $CLR00;
             margin-bottom: -60px;
 
             span {
@@ -108,7 +119,6 @@ background-color: #f5f5f5;
             font-size: rem(16px);
             font-family: Macan-Regular;
             color: $clr11;
-            border: 1px solid $clr14;
             border-radius: 4px;
             // padding: 17px 6px;
             width: 360px;
@@ -126,9 +136,10 @@ background-color: #f5f5f5;
         .or {
             font-size: rem(12px);
             font-family: Macan;
-            color: $clr10;
+            color: $clr12;
             text-align: center;
             margin-top: 20px;
+            margin-left: 34px;
         }
 
         .social-media {
@@ -139,8 +150,7 @@ background-color: #f5f5f5;
             .fbk {
                 font-size: rem(16px);
                 font-family: Macan-Regular;
-                color: $clr11;
-                border: 1px solid $clr14;
+                color: $clr4;
                 border-radius: 4px;
                 width: 175px;
                 height: 50px;
@@ -163,6 +173,12 @@ background-color: #f5f5f5;
             top: 50px;
             left: 40px;
             color: $CLR0;
+
+            p {
+                svg {
+                    fill: $CLR0;
+                }
+            }
 
             .title {
                 font-family: Macan;
@@ -234,8 +250,8 @@ background-color: #f5f5f5;
         .btn-continue {
             font-size: rem(16px);
             font-family: Macan-Regular;
-            color: $CLR0;
-            background-color: $clr4;
+            color: $clr4;
+            background-color: $CLR0;
             border: 1px solid $clr14;
             border-radius: 4px;
             width: 360px;

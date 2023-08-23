@@ -7,13 +7,13 @@
       />
       <div class="txt">
         <p class="title">Success starts here</p>
-        <p><i v-html="$svg('check')"></i> Over 600 categories</p>
+        <p><i v-html="$svg('greenCheck')"></i> Over 600 categories</p>
         <p>
-          <i v-html="$svg('check')"></i> Pay per project, not per
+          <i v-html="$svg('greenCheck')"></i> Pay per project, not per
           hour
         </p>
         <p>
-          <i v-html="$svg('check')"></i> Access to talent and
+          <i v-html="$svg('greenCheck')"></i> Access to talent and
           businesses <br />
           <span>across the globe</span>
         </p>
@@ -26,7 +26,7 @@
         Don’t have an account? <span @click="typeAction">Join here</span>
       </p>
       <p v-else class="sub-title">
-        Already have an account?<span @click="typeAction">Sign in</span>
+        Already have an account? <span @click="typeAction">Sign in</span>
       </p>
       <!-- <p class="mobile-title">fiverr <span>.</span></p> -->
       <p class="mobile-title">
