@@ -42,11 +42,11 @@
             // display: block;
             font-size: rem(40px);
             line-height: rem(48px);
-            font-family: macanBold;
-            // color: $clr4;
+            font-family: Macan;
+            color: $clr4;
             margin-top: 60px;
             span {
-                // color: $red2;
+                color: $clr13;
             }
         }
 
@@ -71,7 +71,7 @@
             position: absolute;
             bottom: 0;
             text-align: start;
-            // color: $clr5;
+            color: $clr5;
             padding-bottom: 5px;
             padding-left: 3px;
             span {
@@ -140,7 +140,7 @@
     }
 
     .login {
-        background-color: white;
+        background-color: $CLR0;
         display: flex;
         flex-direction: column;
         // justify-content: space-around;
@@ -150,16 +150,16 @@
 
         .title {
             font-size: rem(24px);
-            font-family: macanBold;
-            // color: $clr3;
+            font-family: Macan;
+            color: $clr11;
             margin-bottom: 6px;
             margin-top: -30px;
         }
 
         .sub-title {
             font-size: rem(16px);
-            font-family: macanRegular;
-            // color: $clr2;
+            font-family: Macan-Regular;
+            color: $clr2;
             margin-bottom: -60px;
 
             span {
@@ -174,9 +174,9 @@
         .ggl,
         .username {
             font-size: rem(16px);
-            font-family: macanSemibold;
-            // color: $clr3;
-            // border: 1px solid $clr11;
+            font-family: Macan-Regular;
+            color: $clr11;
+            border: 1px solid $clr14;
             border-radius: 4px;
             // padding: 17px 6px;
             width: 360px;
@@ -193,8 +193,8 @@
 
         .or {
             font-size: rem(12px);
-            font-family: macanBold;
-            // color: $clr9;
+            font-family: Macan;
+            color: $clr10;
             text-align: center;
             margin-top: 20px;
         }
@@ -206,9 +206,9 @@
             .apl,
             .fbk {
                 font-size: rem(16px);
-                font-family: macanSemibold;
-                // color: $clr3;
-                // border: 1px solid $clr11;
+                font-family: Macan-Regular;
+                color: $clr11;
+                border: 1px solid $clr14;
                 border-radius: 4px;
                 width: 175px;
                 height: 50px;
@@ -230,10 +230,10 @@
             z-index: 23000;
             top: 50px;
             left: 40px;
-            // color: $clr1;
+            color: $CLR0;
 
             .title {
-                font-family: macanBold;
+                font-family: Macan;
                 font-size: rem(32px);
                 margin-bottom: 15px;
             }
@@ -243,7 +243,7 @@
             }
 
             i {
-                // fill: $clr1;
+                // fill: $CLR0;
                 // height: 10px;
                 // font-size: 18px;
             }
@@ -256,7 +256,7 @@
         right: 0;
         width: 50%;
         height: 100%;
-        // background-color: $clr1;
+        background-color: $CLR0;
         display: flex;
         flex-direction: column;
         padding: 0 40px;
@@ -265,9 +265,9 @@
             align-self: flex-start;
             margin-top: 15px;
             margin-left: -13px;
-            // color: $clr3;
+            color: $clr11;
             font-size: rem(14px);
-            font-family: macanSemibold;
+            font-family: Macan-Regular;
 
             i {
                 padding-right: 4px;
@@ -283,28 +283,28 @@
         .input-title {
             margin-top: 15px;
             margin-bottom: 3px;
-            // color: $clr3;
-            font-family: macanSemibold;
+            color: $clr11;
+            font-family: Macan-Regular;
             font-size: rem(16px);
         }
 
         input {
             height: 45px;
-            // border: 1px solid $clr6;
+            border: 1px solid $clr9;
             border-radius: 4px;
             margin-top: 0;
             padding-left: 15px;
-            // color: $clr3;
+            color: $clr11;
             font-size: rem(16px);
-            font-family: macanRegular;
+            font-family: Macan-Regular;
         }
 
         .btn-continue {
             font-size: rem(16px);
-            font-family: macanSemibold;
-            // color: $clr1;
-            // background-color: $clr4;
-            // border: 1px solid $clr11;
+            font-family: Macan-Regular;
+            color: $CLR0;
+            background-color: $clr4;
+            border: 1px solid $clr14;
             border-radius: 4px;
             width: 360px;
             height: 50px;
@@ -312,7 +312,7 @@
             margin-top: 30px;
 
             &:hover {
-                // background-color: $clr2;
+                background-color: $clr2;
             }
         }
 

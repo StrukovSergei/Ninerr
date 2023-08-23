@@ -7,13 +7,13 @@
       />
       <div class="txt">
         <p class="title">Success starts here</p>
-        <p><i v-html="$getSvg('v-check-white')"></i> Over 600 categories</p>
+        <p><i v-html="$svg('check')"></i> Over 600 categories</p>
         <p>
-          <i v-html="$getSvg('v-check-white')"></i> Pay per project, not per
+          <i v-html="$svg('check')"></i> Pay per project, not per
           hour
         </p>
         <p>
-          <i v-html="$getSvg('v-check-white')"></i> Access to talent and
+          <i v-html="$svg('check')"></i> Access to talent and
           businesses <br />
           <span>across the globe</span>
         </p>
@@ -30,23 +30,23 @@
       </p>
       <!-- <p class="mobile-title">fiverr <span>.</span></p> -->
       <p class="mobile-title">
-        <i v-html="$getSvg('fiverr-logo')"></i>
+        
         <!-- <i v-html="$getSvg('x')"></i> -->
       </p>
       <p class="mobile-sub-title">Success <span>starts</span> here.</p>
       <button class="ggl" @click="doLogin">
-        <i v-html="$getSvg('google')"> </i>Continue with Google
+        Continue with Google
       </button>
       <button class="username" @click="loginByUsername">
-        <i v-html="$getSvg('email')"></i> Continue with email/username
+         Continue with email/username
       </button>
       <p class="or">OR</p>
       <section class="social-media">
         <button class="apl" @click="doLogin">
-          <i v-html="$getSvg('apple')"></i> Apple
+           Apple
         </button>
         <button class="fbk" @click="doLogin">
-          <i v-html="$getSvg('facebook')"></i> Facebook
+           Facebook
         </button>
         <p class="mobile-footer">
           By joining, you agree to the Myverr <span>Terms of Service</span> and
@@ -58,7 +58,7 @@
 
       <div v-if="byUsername" class="username-login">
         <button @click="loginByUsername" class="back">
-          <i v-html="$getSvg('long-arrow-left')"></i> Back
+          Back
         </button>
         <p class="title">Continue with your email or username</p>
         <p class="input-title">Email or username</p>
