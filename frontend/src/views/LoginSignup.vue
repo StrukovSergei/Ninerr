@@ -34,11 +34,11 @@
         <!-- <i v-html="$getSvg('x')"></i> -->
       </p>
       <p class="mobile-sub-title">Success <span>starts</span> here.</p>
-      <button class="ggl" @click="doLogin">
-        <i v-html="$svg('glogin')"></i> Continue with Google
+      <button class="ggl" @click="doLogin(this.users[2])">
+        <i v-html="$svg('glogin')"></i> Continue with Google <span class="buyer">(buyer)</span>
       </button>
-      <button class="username" @click="loginByUsername">
-        <i v-html="$svg('elogin')"></i>   Continue with email/username
+      <button class="username" @click="doLogin(this.users[0])">
+        <i v-html="$svg('elogin')"></i>   Continue with email/username <span class="seller">(seller)</span>
       </button>
       <p class="or">OR</p>
       <section class="social-media">
@@ -109,13 +109,14 @@ export default {
     this.loadUsers()
   },
   methods: {
-    async doLogin() {
+    async doLogin(user) {
       if (!this.loginCred.username) {
         this.msg = "Please enter username/password"
         return
       }
       try {
-        await this.$store.dispatch({ type: "login", userCred: this.loginCred })
+
+        await this.$store.dispatch({ type: "login", userCred: user })
         console.log("user loged in")
         this.$router.push("/")
       } catch (err) {
