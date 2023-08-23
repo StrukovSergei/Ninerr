@@ -73,8 +73,7 @@
       </div>
     </div>
   </div>
-
-  <div class="login-backdrop"></div>
+<div class="login-backdrop"></div>
 </template>
 
 <script>
