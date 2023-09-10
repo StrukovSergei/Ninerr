@@ -21,7 +21,7 @@
             <div class="active">online</div>
             <RouterLink class="seller-btn" :to="becomeSeller">New gig
             </RouterLink>
-            <RouterLink :to="userProfile">Gigs I bought</RouterLink>
+            <RouterLink class="seller-btn"  :to="userProfile">Gigs I bought</RouterLink>
             <a class="seller-btn" @click="onLogout()">Logout</a>
             <!-- <img style="max-width: 200px;" :src="user.imgUrl" /> -->
         </div>
@@ -99,7 +99,7 @@
                             <!-- Add the new column for the remove button -->
                             <el-table-column label="Remove" width="80">
                                 <template #default="{ row }">
-                                    <el-button title="Delete gig" @click="removeGig(row._id)" >X</el-button>
+                                    <el-button title="Delete gig" @click="removeGig(row._id)">X</el-button>
                                 </template>
                             </el-table-column>
                         </el-table>
@@ -126,10 +126,11 @@
                                 </el-icon>
                             </template>
                             <div>
-                                <p class="order-top"><span class="order-inner-img"><img :src="order.imgUrl" alt=""></span> <span
-                                        class="order-inner-span span-for-desktop">{{ order.gigTitle }}</span></p>
-                                <p>Status <span >{{ order.status }}</span></p>
-                                <p>Price<span >${{ order.price }}</span></p>
+                                <p class="order-top"><span class="order-inner-img"><img :src="order.imgUrl" alt=""></span>
+                                    <span class="order-inner-span span-for-desktop">{{ order.gigTitle }}</span>
+                                </p>
+                                <p>Status <span>{{ order.status }}</span></p>
+                                <p>Price<span>${{ order.price }}</span></p>
                                 <p>Buyer <span>{{ order.buyerName }}</span></p>
                                 <a class="status-btn" @click="toggleStatusModal">Change status <span
                                         v-html="$svg('arrowDown')"></span></a>
@@ -244,6 +245,10 @@ export default {
         },
         ifStatusOpen() {
             return this.statusOpen
+        },
+        becomeSeller() {
+
+            return "/register/" + this.userId
         },
     },
     created() {
@@ -401,6 +406,13 @@ export default {
             console.log('New status:', status);
 
             // You can perform any other actions or update data accordingly.
+        },
+        onLogout() {
+            userService.logout()
+            this.$router.push("/")
+            setTimeout(() => {
+                location.reload()
+            }, 100)
         },
     },
     components: {

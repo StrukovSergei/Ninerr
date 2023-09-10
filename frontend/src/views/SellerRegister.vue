@@ -15,8 +15,8 @@
                 <input />
             </label>
             <label class="flex align-center">
-                <span>Password
-                    <p>4 characters or more</p>
+                <span>Gig Title
+                    <p>Ex. I will make professional logo design</p>
                 </span>
                 <input />
             </label>
@@ -38,21 +38,49 @@
                 <textarea />
             </label>
             <label class="flex align-center">
-                <span>Country
-                    <p>Where are you from?</p>
+                <span>Price
+                    <p>Price for the gig</p>
                 </span>
                 <input />
             </label>
+            <label class="flex align-center">
+                <span>Img's
+                    <p>Upload img's for the gig</p>
+                </span>
+                
+            </label>
         </form>
         <div class="btns flex">
-            <button class="cancel-btn" @click="cancelSignup">Cancel</button>
-            <button class="save-btn" @click="saveUser">Sign up</button>
+            <button class="cancel-btn" @click="cancel">Cancel</button>
+            <button class="save-btn" @click="startProcessing">Post gig</button>
+            <div v-if="processing" class="processing-message">
+                Your gig is being processed. Please wait...
+            </div>
         </div>
     </section>
 </template>
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            processing: false
+        };
+    },
+    methods:{
+        cancel(){
+            this.$router.push('/')
+        },
+        startProcessing() {
+            this.processing = true
+            
+            setTimeout(() => {
+                this.processing = false
+
+            }, 3000)
+        }
+    }
+}
 </script>
 
 <style></style>
