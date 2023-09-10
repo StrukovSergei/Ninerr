@@ -47,7 +47,7 @@
                 <span>Img's
                     <p>Upload img's for the gig</p>
                 </span>
-                
+                <input type="file" accept="image/*" multiple @change="handleImageUpload" />
             </label>
         </form>
         <div class="btns flex">
@@ -64,20 +64,35 @@
 export default {
     data() {
         return {
-            processing: false
-        };
+            processing: false,
+            uploadedImages: []
+        }
     },
-    methods:{
-        cancel(){
+    methods: {
+        cancel() {
             this.$router.push('/')
         },
         startProcessing() {
             this.processing = true
-            
+
             setTimeout(() => {
                 this.processing = false
 
             }, 3000)
+        },
+        async handleImageUpload(event) {
+            try {
+                const uploadedImageUrls = await Promise.all(
+                    Array.from(event.target.files).map(async (file) => {
+                        const imageUrl = await uploadService.uploadImg(file)
+                        return imageUrl.secure_url
+                    })
+                )
+
+                this.uploadedImages = [...this.uploadedImages, ...uploadedImageUrls]
+            } catch (error) {
+                console.error('Failed to upload images', error)
+            }
         }
     }
 }
