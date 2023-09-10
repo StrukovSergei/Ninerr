@@ -78,7 +78,7 @@ export default {
         },
         sellerProfile() {
             
-          return this.loggedinUser.isSeller ? "/seller/" + this.loggedinUser?._id : "/user/" + this.loggedinUser?._id
+          return this.loggedinUser?.isSeller ? "/seller/" + this.loggedinUser?._id : "/user/" + this.loggedinUser?._id
             
         }
     },

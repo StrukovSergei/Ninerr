@@ -27,7 +27,7 @@
     </div>
 
     <div class="orders-container">
-      <p class="fs20">Manage orders</p>
+      <p class="manage-title fs20">Manage orders</p>
       <div v-if="orders && orders.length">
         <table class="custom-table">
           <thead>
@@ -39,8 +39,8 @@
           </thead>
           <tbody>
             <tr v-for="order in orders" :key="order._id">
-              <td>
-                <div><img :src="order.imgUrl" alt=""> {{ order.gigTitle }}</div>
+              <td class="td-title">
+                <div class="gig-order-title"><img :src="order.imgUrl" alt=""> {{ order.gigTitle }}</div>
               </td>
               <td>${{ order.price }}</td>
               <td class="center-helper">
