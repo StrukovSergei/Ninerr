@@ -23,6 +23,19 @@
             font-size: 12px;
             font-family: Macan-Regular;
         }
+
+        .status-accepted{
+            color: $clr14;
+        }
+        .status-rejected{
+            color: #ff0000;
+        }
+        .status-completed{
+            color: $clr1;
+        }
+        .status-pending{
+            color: $clr10;
+        }
     }
 
     .modal-tip {
