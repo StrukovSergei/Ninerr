@@ -61,6 +61,7 @@
 </template>
 
 <script>
+import { uploadService } from "../services/upload.service.js"
 export default {
     data() {
         return {

@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import { socketService, SOCKET_EVENT_GIG_ORDERED } from "../services/socket.service";
+import { socketService, SOCKET_EVENT_GIG_ORDERED } from "../services/socket.service"
 export default {
 
     name: "AppFooter",
