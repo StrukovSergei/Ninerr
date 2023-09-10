@@ -14,29 +14,29 @@
             </vueper-slide>
         </vueper-slides>
         <button class="button_hurt"></button>
-
-        <section class="user_preview">
-            <div class="user_info">
-                <img class="user_img" :src="gig.owner.imgUrl" />
-                <a class="user_name txt_body">{{ gig?.owner.fullname }}</a>
+        <span>
+            <section class="user_preview">
+                <div class="user_info">
+                    <img class="user_img" :src="gig.owner.imgUrl" />
+                    <a class="user_name txt_body">{{ gig?.owner.fullname }}</a>
+                </div>
+                <div>
+                    <h3 class="level ">{{ gig.owner.level }}</h3>
+                </div>
+            </section>
+            <h3 class="title_product">{{ gig?.title }}</h3>
+            <div class="rate">
+                <span v-html="$svg('blackStar')" class="rate-star flex align-center"></span>
+                <p class="txt_body">{{ gig?.owner.rate }} <span class="rate-count"> (1k+)</span></p>
             </div>
-            <div>
-                <h3 class="level ">{{ gig.owner.level }}</h3>
-            </div>
-        </section>
-        <h3 class="title_product">{{ gig?.title }}</h3>
-        <div class="rate">
-            <span v-html="$svg('blackStar')" class="rate-star flex align-center"></span>
-            <p class="txt_body">{{ gig?.owner.rate }} <span class="rate-count"> (1k+)</span></p>
-        </div>
-        <p class="price_product txt_body"><span>From </span>${{ gig.price?.toLocaleString() }}</p>
-
+            <p class="price_product txt_body"><span>From </span>${{ gig.price?.toLocaleString() }}</p>
+        </span>
     </li>
     <!-- </section> -->
 </template>
 <script>
-import { VueperSlides, VueperSlide } from "vueperslides";
-import "vueperslides/dist/vueperslides.css";
+import { VueperSlides, VueperSlide } from "vueperslides"
+import "vueperslides/dist/vueperslides.css"
 export default {
     name: "GigPreview",
     props: {
@@ -49,14 +49,14 @@ export default {
     },
     computed: {
         gigs() {
-            console.log(this.$store.getters.gigs);
-            return this.$store.getters.gigs;
+            console.log(this.$store.getters.gigs)
+            return this.$store.getters.gigs
         },
     },
     watch: {
         gig: {
             handler(newGig) {
-                this.slides = newGig.imgUrls;
+                this.slides = newGig.imgUrls
             },
             immediate: true,
         },
