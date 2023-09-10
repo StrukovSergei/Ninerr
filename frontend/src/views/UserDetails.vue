@@ -22,7 +22,7 @@
       <div class="active">online</div>
       <RouterLink class="seller-btn" :to="becomeSeller">Become a Seller
       </RouterLink>
-      <!-- <button @click="onLogout()">Logout</button> -->
+      <a class="seller-btn" @click="onLogout()">Logout</a>
       <!-- <img style="max-width: 200px;" :src="user.imgUrl" /> -->
     </div>
 
