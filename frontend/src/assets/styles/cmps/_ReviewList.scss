@@ -43,6 +43,9 @@
 
     .review-star {
         padding-left: 46px;
+        @include for-mobile-layout {
+            padding-left: 58px;
+        }
 
     }
 
