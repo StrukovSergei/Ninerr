@@ -4,7 +4,7 @@
         <div class="small-order-info" v-for="order in orders">
             <img :src="order.imgUrl" alt="" class="gig-img">
             <div class="gig-title">{{ order.gigTitle }}</div>
-            <span class="gig-status">{{ order.status }}</span>
+            <span class="gig-status" :class="`status-${order.status}`">{{ order.status }}</span>
         </div>
     </div>
 </template>
