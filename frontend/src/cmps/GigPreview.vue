@@ -15,8 +15,10 @@
         </vueper-slides>
         <button class="button_hurt"></button>
         <span>
-            <section class="user_preview">
-                <div class="user_info">
+            <RouterLink active-class="active" :to="`/gig/${gig._id}`">
+
+                <section class="user_preview">
+                    <div class="user_info">
                     <img class="user_img" :src="gig.owner.imgUrl" />
                     <a class="user_name txt_body">{{ gig?.owner.fullname }}</a>
                 </div>
@@ -30,6 +32,7 @@
                 <p class="txt_body">{{ gig?.owner.rate }} <span class="rate-count"> (1k+)</span></p>
             </div>
             <p class="price_product txt_body"><span>From </span>${{ gig.price?.toLocaleString() }}</p>
+        </RouterLink>
         </span>
     </li>
     <!-- </section> -->
