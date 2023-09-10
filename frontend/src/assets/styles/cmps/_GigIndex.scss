@@ -1,6 +1,11 @@
 .main-index-title {
     margin-top: 80px;
     font-family: Macan;
+
+    @include for-mobile-layout {
+        margin-top: 22px;
+
+    }
 }
 
 .index-nav {
@@ -79,8 +84,9 @@
         "clear btn";
     align-items: center;
     padding: 0 20px;
-    margin:0;
+    margin: 0;
     overflow-x: hidden;
+
     .border-helper {
 
 
@@ -179,6 +185,7 @@
         margin-bottom: 4px;
         left: 0;
     }
+
     .btn-container {
 
         margin-top: 24px;
@@ -219,10 +226,11 @@
     }
 }
 
-.applied-filters{
+.applied-filters {
     gap: 10px;
     margin-top: 30px;
-    .filter-pill{
+
+    .filter-pill {
         background-color: $clr15;
         border-radius: 56px;
         color: $clr4;
@@ -233,7 +241,7 @@
 
     }
 
-    button{
+    button {
         background-color: transparent;
         color: $clr5;
         padding: 0;
@@ -242,7 +250,7 @@
         cursor: pointer;
     }
 
-    .filter-pill:hover{
+    .filter-pill:hover {
         color: $clr5;
     }
 }
@@ -287,3 +295,11 @@
 
 }
 
+.index-mobile-helper {
+
+    @include for-mobile-layout {
+
+        margin-top: 2px;
+        margin-bottom: 70px;
+    }
+}

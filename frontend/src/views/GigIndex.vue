@@ -1,5 +1,5 @@
 <template>
-  <div class="container home main-layout">
+  <div class="container home main-layout index-mobile-helper">
     <h1 class="main-index-title">{{ filterHeading }}</h1>
     <div class="gig-small-nav index-nav flex">
       <RouterLink class="home-icon" to="/">
