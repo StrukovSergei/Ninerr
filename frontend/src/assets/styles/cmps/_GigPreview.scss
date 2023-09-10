@@ -109,6 +109,8 @@ li.gig-preview {
         &.vueperslides .vueperslides__inner {
             margin-block-end: 0px;
             height: 100%;
+            border: 1px solid $clr22;
+            border-radius: 8px;
         }
     }
 
