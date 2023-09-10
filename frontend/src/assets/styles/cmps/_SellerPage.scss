@@ -1,13 +1,22 @@
-
-.seller-page-helper{
+.seller-page-helper {
     grid-template-columns: 360px 880px;
-    max-width: 1240px;
     padding: 0 32px;
     margin: 0 auto;
     gap: 2rem;
     color: $clr11;
     font-family: macan;
     margin-top: 70px;
+
+    .earning-table {
+        display: none;
+    }
+
+    .analytic-helper {
+        justify-content: space-between;
+        font-family: Macan-Regular;
+        font-size: 16px;
+    }
+
     .user-container {
         color: #606266;
         border: 1px solid #ebeef5;
@@ -114,20 +123,95 @@
 
         }
     }
+
+    .earning-table section {
+        margin: 0;
+
+    }
+
+    .collapse-title {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .anlaytics-for-mobile {
+        display: grid;
+    }
+
+    .main-seller {
+        flex-direction: column;
+    }
+
+    .order-status-completed {
+
+        color: $clr1;
+    }
+
+    .order-status-rejected {
+
+        color: red;
+    }
+
+    .order-status-pending {
+        color: $clr10;
+    }
+
+    .order-status-progress {
+
+        color: $clr14;
+    }
+
+    .order-top {
+        justify-content: flex-start;
+    }
+
+    .order-inner-img {
+        margin-right: 10px;
+
+        img {
+            position: relative;
+            top: 3px;
+            width: 102px;
+        }
+    }
+
+    p {
+        max-width: 100%;
+    }
+
+    .status-btn {
+        span {
+            svg {
+                height: 8px;
+                position: relative;
+                top: -1px;
+            }
+        }
+    }
+
+    .Manage-gigs {
+        margin-top: 20px;
+        border-top: 1px solid $clr22;
+    }
+
+    .Manage-orders {
+        margin-top: 20px;
+        border-top: 1px solid $clr22;
+    }
 }
 
 
 
 @include for-mobile-layout {
-    .user-container{
+    .user-container {
         display: none;
     }
 
-    .seller-page-helper{
-        padding: 0 ;
+    .seller-page-helper {
+        padding: 0;
         display: block;
         margin-top: 0;
-    
+
     }
 
     .main-seller {
@@ -340,13 +424,7 @@
             }
         }
 
-        .Manage-orders {
 
-            @include for-mobile-layout {
-                display: none;
-
-            }
-        }
 
         .anlaytics-for-mobile {
             display: none;
@@ -412,7 +490,13 @@
         padding: 10px;
         font-family: Macan-Regular;
 
+        .Manage-orders {
 
+
+            margin: 0px 0px 18px;
+            border: 0;
+
+        }
 
         @include for-mobile-layout {}
 
@@ -536,14 +620,17 @@
         }
     }
 
-    .status-btn{
-        span{
-            svg{
+    .status-btn {
+        span {
+            svg {
                 height: 8px;
                 position: relative;
                 top: -1px;
             }
         }
     }
-}
 
+    .span-for-desktop {
+        position: static !important;
+    }
+}

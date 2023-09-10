@@ -8,8 +8,7 @@
                     {{ user.fullname.charAt(0).toUpperCase() }}
                 </div>
             </div>
-            <div class="total-orders">Total orders</div>
-            <div class="total-orders-num">{{ orders.length }}</div>
+
             <div class="user-country-title">From</div>
             <div class="user-country">
                 Israel
@@ -20,9 +19,10 @@
             <div class="year">2023</div>
             <div class="member">Last active </div>
             <div class="active">online</div>
-            <!-- <RouterLink class="seller-btn" :to="becomeSeller">Become a Seller
-      </RouterLink> -->
-            <!-- <a class="seller-btn" @click="onLogout()">Logout</a> -->
+            <RouterLink class="seller-btn" :to="becomeSeller">New gig
+            </RouterLink>
+            <RouterLink :to="userProfile">Gigs I bought</RouterLink>
+            <a class="seller-btn" @click="onLogout()">Logout</a>
             <!-- <img style="max-width: 200px;" :src="user.imgUrl" /> -->
         </div>
         <div class="seller-box">
@@ -30,7 +30,6 @@
                 <!-- <span class="top-btns flex">
                 <button @click="onLogout()"><span>Logout</span></button>
 
-                <RouterLink :to="userProfile">Gigs I bought</RouterLink>
             </span> -->
                 <!-- <add-gig-modal :is-modal-open="isModalOpen" @close="closeModal" @add="handleAddGig"></add-gig-modal> -->
 
@@ -58,15 +57,15 @@
                         </el-col>
                     </el-row>
                     <div class="analytics-rows">
-                        <div class="flex">
+                        <div class="flex analytic-helper">
                             <h2>Earing in August</h2>
                             <h1>${{ totalEarningsFromAllOrders }}</h1>
                         </div>
-                        <div class="flex">
+                        <div class="flex analytic-helper">
                             <h2>Avg. selling price</h2>
                             <h1>$229.23</h1>
                         </div>
-                        <div class="flex">
+                        <div class="flex analytic-helper">
                             <h2>Active orders</h2>
                             <h1>
                                 {{ numberOfInProgressOrders }}<span> (${{ earningsInProgressOrders }})</span>
@@ -79,16 +78,16 @@
                     <!-- <button class="addgig-btn" @click="openModal">Add Gig</button> -->
                     <div v-if="gigs && gigs.length" class="Manage-gigsT">
                         <el-table class="gigsT" :border="true" :data="gigs" style="width: 100%">
-                            <el-table-column prop="title" label="Gig" width="450" class-name="custom-title-column" />
-                            <el-table-column prop="price" label="Price" width="120" class-name="custom-price-column" />
-                            <el-table-column prop="status" label="Status" width="160" class-name="custom-column">
+                            <el-table-column prop="title" label="Gig" width="488" class-name="custom-title-column" />
+                            <el-table-column prop="price" label="Price" width="62" class-name="custom-price-column" />
+                            <el-table-column prop="status" label="Status" width="110" class-name="custom-column">
                                 <template #default="{ row }">
                                     <el-button :class="getStatusButtonClass(row.status)">{{
                                         row.status
                                     }}</el-button>
                                 </template>
                             </el-table-column>
-                            <el-table-column prop="status" label="Update Status" width="160">
+                            <el-table-column prop="status" label="Update Status" width="140">
                                 <template #default="{ row }">
                                     <select v-model="row.status" @change="updateGigStatus(row)">
                                         <option v-for="status in gigStatusOptions" :key="status">
@@ -98,9 +97,9 @@
                                 </template>
                             </el-table-column>
                             <!-- Add the new column for the remove button -->
-                            <el-table-column label="Remove" width="100">
+                            <el-table-column label="Remove" width="80">
                                 <template #default="{ row }">
-                                    <el-button @click="removeGig(row._id)" type="danger" icon="el-icon-delete">X</el-button>
+                                    <el-button title="Delete gig" @click="removeGig(row._id)" >X</el-button>
                                 </template>
                             </el-table-column>
                         </el-table>
@@ -127,11 +126,11 @@
                                 </el-icon>
                             </template>
                             <div>
-                                <p><span class="order-inner-img"><img :src="order.imgUrl" alt=""></span> <span
-                                        class="order-inner-span">{{ order.gigTitle }}</span></p>
-                                <p>Status <span class="order-inner-span">{{ order.status }}</span></p>
-                                <p>Price<span class="order-inner-span">${{ order.price }}</span></p>
-                                <p>Buyer <span class="order-inner-span">{{ order.buyerName }}</span></p>
+                                <p class="order-top"><span class="order-inner-img"><img :src="order.imgUrl" alt=""></span> <span
+                                        class="order-inner-span span-for-desktop">{{ order.gigTitle }}</span></p>
+                                <p>Status <span >{{ order.status }}</span></p>
+                                <p>Price<span >${{ order.price }}</span></p>
+                                <p>Buyer <span>{{ order.buyerName }}</span></p>
                                 <a class="status-btn" @click="toggleStatusModal">Change status <span
                                         v-html="$svg('arrowDown')"></span></a>
                                 <StatusModal v-if="ifStatusOpen" :order="order" @status-changed="updateStatus">
