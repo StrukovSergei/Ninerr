@@ -105,7 +105,7 @@
                             <p>Status <span class="order-inner-span">{{ order.status }}</span></p>
                             <p>Price<span class="order-inner-span">${{ order.price }}</span></p>
                             <p>Buyer <span class="order-inner-span">{{ order.buyerName }}</span></p>
-                            <a class="status-btn" @click="toggleStatusModal">Change status</a>
+                            <a class="status-btn" @click="toggleStatusModal">Change status <span v-html="$svg('arrowDown')"></span></a>
                             <StatusModal v-if="ifStatusOpen" :order="order" @status-changed="updateStatus">
                             </StatusModal>
                             <!-- <el-dropdown placement="top-end">
