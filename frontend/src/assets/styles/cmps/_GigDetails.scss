@@ -233,6 +233,9 @@
                 font-family: Macan-Regular;
                 font-weight: 400;
                 color: $clr10;
+                @include for-mobile-layout {
+                    opacity: 0;
+                }
             }
 
             .mini-user-devider {
@@ -241,6 +244,9 @@
                 padding-left: 8px;
                 top: 3px;
                 color: $clr2;
+                @include for-mobile-layout {
+                    opacity: 0;
+                }
             }
         }
 
@@ -259,6 +265,19 @@
         position: relative;
         margin-left: 10px;
         top: 2px;
+
+        @include for-mobile-layout {
+            position: relative;
+            left: -10px;
+            display: flex;
+            span{
+                span{
+                    svg{
+                        width: 12px;
+                    }
+                }
+            }
+        }
     }
 
     .star-rating svg {
