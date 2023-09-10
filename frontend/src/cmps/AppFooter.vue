@@ -77,7 +77,9 @@ export default {
             return this.$store.getters.loggedinUser
         },
         sellerProfile() {
-            return "/seller/" + this.loggedinUser?._id
+            
+          return this.loggedinUser.isSeller ? "/seller/" + this.loggedinUser?._id : "/user/" + this.loggedinUser?._id
+            
         }
     },
     methods: {
