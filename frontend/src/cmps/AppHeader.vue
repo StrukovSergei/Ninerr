@@ -7,7 +7,7 @@
   }">
     <header class="header-container flex">
       <RouterLink to="/" class="site-logo">
-        <img v-if="isHomePage && isHomePageNotScrolled" src="../assets/imgs/main-logo-white.png" alt="" />
+        <img v-if="isHomePage && isHomePageNotScrolled && !isMobileLayout" src="../assets/imgs/main-logo-white.png" alt="" />
         <img v-else src="../assets/imgs/main-logo.png" alt="" />
       </RouterLink>
       <div class="search">
@@ -92,16 +92,18 @@ export default {
       orderModal: false,
       sellerModal: false,
       ifNewOrder: true,
+      isMobileLayout: false,
     }
   },
   created() {
-    
+    this.checkMobileLayout()
   },
   mounted() {
     // if (this.isHomePage) {
     window.addEventListener("scroll", this.handleScroll)
     this.isHomePageNotScrolled = this.isHomePage
     this.isHomePageNotScrolled = true
+    window.addEventListener("resize", this.checkMobileLayout)
     // } else {
     //   this.scrolled = true
     // }
@@ -111,6 +113,7 @@ export default {
   beforeDestroy() {
     if (this.isHomePage) {
       window.removeEventListener("scroll", this.handleScroll)
+      window.removeEventListener("resize", this.checkMobileLayout)
     }
   },
   computed: {
@@ -196,7 +199,9 @@ export default {
       this.sellerModal ? this.sellerModal = false : this.sellerModal = true
 
     },
-
+    checkMobileLayout() {
+      this.isMobileLayout = window.innerWidth <= 768
+    },
 
   },
   components: {
