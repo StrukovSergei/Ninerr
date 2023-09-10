@@ -53,7 +53,7 @@
         </table>
       </div>
       <div v-else>
-        <p>No orders available.</p>
+        <p>No orders yet.</p>
       </div>
     </div>
   </section>

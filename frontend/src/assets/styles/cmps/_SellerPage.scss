@@ -1,3 +1,113 @@
+
+.main-seller {
+    max-width: 1240px;
+    padding: 0 32px;
+    margin: 0 auto; 
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    color: #333; 
+    font-family: Arial, sans-serif; 
+    flex-direction: column;
+
+
+    background-color: #f7f7f7;
+
+
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .earning-table {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 16px;
+
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+
+        .el-col {
+            display: flex;
+            align-items: center;
+        }
+
+        h4 {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .top-btns {
+        & > * {
+            /* Button styles */
+            display: flex;
+            justify-content: center;
+            border-radius: 4px;
+
+            font-size: 16px;
+            font-weight: 600;
+            padding: 14px;
+            border: none;
+            margin: 10px 24px 14px 24px;
+            width: 75%;
+            cursor: pointer;
+            text-decoration: none;
+
+            transition: background-color 0.3s ease;
+
+
+        }
+
+        button:first-child {
+
+        }
+    }
+
+    .addgig-btn {
+
+        display: flex;
+        justify-content: center;
+        border-radius: 4px;
+
+        font-weight: 600;
+        padding: 14px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        color: #fff; 
+        max-width: 150px;
+
+
+        margin-top: 20px;
+        margin-bottom: 10px;
+
+
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #1e7e34; 
+        }
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
 @include for-mobile-layout {
     .main-seller {
         max-width: 1240px;
@@ -9,6 +119,7 @@
         color: $clr11;
         font-family: macan;
         flex-direction: column;
+        border: 0;
 
         @include for-mobile-layout {
             max-width: 100vw;
@@ -414,3 +525,4 @@
         }
     }
 }
+
