@@ -99,6 +99,12 @@
             }
 
             border-right: 1px solid $clr9;
+
+            @include for-mobile-layout {
+                display: none;
+        
+        
+            }
         }
 
 
@@ -147,13 +153,17 @@
                 position: relative;
                 top: 3px;
                 right: -113px;
+                @include for-mobile-layout {
+                    right: -93px;
+
+                }
             }
 
             .btn-continue-route {
                 color: white;
                 text-decoration: none;
             }
-            
+
         }
 
         .clock-icon {
@@ -182,8 +192,8 @@
         }
 
         @include for-mobile-layout {
-            display: none;
-
+            width: 100%;
+            margin-bottom: 60px;
         }
     }
 
@@ -234,7 +244,7 @@
     .gig-details-overview {
         margin-inline-end: 5.5%;
         width: 59.5%;
-        
+
         @include for-mobile-layout {
             width: 100%;
         }
@@ -358,6 +368,12 @@
     height: 59px;
     color: $clr5;
     cursor: pointer;
+
+    @include for-mobile-layout {
+        display: none;
+
+
+    }
 }
 
 .border-helper2 {
@@ -367,6 +383,11 @@
     border-right: 1px solid $clr9;
     height: 59px;
     top: 0;
+    @include for-mobile-layout {
+        display: none;
+
+
+    }
 
 }
 
@@ -377,5 +398,10 @@
     left: 299px;
     color: $clr5;
     cursor: pointer;
+    @include for-mobile-layout {
+        display: none;
+
+
+    }
 
 }
