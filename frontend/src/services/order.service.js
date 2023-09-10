@@ -26,7 +26,6 @@ export const orderService = {
 }
 
 function query(filterBy) {
-console.log("🚀 ~ file: order.service.js:29 ~ query ~ filterBy:", filterBy)
 
   let orders = []
 

@@ -1,11 +1,11 @@
 <template>
     <div class="seller-box">
         <section v-if="user" class="main-seller flex">
-            <span class="top-btns flex">
+            <!-- <span class="top-btns flex">
                 <button @click="onLogout()"><span>Logout</span></button>
 
                 <RouterLink :to="userProfile">Gigs I bought</RouterLink>
-            </span>
+            </span> -->
             <add-gig-modal :is-modal-open="isModalOpen" @close="closeModal" @add="handleAddGig"></add-gig-modal>
             <section class="anlaytics-for-mobile">
                 <el-row class="earning-table">
