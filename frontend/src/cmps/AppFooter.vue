@@ -47,7 +47,7 @@
             </li>
             <li>
                 <span>
-                    <RouterLink @click="this.ifNewOrder = true" active-class="active" :to="sellerProfile">
+                    <RouterLink @click="ifNewOrder = true" active-class="active" :to="userProfileLink">
                         <a class="profile-svg" v-html="$svg('user')"> </a>
                     </RouterLink>
                     <span class="new-order-dot" :class="{ 'hidden': this.ifNewOrder }">.</span>
@@ -65,7 +65,7 @@ export default {
     name: "AppFooter",
     data() {
         return {
-            ifNewOrder: true,
+            ifNewOrder: false
         }
     },
     created() {
@@ -76,11 +76,17 @@ export default {
         loggedinUser() {
             return this.$store.getters.loggedinUser
         },
-        sellerProfile() {
-            
-          return this.loggedinUser?.isSeller ? "/seller/" + this.loggedinUser?._id : "/user/" + this.loggedinUser?._id
-            
-        }
+
+        userProfileLink() {
+            if (this.loggedinUser) {
+                return this.loggedinUser.isSeller
+                    ? `/seller/${this.loggedinUser._id}`
+                    : `/user/${this.loggedinUser._id}`
+            } else {
+                return "/login"
+            }
+        },
+
     },
     methods: {
         dotUpdate() {
@@ -89,7 +95,8 @@ export default {
             }, 1000)
 
 
+
         }
     }
-};
+}
 </script>
