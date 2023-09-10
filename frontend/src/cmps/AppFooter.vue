@@ -65,7 +65,7 @@ export default {
     name: "AppFooter",
     data() {
         return {
-            ifNewOrder: false
+            ifNewOrder: true
         }
     },
     created() {
@@ -90,6 +90,8 @@ export default {
     },
     methods: {
         dotUpdate() {
+            
+            console.log("🚀 ~ file: AppFooter.vue:96 ~ setTimeout ~ this.ifNewOrder:", this.ifNewOrder)
             setTimeout(() => {
                 this.ifNewOrder = false
             }, 1000)
