@@ -173,6 +173,7 @@
         @include for-mobile-layout {
             font-size: 14px;
             flex-direction: column;
+            min-width: 160px;
         }
     }
 
@@ -184,15 +185,18 @@
         img {
             width: 80px;
             height: 53px;
+            padding-right: 10px;
             @include for-mobile-layout {
-                width: 100px;
+                width: 120px;
+                height: 63px;
+
             }
         }
 
         .td-title {
 
             @include for-mobile-layout {
-                width: 100%;
+                min-width: 160px;
             }
         }
     }
@@ -237,13 +241,7 @@ td div {
     max-width: 600px;
 }
 
-td img {
-    max-width: 80px;
-    margin-right: 10px;
-    @include for-mobile-layout {
-        width: 100px;
-    }
-}
+
 
 
 td div {
