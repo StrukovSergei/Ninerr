@@ -1,6 +1,6 @@
 <template>
     <section class="seller-register main-layout">
-        <h1>Register as Seller</h1>
+        <h1>Post a gig</h1>
         <form>
             <label class="flex align-center">
                 <span>Full Name
@@ -20,14 +20,7 @@
                 </span>
                 <input />
             </label>
-            <!-- <div class="flex align-center">
-                <span>Profile Picture
-                    <p>
-                        Add a profile picture of yourself so customers will know exactly who they’ll
-                        be working with.
-                    </p>
-                </span>
-            </div> -->
+
             <label class="flex align-center">
                 <span>Description
                     <p>

@@ -4,16 +4,22 @@ li.gig-preview {
     position: relative;
     max-height: 362px;
 
+    :last-child{
+        @include for-mobile-layout {
+        }
+    }
+
     @include for-mobile-layout {
         background-color: #fff;
         height: 100px;
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
         width: 100%;
-        height: 79%;
+        height: 100%;
+        
+
+        
     }
 
     & .rate-star {
@@ -21,6 +27,7 @@ li.gig-preview {
 
         @include for-mobile-layout {
             fill: rgb(255, 183, 0);
+
         }
     }
 
@@ -147,9 +154,9 @@ li.gig-preview {
         cursor: pointer;
 
         @include for-mobile-layout {
-            top: 30px;
-            right: 18px;
-            background-color: white;
+            top: 22px;
+            right: -12px;
+            background-color: transparent;
             border: #74767e;
         }
 
@@ -177,7 +184,8 @@ li.gig-preview {
         line-height: rem(21px);
 
         @include for-mobile-layout {
-            display: none;
+            position: relative;
+            top: -20px;
         }
     }
 
@@ -222,7 +230,7 @@ li.gig-preview {
             grid-column: 2/3;
             margin-inline-start: 10px;
             position: absolute;
-            top: 30px
+            top: 58px
         }
     }
 
@@ -286,6 +294,7 @@ li.gig-preview {
             right: 30px;
             bottom: 5px;
             z-index: 1;
+            display: none;
         }
 
         & span {
@@ -313,7 +322,6 @@ li.gig-preview {
             margin-block-start: rem(4px);
 
             @include for-mobile-layout {
-                display: none;
             }
 
 
@@ -323,7 +331,9 @@ li.gig-preview {
                 border-radius: 50%;
 
                 @include for-mobile-layout {
-                    display: none;
+                    position: relative;
+                    top: -17px;
+                    margin-left: 10px;
                 }
             }
         }
@@ -364,7 +374,7 @@ li.gig-preview {
             text-decoration: underline;
         }
     }
-
+ 
 
 }
 
@@ -373,4 +383,11 @@ li.gig-preview {
     padding: 0;
     position: relative;
     top: -15px;
+
+    @include for-mobile-layout {
+        position: relative;
+        top: 4px;
+
+
+    }
 }
