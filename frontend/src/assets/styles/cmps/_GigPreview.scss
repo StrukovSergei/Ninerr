@@ -2,6 +2,7 @@ li.gig-preview {
     background-color: white;
     height: fit-content;
     position: relative;
+    max-height: 362px;
 
     @include for-mobile-layout {
         background-color: #fff;
@@ -365,3 +366,9 @@ li.gig-preview {
 
 }
 
+.margin-helper{
+    margin: 0 ;
+    padding: 0;
+    position: relative;
+    top: -15px;
+}

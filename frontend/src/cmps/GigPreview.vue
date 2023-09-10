@@ -14,8 +14,8 @@
             </vueper-slide>
         </vueper-slides>
         <button class="button_hurt"></button>
-        <span>
-            <RouterLink active-class="active" :to="`/gig/${gig._id}`">
+        <span class="margin-helper">
+            <RouterLink class="margin-helper" active-class="active" :to="`/gig/${gig._id}`">
 
                 <section class="user_preview">
                     <div class="user_info">
