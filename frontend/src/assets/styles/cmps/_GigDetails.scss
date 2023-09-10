@@ -180,6 +180,17 @@
         }
     }
 
+    .slider{
+        display: none;
+        @include for-mobile-layout {
+            display: block;
+            img{
+            width: 340px;
+            height: 200px;
+            }
+        }
+    }
+
     .vueperslides__arrow svg {
         background-color: #fff;
         -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
@@ -216,6 +227,8 @@
         width: 59.5%;
 
     }
+
+
 
     .mini-user-info {
         max-height: 30px;

@@ -36,12 +36,16 @@
 
                 <vueper-slides class="no-shadow thumbnails" ref="vueperslides2" @slide="
                     $refs.vueperslides1.goToSlide($event.currentSlide.index, { emit: false })
-                    " :visible-slides="slides.length" fixed-height="80px" :bullets="false" :touchable="false" :gap="1.5"
-                    :arrows="false">
+                    " :visible-slides="slides.length" fixed-height="80px" :bullets="false" :touchable="false"
+                    :gap="1.5" :arrows="false">
                     <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image"
                         @click.native="$refs.vueperslides2.goToSlide(i)">
                     </vueper-slide>
                 </vueper-slides>
+                <div class="slider">
+                    <img :src="currGig.imgUrls[0]" alt="Image 1">
+
+                </div>
             </div>
             <div class="aboutgig-container">
                 <h2 class="gig-title fs20">About this gig</h2>
