@@ -40,6 +40,10 @@
     padding-top: 20px;
     margin-top: 20px;
     gap: 10px;
+    @include for-mobile-layout {
+margin-bottom: 20px;
+
+    }
 
     button {
         cursor: pointer;
