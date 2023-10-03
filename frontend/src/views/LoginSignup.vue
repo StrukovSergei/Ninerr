@@ -37,7 +37,7 @@
       <button class="ggl" @click="doLogin(this.users[2])">
         <i v-html="$svg('glogin')"></i> Continue with Google <span class="buyer">(buyer)</span>
       </button>
-      <button class="username" @click="doLogin(this.users[0])">
+      <button class="username" @click="doLogin(this.users[1])">
         <i v-html="$svg('elogin')"></i>   Continue with email/username <span class="seller">(seller)</span>
       </button>
       <p class="or">OR</p>
